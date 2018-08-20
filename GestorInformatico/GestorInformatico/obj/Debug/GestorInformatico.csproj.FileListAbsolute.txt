@@ -1,2 +1,3 @@
 c:\users\gsgonzalez88\documents\visual studio 2013\Projects\GestorInformatico\GestorInformatico\bin\Debug\GestorInformatico.exe.config
 C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\bin\Debug\GestorInformatico.exe.config
+C:\Users\metam\Documents\PAVRepo\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\bin\Debug\GestorInformatico.exe.config
