@@ -1,3 +1,13 @@
 c:\users\gsgonzalez88\documents\visual studio 2013\Projects\GestorInformatico\GestorInformatico\bin\Debug\GestorInformatico.exe.config
 C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\bin\Debug\GestorInformatico.exe.config
 C:\Users\metam\Documents\PAVRepo\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\bin\Debug\GestorInformatico.exe.config
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.csprojResolveAssemblyReference.cache
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Login.resources
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Properties.Resources.resources
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.csproj.GenerateResource.Cache
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\bin\Debug\GestorInformatico.exe
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\bin\Debug\GestorInformatico.pdb
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\bin\Debug\Milibreria.dll
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\bin\Debug\Milibreria.pdb
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.exe
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.pdb

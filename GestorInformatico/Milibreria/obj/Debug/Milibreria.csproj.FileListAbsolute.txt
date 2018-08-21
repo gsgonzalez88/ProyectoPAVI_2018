@@ -1,0 +1,5 @@
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\Milibreria\bin\Debug\Milibreria.dll
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\Milibreria\bin\Debug\Milibreria.pdb
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\Milibreria\obj\Debug\Milibreria.csprojResolveAssemblyReference.cache
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\Milibreria\obj\Debug\Milibreria.dll
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\Milibreria\obj\Debug\Milibreria.pdb
