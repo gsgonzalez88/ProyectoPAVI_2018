@@ -21,7 +21,7 @@ namespace GestorInformatico
         {
             try
             {
-                string cmd = string.Format("Select * from Usuario where Nombre = '{0}' and Constraseña ='{1}'", txtUsuario.Text.Trim(), txtContraseña.Text.Trim());
+                string cmd = string.Format("Select * from Usuario where Nombre = '{0}' and Contraseña ='{1}'", txtUsuario.Text.Trim(), txtContraseña.Text.Trim());
                 DataSet ds = Utilidades.Ejecutar(cmd);
                 string cuenta = ds.Tables[0].Rows[0]["Nombre"].ToString().Trim();
                 string Constraseña = ds.Tables[0].Rows[0]["Contraseña"].ToString().Trim();
@@ -32,14 +32,20 @@ namespace GestorInformatico
                
                     
             }
-            catch (Exception error)
+            catch (Exception)
             {
 
-                MessageBox.Show("Usuario o Constraseña incorrecto");  
+                MessageBox.Show("Usuario o Constraseña incorrecto"); 
+                
             }
           
                      
            
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

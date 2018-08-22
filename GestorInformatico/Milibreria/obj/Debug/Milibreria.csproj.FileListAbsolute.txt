@@ -3,3 +3,8 @@ C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\Milibreria\bin\Debu
 C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\Milibreria\obj\Debug\Milibreria.csprojResolveAssemblyReference.cache
 C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\Milibreria\obj\Debug\Milibreria.dll
 C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\Milibreria\obj\Debug\Milibreria.pdb
+D:\Pav I\ProyectoPAVI_2018\GestorInformatico\Milibreria\bin\Debug\Milibreria.dll
+D:\Pav I\ProyectoPAVI_2018\GestorInformatico\Milibreria\bin\Debug\Milibreria.pdb
+D:\Pav I\ProyectoPAVI_2018\GestorInformatico\Milibreria\obj\Debug\Milibreria.csprojResolveAssemblyReference.cache
+D:\Pav I\ProyectoPAVI_2018\GestorInformatico\Milibreria\obj\Debug\Milibreria.dll
+D:\Pav I\ProyectoPAVI_2018\GestorInformatico\Milibreria\obj\Debug\Milibreria.pdb

@@ -14,17 +14,27 @@ namespace Milibreria
     {
         public static DataSet Ejecutar(string Ejec)
         {
+            try
+            {
 
-            string cadena = "Data Source=.;Initial Catalog=Pav;User ID=sa;Password=sqladmin";
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = cadena;
-            con.Open();
-            DataSet DS = new DataSet();
-            SqlDataAdapter DA = new SqlDataAdapter(Ejec, con);
-            DA.Fill(DS);
-            con.Close();
 
-            return DS;
+
+                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = cadena;
+                con.Open();
+                DataSet DS = new DataSet();
+                SqlDataAdapter DA = new SqlDataAdapter(Ejec, con);
+                DA.Fill(DS);
+                con.Close();
+
+                return DS;
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception("" + e.Message);
+            }
 
         }
     }
