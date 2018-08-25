@@ -16,5 +16,26 @@ namespace GestorInformatico
         {
             InitializeComponent();
         }
+
+        private void estaSeguro(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que desea salir?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ABMCliente abmC = new ABMCliente();
+            abmC.Show();
+        }
+
+        
     }
 }
