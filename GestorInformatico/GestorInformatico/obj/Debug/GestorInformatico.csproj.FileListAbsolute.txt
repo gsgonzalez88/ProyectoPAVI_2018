@@ -22,3 +22,5 @@ D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorI
 D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Login.resources
 D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Properties.Resources.resources
 D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.csproj.GenerateResource.Cache
+D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Menu.resources
+D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.ABMCliente.resources
