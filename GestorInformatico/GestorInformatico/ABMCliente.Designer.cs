@@ -398,6 +398,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ABMCliente";
             this.Text = "Nuevo Cliente";
+            this.Load += new System.EventHandler(this.ABMCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
