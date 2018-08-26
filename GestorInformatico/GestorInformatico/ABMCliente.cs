@@ -38,9 +38,9 @@ namespace GestorInformatico
             table.Load(cmd.ExecuteReader());
             con.Close();
 
-            lbxBarrio.DataSource = table;
-            lbxBarrio.DisplayMember = "Descripcion";
-            lbxBarrio.ValueMember = "Descripcion";
+            cmbBarrio.DataSource = table;
+            cmbBarrio.DisplayMember = "Descripcion";
+            cmbBarrio.ValueMember = "Descripcion";
             con.Open();
 
             cmd.Connection = con;
@@ -50,11 +50,27 @@ namespace GestorInformatico
             table.Load(cmd.ExecuteReader());
             con.Close();
 
-            lbxLocalidad.DataSource = table;
-            lbxLocalidad.DisplayMember = "Descripcion";
-            lbxLocalidad.ValueMember = "Descripcion";
+            cmbLocalidad.DataSource = table;
+            cmbLocalidad.DisplayMember = "Descripcion";
+            cmbLocalidad.ValueMember = "Descripcion";
+
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Select * from TipoDocumento ";
+            table = new DataTable();
+            table.Load(cmd.ExecuteReader());
+            con.Close();
+
+            cmbTdoc.DataSource = table;
+            cmbTdoc.DisplayMember = "Descripcion";
+            cmbTdoc.ValueMember = "Descripcion";
         }
 
+       
+
+       
+
+       
 
       
     }
