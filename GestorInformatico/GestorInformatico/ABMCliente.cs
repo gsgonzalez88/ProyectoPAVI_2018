@@ -38,9 +38,9 @@ namespace GestorInformatico
             table.Load(cmd.ExecuteReader());
             con.Close();
 
-            lbxBarrio.DataSource = table;
-            lbxBarrio.DisplayMember = "Descripcion";
-            lbxBarrio.ValueMember = "Descripcion";
+            cmbBarrio.DataSource = table;
+            cmbBarrio.DisplayMember = "Descripcion";
+            cmbBarrio.ValueMember = "Descripcion";
             con.Open();
 
             cmd.Connection = con;
@@ -50,11 +50,62 @@ namespace GestorInformatico
             table.Load(cmd.ExecuteReader());
             con.Close();
 
-            lbxLocalidad.DataSource = table;
-            lbxLocalidad.DisplayMember = "Descripcion";
-            lbxLocalidad.ValueMember = "Descripcion";
+            cmbLocalidad.DataSource = table;
+            cmbLocalidad.DisplayMember = "Descripcion";
+            cmbLocalidad.ValueMember = "Descripcion";
+            con.Open();
+
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Select * from TipoDoc";
+            table = new DataTable();
+            table.Load(cmd.ExecuteReader());
+            con.Close();
+
+            cmbTdoc.DataSource = table;
+            cmbTdoc.DisplayMember = "Descripcion";
+            cmbTdoc.ValueMember = "Descripcion";
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            con.Open();
+            cmd.CommandText = "Select * from Provincia";
+            table = new DataTable();
+            table.Load(cmd.ExecuteReader());
+            con.Close();
+            
+            cmbProvin.DataSource = table;
+            cmbProvin.DisplayMember = "Descripcion";
+            cmbProvin.ValueMember = "Descripcion";
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Select * from Departamento";
+            table = new DataTable();
+            table.Load(cmd.ExecuteReader());
+            con.Close();
+         
+             cmbDepto.DataSource = table;
+             cmbDepto.DisplayMember = "Descripcion";
+             cmbDepto.ValueMember = "Descripcion";
         }
 
+        private void EstaSeguro(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que desea salir?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+       
+
+       
+
+       
 
       
     }
