@@ -27,7 +27,7 @@ namespace GestorInformatico
                 string Constraseña = ds.Tables[0].Rows[0]["Contraseña"].ToString().Trim();
                 if (txtUsuario.Text == cuenta && txtContraseña.Text == Constraseña)
 	            {
-		          MessageBox.Show("Inicio correcto","Informacion");
+		          MessageBox.Show("Inicio correcto","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
                   this.Hide();
                   Menu frmMenu = new Menu();
                   frmMenu.ShowDialog();

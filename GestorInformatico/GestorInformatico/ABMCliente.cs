@@ -53,10 +53,11 @@ namespace GestorInformatico
             cmbLocalidad.DataSource = table;
             cmbLocalidad.DisplayMember = "Descripcion";
             cmbLocalidad.ValueMember = "Descripcion";
+            con.Open();
 
             cmd.Connection = con;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Select * from TipoDocumento ";
+            cmd.CommandText = "Select * from TipoDoc";
             table = new DataTable();
             table.Load(cmd.ExecuteReader());
             con.Close();
@@ -64,6 +65,28 @@ namespace GestorInformatico
             cmbTdoc.DataSource = table;
             cmbTdoc.DisplayMember = "Descripcion";
             cmbTdoc.ValueMember = "Descripcion";
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            con.Open();
+            cmd.CommandText = "Select * from Provincia";
+            table = new DataTable();
+            table.Load(cmd.ExecuteReader());
+            con.Close();
+            
+            cmbProvin.DataSource = table;
+            cmbProvin.DisplayMember = "Descripcion";
+            cmbProvin.ValueMember = "Descripcion";
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Select * from Departamento";
+            table = new DataTable();
+            table.Load(cmd.ExecuteReader());
+            con.Close();
+         
+             cmbDepto.DataSource = table;
+             cmbDepto.DisplayMember = "Descripcion";
+             cmbDepto.ValueMember = "Descripcion";
         }
 
        
