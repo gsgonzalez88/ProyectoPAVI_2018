@@ -22,6 +22,7 @@ namespace GestorInformatico
             if (MessageBox.Show("Esta seguro que desea salir?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 e.Cancel = false;
+               
             }
             else
             {
@@ -31,9 +32,9 @@ namespace GestorInformatico
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             ABMCliente abmC = new ABMCliente();
-            abmC.Show();
+            abmC.ShowDialog();
         }
 
         

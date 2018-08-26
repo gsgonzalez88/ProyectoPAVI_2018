@@ -89,6 +89,18 @@ namespace GestorInformatico
              cmbDepto.ValueMember = "Descripcion";
         }
 
+        private void EstaSeguro(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que desea salir?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
        
 
        
