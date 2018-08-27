@@ -31,4 +31,3 @@ C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\o
 C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.AbmLocalidad.resources
 C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.ConsultarCliente.resources
 C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Menu.resources
-C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.BucarCliente.resources

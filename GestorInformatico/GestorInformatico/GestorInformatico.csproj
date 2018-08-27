@@ -70,12 +70,6 @@
     <Compile Include="AbmLocalidad.Designer.cs">
       <DependentUpon>AbmLocalidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="BucarCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BucarCliente.Designer.cs">
-      <DependentUpon>BucarCliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="ConsultarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,9 +98,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AbmLocalidad.resx">
       <DependentUpon>AbmLocalidad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BucarCliente.resx">
-      <DependentUpon>BucarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarCliente.resx">
       <DependentUpon>ConsultarCliente.cs</DependentUpon>
