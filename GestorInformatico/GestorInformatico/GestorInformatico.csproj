@@ -31,6 +31,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Milibreria, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -48,11 +52,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbmBarrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmBarrio.Designer.cs">
+      <DependentUpon>AbmBarrio.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ABMCliente.Designer.cs">
       <DependentUpon>ABMCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmLocalidad.Designer.cs">
+      <DependentUpon>AbmLocalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BucarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BucarCliente.Designer.cs">
+      <DependentUpon>BucarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarCliente.Designer.cs">
+      <DependentUpon>ConsultarCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -68,8 +96,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AbmBarrio.resx">
+      <DependentUpon>AbmBarrio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABMCliente.resx">
       <DependentUpon>ABMCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmLocalidad.resx">
+      <DependentUpon>AbmLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BucarCliente.resx">
+      <DependentUpon>BucarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarCliente.resx">
+      <DependentUpon>ConsultarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

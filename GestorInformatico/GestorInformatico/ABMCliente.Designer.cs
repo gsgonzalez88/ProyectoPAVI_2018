@@ -58,19 +58,23 @@
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.cmbTdoc = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnLoc = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.cmbProvin = new System.Windows.Forms.ComboBox();
             this.cmbDepto = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button2 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -259,16 +263,17 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(202, 337);
+            this.btnAceptar.Location = new System.Drawing.Point(700, 130);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 26;
-            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // BtnSalir
             // 
-            this.BtnSalir.Location = new System.Drawing.Point(283, 337);
+            this.BtnSalir.Location = new System.Drawing.Point(700, 159);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(75, 23);
             this.BtnSalir.TabIndex = 27;
@@ -287,6 +292,7 @@
             this.rbtParticular.TabStop = true;
             this.rbtParticular.Text = "Particular";
             this.rbtParticular.UseVisualStyleBackColor = false;
+            this.rbtParticular.CheckedChanged += new System.EventHandler(this.rbtParticular_CheckedChanged);
             // 
             // rbtEmpresa
             // 
@@ -323,6 +329,7 @@
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(181, 21);
             this.cmbLocalidad.TabIndex = 37;
+            this.cmbLocalidad.SelectedIndexChanged += new System.EventHandler(this.cmbLocalidad_SelectedIndexChanged);
             // 
             // cmbTdoc
             // 
@@ -343,19 +350,20 @@
             this.label11.TabIndex = 39;
             this.label11.Text = "Fecha";
             // 
-            // dateTimePicker1
+            // dtpFechaAlta
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(118, 16);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(205, 20);
-            this.dateTimePicker1.TabIndex = 40;
+            this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaAlta.Location = new System.Drawing.Point(118, 16);
+            this.dtpFechaAlta.Name = "dtpFechaAlta";
+            this.dtpFechaAlta.Size = new System.Drawing.Size(205, 20);
+            this.dtpFechaAlta.TabIndex = 40;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.txtCuit);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnLoc);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cmbProvin);
             this.groupBox1.Controls.Add(this.cmbDepto);
@@ -385,6 +393,50 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
             // 
+            // button4
+            // 
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(636, 139);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(29, 24);
+            this.button4.TabIndex = 46;
+            this.button4.Tag = "Nuevo";
+            this.toolTip1.SetToolTip(this.button4, "Nuevo");
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(637, 110);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(29, 24);
+            this.button3.TabIndex = 45;
+            this.toolTip1.SetToolTip(this.button3, "Nuevo");
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btnLoc
+            // 
+            this.btnLoc.Image = ((System.Drawing.Image)(resources.GetObject("btnLoc.Image")));
+            this.btnLoc.Location = new System.Drawing.Point(271, 140);
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.Size = new System.Drawing.Size(29, 24);
+            this.btnLoc.TabIndex = 44;
+            this.toolTip1.SetToolTip(this.btnLoc, "Nuevo");
+            this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
+            // 
+            // button1
+            // 
+            this.button1.AccessibleDescription = "Nuevo";
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(271, 107);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 24);
+            this.button1.TabIndex = 43;
+            this.toolTip1.SetToolTip(this.button1, "Nuevo");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // cmbProvin
             // 
             this.cmbProvin.FormattingEnabled = true;
@@ -392,6 +444,7 @@
             this.cmbProvin.Name = "cmbProvin";
             this.cmbProvin.Size = new System.Drawing.Size(205, 21);
             this.cmbProvin.TabIndex = 42;
+            this.cmbProvin.SelectedIndexChanged += new System.EventHandler(this.cmbProvin_SelectedIndexChanged);
             // 
             // cmbDepto
             // 
@@ -400,6 +453,7 @@
             this.cmbDepto.Name = "cmbDepto";
             this.cmbDepto.Size = new System.Drawing.Size(205, 21);
             this.cmbDepto.TabIndex = 41;
+            this.cmbDepto.SelectedIndexChanged += new System.EventHandler(this.cmbDepto_SelectedIndexChanged);
             // 
             // label16
             // 
@@ -427,7 +481,7 @@
             // 
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.rbtParticular);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.dtpFechaAlta);
             this.groupBox2.Controls.Add(this.rbtEmpresa);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Location = new System.Drawing.Point(12, 7);
@@ -450,58 +504,58 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacion de Contacto";
             // 
-            // button1
-            // 
-            this.button1.AccessibleDescription = "Nuevo";
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(271, 107);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 24);
-            this.button1.TabIndex = 43;
-            this.toolTip1.SetToolTip(this.button1, "Nuevo");
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(271, 140);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(29, 24);
-            this.button2.TabIndex = 44;
-            this.toolTip1.SetToolTip(this.button2, "Nuevo");
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(637, 110);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(29, 24);
-            this.button3.TabIndex = 45;
-            this.toolTip1.SetToolTip(this.button3, "Nuevo");
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(636, 139);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(29, 24);
-            this.button4.TabIndex = 46;
-            this.button4.Tag = "Nuevo";
-            this.toolTip1.SetToolTip(this.button4, "Nuevo");
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // toolTip1
             // 
             this.toolTip1.ToolTipTitle = "Nuevo";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(700, 101);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 44;
+            this.button2.Text = "Cancelar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.limpiar);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(700, 12);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 45;
+            this.button5.Text = "Buscar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(700, 41);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 46;
+            this.button6.Text = "Modificar";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(700, 70);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 47;
+            this.button7.Text = "Eliminar";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // ABMCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(701, 365);
+            this.ClientSize = new System.Drawing.Size(784, 336);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -536,34 +590,38 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtNom;
-        private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.TextBox txtNroDoc;
-        private System.Windows.Forms.TextBox txtCuit;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtCalle;
-        private System.Windows.Forms.TextBox txtNroCalle;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button BtnSalir;
-        private System.Windows.Forms.RadioButton rbtParticular;
-        private System.Windows.Forms.RadioButton rbtEmpresa;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.ComboBox cmbBarrio;
-        private System.Windows.Forms.ComboBox cmbLocalidad;
-        private System.Windows.Forms.ComboBox cmbTdoc;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaAlta;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cmbProvin;
-        private System.Windows.Forms.ComboBox cmbDepto;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        public System.Windows.Forms.TextBox txtNom;
+        public System.Windows.Forms.TextBox txtApellido;
+        public System.Windows.Forms.TextBox txtNroDoc;
+        public System.Windows.Forms.TextBox txtCuit;
+        public System.Windows.Forms.TextBox txtEmail;
+        public System.Windows.Forms.TextBox txtCalle;
+        public System.Windows.Forms.TextBox txtNroCalle;
+        public System.Windows.Forms.TextBox txtTelefono;
+        public System.Windows.Forms.ComboBox cmbBarrio;
+        public System.Windows.Forms.ComboBox cmbLocalidad;
+        public System.Windows.Forms.ComboBox cmbTdoc;
+        public System.Windows.Forms.ComboBox cmbProvin;
+        public System.Windows.Forms.ComboBox cmbDepto;
+        public System.Windows.Forms.RadioButton rbtParticular;
+        public System.Windows.Forms.RadioButton rbtEmpresa;
     }
 }

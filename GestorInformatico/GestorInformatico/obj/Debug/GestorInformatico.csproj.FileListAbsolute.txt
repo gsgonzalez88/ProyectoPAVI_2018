@@ -24,3 +24,11 @@ D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorI
 D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.csproj.GenerateResource.Cache
 D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Menu.resources
 D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.ABMCliente.resources
+D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.AbmBarrio.resources
+D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.AbmLocalidad.resources
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.AbmBarrio.resources
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.ABMCliente.resources
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.AbmLocalidad.resources
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.ConsultarCliente.resources
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Menu.resources
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.BucarCliente.resources
