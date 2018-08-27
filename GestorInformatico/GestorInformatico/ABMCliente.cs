@@ -113,6 +113,24 @@ namespace GestorInformatico
             loc.ShowDialog();
         }
 
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
+
+            SqlConnection con = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            DataTable table;
+            con.ConnectionString = cadena;
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select c.IdCliente,c.Cuit,c.NroDoc from Cliente c ";
+            table = new DataTable();
+            table.Load(cmd.ExecuteReader());
+            con.Close();
+           
+        }
+
        
 
        
