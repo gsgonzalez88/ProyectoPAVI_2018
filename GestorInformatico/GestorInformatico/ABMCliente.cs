@@ -91,7 +91,7 @@ namespace GestorInformatico
 
         private void EstaSeguro(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Esta seguro que desea salir?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Desea salir sin guardar??", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 e.Cancel = false;
             }
@@ -99,6 +99,18 @@ namespace GestorInformatico
             {
                 e.Cancel = true;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbmBarrio frmBarrio = new AbmBarrio();
+            frmBarrio.ShowDialog();
+        }
+
+        private void btnLoc_Click(object sender, EventArgs e)
+        {
+            AbmLocalidad loc = new AbmLocalidad();
+            loc.ShowDialog();
         }
 
        

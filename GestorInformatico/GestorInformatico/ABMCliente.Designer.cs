@@ -60,16 +60,16 @@
             this.label11 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnLoc = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.cmbProvin = new System.Windows.Forms.ComboBox();
             this.cmbDepto = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -355,7 +355,7 @@
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.txtCuit);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnLoc);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cmbProvin);
             this.groupBox1.Controls.Add(this.cmbDepto);
@@ -384,6 +384,50 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
+            // 
+            // button4
+            // 
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(636, 139);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(29, 24);
+            this.button4.TabIndex = 46;
+            this.button4.Tag = "Nuevo";
+            this.toolTip1.SetToolTip(this.button4, "Nuevo");
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(637, 110);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(29, 24);
+            this.button3.TabIndex = 45;
+            this.toolTip1.SetToolTip(this.button3, "Nuevo");
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btnLoc
+            // 
+            this.btnLoc.Image = ((System.Drawing.Image)(resources.GetObject("btnLoc.Image")));
+            this.btnLoc.Location = new System.Drawing.Point(271, 140);
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.Size = new System.Drawing.Size(29, 24);
+            this.btnLoc.TabIndex = 44;
+            this.toolTip1.SetToolTip(this.btnLoc, "Nuevo");
+            this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
+            // 
+            // button1
+            // 
+            this.button1.AccessibleDescription = "Nuevo";
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(271, 107);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 24);
+            this.button1.TabIndex = 43;
+            this.toolTip1.SetToolTip(this.button1, "Nuevo");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cmbProvin
             // 
@@ -449,48 +493,6 @@
             this.groupBox3.TabIndex = 43;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacion de Contacto";
-            // 
-            // button1
-            // 
-            this.button1.AccessibleDescription = "Nuevo";
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(271, 107);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 24);
-            this.button1.TabIndex = 43;
-            this.toolTip1.SetToolTip(this.button1, "Nuevo");
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(271, 140);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(29, 24);
-            this.button2.TabIndex = 44;
-            this.toolTip1.SetToolTip(this.button2, "Nuevo");
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(637, 110);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(29, 24);
-            this.button3.TabIndex = 45;
-            this.toolTip1.SetToolTip(this.button3, "Nuevo");
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(636, 139);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(29, 24);
-            this.button4.TabIndex = 46;
-            this.button4.Tag = "Nuevo";
-            this.toolTip1.SetToolTip(this.button4, "Nuevo");
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // toolTip1
             // 
@@ -562,7 +564,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolTip toolTip1;
     }

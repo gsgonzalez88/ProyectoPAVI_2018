@@ -22,7 +22,7 @@ namespace GestorInformatico
             if (MessageBox.Show("Esta seguro que desea salir?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 e.Cancel = false;
-               
+                Application.ExitThread();
             }
             else
             {
@@ -36,6 +36,8 @@ namespace GestorInformatico
             ABMCliente abmC = new ABMCliente();
             abmC.ShowDialog();
         }
+
+      
 
         
     }

@@ -48,11 +48,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbmBarrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmBarrio.Designer.cs">
+      <DependentUpon>AbmBarrio.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ABMCliente.Designer.cs">
       <DependentUpon>ABMCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmLocalidad.Designer.cs">
+      <DependentUpon>AbmLocalidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -68,8 +80,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AbmBarrio.resx">
+      <DependentUpon>AbmBarrio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABMCliente.resx">
       <DependentUpon>ABMCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmLocalidad.resx">
+      <DependentUpon>AbmLocalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
