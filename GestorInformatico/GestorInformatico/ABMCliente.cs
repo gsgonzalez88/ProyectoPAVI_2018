@@ -195,11 +195,13 @@ namespace GestorInformatico
                 {
                     rbtEmpresa.Checked = true;
                      txtCuit.Text = table.Rows[0]["Cuit"].ToString();
-                     limpiar(sender, e);
+                     rbtParticular.Visible = false;
                 }
                 else
                 {
                     rbtParticular.Checked = true;
+                    txtCuit.Visible = false;
+                    rbtEmpresa.Visible = false;
                 }
                 txtNroDoc.Text = table.Rows[0]["NroDoc"].ToString();
                 txtTelefono.Text = table.Rows[0]["Telefono"].ToString();
