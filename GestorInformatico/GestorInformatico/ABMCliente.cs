@@ -27,7 +27,7 @@ namespace GestorInformatico
             cmbBarrio.SelectedIndex = -1;
             cmbDepto.SelectedIndex = -1;
             cmbLocalidad.SelectedIndex = -1;
-           
+          
           
 
             cmbProvin.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Provincia");
@@ -94,7 +94,7 @@ namespace GestorInformatico
                     tipo=0;
                  
 	            }
-                Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','" + txtApellido.Text + "'," + txtCuit.Text + ",'" + dtpFechaAlta.Text + "','" + dtpFechaAlta.Text + "'," + cmbTdoc.SelectedValue.ToString() + "," + txtNroDoc.Text + "," 
+                Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','" + txtApellido.Text + "'," + txtCuit.Text + "," + "GETDATE()" + ",'" + "Null" + "'," + cmbTdoc.SelectedValue.ToString() + "," + txtNroDoc.Text + "," 
                     + tipo + "," + cmbBarrio.SelectedValue.ToString() + "," + cmbLocalidad.SelectedValue.ToString() + ","
                     + cmbDepto.SelectedValue.ToString() + "," + cmbProvin.SelectedValue.ToString() + "," + txtTelefono.Text + ",'" + txtEmail.Text + "','" + txtCalle.Text + "'," + txtNroCalle.Text + ")");
                 MessageBox.Show("Se creo correctamente", "Informacion");
@@ -183,9 +183,38 @@ namespace GestorInformatico
 
         private void button5_Click(object sender, EventArgs e)
         {
-            BucarCliente frmBuscar = new BucarCliente();
-            frmBuscar.ShowDialog();
-         }
+            int nro = Convert.ToInt32(txtBuscar.Text);
+            DataTable table =  Milibreria.Utilidades.ConsultarCliente(nro);
+
+            if (table.Rows.Count>0)
+            {
+                txtNom.Text = table.Rows[0]["Nombre"].ToString();
+                txtApellido.Text = table.Rows[0]["Apellido"].ToString();
+                if (txtCuit.Visible == true)
+                {
+                     txtCuit.Text = table.Rows[0]["Cuit"].ToString();
+                }
+                txtNroDoc.Text = table.Rows[0]["NroDoc"].ToString();
+                txtTelefono.Text = table.Rows[0]["Telefono"].ToString();
+                txtEmail.Text = table.Rows[0]["Email"].ToString();
+                txtNroCalle.Text = table.Rows[0]["NroCalle"].ToString();
+                txtCalle.Text = table.Rows[0]["Calle"].ToString();
+                cmbTdoc.SelectedText = table.Rows[0]["TipoDoc"].ToString();
+                cmbProvin.SelectedText = table.Rows[0]["Prov"].ToString();
+                cmbDepto.SelectedText = table.Rows[0]["Depto"].ToString();
+            }
+            
+            else
+            {
+                MessageBox.Show("No existe el cliente", "Informacion");
+            }
+
+        }
+        
+
+      
+
+       
      }
       
 }

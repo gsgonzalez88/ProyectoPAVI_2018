@@ -75,7 +75,7 @@ namespace Milibreria
             {
 
                 string cadena = "Data Source=DESKTOP-GLE5LO1\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
-
+                string Consulta = "";
                 SqlConnection con = new SqlConnection();
                 SqlCommand cmd = new SqlCommand();
                 DataTable table;
@@ -84,7 +84,13 @@ namespace Milibreria
 
                 cmd.Connection = con;
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "Select *  from cliente where NroDoc ="+dni;
+                cmd.CommandText = "select b.Descripcion as Barrio,l.Descripcion as Localidad ,d.Descripcon as Depto,p.Descripcion as Prov,tp.Descripcion as TipoC,td.Descripcion as TipoDoc,* from Cliente c"
+                                    +" join Barrio b on b.IdBarrio = c.IdBarrio join Localidad l on l.IdLocalidad = c.IdLocalidad"
+                                    +" join Departamento d on d.IdDepartamento = c.IdDepartamento "+ 
+                                    " join Provincia p on p.IdProvincia = d.IdProvincia "+ 
+                                    " join TipoCliente tp on tp.IdTipoCliente =c.IdTipoCliente "+ 
+                                    " join TipoDoc td on td.IdTipoDoc =c.IdTipoDoc "+ 
+                                    "where NroDoc ="+dni;
                 table = new DataTable();
                 table.Load(cmd.ExecuteReader());
                 con.Close();

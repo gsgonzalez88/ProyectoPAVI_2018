@@ -58,7 +58,6 @@
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.cmbTdoc = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -69,6 +68,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button2 = new System.Windows.Forms.Button();
@@ -348,15 +348,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 20);
             this.label11.TabIndex = 39;
-            this.label11.Text = "Fecha";
-            // 
-            // dtpFechaAlta
-            // 
-            this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAlta.Location = new System.Drawing.Point(118, 16);
-            this.dtpFechaAlta.Name = "dtpFechaAlta";
-            this.dtpFechaAlta.Size = new System.Drawing.Size(205, 20);
-            this.dtpFechaAlta.TabIndex = 40;
+            this.label11.Text = "Buscar P/nroDoc";
             // 
             // groupBox1
             // 
@@ -479,9 +471,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtBuscar);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.rbtParticular);
-            this.groupBox2.Controls.Add(this.dtpFechaAlta);
             this.groupBox2.Controls.Add(this.rbtEmpresa);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Location = new System.Drawing.Point(12, 7);
@@ -490,6 +482,13 @@
             this.groupBox2.TabIndex = 42;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Obligatorios";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(118, 17);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(205, 20);
+            this.txtBuscar.TabIndex = 36;
             // 
             // groupBox3
             // 
@@ -593,7 +592,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dtpFechaAlta;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
@@ -623,5 +621,6 @@
         public System.Windows.Forms.ComboBox cmbDepto;
         public System.Windows.Forms.RadioButton rbtParticular;
         public System.Windows.Forms.RadioButton rbtEmpresa;
+        public System.Windows.Forms.TextBox txtBuscar;
     }
 }
