@@ -190,9 +190,16 @@ namespace GestorInformatico
             {
                 txtNom.Text = table.Rows[0]["Nombre"].ToString();
                 txtApellido.Text = table.Rows[0]["Apellido"].ToString();
-                if (txtCuit.Visible == true)
+                string tipo = table.Rows[0]["TipoC"].ToString();
+                if (tipo =="Empreza")
                 {
+                    rbtEmpresa.Checked = true;
                      txtCuit.Text = table.Rows[0]["Cuit"].ToString();
+                     limpiar(sender, e);
+                }
+                else
+                {
+                    rbtParticular.Checked = true;
                 }
                 txtNroDoc.Text = table.Rows[0]["NroDoc"].ToString();
                 txtTelefono.Text = table.Rows[0]["Telefono"].ToString();
