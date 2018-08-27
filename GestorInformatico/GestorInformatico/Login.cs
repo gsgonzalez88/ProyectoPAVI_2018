@@ -22,10 +22,9 @@ namespace GestorInformatico
             try
             {
                 string cmd = string.Format("Select * from Usuario where Nombre = '{0}' and Contraseña ='{1}'", txtUsuario.Text.Trim(), txtContraseña.Text.Trim());
-                DataSet ds = Utilidades.Ejecutar(cmd);
-                string cuenta = ds.Tables[0].Rows[0]["Nombre"].ToString().Trim();
-                string Constraseña = ds.Tables[0].Rows[0]["Contraseña"].ToString().Trim();
-                if (txtUsuario.Text == cuenta && txtContraseña.Text == Constraseña)
+                DataTable ds = Utilidades.Ejecutar(cmd);
+                
+                if (ds.Rows.Count >0)
 	            {
 		          MessageBox.Show("Inicio correcto","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
                   this.Hide();
