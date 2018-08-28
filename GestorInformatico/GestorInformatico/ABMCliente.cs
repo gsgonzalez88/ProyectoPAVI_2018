@@ -27,7 +27,7 @@ namespace GestorInformatico
             cmbBarrio.SelectedIndex = -1;
             cmbDepto.SelectedIndex = -1;
             cmbLocalidad.SelectedIndex = -1;
-          
+            Eliminado.Visible = false;
           
 
             cmbProvin.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Provincia");
@@ -83,15 +83,15 @@ namespace GestorInformatico
             }
             else
             {
-                int tipo;
+                string tipo;
                 if (rbtParticular.Checked )
 	            {
-		            tipo=1;
+                    tipo = rbtParticular.Text;
                     txtCuit.Text = "NULL";
 	            }
                 else
 	            {
-                    tipo=0;
+                    tipo = rbtEmpresa.Text; 
                  
 	            }
                 Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','" + txtApellido.Text + "'," + txtCuit.Text + "," + cmbTdoc.SelectedValue.ToString() + "," + txtNroDoc.Text + "," 
@@ -184,16 +184,9 @@ namespace GestorInformatico
         private void button5_Click(object sender, EventArgs e)
         {
             int nro = 0;
-            if (txtBuscar.Text != null || nro != 0)
-            {
-                 nro = Convert.ToInt32(txtBuscar.Text);
-                
-            }
-            else
-            {
-                MessageBox.Show("Debe ingresar un Numero", "Informacion");
-            }
 
+            nro = Convert.ToInt32(txtBuscar.Text);
+           
             DataTable table = Milibreria.Utilidades.ConsultarCliente(nro);
 
             if (table.Rows.Count>0)
