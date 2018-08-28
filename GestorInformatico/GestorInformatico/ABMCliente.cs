@@ -94,9 +94,9 @@ namespace GestorInformatico
                     tipo=0;
                  
 	            }
-                Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','" + txtApellido.Text + "'," + txtCuit.Text + "," + "GETDATE()" + ",'" + "Null" + "'," + cmbTdoc.SelectedValue.ToString() + "," + txtNroDoc.Text + "," 
+                Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','" + txtApellido.Text + "'," + txtCuit.Text + "," + cmbTdoc.SelectedValue.ToString() + "," + txtNroDoc.Text + "," 
                     + tipo + "," + cmbBarrio.SelectedValue.ToString() + "," + cmbLocalidad.SelectedValue.ToString() + ","
-                    + cmbDepto.SelectedValue.ToString() + "," + cmbProvin.SelectedValue.ToString() + "," + txtTelefono.Text + ",'" + txtEmail.Text + "','" + txtCalle.Text + "'," + txtNroCalle.Text + ")");
+                    + cmbDepto.SelectedValue.ToString() + "," + cmbProvin.SelectedValue.ToString() + "," + txtTelefono.Text + ",'" + txtEmail.Text + "','" + txtCalle.Text + "'," + txtNroCalle.Text +","+"NULL"+ ")");
                 MessageBox.Show("Se creo correctamente", "Informacion");
                 limpiar(sender,e);
             }
@@ -109,7 +109,7 @@ namespace GestorInformatico
             {
                 a = 0;
             cmbDepto.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Departamento where IdProvincia = " + cmbProvin.SelectedValue.ToString());
-            cmbDepto.DisplayMember = "Descripcon";
+            cmbDepto.DisplayMember = "Descripcion";
             cmbDepto.ValueMember = "IdDepartamento";
             cmbDepto.SelectedIndex = -1;
             a = 1;
@@ -183,8 +183,18 @@ namespace GestorInformatico
 
         private void button5_Click(object sender, EventArgs e)
         {
-            int nro = Convert.ToInt32(txtBuscar.Text);
-            DataTable table =  Milibreria.Utilidades.ConsultarCliente(nro);
+            int nro = 0;
+            if (txtBuscar.Text != null && nro != 0)
+            {
+                 nro = Convert.ToInt32(txtBuscar.Text);
+                
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un Numero", "Informacion");
+            }
+
+            DataTable table = Milibreria.Utilidades.ConsultarCliente(nro);
 
             if (table.Rows.Count>0)
             {

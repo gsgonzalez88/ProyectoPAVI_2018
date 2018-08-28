@@ -10,15 +10,17 @@ using System.Data.SqlClient;
 
 namespace Milibreria
 {
+
     public class Utilidades
     {
+        
         public static DataTable Ejecutar(string Ejec)
         {
             try
             {
 
-
-                string cadena = "Data Source=DESKTOP-GLE5LO1\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
+                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
+               
 
                 SqlConnection con = new SqlConnection();
                 SqlCommand cmd = new SqlCommand();
@@ -48,7 +50,7 @@ namespace Milibreria
             {
 
 
-                string cadena = "Data Source=DESKTOP-GLE5LO1\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
+                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
 
                 SqlConnection con = new SqlConnection();
                 SqlCommand cmd = new SqlCommand();
@@ -73,8 +75,8 @@ namespace Milibreria
         {
             try
             {
-
-                string cadena = "Data Source=DESKTOP-GLE5LO1\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
+                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
+             
                 string Consulta = "";
                 SqlConnection con = new SqlConnection();
                 SqlCommand cmd = new SqlCommand();
