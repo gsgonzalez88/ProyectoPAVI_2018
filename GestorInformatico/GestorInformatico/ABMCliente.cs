@@ -75,7 +75,7 @@ namespace GestorInformatico
             
 
             DataTable table;
-            table = Milibreria.Utilidades.Ejecutar("select c.IdCliente,c.Cuit,c.NroDoc from Cliente c where c.NroDoc =" +txtNroDoc.Text);
+            table = Milibreria.Utilidades.Ejecutar("select c.NroDoc from Cliente c where c.NroDoc =" +txtNroDoc.Text);
 
             if (table.Rows.Count >0)
             {
@@ -94,8 +94,8 @@ namespace GestorInformatico
                     tipo = rbtEmpresa.Text; 
                  
 	            }
-                Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','" + txtApellido.Text + "'," + txtCuit.Text + "," + cmbTdoc.SelectedValue.ToString() + "," + txtNroDoc.Text + "," 
-                    + tipo + "," + cmbBarrio.SelectedValue.ToString() + "," + cmbLocalidad.SelectedValue.ToString() + ","
+                Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','" + txtApellido.Text + "'," + txtCuit.Text + "," + cmbTdoc.SelectedValue.ToString() + "," + txtNroDoc.Text + ",'" 
+                    + tipo + "'," + cmbBarrio.SelectedValue.ToString() + "," + cmbLocalidad.SelectedValue.ToString() + ","
                     + cmbDepto.SelectedValue.ToString() + "," + cmbProvin.SelectedValue.ToString() + "," + txtTelefono.Text + ",'" + txtEmail.Text + "','" + txtCalle.Text + "'," + txtNroCalle.Text +","+"NULL"+ ")");
                 MessageBox.Show("Se creo correctamente", "Informacion");
                 limpiar(sender,e);
@@ -154,11 +154,13 @@ namespace GestorInformatico
             {
                 label6.Visible = false;
                 txtCuit.Visible = false;
+                rbtEmpresa.Visible = false;
             }
             else
             {
                 label6.Visible = true;
                 txtCuit.Visible = true;
+                rbtEmpresa.Visible = true;
             }
         }
 
@@ -171,6 +173,7 @@ namespace GestorInformatico
             txtNom.Text = "";
             txtNroCalle.Text = "";
             txtNroDoc.Text = "";
+            txtBuscar.Text = "";
             txtTelefono.Text = "";
             cmbBarrio.SelectedIndex = -1;
             cmbDepto.SelectedIndex = -1;
@@ -191,9 +194,8 @@ namespace GestorInformatico
 
             if (table.Rows.Count>0)
             {
-                txtNom.Text = table.Rows[0]["Nombre"].ToString();
-                txtApellido.Text = table.Rows[0]["Apellido"].ToString();
-                string tipo = table.Rows[0]["TipoC"].ToString();
+              
+                string tipo = table.Rows[0]["TipoCliente"].ToString();
                 string check = table.Rows[0]["Eliminado"].ToString();
                 if (tipo =="Empresa")
                 {
@@ -207,8 +209,10 @@ namespace GestorInformatico
                     txtCuit.Visible = false;
                     rbtEmpresa.Visible = false;
                 }
+                txtNom.Text = table.Rows[0]["Nombre"].ToString();
+                txtApellido.Text = table.Rows[0]["Apellido"].ToString();
                 txtNroDoc.Text = table.Rows[0]["NroDoc"].ToString();
-                txtTelefono.Text = table.Rows[0]["Telefono"].ToString();
+                txtTelefono.Text = table.Rows[0]["nroTelefono"].ToString();
                 txtEmail.Text = table.Rows[0]["Email"].ToString();
                 txtNroCalle.Text = table.Rows[0]["NroCalle"].ToString();
                 txtCalle.Text = table.Rows[0]["Calle"].ToString();
@@ -234,6 +238,21 @@ namespace GestorInformatico
             }
 
         }
+
+        private void rbtEmpresa_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtEmpresa.Checked)
+            {
+                
+                rbtParticular.Visible = false;
+            }
+            else
+            {
+                rbtParticular.Visible = true;
+            }
+        }
+
+      
         
 
       

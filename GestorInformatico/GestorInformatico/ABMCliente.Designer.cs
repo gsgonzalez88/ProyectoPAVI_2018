@@ -59,6 +59,7 @@
             this.cmbTdoc = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Eliminado = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnLoc = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.Eliminado = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -307,6 +307,7 @@
             this.rbtEmpresa.TabStop = true;
             this.rbtEmpresa.Text = "Empresa";
             this.rbtEmpresa.UseVisualStyleBackColor = false;
+            this.rbtEmpresa.CheckedChanged += new System.EventHandler(this.rbtEmpresa_CheckedChanged);
             // 
             // txtTelefono
             // 
@@ -386,6 +387,16 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
+            // 
+            // Eliminado
+            // 
+            this.Eliminado.AutoSize = true;
+            this.Eliminado.Location = new System.Drawing.Point(329, 169);
+            this.Eliminado.Name = "Eliminado";
+            this.Eliminado.Size = new System.Drawing.Size(71, 17);
+            this.Eliminado.TabIndex = 47;
+            this.Eliminado.Text = "Eliminado";
+            this.Eliminado.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -546,16 +557,6 @@
             this.btnEliminar.TabIndex = 47;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // Eliminado
-            // 
-            this.Eliminado.AutoSize = true;
-            this.Eliminado.Location = new System.Drawing.Point(329, 169);
-            this.Eliminado.Name = "Eliminado";
-            this.Eliminado.Size = new System.Drawing.Size(71, 17);
-            this.Eliminado.TabIndex = 47;
-            this.Eliminado.Text = "Eliminado";
-            this.Eliminado.UseVisualStyleBackColor = true;
             // 
             // ABMCliente
             // 
