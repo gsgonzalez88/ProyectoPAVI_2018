@@ -75,6 +75,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.Eliminado = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -352,6 +353,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Eliminado);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.txtCuit);
             this.groupBox1.Controls.Add(this.button3);
@@ -545,6 +547,16 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
+            // Eliminado
+            // 
+            this.Eliminado.AutoSize = true;
+            this.Eliminado.Location = new System.Drawing.Point(329, 169);
+            this.Eliminado.Name = "Eliminado";
+            this.Eliminado.Size = new System.Drawing.Size(71, 17);
+            this.Eliminado.TabIndex = 47;
+            this.Eliminado.Text = "Eliminado";
+            this.Eliminado.UseVisualStyleBackColor = true;
+            // 
             // ABMCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -622,5 +634,6 @@
         public System.Windows.Forms.RadioButton rbtParticular;
         public System.Windows.Forms.RadioButton rbtEmpresa;
         public System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.CheckBox Eliminado;
     }
 }

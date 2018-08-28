@@ -184,7 +184,7 @@ namespace GestorInformatico
         private void button5_Click(object sender, EventArgs e)
         {
             int nro = 0;
-            if (txtBuscar.Text != null && nro != 0)
+            if (txtBuscar.Text != null || nro != 0)
             {
                  nro = Convert.ToInt32(txtBuscar.Text);
                 
@@ -201,7 +201,8 @@ namespace GestorInformatico
                 txtNom.Text = table.Rows[0]["Nombre"].ToString();
                 txtApellido.Text = table.Rows[0]["Apellido"].ToString();
                 string tipo = table.Rows[0]["TipoC"].ToString();
-                if (tipo =="Empreza")
+                string check = table.Rows[0]["Eliminado"].ToString();
+                if (tipo =="Empresa")
                 {
                     rbtEmpresa.Checked = true;
                      txtCuit.Text = table.Rows[0]["Cuit"].ToString();
@@ -221,6 +222,17 @@ namespace GestorInformatico
                 cmbTdoc.SelectedText = table.Rows[0]["TipoDoc"].ToString();
                 cmbProvin.SelectedText = table.Rows[0]["Prov"].ToString();
                 cmbDepto.SelectedText = table.Rows[0]["Depto"].ToString();
+                cmbBarrio.SelectedText = table.Rows[0]["Barrio"].ToString();
+                cmbLocalidad.SelectedText = table.Rows[0]["Localidad"].ToString();
+                if (check == "1")
+                {
+                    Eliminado.Visible = true;
+                    Eliminado.Checked = true;
+                }
+                else
+                {
+                    Eliminado.Visible = false;
+                }
             }
             
             else
