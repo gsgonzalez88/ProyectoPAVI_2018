@@ -72,115 +72,122 @@ namespace GestorInformatico
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            
-                    if (txtNom.Text != "")
+            if (rbtEmpresa.Checked || rbtParticular.Checked )
+            {
+                if (txtNom.Text != "")
+                {
+                    if (txtCalle.Text != "")
                     {
-                        if (txtCalle.Text != "")
+                        if (cmbProvin.Text != "" || cmbProvin.SelectedIndex != -1)
                         {
-                            if (cmbProvin.Text != "" || cmbProvin.SelectedIndex != -1)
+                            if (cmbDepto.Text != "" || cmbDepto.SelectedIndex != -1)
                             {
-                                if (cmbDepto.Text != "" || cmbDepto.SelectedIndex != -1)
+                                if (cmbLocalidad.Text != "" || cmbLocalidad.SelectedIndex != -1)
                                 {
-                                    if (cmbLocalidad.Text != "" || cmbLocalidad.SelectedIndex != -1)
+                                    if (cmbBarrio.Text != "" || cmbBarrio.SelectedIndex != -1)
                                     {
-                                        if (cmbBarrio.Text != "" || cmbBarrio.SelectedIndex != -1)
+                                        if (txtNroCalle.Text != "")
                                         {
-                                            if (txtNroCalle.Text != "")
+                                            if (rbtEmpresa.Checked == true)
                                             {
-                                                if (rbtEmpresa.Checked == true )
+                                                if (txtCuit.Text != "")
                                                 {
-                                                    if (txtCuit.Text != "")
-                                                    {
 
-                                                        Insert(sender, e);
-                                                    }
-                                                    else
-                                                    {
-                                                        MessageBox.Show("Debe ingresar Cuit", "Informacion");
-                                                        txtCuit.Focus();
-                                                    }
-
+                                                    Insert(sender, e);
                                                 }
                                                 else
                                                 {
-                                                    if (txtApellido.Text != "")
+                                                    MessageBox.Show("Debe ingresar Cuit", "Informacion");
+                                                    txtCuit.Focus();
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                                if (txtApellido.Text != "")
+                                                {
+                                                    if (cmbTdoc.Text != "" || cmbTdoc.SelectedIndex != -1)
                                                     {
-                                                        if (cmbTdoc.Text != "" || cmbTdoc.SelectedIndex != -1)
+                                                        if (txtNroDoc.Text != "")
                                                         {
-                                                            if (txtNroDoc.Text != "")
-                                                            {
-                                                                Insert(sender, e);
-                                                            }
-                                                            else
-                                                            {
-                                                                MessageBox.Show("Debe ingresar Nro", "Informacion");
-                                                                txtNroDoc.Focus();
-                                                            }
+                                                            Insert(sender, e);
                                                         }
                                                         else
                                                         {
-                                                            MessageBox.Show("Debe ingresar Tipo Documento", "Informacion");
-                                                            cmbTdoc.Focus();
+                                                            MessageBox.Show("Debe ingresar Nro", "Informacion");
+                                                            txtNroDoc.Focus();
                                                         }
                                                     }
                                                     else
                                                     {
-                                                        MessageBox.Show("Debe ingresar Apellido", "Informacion");
-                                                        txtApellido.Focus();
+                                                        MessageBox.Show("Debe ingresar Tipo Documento", "Informacion");
+                                                        cmbTdoc.Focus();
                                                     }
-                                                    
-                                                   
                                                 }
-                                                
+                                                else
+                                                {
+                                                    MessageBox.Show("Debe ingresar Apellido", "Informacion");
+                                                    txtApellido.Focus();
+                                                }
+
+
                                             }
-                                            else
-                                            {
-                                                MessageBox.Show("Debe ingresar un nro Calle", "Informacion");
-                                                txtNroCalle.Focus();
-                                            }
+
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Debe ingresar un Barrio", "Informacion");
-                                            cmbBarrio.Focus();
+                                            MessageBox.Show("Debe ingresar un nro Calle", "Informacion");
+                                            txtNroCalle.Focus();
                                         }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Debe ingresar una Localidad", "Informacion");
-                                        cmbLocalidad.Focus();
+                                        MessageBox.Show("Debe ingresar un Barrio", "Informacion");
+                                        cmbBarrio.Focus();
                                     }
                                 }
-
                                 else
                                 {
-                                    MessageBox.Show("Debe ingresar una Departamento", "Informacion");
-                                    cmbDepto.Focus();
+                                    MessageBox.Show("Debe ingresar una Localidad", "Informacion");
+                                    cmbLocalidad.Focus();
                                 }
                             }
+
                             else
                             {
-                                MessageBox.Show("Debe ingresar una Provincia", "Informacion");
-                                cmbProvin.Focus();
+                                MessageBox.Show("Debe ingresar una Departamento", "Informacion");
+                                cmbDepto.Focus();
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Debe ingresar una Calle", "Informacion");
-                            txtCalle.Focus();
+                            MessageBox.Show("Debe ingresar una Provincia", "Informacion");
+                            cmbProvin.Focus();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Debe ingresar un Nombre", "Informacion");
-                        txtNom.Focus();
+                        MessageBox.Show("Debe ingresar una Calle", "Informacion");
+                        txtCalle.Focus();
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar un Nombre", "Informacion");
+                    txtNom.Focus();
+                }
 
-                    //if (rbtParticular.Checked != true || rbtEmpresa.Checked != true)
-                    //{
-                    //    MessageBox.Show("Cargue los datos", "Informacion");
+      
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un tipo de cliente", "Informacion");
+            }
+           
+           
+                
 
-                    //}
+  
         }
 
         private void cmbProvin_SelectedIndexChanged(object sender, EventArgs e)
@@ -378,9 +385,16 @@ namespace GestorInformatico
 
         private void Insert(object sender, EventArgs e)
         {
-            DataTable table;
-            table = Milibreria.Utilidades.Ejecutar("select c.Cuit from Cliente c where c.Cuit =" + txtCuit.Text);
-
+            DataTable table = new DataTable();
+            if (rbtParticular.Checked)
+            {
+                table = Milibreria.Utilidades.Ejecutar("select c.NroDoc from Cliente c where c.NroDoc =" + txtNroDoc.Text);
+            }
+            else
+            {
+                table = Milibreria.Utilidades.Ejecutar("select c.Cuit from Cliente c where c.Cuit =" + txtCuit.Text);
+            }
+           
             if (table.Rows.Count > 0)
             {
                 MessageBox.Show("Empresa existente", "Informacion");
