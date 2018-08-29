@@ -55,6 +55,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.txtCuit = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.btnLoc = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -62,19 +63,18 @@
             this.cmbDepto = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.rbtParticular = new System.Windows.Forms.RadioButton();
+            this.rbtEmpresa = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtCuit = new System.Windows.Forms.TextBox();
-            this.rbtEmpresa = new System.Windows.Forms.RadioButton();
-            this.rbtParticular = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -294,9 +294,9 @@
             this.label11.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(9, 16);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 20);
+            this.label11.Size = new System.Drawing.Size(127, 20);
             this.label11.TabIndex = 39;
-            this.label11.Text = "Buscar P/nroDoc";
+            this.label11.Text = "Buscar NroDoc/Cuit";
             // 
             // groupBox1
             // 
@@ -343,6 +343,13 @@
             this.button4.Tag = "Nuevo";
             this.toolTip1.SetToolTip(this.button4, "Nuevo");
             this.button4.UseVisualStyleBackColor = true;
+            // 
+            // txtCuit
+            // 
+            this.txtCuit.Location = new System.Drawing.Point(84, 17);
+            this.txtCuit.Name = "txtCuit";
+            this.txtCuit.Size = new System.Drawing.Size(181, 20);
+            this.txtCuit.TabIndex = 17;
             // 
             // button3
             // 
@@ -417,6 +424,17 @@
             this.label14.TabIndex = 39;
             this.label14.Text = "Departamento";
             // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.SystemColors.Control;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(9, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 21);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "C.U.I.T";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtBuscar);
@@ -433,10 +451,49 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(118, 16);
+            this.txtBuscar.Location = new System.Drawing.Point(142, 14);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(205, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(210, 20);
             this.txtBuscar.TabIndex = 36;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(370, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 20);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Tipo de Cliente";
+            // 
+            // rbtParticular
+            // 
+            this.rbtParticular.AutoSize = true;
+            this.rbtParticular.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.rbtParticular.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtParticular.Location = new System.Drawing.Point(479, 15);
+            this.rbtParticular.Name = "rbtParticular";
+            this.rbtParticular.Size = new System.Drawing.Size(75, 19);
+            this.rbtParticular.TabIndex = 28;
+            this.rbtParticular.TabStop = true;
+            this.rbtParticular.Text = "Particular";
+            this.rbtParticular.UseVisualStyleBackColor = false;
+            this.rbtParticular.CheckedChanged += new System.EventHandler(this.rbtParticular_CheckedChanged);
+            // 
+            // rbtEmpresa
+            // 
+            this.rbtEmpresa.AutoSize = true;
+            this.rbtEmpresa.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.rbtEmpresa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtEmpresa.Location = new System.Drawing.Point(560, 15);
+            this.rbtEmpresa.Name = "rbtEmpresa";
+            this.rbtEmpresa.Size = new System.Drawing.Size(70, 19);
+            this.rbtEmpresa.TabIndex = 29;
+            this.rbtEmpresa.TabStop = true;
+            this.rbtEmpresa.Text = "Empresa";
+            this.rbtEmpresa.UseVisualStyleBackColor = false;
+            this.rbtEmpresa.CheckedChanged += new System.EventHandler(this.rbtEmpresa_CheckedChanged);
             // 
             // groupBox3
             // 
@@ -485,6 +542,7 @@
             this.button6.TabIndex = 46;
             this.toolTip1.SetToolTip(this.button6, "Modificar");
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnEliminar
             // 
@@ -497,63 +555,6 @@
             this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.SystemColors.Control;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 21);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "C.U.I.T";
-            // 
-            // txtCuit
-            // 
-            this.txtCuit.Location = new System.Drawing.Point(84, 17);
-            this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(181, 20);
-            this.txtCuit.TabIndex = 17;
-            // 
-            // rbtEmpresa
-            // 
-            this.rbtEmpresa.AutoSize = true;
-            this.rbtEmpresa.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.rbtEmpresa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtEmpresa.Location = new System.Drawing.Point(519, 16);
-            this.rbtEmpresa.Name = "rbtEmpresa";
-            this.rbtEmpresa.Size = new System.Drawing.Size(70, 19);
-            this.rbtEmpresa.TabIndex = 29;
-            this.rbtEmpresa.TabStop = true;
-            this.rbtEmpresa.Text = "Empresa";
-            this.rbtEmpresa.UseVisualStyleBackColor = false;
-            this.rbtEmpresa.CheckedChanged += new System.EventHandler(this.rbtEmpresa_CheckedChanged);
-            // 
-            // rbtParticular
-            // 
-            this.rbtParticular.AutoSize = true;
-            this.rbtParticular.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.rbtParticular.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtParticular.Location = new System.Drawing.Point(438, 17);
-            this.rbtParticular.Name = "rbtParticular";
-            this.rbtParticular.Size = new System.Drawing.Size(75, 19);
-            this.rbtParticular.TabIndex = 28;
-            this.rbtParticular.TabStop = true;
-            this.rbtParticular.Text = "Particular";
-            this.rbtParticular.UseVisualStyleBackColor = false;
-            this.rbtParticular.CheckedChanged += new System.EventHandler(this.rbtParticular_CheckedChanged);
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.SystemColors.Control;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(329, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 20);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Tipo de Cliente";
             // 
             // ABMCliente
             // 

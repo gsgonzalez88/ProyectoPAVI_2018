@@ -369,16 +369,38 @@ namespace GestorInformatico
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             int nro;
+            if (rbtEmpresa.Checked)
+	        {
+		 
+	
             if (txtBuscar.Text != "")
             {
                 nro = Convert.ToInt32(txtBuscar.Text);
 
-               
+                Milibreria.Utilidades.Ejecutar("delete from Cliente where Cuit =  " + txtBuscar.Text);
+                MessageBox.Show("Empresa  eliminado", "Informacion");
             }
             else
             {
                 MessageBox.Show("Busque el cliente a eliminar","Informacion");
             }
+          }
+            if (rbtParticular.Checked)
+            {
+               
+            if (txtBuscar.Text != "")
+            {
+                nro = Convert.ToInt32(txtBuscar.Text);
+
+                Milibreria.Utilidades.Ejecutar("delete from Cliente where NroDoc =  " + txtBuscar.Text);
+                MessageBox.Show("Empresa  eliminado", "Informacion");
+            }
+            else
+            {
+                MessageBox.Show("Busque el cliente a eliminar","Informacion");
+            } 
+            }
+            
         }
 
 
@@ -409,6 +431,18 @@ namespace GestorInformatico
                 MessageBox.Show("Se creo correctamente", "Informacion");
 
             }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+             if (txtBuscar.Text != "")
+            {
+            }
+             else
+             {
+                 MessageBox.Show("Busque cliente a modificar","Informar");
+             }
+             
         }
 
       
