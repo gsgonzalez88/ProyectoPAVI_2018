@@ -597,7 +597,7 @@
             this.dataGridViewTextBoxColumn1,
             this.Apellido,
             this.dataGridViewTextBoxColumn2});
-            this.dvgParticular.Location = new System.Drawing.Point(-3, 104);
+            this.dvgParticular.Location = new System.Drawing.Point(12, 12);
             this.dvgParticular.Name = "dvgParticular";
             this.dvgParticular.Size = new System.Drawing.Size(341, 88);
             this.dvgParticular.TabIndex = 49;

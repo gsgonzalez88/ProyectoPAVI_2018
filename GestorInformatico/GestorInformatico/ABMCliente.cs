@@ -471,7 +471,6 @@ namespace GestorInformatico
             for ( i = table.Rows.Count; i != -1; i++)
             {
                 dvgEmpresa.DataSource = table;
-                dvgEmpresa.add
                
             }
                 
