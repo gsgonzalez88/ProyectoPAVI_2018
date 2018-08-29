@@ -28,7 +28,8 @@ namespace GestorInformatico
             cmbDepto.SelectedIndex = -1;
             cmbLocalidad.SelectedIndex = -1;
           
-          
+                 dvgParticular.Visible = true;
+                 dvgEmpresa.Visible = false;
 
             cmbProvin.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Provincia");
             cmbProvin.DisplayMember = "Descripcion";
@@ -248,13 +249,14 @@ namespace GestorInformatico
                 label2.Visible = true;
                 label3.Visible = true;
                 label4.Visible = true;
+                dvgEmpresa.Visible = false;
             }
             else
             {
                 label6.Visible = true;
                 txtCuit.Visible = true;
                 rbtEmpresa.Visible = true;
-              
+                dvgEmpresa.Visible = true;
             }
         }
 
@@ -283,6 +285,8 @@ namespace GestorInformatico
             label2.Visible = true;
             label3.Visible = true;
             label4.Visible = true;
+            dvgParticular.Visible = true;
+            dvgEmpresa.Visible = false;
             a = 1;
          }
 
@@ -354,10 +358,13 @@ namespace GestorInformatico
                 label2.Visible = false;
                 label3.Visible = false;
                 label4.Visible = false;
+                dvgParticular.Visible = false;
+                dvgEmpresa.Visible = true;
             }
             else
             {
                 rbtParticular.Visible = true;
+                dvgParticular.Visible = true;
             }
         }
 
@@ -455,6 +462,19 @@ namespace GestorInformatico
         {
             ABMProvincia prov = new ABMProvincia();
             prov.ShowDialog();
+        }
+
+        private void dvgEmpresa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTable table = Milibreria.Utilidades.Ejecutar("Select c.Nombre,C.cuit from Cliente c");
+            int i = 0;
+            for ( i = table.Rows.Count; i != -1; i++)
+            {
+                dvgEmpresa.DataSource = table;
+                dvgEmpresa.add
+               
+            }
+                
         }
 
       
