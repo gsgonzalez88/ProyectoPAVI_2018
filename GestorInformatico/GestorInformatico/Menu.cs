@@ -37,6 +37,12 @@ namespace GestorInformatico
             abmC.ShowDialog();
         }
 
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbmUsuario usu = new AbmUsuario();
+            usu.ShowDialog();
+        }
+
       
 
     
