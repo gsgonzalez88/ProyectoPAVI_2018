@@ -64,11 +64,23 @@
     <Compile Include="ABMCliente.Designer.cs">
       <DependentUpon>ABMCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="AbmDepto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmDepto.Designer.cs">
+      <DependentUpon>AbmDepto.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbmLocalidad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AbmLocalidad.Designer.cs">
       <DependentUpon>AbmLocalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMProvincia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMProvincia.Designer.cs">
+      <DependentUpon>ABMProvincia.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmUsuario.cs">
       <SubType>Form</SubType>
@@ -102,8 +114,14 @@
     <EmbeddedResource Include="ABMCliente.resx">
       <DependentUpon>ABMCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AbmDepto.resx">
+      <DependentUpon>AbmDepto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AbmLocalidad.resx">
       <DependentUpon>AbmLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMProvincia.resx">
+      <DependentUpon>ABMProvincia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AbmUsuario.resx">
       <DependentUpon>AbmUsuario.cs</DependentUpon>

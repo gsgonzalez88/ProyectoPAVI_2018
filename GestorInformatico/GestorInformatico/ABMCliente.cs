@@ -445,6 +445,18 @@ namespace GestorInformatico
              
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AbmDepto depto = new AbmDepto();
+            depto.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ABMProvincia prov = new ABMProvincia();
+            prov.ShowDialog();
+        }
+
       
 
        
