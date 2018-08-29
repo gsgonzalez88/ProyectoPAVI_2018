@@ -33,3 +33,6 @@ C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\o
 C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Menu.resources
 D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.ConsultarCliente.resources
 D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.AbmUsuario.resources
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.AbmUsuario.resources
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.AbmDepto.resources
+C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.ABMProvincia.resources

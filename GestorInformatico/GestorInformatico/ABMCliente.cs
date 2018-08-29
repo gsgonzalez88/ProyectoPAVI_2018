@@ -28,7 +28,8 @@ namespace GestorInformatico
             cmbDepto.SelectedIndex = -1;
             cmbLocalidad.SelectedIndex = -1;
           
-          
+                 dvgParticular.Visible = true;
+                 dvgEmpresa.Visible = false;
 
             cmbProvin.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Provincia");
             cmbProvin.DisplayMember = "Descripcion";
@@ -248,13 +249,14 @@ namespace GestorInformatico
                 label2.Visible = true;
                 label3.Visible = true;
                 label4.Visible = true;
+                dvgEmpresa.Visible = false;
             }
             else
             {
                 label6.Visible = true;
                 txtCuit.Visible = true;
                 rbtEmpresa.Visible = true;
-              
+                dvgEmpresa.Visible = true;
             }
         }
 
@@ -283,6 +285,8 @@ namespace GestorInformatico
             label2.Visible = true;
             label3.Visible = true;
             label4.Visible = true;
+            dvgParticular.Visible = true;
+            dvgEmpresa.Visible = false;
             a = 1;
          }
 
@@ -354,10 +358,13 @@ namespace GestorInformatico
                 label2.Visible = false;
                 label3.Visible = false;
                 label4.Visible = false;
+                dvgParticular.Visible = false;
+                dvgEmpresa.Visible = true;
             }
             else
             {
                 rbtParticular.Visible = true;
+                dvgParticular.Visible = true;
             }
         }
 
@@ -369,16 +376,38 @@ namespace GestorInformatico
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             int nro;
+            if (rbtEmpresa.Checked)
+	        {
+		 
+	
             if (txtBuscar.Text != "")
             {
                 nro = Convert.ToInt32(txtBuscar.Text);
 
-               
+                Milibreria.Utilidades.Ejecutar("delete from Cliente where Cuit =  " + txtBuscar.Text);
+                MessageBox.Show("Empresa  eliminado", "Informacion");
             }
             else
             {
                 MessageBox.Show("Busque el cliente a eliminar","Informacion");
             }
+          }
+            if (rbtParticular.Checked)
+            {
+               
+            if (txtBuscar.Text != "")
+            {
+                nro = Convert.ToInt32(txtBuscar.Text);
+
+                Milibreria.Utilidades.Ejecutar("delete from Cliente where NroDoc =  " + txtBuscar.Text);
+                MessageBox.Show("Empresa  eliminado", "Informacion");
+            }
+            else
+            {
+                MessageBox.Show("Busque el cliente a eliminar","Informacion");
+            } 
+            }
+            
         }
 
 
@@ -409,6 +438,43 @@ namespace GestorInformatico
                 MessageBox.Show("Se creo correctamente", "Informacion");
 
             }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+             if (txtBuscar.Text != "")
+            {
+            }
+             else
+             {
+                 MessageBox.Show("Busque cliente a modificar","Informar");
+             }
+             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AbmDepto depto = new AbmDepto();
+            depto.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ABMProvincia prov = new ABMProvincia();
+            prov.ShowDialog();
+        }
+
+        private void dvgEmpresa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTable table = Milibreria.Utilidades.Ejecutar("Select c.Nombre,C.cuit from Cliente c");
+            int i = 0;
+            for ( i = table.Rows.Count; i != -1; i++)
+            {
+                dvgEmpresa.DataSource = table;
+                dvgEmpresa.add
+               
+            }
+                
         }
 
       

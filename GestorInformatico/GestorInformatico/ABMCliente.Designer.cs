@@ -55,29 +55,38 @@
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.txtCuit = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.btnLoc = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbProvin = new System.Windows.Forms.ComboBox();
             this.cmbDepto = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.rbtParticular = new System.Windows.Forms.RadioButton();
+            this.rbtEmpresa = new System.Windows.Forms.RadioButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtCuit = new System.Windows.Forms.TextBox();
-            this.rbtEmpresa = new System.Windows.Forms.RadioButton();
-            this.rbtParticular = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
+            this.dvgEmpresa = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvgParticular = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgEmpresa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgParticular)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -162,9 +171,9 @@
             this.label10.BackColor = System.Drawing.SystemColors.Control;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(316, 22);
+            this.label10.Location = new System.Drawing.Point(308, 15);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 20);
+            this.label10.Size = new System.Drawing.Size(102, 20);
             this.label10.TabIndex = 10;
             this.label10.Text = "Telefono";
             // 
@@ -213,9 +222,9 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(83, 22);
+            this.txtEmail.Location = new System.Drawing.Point(83, 20);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(181, 20);
+            this.txtEmail.Size = new System.Drawing.Size(173, 20);
             this.txtEmail.TabIndex = 18;
             // 
             // txtCalle
@@ -236,7 +245,7 @@
             // 
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(700, 130);
+            this.btnAceptar.Location = new System.Drawing.Point(1037, 143);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(27, 23);
             this.btnAceptar.TabIndex = 26;
@@ -247,7 +256,7 @@
             // BtnSalir
             // 
             this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
-            this.BtnSalir.Location = new System.Drawing.Point(700, 159);
+            this.BtnSalir.Location = new System.Drawing.Point(1037, 175);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(27, 23);
             this.BtnSalir.TabIndex = 27;
@@ -257,7 +266,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(424, 22);
+            this.txtTelefono.Location = new System.Drawing.Point(411, 15);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(205, 20);
             this.txtTelefono.TabIndex = 35;
@@ -292,11 +301,11 @@
             this.label11.BackColor = System.Drawing.SystemColors.Control;
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(9, 16);
+            this.label11.Location = new System.Drawing.Point(6, 14);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 20);
+            this.label11.Size = new System.Drawing.Size(127, 20);
             this.label11.TabIndex = 39;
-            this.label11.Text = "Buscar P/nroDoc";
+            this.label11.Text = "Buscar NroDoc/Cuit";
             // 
             // groupBox1
             // 
@@ -304,6 +313,7 @@
             this.groupBox1.Controls.Add(this.txtCuit);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.btnLoc);
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cmbProvin);
             this.groupBox1.Controls.Add(this.cmbDepto);
@@ -326,9 +336,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtNroDoc);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(12, 58);
+            this.groupBox1.Location = new System.Drawing.Point(359, 58);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(682, 201);
+            this.groupBox1.Size = new System.Drawing.Size(672, 227);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
@@ -343,6 +353,14 @@
             this.button4.Tag = "Nuevo";
             this.toolTip1.SetToolTip(this.button4, "Nuevo");
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // txtCuit
+            // 
+            this.txtCuit.Location = new System.Drawing.Point(84, 17);
+            this.txtCuit.Name = "txtCuit";
+            this.txtCuit.Size = new System.Drawing.Size(181, 20);
+            this.txtCuit.TabIndex = 17;
             // 
             // button3
             // 
@@ -353,6 +371,7 @@
             this.button3.TabIndex = 45;
             this.toolTip1.SetToolTip(this.button3, "Nuevo");
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnLoc
             // 
@@ -364,6 +383,19 @@
             this.toolTip1.SetToolTip(this.btnLoc, "Nuevo");
             this.btnLoc.UseVisualStyleBackColor = true;
             this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.txtTelefono);
+            this.groupBox3.Controls.Add(this.txtEmail);
+            this.groupBox3.Location = new System.Drawing.Point(9, 166);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(622, 47);
+            this.groupBox3.TabIndex = 43;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Informacion de Contacto";
             // 
             // button1
             // 
@@ -417,87 +449,6 @@
             this.label14.TabIndex = 39;
             this.label14.Text = "Departamento";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtBuscar);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.rbtParticular);
-            this.groupBox2.Controls.Add(this.rbtEmpresa);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Location = new System.Drawing.Point(12, 7);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(682, 40);
-            this.groupBox2.TabIndex = 42;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos Obligatorios";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(118, 16);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(205, 20);
-            this.txtBuscar.TabIndex = 36;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.txtTelefono);
-            this.groupBox3.Controls.Add(this.txtEmail);
-            this.groupBox3.Location = new System.Drawing.Point(13, 268);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(680, 63);
-            this.groupBox3.TabIndex = 43;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Informacion de Contacto";
-            // 
-            // button2
-            // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(700, 101);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(27, 23);
-            this.button2.TabIndex = 44;
-            this.toolTip1.SetToolTip(this.button2, "Refescar");
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.limpiar);
-            // 
-            // button5
-            // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(700, 12);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(27, 23);
-            this.button5.TabIndex = 45;
-            this.toolTip1.SetToolTip(this.button5, "Buscar");
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(700, 41);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(27, 23);
-            this.button6.TabIndex = 46;
-            this.toolTip1.SetToolTip(this.button6, "Modificar");
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(700, 70);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(27, 23);
-            this.btnEliminar.TabIndex = 47;
-            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // label6
             // 
             this.label6.BackColor = System.Drawing.SystemColors.Control;
@@ -509,33 +460,44 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "C.U.I.T";
             // 
-            // txtCuit
+            // groupBox2
             // 
-            this.txtCuit.Location = new System.Drawing.Point(84, 17);
-            this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(181, 20);
-            this.txtCuit.TabIndex = 17;
+            this.groupBox2.Controls.Add(this.txtBuscar);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.rbtParticular);
+            this.groupBox2.Controls.Add(this.rbtEmpresa);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Location = new System.Drawing.Point(359, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(672, 40);
+            this.groupBox2.TabIndex = 42;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos Obligatorios";
             // 
-            // rbtEmpresa
+            // txtBuscar
             // 
-            this.rbtEmpresa.AutoSize = true;
-            this.rbtEmpresa.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.rbtEmpresa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtEmpresa.Location = new System.Drawing.Point(519, 16);
-            this.rbtEmpresa.Name = "rbtEmpresa";
-            this.rbtEmpresa.Size = new System.Drawing.Size(70, 19);
-            this.rbtEmpresa.TabIndex = 29;
-            this.rbtEmpresa.TabStop = true;
-            this.rbtEmpresa.Text = "Empresa";
-            this.rbtEmpresa.UseVisualStyleBackColor = false;
-            this.rbtEmpresa.CheckedChanged += new System.EventHandler(this.rbtEmpresa_CheckedChanged);
+            this.txtBuscar.Location = new System.Drawing.Point(142, 14);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(210, 20);
+            this.txtBuscar.TabIndex = 36;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(370, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 20);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Tipo de Cliente";
             // 
             // rbtParticular
             // 
             this.rbtParticular.AutoSize = true;
             this.rbtParticular.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.rbtParticular.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtParticular.Location = new System.Drawing.Point(438, 17);
+            this.rbtParticular.Location = new System.Drawing.Point(479, 15);
             this.rbtParticular.Name = "rbtParticular";
             this.rbtParticular.Size = new System.Drawing.Size(75, 19);
             this.rbtParticular.TabIndex = 28;
@@ -544,28 +506,129 @@
             this.rbtParticular.UseVisualStyleBackColor = false;
             this.rbtParticular.CheckedChanged += new System.EventHandler(this.rbtParticular_CheckedChanged);
             // 
-            // label5
+            // rbtEmpresa
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.Control;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(329, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 20);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Tipo de Cliente";
+            this.rbtEmpresa.AutoSize = true;
+            this.rbtEmpresa.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.rbtEmpresa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtEmpresa.Location = new System.Drawing.Point(560, 15);
+            this.rbtEmpresa.Name = "rbtEmpresa";
+            this.rbtEmpresa.Size = new System.Drawing.Size(70, 19);
+            this.rbtEmpresa.TabIndex = 29;
+            this.rbtEmpresa.TabStop = true;
+            this.rbtEmpresa.Text = "Empresa";
+            this.rbtEmpresa.UseVisualStyleBackColor = false;
+            this.rbtEmpresa.CheckedChanged += new System.EventHandler(this.rbtEmpresa_CheckedChanged);
+            // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(1037, 110);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(27, 23);
+            this.button2.TabIndex = 44;
+            this.toolTip1.SetToolTip(this.button2, "Refescar");
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.limpiar);
+            // 
+            // button5
+            // 
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(1037, 23);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(27, 23);
+            this.button5.TabIndex = 45;
+            this.toolTip1.SetToolTip(this.button5, "Buscar");
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(1037, 52);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(27, 23);
+            this.button6.TabIndex = 46;
+            this.toolTip1.SetToolTip(this.button6, "Modificar");
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(1037, 81);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(27, 23);
+            this.btnEliminar.TabIndex = 47;
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // dvgEmpresa
+            // 
+            this.dvgEmpresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgEmpresa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Cuit});
+            this.dvgEmpresa.Location = new System.Drawing.Point(12, 12);
+            this.dvgEmpresa.Name = "dvgEmpresa";
+            this.dvgEmpresa.Size = new System.Drawing.Size(251, 88);
+            this.dvgEmpresa.TabIndex = 48;
+            this.dvgEmpresa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgEmpresa_CellContentClick);
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Cuit
+            // 
+            this.Cuit.HeaderText = "Cuit";
+            this.Cuit.Name = "Cuit";
+            // 
+            // dvgParticular
+            // 
+            this.dvgParticular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgParticular.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.Apellido,
+            this.dataGridViewTextBoxColumn2});
+            this.dvgParticular.Location = new System.Drawing.Point(-3, 104);
+            this.dvgParticular.Name = "dvgParticular";
+            this.dvgParticular.Size = new System.Drawing.Size(341, 88);
+            this.dvgParticular.TabIndex = 49;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "NroDocumento";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // ABMCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(732, 336);
+            this.ClientSize = new System.Drawing.Size(1069, 295);
+            this.Controls.Add(this.dvgParticular);
+            this.Controls.Add(this.dvgEmpresa);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnSalir);
@@ -577,10 +640,12 @@
             this.Load += new System.EventHandler(this.ABMCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgEmpresa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgParticular)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -632,5 +697,12 @@
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.RadioButton rbtParticular;
         public System.Windows.Forms.RadioButton rbtEmpresa;
+        private System.Windows.Forms.DataGridView dvgEmpresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
+        private System.Windows.Forms.DataGridView dvgParticular;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }
