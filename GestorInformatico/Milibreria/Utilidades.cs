@@ -106,36 +106,7 @@ namespace Milibreria
             }
 
         }
-        public static DataTable EstaEliminado(int dni)
-        {
-            try
-            {
-                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
-
-                
-                SqlConnection con = new SqlConnection();
-                SqlCommand cmd = new SqlCommand();
-                DataTable table;
-                con.ConnectionString = cadena;
-                con.Open();
-
-                cmd.Connection = con;
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Eliminado from Cliente c where NroDoc =" + dni;
-                table = new DataTable();
-                table.Load(cmd.ExecuteReader());
-                con.Close();
-
-                return table;
-
-            }
-            catch (Exception e)
-            {
-
-                throw new Exception("" + e.Message);
-            }
-
-        }
+       
 
         
     }

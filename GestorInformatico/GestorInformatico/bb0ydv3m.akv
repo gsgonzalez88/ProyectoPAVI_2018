@@ -84,52 +84,26 @@ namespace GestorInformatico
                             {
                                 if (cmbDepto.Text != "" || cmbDepto.SelectedIndex != -1)
                                 {
-                                    if (cmbLocalidad.Text != "" || cmbLocalidad.SelectedIndex != -1)
+
+
+                                    DataTable table;
+                                    table = Milibreria.Utilidades.Ejecutar("select c.Cuit from Cliente c where c.Cuit =" + txtCuit.Text);
+
+                                    if (table.Rows.Count > 0)
                                     {
-                                        if (cmbBarrio.Text != "" || cmbBarrio.SelectedIndex != -1)
-                                        {
-                                            if (txtNroCalle.Text != "")
-                                            {
-
-
-                                                DataTable table;
-                                                table = Milibreria.Utilidades.Ejecutar("select c.Cuit from Cliente c where c.Cuit =" + txtCuit.Text);
-
-                                                if (table.Rows.Count > 0)
-                                                {
-                                                    MessageBox.Show("Empresa existente", "Informacion");
-                                                }
-                                                else
-                                                {
-
-
-                                                    Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','" + txtApellido.Text + "'," + txtCuit.Text + "," + cmbTdoc.SelectedValue.ToString() + "," + txtNroDoc.Text + ",'"
-                                                        + rbtEmpresa.Text + "'," + cmbBarrio.SelectedValue.ToString() + "," + cmbLocalidad.SelectedValue.ToString() + ","
-                                                        + cmbDepto.SelectedValue.ToString() + "," + cmbProvin.SelectedValue.ToString() + "," + txtTelefono.Text + ",'" + txtEmail.Text + "','" + txtCalle.Text + "'," + txtNroCalle.Text + "," + "NULL" + ")");
-                                                    MessageBox.Show("Se creo correctamente", "Informacion");
-
-                                                }
-
-                                            }
-                                            else
-                                            {
-                                                MessageBox.Show("Debe ingresar un nro Calle", "Informacion");
-                                                txtNroCalle.Focus();
-                                            }
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("Debe ingresar un Barrio", "Informacion");
-                                            cmbBarrio.Focus();
-                                        }
+                                        MessageBox.Show("Empresa existente", "Informacion");
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Debe ingresar una Localidad", "Informacion");
-                                        cmbLocalidad.Focus();
+
+
+                                        Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','" + txtApellido.Text + "'," + txtCuit.Text + "," + cmbTdoc.SelectedValue.ToString() + "," + txtNroDoc.Text + ",'"
+                                            + rbtEmpresa.Text + "'," + cmbBarrio.SelectedValue.ToString() + "," + cmbLocalidad.SelectedValue.ToString() + ","
+                                            + cmbDepto.SelectedValue.ToString() + "," + cmbProvin.SelectedValue.ToString() + "," + txtTelefono.Text + ",'" + txtEmail.Text + "','" + txtCalle.Text + "'," + txtNroCalle.Text + "," + "NULL" + ")");
+                                        MessageBox.Show("Se creo correctamente", "Informacion");
+
                                     }
                                 }
-
                                 else
                                 {
                                     MessageBox.Show("Debe ingresar una Departamento", "Informacion");
@@ -179,11 +153,6 @@ namespace GestorInformatico
                         MessageBox.Show("Se creo correctamente", "Informacion");
 
                     }
-                }
-                if (rbtParticular.Checked != true || rbtEmpresa.Checked != true)
-                {
-                     MessageBox.Show("Cargue los datos", "Informacion");
-
                 }
         }
 

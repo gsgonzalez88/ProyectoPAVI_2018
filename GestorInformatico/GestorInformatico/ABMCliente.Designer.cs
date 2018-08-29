@@ -34,8 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -45,21 +43,17 @@
             this.txtNom = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNroDoc = new System.Windows.Forms.TextBox();
-            this.txtCuit = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtCalle = new System.Windows.Forms.TextBox();
             this.txtNroCalle = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
-            this.rbtParticular = new System.Windows.Forms.RadioButton();
-            this.rbtEmpresa = new System.Windows.Forms.RadioButton();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.cmbBarrio = new System.Windows.Forms.ComboBox();
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.cmbTdoc = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Eliminado = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnLoc = new System.Windows.Forms.Button();
@@ -76,6 +70,11 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtCuit = new System.Windows.Forms.TextBox();
+            this.rbtEmpresa = new System.Windows.Forms.RadioButton();
+            this.rbtParticular = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -124,28 +123,6 @@
             this.label4.Size = new System.Drawing.Size(103, 21);
             this.label4.TabIndex = 4;
             this.label4.Text = "Nro Doc";
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.SystemColors.Control;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(329, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 20);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Tipo de Cliente";
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.SystemColors.Control;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 170);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 21);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "C.U.I.T";
             // 
             // label7
             // 
@@ -234,13 +211,6 @@
             this.txtNroDoc.Size = new System.Drawing.Size(205, 20);
             this.txtNroDoc.TabIndex = 16;
             // 
-            // txtCuit
-            // 
-            this.txtCuit.Location = new System.Drawing.Point(84, 169);
-            this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(181, 20);
-            this.txtCuit.TabIndex = 17;
-            // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(83, 22);
@@ -264,50 +234,26 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAceptar.Location = new System.Drawing.Point(700, 130);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(27, 23);
             this.btnAceptar.TabIndex = 26;
-            this.btnAceptar.Text = "Guardar";
+            this.toolTip1.SetToolTip(this.btnAceptar, "Guardar");
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // BtnSalir
             // 
+            this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
             this.BtnSalir.Location = new System.Drawing.Point(700, 159);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(75, 23);
+            this.BtnSalir.Size = new System.Drawing.Size(27, 23);
             this.BtnSalir.TabIndex = 27;
-            this.BtnSalir.Text = "Salir";
+            this.toolTip1.SetToolTip(this.BtnSalir, "Salir");
             this.BtnSalir.UseVisualStyleBackColor = true;
-            // 
-            // rbtParticular
-            // 
-            this.rbtParticular.AutoSize = true;
-            this.rbtParticular.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.rbtParticular.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtParticular.Location = new System.Drawing.Point(438, 17);
-            this.rbtParticular.Name = "rbtParticular";
-            this.rbtParticular.Size = new System.Drawing.Size(75, 19);
-            this.rbtParticular.TabIndex = 28;
-            this.rbtParticular.TabStop = true;
-            this.rbtParticular.Text = "Particular";
-            this.rbtParticular.UseVisualStyleBackColor = false;
-            this.rbtParticular.CheckedChanged += new System.EventHandler(this.rbtParticular_CheckedChanged);
-            // 
-            // rbtEmpresa
-            // 
-            this.rbtEmpresa.AutoSize = true;
-            this.rbtEmpresa.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.rbtEmpresa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtEmpresa.Location = new System.Drawing.Point(519, 16);
-            this.rbtEmpresa.Name = "rbtEmpresa";
-            this.rbtEmpresa.Size = new System.Drawing.Size(70, 19);
-            this.rbtEmpresa.TabIndex = 29;
-            this.rbtEmpresa.TabStop = true;
-            this.rbtEmpresa.Text = "Empresa";
-            this.rbtEmpresa.UseVisualStyleBackColor = false;
-            this.rbtEmpresa.CheckedChanged += new System.EventHandler(this.rbtEmpresa_CheckedChanged);
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // txtTelefono
             // 
@@ -354,7 +300,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Eliminado);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.txtCuit);
             this.groupBox1.Controls.Add(this.button3);
@@ -387,16 +332,6 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
-            // 
-            // Eliminado
-            // 
-            this.Eliminado.AutoSize = true;
-            this.Eliminado.Location = new System.Drawing.Point(329, 169);
-            this.Eliminado.Name = "Eliminado";
-            this.Eliminado.Size = new System.Drawing.Size(71, 17);
-            this.Eliminado.TabIndex = 47;
-            this.Eliminado.Text = "Eliminado";
-            this.Eliminado.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -498,7 +433,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(118, 17);
+            this.txtBuscar.Location = new System.Drawing.Point(118, 16);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(205, 20);
             this.txtBuscar.TabIndex = 36;
@@ -516,54 +451,116 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacion de Contacto";
             // 
-            // toolTip1
-            // 
-            this.toolTip1.ToolTipTitle = "Nuevo";
-            // 
             // button2
             // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(700, 101);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(27, 23);
             this.button2.TabIndex = 44;
-            this.button2.Text = "Cancelar";
+            this.toolTip1.SetToolTip(this.button2, "Refescar");
             this.button2.UseVisualStyleBackColor = true;
             this.button2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.limpiar);
             // 
             // button5
             // 
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(700, 12);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(27, 23);
             this.button5.TabIndex = 45;
-            this.button5.Text = "Buscar";
+            this.toolTip1.SetToolTip(this.button5, "Buscar");
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(700, 41);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(27, 23);
             this.button6.TabIndex = 46;
-            this.button6.Text = "Modificar";
+            this.toolTip1.SetToolTip(this.button6, "Modificar");
             this.button6.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.Location = new System.Drawing.Point(700, 70);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(27, 23);
             this.btnEliminar.TabIndex = 47;
-            this.btnEliminar.Text = "Eliminar";
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.SystemColors.Control;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(9, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 21);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "C.U.I.T";
+            // 
+            // txtCuit
+            // 
+            this.txtCuit.Location = new System.Drawing.Point(84, 17);
+            this.txtCuit.Name = "txtCuit";
+            this.txtCuit.Size = new System.Drawing.Size(181, 20);
+            this.txtCuit.TabIndex = 17;
+            // 
+            // rbtEmpresa
+            // 
+            this.rbtEmpresa.AutoSize = true;
+            this.rbtEmpresa.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.rbtEmpresa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtEmpresa.Location = new System.Drawing.Point(519, 16);
+            this.rbtEmpresa.Name = "rbtEmpresa";
+            this.rbtEmpresa.Size = new System.Drawing.Size(70, 19);
+            this.rbtEmpresa.TabIndex = 29;
+            this.rbtEmpresa.TabStop = true;
+            this.rbtEmpresa.Text = "Empresa";
+            this.rbtEmpresa.UseVisualStyleBackColor = false;
+            this.rbtEmpresa.CheckedChanged += new System.EventHandler(this.rbtEmpresa_CheckedChanged);
+            // 
+            // rbtParticular
+            // 
+            this.rbtParticular.AutoSize = true;
+            this.rbtParticular.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.rbtParticular.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtParticular.Location = new System.Drawing.Point(438, 17);
+            this.rbtParticular.Name = "rbtParticular";
+            this.rbtParticular.Size = new System.Drawing.Size(75, 19);
+            this.rbtParticular.TabIndex = 28;
+            this.rbtParticular.TabStop = true;
+            this.rbtParticular.Text = "Particular";
+            this.rbtParticular.UseVisualStyleBackColor = false;
+            this.rbtParticular.CheckedChanged += new System.EventHandler(this.rbtParticular_CheckedChanged);
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(329, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 20);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Tipo de Cliente";
             // 
             // ABMCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(784, 336);
+            this.ClientSize = new System.Drawing.Size(732, 336);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -594,8 +591,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -622,7 +617,6 @@
         public System.Windows.Forms.TextBox txtNom;
         public System.Windows.Forms.TextBox txtApellido;
         public System.Windows.Forms.TextBox txtNroDoc;
-        public System.Windows.Forms.TextBox txtCuit;
         public System.Windows.Forms.TextBox txtEmail;
         public System.Windows.Forms.TextBox txtCalle;
         public System.Windows.Forms.TextBox txtNroCalle;
@@ -632,9 +626,11 @@
         public System.Windows.Forms.ComboBox cmbTdoc;
         public System.Windows.Forms.ComboBox cmbProvin;
         public System.Windows.Forms.ComboBox cmbDepto;
+        public System.Windows.Forms.TextBox txtBuscar;
+        public System.Windows.Forms.TextBox txtCuit;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
         public System.Windows.Forms.RadioButton rbtParticular;
         public System.Windows.Forms.RadioButton rbtEmpresa;
-        public System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.CheckBox Eliminado;
     }
 }
