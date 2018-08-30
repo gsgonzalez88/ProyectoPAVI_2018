@@ -19,7 +19,7 @@ namespace Milibreria
             try
             {
 
-                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
+                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
                
 
                 SqlConnection con = new SqlConnection();
@@ -50,7 +50,7 @@ namespace Milibreria
             {
 
 
-                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
+                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
 
                 SqlConnection con = new SqlConnection();
                 SqlCommand cmd = new SqlCommand();
@@ -75,7 +75,7 @@ namespace Milibreria
         {
             try
             {
-                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
+                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
              
                 
                 SqlConnection con = new SqlConnection();

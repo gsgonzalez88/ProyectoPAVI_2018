@@ -75,18 +75,16 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.dvgEmpresa = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dvgParticular = new System.Windows.Forms.DataGridView();
+            this.dgvParticular = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgEmpresa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgParticular)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParticular)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -245,7 +243,7 @@
             // 
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(1037, 143);
+            this.btnAceptar.Location = new System.Drawing.Point(624, 302);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(27, 23);
             this.btnAceptar.TabIndex = 26;
@@ -256,7 +254,7 @@
             // BtnSalir
             // 
             this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
-            this.BtnSalir.Location = new System.Drawing.Point(1037, 175);
+            this.BtnSalir.Location = new System.Drawing.Point(657, 302);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(27, 23);
             this.BtnSalir.TabIndex = 27;
@@ -336,7 +334,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtNroDoc);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(359, 58);
+            this.groupBox1.Location = new System.Drawing.Point(12, 70);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(672, 227);
             this.groupBox1.TabIndex = 41;
@@ -467,7 +465,7 @@
             this.groupBox2.Controls.Add(this.rbtParticular);
             this.groupBox2.Controls.Add(this.rbtEmpresa);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Location = new System.Drawing.Point(359, 12);
+            this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(672, 40);
             this.groupBox2.TabIndex = 42;
@@ -524,7 +522,7 @@
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(1037, 110);
+            this.button2.Location = new System.Drawing.Point(591, 303);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(27, 23);
             this.button2.TabIndex = 44;
@@ -536,7 +534,7 @@
             // 
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(1037, 23);
+            this.button5.Location = new System.Drawing.Point(492, 302);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(27, 23);
             this.button5.TabIndex = 45;
@@ -548,7 +546,7 @@
             // 
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(1037, 52);
+            this.button6.Location = new System.Drawing.Point(525, 302);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(27, 23);
             this.button6.TabIndex = 46;
@@ -560,7 +558,7 @@
             // 
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(1037, 81);
+            this.btnEliminar.Location = new System.Drawing.Point(558, 303);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(27, 23);
             this.btnEliminar.TabIndex = 47;
@@ -568,39 +566,19 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // dvgEmpresa
+            // dgvParticular
             // 
-            this.dvgEmpresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgEmpresa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nombre,
-            this.Cuit});
-            this.dvgEmpresa.Location = new System.Drawing.Point(12, 12);
-            this.dvgEmpresa.Name = "dvgEmpresa";
-            this.dvgEmpresa.Size = new System.Drawing.Size(251, 88);
-            this.dvgEmpresa.TabIndex = 48;
-            this.dvgEmpresa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgEmpresa_CellContentClick);
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Cuit
-            // 
-            this.Cuit.HeaderText = "Cuit";
-            this.Cuit.Name = "Cuit";
-            // 
-            // dvgParticular
-            // 
-            this.dvgParticular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgParticular.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvParticular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvParticular.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.Apellido,
-            this.dataGridViewTextBoxColumn2});
-            this.dvgParticular.Location = new System.Drawing.Point(12, 12);
-            this.dvgParticular.Name = "dvgParticular";
-            this.dvgParticular.Size = new System.Drawing.Size(341, 88);
-            this.dvgParticular.TabIndex = 49;
+            this.dataGridViewTextBoxColumn2,
+            this.Cuit,
+            this.Estado});
+            this.dgvParticular.Location = new System.Drawing.Point(690, 12);
+            this.dgvParticular.Name = "dgvParticular";
+            this.dgvParticular.Size = new System.Drawing.Size(548, 88);
+            this.dgvParticular.TabIndex = 49;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -617,14 +595,23 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "NroDocumento";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
+            // Cuit
+            // 
+            this.Cuit.HeaderText = "Cuit";
+            this.Cuit.Name = "Cuit";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            // 
             // ABMCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1069, 295);
-            this.Controls.Add(this.dvgParticular);
-            this.Controls.Add(this.dvgEmpresa);
+            this.ClientSize = new System.Drawing.Size(1245, 334);
+            this.Controls.Add(this.dgvParticular);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -644,8 +631,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgEmpresa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgParticular)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParticular)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -697,12 +683,11 @@
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.RadioButton rbtParticular;
         public System.Windows.Forms.RadioButton rbtEmpresa;
-        private System.Windows.Forms.DataGridView dvgEmpresa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
-        private System.Windows.Forms.DataGridView dvgParticular;
+        private System.Windows.Forms.DataGridView dgvParticular;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }
