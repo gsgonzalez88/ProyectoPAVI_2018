@@ -71,6 +71,33 @@ namespace Milibreria
             }
 
         }
+        public static void Update(string Ejec)
+        {
+            try
+            {
+
+
+                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
+
+                SqlConnection con = new SqlConnection();
+                SqlCommand cmd = new SqlCommand();
+                con.ConnectionString = cadena;
+                con.Open();
+
+                cmd.Connection = con;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = Ejec;
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception("" + e.Message);
+            }
+
+        }
         public static DataTable ConsultarCliente(int dni)
         {
             try

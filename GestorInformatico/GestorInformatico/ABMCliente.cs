@@ -27,7 +27,11 @@ namespace GestorInformatico
             cmbBarrio.SelectedIndex = -1;
             cmbDepto.SelectedIndex = -1;
             cmbLocalidad.SelectedIndex = -1;
-          
+            lblEstado.Visible = false;
+            rbtInactivo.Visible = false;
+            rbtActivo.Visible = false;
+            rbtInactivo.Checked = false;
+            rbtActivo.Checked = false;
             cmbProvin.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Provincia");
             cmbProvin.DisplayMember = "Descripcion";
             cmbProvin.ValueMember = "idProvincia";
@@ -38,22 +42,7 @@ namespace GestorInformatico
             cmbTdoc.ValueMember = "IdTipoDoc";
             cmbTdoc.SelectedIndex = -1;
 
-            DataTable tabla = Milibreria.Utilidades.Ejecutar("Select  e.Descripcion as Estado,* from cliente c  left outer join Estado e on e.idEstado = c.IdEstado");
-            dgvParticular.Rows.Clear();
-            if (tabla.Rows.Count >0)
-            {
-                for (int i = 0; i < tabla.Rows.Count; i++)
-                {
-                    dgvParticular.Rows.Add(tabla.Rows[i]["Nombre"]
-                        , tabla.Rows[i]["Apellido"]
-                        , tabla.Rows[i]["NroDoc"]
-                        , tabla.Rows[i]["Cuit"]
-                        , tabla.Rows[i]["Estado"]
-                        );
-                }
-               
-            }
-
+            LlenarGrilla();
 
             a = 1;
            
@@ -297,10 +286,33 @@ namespace GestorInformatico
             label2.Visible = true;
             label3.Visible = true;
             label4.Visible = true;
+            lblEstado.Visible = false;
+            rbtInactivo.Visible = false;
+            rbtActivo.Visible = false;
+            rbtInactivo.Checked = false;
+            rbtActivo.Checked = false;
+
+
+            txtNroDoc.Enabled = true;
+            txtCuit.Enabled = true;
+            cmbTdoc.Enabled = true;
+
+            txtNom.Enabled = true;
+            txtApellido.Enabled = true;
+            txtTelefono.Enabled = true;
+            txtEmail.Enabled = true;
+            txtNroCalle.Enabled = true;
+            txtCalle.Enabled = true;
+            cmbProvin.Enabled = true;
+            cmbDepto.Enabled = true;
+            cmbBarrio.Enabled = true;
+            cmbLocalidad.Enabled = true;
+            LlenarGrilla();
+
             a = 1;
          }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
             int nro;
             if (txtBuscar.Text != "")
@@ -316,7 +328,6 @@ namespace GestorInformatico
                 {
 
                     string tipo = table.Rows[0]["TipoCliente"].ToString();
-                    string check = table.Rows[0]["Eliminado"].ToString();
                     if (tipo == "Empresa")
                     {
                         rbtEmpresa.Checked = true;
@@ -341,7 +352,27 @@ namespace GestorInformatico
                     cmbDepto.SelectedText = table.Rows[0]["Depto"].ToString();
                     cmbBarrio.SelectedText = table.Rows[0]["Barrio"].ToString();
                     cmbLocalidad.SelectedText = table.Rows[0]["Localidad"].ToString();
-                  
+                    if (table.Rows[0]["IdEstado"].ToString() == "1")
+                    {
+                        lblEstado.Visible = true;
+                        rbtActivo.Visible = true;
+                        rbtActivo.Checked = true;
+                        rbtInactivo.Visible = true;
+                    }
+                    if (table.Rows[0]["IdEstado"].ToString() == "2")
+                    {
+                        lblEstado.Visible = true;
+                        rbtInactivo.Visible = true;
+                        rbtInactivo.Checked = true;
+                        rbtActivo.Visible = true;
+                    
+
+                    }
+                    txtCuit.Enabled = false;
+                    txtNroDoc.Enabled = false;
+                    cmbTdoc.Enabled = false;
+
+
                 }
                 else
                 {
@@ -368,7 +399,6 @@ namespace GestorInformatico
                 label2.Visible = false;
                 label3.Visible = false;
                 label4.Visible = false;
-                dgvParticular.Visible = false;
                
             }
             else
@@ -386,37 +416,32 @@ namespace GestorInformatico
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             int nro;
-            if (rbtEmpresa.Checked)
-	        {
-		 
-	
             if (txtBuscar.Text != "")
             {
-                nro = Convert.ToInt32(txtBuscar.Text);
+                if (rbtEmpresa.Checked)
+                {
+                    nro = Convert.ToInt32(txtBuscar.Text);
 
-                Milibreria.Utilidades.Ejecutar("delete from Cliente where Cuit =  " + txtBuscar.Text);
-                MessageBox.Show("Empresa  eliminado", "Informacion");
+                    Milibreria.Utilidades.Ejecutar("Update Cliente set IdEstado =2where Cuit =  " + txtBuscar.Text);
+                    MessageBox.Show("Cliente  eliminado", "Informacion");
+                }
+                if (rbtParticular.Checked)
+                {
+
+                    if (txtBuscar.Text != "")
+                    {
+                        nro = Convert.ToInt32(txtBuscar.Text);
+
+                        Milibreria.Utilidades.Ejecutar("Update Cliente set IdEstado =2 where NroDoc =  " + txtBuscar.Text);
+                        MessageBox.Show("Cliente  eliminado", "Informacion");
+                    }
+                }
             }
             else
             {
-                MessageBox.Show("Busque el cliente a eliminar","Informacion");
+                MessageBox.Show("Busque el cliente a eliminar", "Informacion");
             }
-          }
-            if (rbtParticular.Checked)
-            {
-               
-            if (txtBuscar.Text != "")
-            {
-                nro = Convert.ToInt32(txtBuscar.Text);
 
-                Milibreria.Utilidades.Ejecutar("delete from Cliente where NroDoc =  " + txtBuscar.Text);
-                MessageBox.Show("Empresa  eliminado", "Informacion");
-            }
-            else
-            {
-                MessageBox.Show("Busque el cliente a eliminar","Informacion");
-            } 
-            }
             
         }
 
@@ -428,10 +453,12 @@ namespace GestorInformatico
             if (rbtParticular.Checked)
             {
                 table = Milibreria.Utilidades.Ejecutar("select c.NroDoc from Cliente c where c.NroDoc =" + txtNroDoc.Text);
+                
             }
             else
             {
                 table = Milibreria.Utilidades.Ejecutar("select c.Cuit from Cliente c where c.Cuit =" + txtCuit.Text);
+
             }
            
             if (table.Rows.Count > 0)
@@ -442,18 +469,98 @@ namespace GestorInformatico
             {
 
 
-                Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','" + txtApellido.Text + "'," + txtCuit.Text + "," + cmbTdoc.SelectedValue.ToString() + "," + txtNroDoc.Text + ",'"
-                    + rbtEmpresa.Text + "'," + cmbBarrio.SelectedValue.ToString() + "," + cmbLocalidad.SelectedValue.ToString() + ","
-                    + cmbDepto.SelectedValue.ToString() + "," + cmbProvin.SelectedValue.ToString() + "," + txtTelefono.Text + ",'" + txtEmail.Text + "','" + txtCalle.Text + "'," + txtNroCalle.Text + "," + 1 + ")");
+                Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','" 
+                    + txtApellido.Text + "'," + txtCuit.Text + "," 
+                    + cmbTdoc.SelectedValue.ToString() + "," 
+                    + txtNroDoc.Text + ",'"
+                    + rbtEmpresa.Text + "',"
+                    + cmbBarrio.SelectedValue.ToString() + ","
+                    + cmbLocalidad.SelectedValue.ToString() + ","
+                    + cmbDepto.SelectedValue.ToString() + ","
+                    + cmbProvin.SelectedValue.ToString() + ","
+                    + txtTelefono.Text.ToString() + ",'"
+                    + txtEmail.Text.ToString()
+                    + "','" + txtCalle.Text + "',"
+                    + txtNroCalle.Text + ",1)");
                 MessageBox.Show("Se creo correctamente", "Informacion");
 
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
              if (txtBuscar.Text != "")
             {
+                txtNroDoc.Enabled = false;
+                txtCuit.Enabled = false;
+                cmbTdoc.Enabled = false;
+
+                txtNom.Enabled = true;
+                txtApellido.Enabled = true;
+                txtTelefono.Enabled = true;
+                txtEmail.Enabled = true;
+                txtNroCalle.Enabled = true;
+                txtCalle.Enabled = true;
+                cmbProvin.Enabled = true;
+                cmbDepto.Enabled = true;
+                cmbBarrio.Enabled = true;
+                cmbLocalidad.Enabled = true;
+                DataTable tabla = Milibreria.Utilidades.ConsultarCliente(Convert.ToInt32(txtBuscar.Text));
+                string sql = "Update Cliente ";
+                    if (tabla.Rows.Count>0)
+            	{
+	    	    
+	           
+                if (txtApellido.Text != tabla.Rows[0]["Apellido"].ToString() || txtNom.Text !=tabla.Rows[0]["Nombre"].ToString() ||
+                    txtNroCalle.Text != tabla.Rows[0]["NroCalle"].ToString() || txtCalle.Text != tabla.Rows[0]["Calle"].ToString() ||
+                    txtTelefono.Text != tabla.Rows[0]["nroTelefono"].ToString() || txtEmail.Text != tabla.Rows[0]["Email"].ToString() ||
+                    cmbBarrio.Text != tabla.Rows[0]["Barrio"].ToString() || cmbLocalidad.Text != tabla.Rows[0]["Localidad"].ToString() ||
+                   cmbDepto.Text != tabla.Rows[0]["Depto"].ToString() || cmbProvin.Text != tabla.Rows[0]["Prov"].ToString() )
+                {
+                    sql += "set  Apellido = '" + txtApellido.Text + "'," + " Nombre = '" + txtNom.Text + "',"
+                        + " NroCalle = " + txtNroCalle.Text + "," + " Calle = '" + txtCalle.Text + "',"
+                        + " nroTelefono= " + txtTelefono.Text + "," + " Email = '" + txtEmail.Text + "',";
+                        
+                    DataTable table= Milibreria.Utilidades.Ejecutar("select b.IdBarrio,l.IdLocalidad,d.IdDepartamento,d.IdProvincia from Barrio b" 
+                    +" join Localidad l on b.IdLocalidad = l.IdLocalidad "
+                    +" join Departamento d on l.IdDepartamento = d.IdDepartamento "
+                    +" where b.Descripcion = '" + cmbBarrio.Text +"'");
+
+                       sql += " IdBarrio = " + table.Rows[0]["IdBarrio"] + ","
+                        + " IdLocalidad = " + table.Rows[0]["IdLocalidad"] + ","
+                        + " IdDepartamento = "+table.Rows[0]["IdDepartamento"] + ","
+                         + " IdProvincia = " + table.Rows[0]["IdProvincia"] + ",";
+                }
+                else
+                {
+                    sql += "set ";
+                }
+                if (rbtInactivo.Checked)
+                {
+                    sql += " IdEstado = "+ 2;
+
+                }
+                if (rbtActivo.Checked)
+                {
+                    sql += " IdEstado = " + 1;
+
+                }
+
+                if (rbtParticular.Checked)
+                {
+                    sql += " where NroDoc = " + txtNroDoc.Text;
+                }
+                else
+                {
+                    sql += " where Cuit = " + txtCuit.Text;
+                }
+
+
+                Milibreria.Utilidades.Update(sql);
+                MessageBox.Show("Se guardo correctamento", "Informacion");
+
+
+               }
             }
              else
              {
@@ -474,6 +581,31 @@ namespace GestorInformatico
             prov.ShowDialog();
         }
 
+
+        private void LlenarGrilla()
+        {
+            DataTable tabla = Milibreria.Utilidades.Ejecutar("Select  e.Descripcion as Estado,* from cliente c  left outer join Estado e on e.idEstado = c.IdEstado");
+            dgvParticular.Rows.Clear();
+            if (tabla.Rows.Count > 0)
+            {
+                for (int i = 0; i < tabla.Rows.Count; i++)
+                {
+                    dgvParticular.Rows.Add(tabla.Rows[i]["Nombre"]
+                        , tabla.Rows[i]["Apellido"]
+                        , tabla.Rows[i]["NroDoc"]
+                        , tabla.Rows[i]["Cuit"]
+                        , tabla.Rows[i]["Estado"]
+                        );
+                }
+
+            }
+        }
+
+       
+
+        
+
+     
 
        
      }
