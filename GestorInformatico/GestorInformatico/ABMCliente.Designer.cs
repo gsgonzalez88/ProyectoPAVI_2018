@@ -617,16 +617,17 @@
             // dgvParticular
             // 
             this.dgvParticular.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvParticular.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvParticular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvParticular.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.Apellido,
             this.dataGridViewTextBoxColumn2,
             this.Cuit});
-            this.dgvParticular.GridColor = System.Drawing.SystemColors.Desktop;
+            this.dgvParticular.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvParticular.Location = new System.Drawing.Point(690, 12);
             this.dgvParticular.Name = "dgvParticular";
-            this.dgvParticular.Size = new System.Drawing.Size(443, 88);
+            this.dgvParticular.Size = new System.Drawing.Size(443, 310);
             this.dgvParticular.TabIndex = 49;
             // 
             // dataGridViewTextBoxColumn1

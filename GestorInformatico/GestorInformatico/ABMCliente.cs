@@ -319,10 +319,14 @@ namespace GestorInformatico
             {
 
 
-
+                DataTable table;
                 nro = Convert.ToInt32(txtBuscar.Text);
 
-                DataTable table = Milibreria.Utilidades.ConsultarCliente(nro);
+              
+                   table = Milibreria.Utilidades.ConsultarCliente(nro);
+
+
+               
 
                 if (table.Rows.Count > 0)
                 {
