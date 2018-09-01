@@ -108,7 +108,7 @@ namespace GestorInformatico
                 
                 for ( int i = 0; i < table.Rows.Count; i++)
                 {
-                    table.Rows.Add(table.Rows[i]["Descripcion"].ToString()
+                    dataGridView1.Rows.Add(table.Rows[i]["Descripcion"].ToString()
                                    ,table.Rows[i]["Localidad"].ToString()
                                    ,table.Rows[i]["Departamento"].ToString()
                                    ,table.Rows[i]["Provincia"].ToString());
