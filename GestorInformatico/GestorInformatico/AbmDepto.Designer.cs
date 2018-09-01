@@ -34,12 +34,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtDepto = new System.Windows.Forms.TextBox();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.dvgDepartamento = new System.Windows.Forms.DataGridView();
+            this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnSalir = new System.Windows.Forms.Button();
+            this.btnRefescar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgDepartamento)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,22 +83,12 @@
             this.cmbProvincia.Size = new System.Drawing.Size(206, 21);
             this.cmbProvincia.TabIndex = 6;
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(291, 69);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(24, 27);
-            this.btnEliminar.TabIndex = 14;
-            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.Location = new System.Drawing.Point(291, 7);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(24, 27);
+            this.btnBuscar.Size = new System.Drawing.Size(28, 27);
             this.btnBuscar.TabIndex = 13;
             this.toolTip1.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -104,45 +98,87 @@
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.Location = new System.Drawing.Point(291, 40);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(24, 26);
+            this.btnNuevo.Size = new System.Drawing.Size(28, 26);
             this.btnNuevo.TabIndex = 12;
             this.toolTip1.SetToolTip(this.btnNuevo, "Nuevo");
             this.btnNuevo.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // dvgDepartamento
             // 
-            this.button1.Location = new System.Drawing.Point(129, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dvgDepartamento.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dvgDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dvgDepartamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Departamento,
+            this.Provincia});
+            this.dvgDepartamento.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dvgDepartamento.Location = new System.Drawing.Point(336, 10);
+            this.dvgDepartamento.Name = "dvgDepartamento";
+            this.dvgDepartamento.Size = new System.Drawing.Size(245, 108);
+            this.dvgDepartamento.TabIndex = 17;
             // 
-            // button2
+            // Departamento
             // 
-            this.button2.Location = new System.Drawing.Point(210, 73);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Salir";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Departamento.HeaderText = "Departamento";
+            this.Departamento.Name = "Departamento";
+            // 
+            // Provincia
+            // 
+            this.Provincia.HeaderText = "Provincia";
+            this.Provincia.Name = "Provincia";
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
+            this.BtnSalir.Location = new System.Drawing.Point(291, 67);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(28, 32);
+            this.BtnSalir.TabIndex = 50;
+            this.toolTip1.SetToolTip(this.BtnSalir, "Salir");
+            this.BtnSalir.UseVisualStyleBackColor = true;
+            // 
+            // btnRefescar
+            // 
+            this.btnRefescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefescar.Image")));
+            this.btnRefescar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefescar.Location = new System.Drawing.Point(257, 67);
+            this.btnRefescar.Name = "btnRefescar";
+            this.btnRefescar.Size = new System.Drawing.Size(28, 32);
+            this.btnRefescar.TabIndex = 49;
+            this.toolTip1.SetToolTip(this.btnRefescar, "Refescar");
+            this.btnRefescar.UseVisualStyleBackColor = true;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.Location = new System.Drawing.Point(223, 67);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(28, 32);
+            this.btnAceptar.TabIndex = 48;
+            this.toolTip1.SetToolTip(this.btnAceptar, "Guardar");
+            this.btnAceptar.UseVisualStyleBackColor = true;
             // 
             // AbmDepto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 100);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnEliminar);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(598, 130);
+            this.Controls.Add(this.BtnSalir);
+            this.Controls.Add(this.btnRefescar);
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.dvgDepartamento);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.cmbProvincia);
             this.Controls.Add(this.txtDepto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AbmDepto";
-            this.Text = "AbmDepto";
+            this.Text = "Nuevo Departamento";
+            this.Load += new System.EventHandler(this.AbmDepto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dvgDepartamento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,11 +190,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDepto;
         private System.Windows.Forms.ComboBox cmbProvincia;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DataGridView dvgDepartamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Departamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
+        private System.Windows.Forms.Button BtnSalir;
+        private System.Windows.Forms.Button btnRefescar;
+        private System.Windows.Forms.Button btnAceptar;
     }
 }

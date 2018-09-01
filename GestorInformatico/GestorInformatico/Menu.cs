@@ -55,6 +55,18 @@ namespace GestorInformatico
             localidad.ShowDialog();
         }
 
+        private void departamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbmDepto departamento = new AbmDepto();
+            departamento.ShowDialog();
+        }
+
+        private void provinciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABMProvincia Provincia = new ABMProvincia();
+            Provincia.ShowDialog();
+        }
+
       
 
     
