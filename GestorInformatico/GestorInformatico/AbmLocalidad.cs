@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Milibreria;
 
 namespace GestorInformatico
 {
@@ -78,6 +79,61 @@ namespace GestorInformatico
                 a = 1;
             }
             
+        }
+
+        private void btnRefescar_Click(object sender, EventArgs e)
+        {
+            cmbDepartamento.SelectedIndex = -1;
+            cmbProvincia.SelectedIndex = -1;
+            txtLoc.Clear();
+            txtCod.Clear();
+            dgvLocalidad.Rows.Clear();
+            LlenarGrilla();
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (txtLoc.Text != "")
+            {
+                
+           
+            if (cmbProvincia.SelectedValue != null)
+            {
+                if (cmbDepartamento.SelectedValue != null)
+                {
+
+                    if (txtCod.Text != "")
+                    {
+                        Milibreria.Utilidades.Insert("Insert Localidad Values ('" + txtLoc.Text + "'," + cmbDepartamento.SelectedValue.ToString() + "," + txtCod.Text + ",GETDATE())");
+                        MessageBox.Show("Guardado Correctamente", "Informacion");
+                        txtCod.Focus();
+                        return;
+                    }
+                    MessageBox.Show("Complete los campos", "Informacion");
+                    txtCod.Focus();
+                    return;
+                   
+                }
+                MessageBox.Show("Complete los campos", "Informacion");
+                cmbDepartamento.Focus();
+                return;
+                   
+            }
+            MessageBox.Show("Complete los campos", "Informacion");
+            cmbProvincia.Focus();
+            return;
+                   
+            }
+            else
+            {
+                MessageBox.Show("Complete los campos", "Informacion");
+                txtLoc.Focus();
+            }
         }
 
        

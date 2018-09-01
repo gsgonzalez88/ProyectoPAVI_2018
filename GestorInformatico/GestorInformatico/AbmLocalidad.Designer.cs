@@ -135,6 +135,7 @@
             this.BtnSalir.TabIndex = 50;
             this.toolTip1.SetToolTip(this.BtnSalir, "Salir");
             this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // btnRefescar
             // 
@@ -146,6 +147,7 @@
             this.btnRefescar.TabIndex = 49;
             this.toolTip1.SetToolTip(this.btnRefescar, "Refescar");
             this.btnRefescar.UseVisualStyleBackColor = true;
+            this.btnRefescar.Click += new System.EventHandler(this.btnRefescar_Click);
             // 
             // btnAceptar
             // 
@@ -157,6 +159,7 @@
             this.btnAceptar.TabIndex = 48;
             this.toolTip1.SetToolTip(this.btnAceptar, "Guardar");
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // dgvLocalidad
             // 
