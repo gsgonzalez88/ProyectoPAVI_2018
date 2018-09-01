@@ -39,13 +39,13 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnRefescar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.BtnSalir = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbDepartamento = new System.Windows.Forms.ComboBox();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
-            this.btnRefescar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.BtnSalir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,6 +100,7 @@
             this.btnAgregarLocalidad.TabIndex = 8;
             this.toolTip1.SetToolTip(this.btnAgregarLocalidad, "Nueva Localidad");
             this.btnAgregarLocalidad.UseVisualStyleBackColor = true;
+            this.btnAgregarLocalidad.Click += new System.EventHandler(this.btnAgregarLocalidad_Click);
             // 
             // btnBuscar
             // 
@@ -121,6 +122,7 @@
             this.button3.TabIndex = 17;
             this.toolTip1.SetToolTip(this.button3, "Nuevo Departamento");
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -131,6 +133,42 @@
             this.button4.TabIndex = 18;
             this.toolTip1.SetToolTip(this.button4, "Nueva Provincia");
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnRefescar
+            // 
+            this.btnRefescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefescar.Image")));
+            this.btnRefescar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefescar.Location = new System.Drawing.Point(282, 134);
+            this.btnRefescar.Name = "btnRefescar";
+            this.btnRefescar.Size = new System.Drawing.Size(28, 32);
+            this.btnRefescar.TabIndex = 46;
+            this.toolTip1.SetToolTip(this.btnRefescar, "Refescar");
+            this.btnRefescar.UseVisualStyleBackColor = true;
+            this.btnRefescar.Click += new System.EventHandler(this.btnRefescar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.Location = new System.Drawing.Point(248, 134);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(28, 32);
+            this.btnAceptar.TabIndex = 45;
+            this.toolTip1.SetToolTip(this.btnAceptar, "Guardar");
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
+            this.BtnSalir.Location = new System.Drawing.Point(316, 134);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(28, 32);
+            this.BtnSalir.TabIndex = 47;
+            this.toolTip1.SetToolTip(this.BtnSalir, "Salir");
+            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // label3
             // 
@@ -171,44 +209,13 @@
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(116, 102);
             this.cmbProvincia.Name = "cmbProvincia";
-            this.cmbProvincia.Size = new System.Drawing.Size(195, 21);
+            this.cmbProvincia.Size = new System.Drawing.Size(198, 21);
             this.cmbProvincia.TabIndex = 16;
             this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 
-            // btnRefescar
-            // 
-            this.btnRefescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefescar.Image")));
-            this.btnRefescar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefescar.Location = new System.Drawing.Point(252, 129);
-            this.btnRefescar.Name = "btnRefescar";
-            this.btnRefescar.Size = new System.Drawing.Size(28, 32);
-            this.btnRefescar.TabIndex = 46;
-            this.toolTip1.SetToolTip(this.btnRefescar, "Refescar");
-            this.btnRefescar.UseVisualStyleBackColor = true;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
-            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(218, 129);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(28, 32);
-            this.btnAceptar.TabIndex = 45;
-            this.toolTip1.SetToolTip(this.btnAceptar, "Guardar");
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            // 
-            // BtnSalir
-            // 
-            this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
-            this.BtnSalir.Location = new System.Drawing.Point(286, 129);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(28, 32);
-            this.BtnSalir.TabIndex = 47;
-            this.toolTip1.SetToolTip(this.BtnSalir, "Salir");
-            this.BtnSalir.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -219,7 +226,7 @@
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.Location = new System.Drawing.Point(350, 9);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(446, 107);
+            this.dataGridView1.Size = new System.Drawing.Size(446, 157);
             this.dataGridView1.TabIndex = 48;
             // 
             // Nombre
@@ -248,7 +255,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(805, 178);
+            this.ClientSize = new System.Drawing.Size(805, 174);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.btnRefescar);
