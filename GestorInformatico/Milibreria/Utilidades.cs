@@ -19,7 +19,7 @@ namespace Milibreria
             try
             {
 
-                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
+                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
                
 
                 SqlConnection con = new SqlConnection();
@@ -50,7 +50,34 @@ namespace Milibreria
             {
 
 
-                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
+                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
+
+                SqlConnection con = new SqlConnection();
+                SqlCommand cmd = new SqlCommand();
+                con.ConnectionString = cadena;
+                con.Open();
+
+                cmd.Connection = con;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = Ejec;
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception("" + e.Message);
+            }
+
+        }
+        public static void Update(string Ejec)
+        {
+            try
+            {
+
+
+                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
 
                 SqlConnection con = new SqlConnection();
                 SqlCommand cmd = new SqlCommand();
@@ -75,7 +102,7 @@ namespace Milibreria
         {
             try
             {
-                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True";
+                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
              
                 
                 SqlConnection con = new SqlConnection();
@@ -90,8 +117,8 @@ namespace Milibreria
                                     +" join Barrio b on b.IdBarrio = c.IdBarrio join Localidad l on l.IdLocalidad = c.IdLocalidad"
                                     +" join Departamento d on d.IdDepartamento = c.IdDepartamento "+ 
                                     " join Provincia p on p.IdProvincia = d.IdProvincia "+ 
-                                    " join TipoDoc td on td.IdTipoDoc =c.IdTipoDoc "+ 
-                                    "where NroDoc ="+dni;
+                                    " left outer join TipoDoc td on td.IdTipoDoc =c.IdTipoDoc "+ 
+                                    "where (c.NroDoc ="+dni+ ") OR (c.Cuit ="+dni +" )";
                 table = new DataTable();
                 table.Load(cmd.ExecuteReader());
                 con.Close();
