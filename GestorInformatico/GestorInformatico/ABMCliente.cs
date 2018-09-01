@@ -239,8 +239,10 @@ namespace GestorInformatico
 
         private void rbtParticular_CheckedChanged(object sender, EventArgs e)
         {
+         
             if (rbtParticular.Checked)
             {
+                
                 label6.Visible = false;
                 txtCuit.Visible = false;
                 rbtEmpresa.Visible = false;
@@ -395,7 +397,6 @@ namespace GestorInformatico
         {
             if (rbtEmpresa.Checked)
             {
-                
                 rbtParticular.Visible = false;
                 txtApellido.Visible = false;
                 txtNroDoc.Visible = false;
@@ -408,7 +409,6 @@ namespace GestorInformatico
             else
             {
                 rbtParticular.Visible = true;
-
             }
         }
 

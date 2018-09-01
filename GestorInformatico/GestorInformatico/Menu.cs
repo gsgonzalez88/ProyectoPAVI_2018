@@ -49,6 +49,12 @@ namespace GestorInformatico
             barrio.ShowDialog();
         }
 
+        private void localidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbmLocalidad localidad = new AbmLocalidad();
+            localidad.ShowDialog();
+        }
+
       
 
     
