@@ -117,8 +117,8 @@ namespace Milibreria
                                     +" join Barrio b on b.IdBarrio = c.IdBarrio join Localidad l on l.IdLocalidad = c.IdLocalidad"
                                     +" join Departamento d on d.IdDepartamento = c.IdDepartamento "+ 
                                     " join Provincia p on p.IdProvincia = d.IdProvincia "+ 
-                                    " join TipoDoc td on td.IdTipoDoc =c.IdTipoDoc "+ 
-                                    "where NroDoc ="+dni;
+                                    " left outer join TipoDoc td on td.IdTipoDoc =c.IdTipoDoc "+ 
+                                    "where (c.NroDoc ="+dni+ ") OR (c.Cuit ="+dni +" )";
                 table = new DataTable();
                 table.Load(cmd.ExecuteReader());
                 con.Close();

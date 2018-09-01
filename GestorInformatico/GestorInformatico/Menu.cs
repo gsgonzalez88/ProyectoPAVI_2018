@@ -33,14 +33,20 @@ namespace GestorInformatico
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
-            ABMCliente abmC = new ABMCliente();
-            abmC.ShowDialog();
+            ABMCliente Cliente = new ABMCliente();
+            Cliente.ShowDialog();
         }
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbmUsuario usu = new AbmUsuario();
-            usu.ShowDialog();
+            AbmUsuario usuario = new AbmUsuario();
+            usuario.ShowDialog();
+        }
+
+        private void barrioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbmBarrio barrio = new AbmBarrio();
+            barrio.ShowDialog();
         }
 
       
