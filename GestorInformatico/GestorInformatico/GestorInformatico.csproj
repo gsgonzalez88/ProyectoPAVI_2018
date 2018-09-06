@@ -88,12 +88,6 @@
     <Compile Include="AbmUsuario.Designer.cs">
       <DependentUpon>AbmUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConsultarCliente.Designer.cs">
-      <DependentUpon>ConsultarCliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,9 +119,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AbmUsuario.resx">
       <DependentUpon>AbmUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ConsultarCliente.resx">
-      <DependentUpon>ConsultarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

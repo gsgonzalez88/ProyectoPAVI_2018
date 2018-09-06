@@ -51,7 +51,11 @@
             this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -59,7 +63,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.Window;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Location = new System.Drawing.Point(7, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 19);
             this.label1.TabIndex = 0;
@@ -70,7 +74,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.Window;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 43);
+            this.label2.Location = new System.Drawing.Point(7, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 21);
             this.label2.TabIndex = 1;
@@ -78,25 +82,25 @@
             // 
             // txtBarrio
             // 
-            this.txtBarrio.Location = new System.Drawing.Point(116, 12);
+            this.txtBarrio.Location = new System.Drawing.Point(102, 16);
             this.txtBarrio.Name = "txtBarrio";
-            this.txtBarrio.Size = new System.Drawing.Size(198, 20);
+            this.txtBarrio.Size = new System.Drawing.Size(210, 20);
             this.txtBarrio.TabIndex = 3;
             // 
             // cmbLocalidad
             // 
             this.cmbLocalidad.FormattingEnabled = true;
-            this.cmbLocalidad.Location = new System.Drawing.Point(116, 43);
+            this.cmbLocalidad.Location = new System.Drawing.Point(102, 46);
             this.cmbLocalidad.Name = "cmbLocalidad";
-            this.cmbLocalidad.Size = new System.Drawing.Size(198, 21);
+            this.cmbLocalidad.Size = new System.Drawing.Size(210, 21);
             this.cmbLocalidad.TabIndex = 5;
             // 
             // btnAgregarLocalidad
             // 
             this.btnAgregarLocalidad.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarLocalidad.Image")));
-            this.btnAgregarLocalidad.Location = new System.Drawing.Point(318, 35);
+            this.btnAgregarLocalidad.Location = new System.Drawing.Point(318, 44);
             this.btnAgregarLocalidad.Name = "btnAgregarLocalidad";
-            this.btnAgregarLocalidad.Size = new System.Drawing.Size(28, 32);
+            this.btnAgregarLocalidad.Size = new System.Drawing.Size(28, 25);
             this.btnAgregarLocalidad.TabIndex = 8;
             this.toolTip1.SetToolTip(this.btnAgregarLocalidad, "Nueva Localidad");
             this.btnAgregarLocalidad.UseVisualStyleBackColor = true;
@@ -105,7 +109,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(318, 5);
+            this.btnBuscar.Location = new System.Drawing.Point(6, 7);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(28, 32);
             this.btnBuscar.TabIndex = 11;
@@ -116,9 +120,9 @@
             // button3
             // 
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(318, 65);
+            this.button3.Location = new System.Drawing.Point(318, 75);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 32);
+            this.button3.Size = new System.Drawing.Size(28, 25);
             this.button3.TabIndex = 17;
             this.toolTip1.SetToolTip(this.button3, "Nuevo Departamento");
             this.button3.UseVisualStyleBackColor = true;
@@ -127,9 +131,9 @@
             // button4
             // 
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(318, 95);
+            this.button4.Location = new System.Drawing.Point(318, 105);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(28, 32);
+            this.button4.Size = new System.Drawing.Size(28, 25);
             this.button4.TabIndex = 18;
             this.toolTip1.SetToolTip(this.button4, "Nueva Provincia");
             this.button4.UseVisualStyleBackColor = true;
@@ -139,7 +143,7 @@
             // 
             this.btnRefescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefescar.Image")));
             this.btnRefescar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefescar.Location = new System.Drawing.Point(282, 134);
+            this.btnRefescar.Location = new System.Drawing.Point(74, 7);
             this.btnRefescar.Name = "btnRefescar";
             this.btnRefescar.Size = new System.Drawing.Size(28, 32);
             this.btnRefescar.TabIndex = 46;
@@ -151,7 +155,7 @@
             // 
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(248, 134);
+            this.btnAceptar.Location = new System.Drawing.Point(40, 7);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(28, 32);
             this.btnAceptar.TabIndex = 45;
@@ -162,7 +166,7 @@
             // BtnSalir
             // 
             this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
-            this.BtnSalir.Location = new System.Drawing.Point(316, 134);
+            this.BtnSalir.Location = new System.Drawing.Point(108, 7);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(28, 32);
             this.BtnSalir.TabIndex = 47;
@@ -175,7 +179,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.Window;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 72);
+            this.label3.Location = new System.Drawing.Point(7, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 21);
             this.label3.TabIndex = 13;
@@ -186,7 +190,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.Window;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 102);
+            this.label4.Location = new System.Drawing.Point(7, 105);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 21);
             this.label4.TabIndex = 14;
@@ -195,9 +199,9 @@
             // cmbDepartamento
             // 
             this.cmbDepartamento.FormattingEnabled = true;
-            this.cmbDepartamento.Location = new System.Drawing.Point(116, 72);
+            this.cmbDepartamento.Location = new System.Drawing.Point(102, 75);
             this.cmbDepartamento.Name = "cmbDepartamento";
-            this.cmbDepartamento.Size = new System.Drawing.Size(198, 21);
+            this.cmbDepartamento.Size = new System.Drawing.Size(210, 21);
             this.cmbDepartamento.TabIndex = 15;
             this.cmbDepartamento.SelectedIndexChanged += new System.EventHandler(this.cmbDepartamento_SelectedIndexChanged);
             // 
@@ -207,9 +211,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbProvincia.FormattingEnabled = true;
-            this.cmbProvincia.Location = new System.Drawing.Point(116, 102);
+            this.cmbProvincia.Location = new System.Drawing.Point(102, 105);
             this.cmbProvincia.Name = "cmbProvincia";
-            this.cmbProvincia.Size = new System.Drawing.Size(198, 21);
+            this.cmbProvincia.Size = new System.Drawing.Size(210, 21);
             this.cmbProvincia.TabIndex = 16;
             this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 
@@ -224,9 +228,9 @@
             this.Departamento,
             this.Provincia});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.Location = new System.Drawing.Point(350, 9);
+            this.dataGridView1.Location = new System.Drawing.Point(363, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(446, 157);
+            this.dataGridView1.Size = new System.Drawing.Size(446, 196);
             this.dataGridView1.TabIndex = 48;
             // 
             // Nombre
@@ -250,36 +254,57 @@
             this.Provincia.Name = "Provincia";
             this.Provincia.Width = 105;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtBarrio);
+            this.groupBox1.Controls.Add(this.cmbLocalidad);
+            this.groupBox1.Controls.Add(this.btnAgregarLocalidad);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cmbProvincia);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.cmbDepartamento);
+            this.groupBox1.Location = new System.Drawing.Point(5, 9);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(352, 199);
+            this.groupBox1.TabIndex = 49;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Barrio";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnBuscar);
+            this.groupBox2.Controls.Add(this.btnAceptar);
+            this.groupBox2.Controls.Add(this.BtnSalir);
+            this.groupBox2.Controls.Add(this.btnRefescar);
+            this.groupBox2.Location = new System.Drawing.Point(7, 136);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(338, 44);
+            this.groupBox2.TabIndex = 19;
+            this.groupBox2.TabStop = false;
+            // 
             // AbmBarrio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(805, 174);
+            this.ClientSize = new System.Drawing.Size(836, 216);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.BtnSalir);
-            this.Controls.Add(this.btnRefescar);
-            this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.cmbProvincia);
-            this.Controls.Add(this.cmbDepartamento);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.btnAgregarLocalidad);
-            this.Controls.Add(this.cmbLocalidad);
-            this.Controls.Add(this.txtBarrio);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AbmBarrio";
-            this.Text = "AbmBarrio";
+            this.Text = "Barrio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EstaSeguro);
             this.Load += new System.EventHandler(this.AbmBarrio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -306,5 +331,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Localidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Departamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
