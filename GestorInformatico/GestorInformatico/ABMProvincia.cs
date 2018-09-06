@@ -16,5 +16,6 @@ namespace GestorInformatico
         {
             InitializeComponent();
         }
+
     }
 }

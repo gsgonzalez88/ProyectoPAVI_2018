@@ -30,29 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABMProvincia));
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtDepto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.dvgProvincia = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgProvincia)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(321, 4);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(24, 27);
-            this.btnEliminar.TabIndex = 19;
-            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
-            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(291, 3);
+            this.btnBuscar.Location = new System.Drawing.Point(6, 9);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(24, 27);
             this.btnBuscar.TabIndex = 18;
@@ -61,7 +55,7 @@
             // 
             // txtDepto
             // 
-            this.txtDepto.Location = new System.Drawing.Point(79, 4);
+            this.txtDepto.Location = new System.Drawing.Point(74, 16);
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.Size = new System.Drawing.Size(206, 20);
             this.txtDepto.TabIndex = 16;
@@ -71,56 +65,75 @@
             this.label1.BackColor = System.Drawing.SystemColors.Window;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 4);
+            this.label1.Location = new System.Drawing.Point(7, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 19);
             this.label1.TabIndex = 15;
             this.label1.Text = "Nombre";
             // 
-            // btnAceptar
+            // dvgProvincia
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(129, 30);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 20;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.dvgProvincia.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dvgProvincia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgProvincia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre});
+            this.dvgProvincia.Location = new System.Drawing.Point(306, 8);
+            this.dvgProvincia.Name = "dvgProvincia";
+            this.dvgProvincia.Size = new System.Drawing.Size(146, 126);
+            this.dvgProvincia.TabIndex = 19;
             // 
-            // btnCancelar
+            // Nombre
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(210, 30);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 21;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtDepto);
+            this.groupBox1.Location = new System.Drawing.Point(5, 8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(295, 122);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnBuscar);
+            this.groupBox2.Location = new System.Drawing.Point(6, 69);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(274, 42);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
             // 
             // ABMProvincia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 62);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtDepto);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(466, 217);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.dvgProvincia);
             this.Name = "ABMProvincia";
             this.Text = "ABMProvincia";
+            ((System.ComponentModel.ISupportInitialize)(this.dvgProvincia)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtDepto;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DataGridView dvgProvincia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
