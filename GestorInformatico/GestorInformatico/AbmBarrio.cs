@@ -190,6 +190,8 @@ namespace GestorInformatico
             ABMProvincia provincia = new ABMProvincia();
             provincia.ShowDialog();
         }
+
+       
     }
 
 }
