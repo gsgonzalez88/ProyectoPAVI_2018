@@ -654,14 +654,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1136, 334);
             this.Controls.Add(this.dgvParticular);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ABMCliente";
-            this.Text = "Nuevo Cliente";
+            this.Text = " Cliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EstaSeguro);
             this.Load += new System.EventHandler(this.ABMCliente_Load);
             this.groupBox1.ResumeLayout(false);
