@@ -30,10 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABMProvincia));
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtDepto = new System.Windows.Forms.TextBox();
+            this.txtProvincia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.BtnSalir = new System.Windows.Forms.Button();
+            this.btnRefescar = new System.Windows.Forms.Button();
             this.dvgProvincia = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -43,22 +45,12 @@
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnBuscar
+            // txtProvincia
             // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(6, 9);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(24, 27);
-            this.btnBuscar.TabIndex = 18;
-            this.toolTip1.SetToolTip(this.btnBuscar, "Buscar");
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // txtDepto
-            // 
-            this.txtDepto.Location = new System.Drawing.Point(74, 16);
-            this.txtDepto.Name = "txtDepto";
-            this.txtDepto.Size = new System.Drawing.Size(206, 20);
-            this.txtDepto.TabIndex = 16;
+            this.txtProvincia.Location = new System.Drawing.Point(74, 16);
+            this.txtProvincia.Name = "txtProvincia";
+            this.txtProvincia.Size = new System.Drawing.Size(206, 20);
+            this.txtProvincia.TabIndex = 16;
             // 
             // label1
             // 
@@ -71,6 +63,41 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Nombre";
             // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.Location = new System.Drawing.Point(6, 9);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(28, 32);
+            this.btnAceptar.TabIndex = 48;
+            this.toolTip1.SetToolTip(this.btnAceptar, "Guardar");
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
+            this.BtnSalir.Location = new System.Drawing.Point(74, 9);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(28, 32);
+            this.BtnSalir.TabIndex = 50;
+            this.toolTip1.SetToolTip(this.BtnSalir, "Salir");
+            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
+            // btnRefescar
+            // 
+            this.btnRefescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefescar.Image")));
+            this.btnRefescar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefescar.Location = new System.Drawing.Point(40, 9);
+            this.btnRefescar.Name = "btnRefescar";
+            this.btnRefescar.Size = new System.Drawing.Size(28, 32);
+            this.btnRefescar.TabIndex = 49;
+            this.toolTip1.SetToolTip(this.btnRefescar, "Refescar");
+            this.btnRefescar.UseVisualStyleBackColor = true;
+            this.btnRefescar.Click += new System.EventHandler(this.btnRefescar_Click);
+            // 
             // dvgProvincia
             // 
             this.dvgProvincia.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
@@ -79,7 +106,7 @@
             this.Nombre});
             this.dvgProvincia.Location = new System.Drawing.Point(306, 8);
             this.dvgProvincia.Name = "dvgProvincia";
-            this.dvgProvincia.Size = new System.Drawing.Size(146, 126);
+            this.dvgProvincia.Size = new System.Drawing.Size(146, 122);
             this.dvgProvincia.TabIndex = 19;
             // 
             // Nombre
@@ -91,7 +118,7 @@
             // 
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtDepto);
+            this.groupBox1.Controls.Add(this.txtProvincia);
             this.groupBox1.Location = new System.Drawing.Point(5, 8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(295, 122);
@@ -100,10 +127,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnBuscar);
+            this.groupBox2.Controls.Add(this.btnAceptar);
+            this.groupBox2.Controls.Add(this.BtnSalir);
+            this.groupBox2.Controls.Add(this.btnRefescar);
             this.groupBox2.Location = new System.Drawing.Point(6, 69);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(274, 42);
+            this.groupBox2.Size = new System.Drawing.Size(274, 47);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             // 
@@ -112,11 +141,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(466, 217);
+            this.ClientSize = new System.Drawing.Size(464, 144);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dvgProvincia);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ABMProvincia";
-            this.Text = "ABMProvincia";
+            this.Text = "Provincia";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EstaSeguro);
+            this.Load += new System.EventHandler(this.ABMProvincia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvgProvincia)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -127,13 +159,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtDepto;
+        private System.Windows.Forms.TextBox txtProvincia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridView dvgProvincia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button BtnSalir;
+        private System.Windows.Forms.Button btnRefescar;
     }
 }
