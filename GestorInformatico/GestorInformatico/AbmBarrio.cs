@@ -125,7 +125,7 @@ namespace GestorInformatico
             cmbLocalidad.SelectedIndex = -1;
             cmbDepartamento.SelectedIndex = -1;
             cmbProvincia.SelectedIndex = -1;
-            txtBarrio.Text = "";
+            txtBarrio.Clear();
             cmbLocalidad.Enabled = true;
             cmbDepartamento.Enabled = true;
             cmbProvincia.Enabled = true;
