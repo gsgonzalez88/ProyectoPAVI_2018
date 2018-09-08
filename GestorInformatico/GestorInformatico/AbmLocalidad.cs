@@ -109,7 +109,7 @@ namespace GestorInformatico
 
                     if (txtCod.Text != "")
                     {
-                        Milibreria.Utilidades.Insert("Insert Localidad Values ('" + txtLoc.Text + "'," + cmbDepartamento.SelectedValue.ToString() + "," + txtCod.Text + ",GETDATE())");
+                        Milibreria.Utilidades.Insert("Insert Localidad Values ('" + txtLoc.Text + "'," + cmbDepartamento.SelectedValue.ToString() + "," + txtCod.Text + ")");
                         MessageBox.Show("Guardado Correctamente", "Informacion");
                         txtCod.Focus();
                         return;
