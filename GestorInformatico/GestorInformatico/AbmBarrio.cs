@@ -142,7 +142,7 @@ namespace GestorInformatico
                     {
                         if (cmbLocalidad.SelectedValue != null)
                         {
-                            Milibreria.Utilidades.Insert("Insert Barrio Values ('"+txtBarrio.Text+"',"+cmbLocalidad.SelectedValue+",GETDATE()" +")");
+                            Milibreria.Utilidades.Insert("Insert Barrio Values ('"+txtBarrio.Text+"',"+cmbLocalidad.SelectedValue +")");
                             MessageBox.Show("Guardado Correctament", "Informacion");
                             return;
                         }

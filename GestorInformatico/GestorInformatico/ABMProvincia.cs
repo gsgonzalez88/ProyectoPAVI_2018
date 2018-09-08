@@ -46,7 +46,7 @@ namespace GestorInformatico
                     + "  where Descripcion = '" + txtProvincia.Text + "'");
                 if (table.Rows.Count == 0)
                 {
-                    Milibreria.Utilidades.Insert("Insert Provincia Values('" + txtProvincia.Text + "'," + "GETDATE())");
+                    Milibreria.Utilidades.Insert("Insert Provincia Values('" + txtProvincia.Text + "'," + ")");
                     MessageBox.Show("Gurdado Correctamente", "Informacion");
                     return;
                 }
