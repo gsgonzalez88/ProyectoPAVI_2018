@@ -49,12 +49,12 @@ namespace GestorInformatico
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(txtUsuario.Text))
+            {
             rbtActivo.Visible = true;
             rbtInactivo.Visible = true;
             label4.Visible = true;
             txtNro.Enabled = false;
-            if (!string.IsNullOrEmpty(txtUsuario.Text))
-            {
                 DataTable table = Milibreria.Utilidades.Ejecutar("select e.NroDoc,* from Usuario u"
                 + " join Empleado e on u.IdEmpleado = e.IdEmpleado where u.Nombre ='" + txtUsuario.Text + "'");
                 if (table.Rows.Count>0)
@@ -227,6 +227,7 @@ namespace GestorInformatico
                    sql += " where IdEmpleado =  " + table.Rows[0]["IdEmpleado"].ToString() + " and IdUsuario = " + table.Rows[0]["IdUsuario"].ToString();
                    Milibreria.Utilidades.Update(sql);
                    MessageBox.Show("Actulizacion Correcta", "Informacion");
+                   return;
                }
             }
             else
@@ -241,7 +242,5 @@ namespace GestorInformatico
         {
             Close();
         }
-
-      
     }
 }

@@ -39,17 +39,12 @@ namespace GestorInformatico
                         return;
                     }
             	}
-               
                     
             }
             catch (Exception)
             {
-
-                MessageBox.Show("Usuario o Constraseña incorrecto","Inicio Incorrecto",MessageBoxButtons.OK,MessageBoxIcon.Error); 
-                
+                MessageBox.Show("Usuario o Constraseña incorrecto","Inicio Incorrecto",MessageBoxButtons.OK,MessageBoxIcon.Error);  
             }
-          
-                     
            
         }
 
@@ -68,8 +63,5 @@ namespace GestorInformatico
         {
             Close();
         }
-
-   
-
     }
 }
