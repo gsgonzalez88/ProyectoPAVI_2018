@@ -36,3 +36,6 @@ C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\o
 C:\Users\maxi-\Documents\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.ABMProvincia.resources
 D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.AbmDepto.resources
 D:\Pav I\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.ABMProvincia.resources
+D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\bin\Debug\GestorInformatico.exe.config
+D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.exe
+D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.pdb
