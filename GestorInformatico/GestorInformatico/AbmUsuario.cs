@@ -20,13 +20,16 @@ namespace GestorInformatico
         private void AbmUsuario_Load(object sender, EventArgs e)
         {
             LlenarGrilla();
-
+            txtContraAnterior.Enabled = false;
+            rbtActivo.Visible = false;
+            rbtInactivo.Visible = false;
+            label4.Visible = false;
         }
 
         private void LlenarGrilla()
         {
-            DataTable tabla = Milibreria.Utilidades.Ejecutar("Select  em.Descripcion,e.Descripcion as Estado,* from Usuario "
-            +" left outer join Estado e on e.idEstado = c.IdEstado"
+            DataTable tabla = Milibreria.Utilidades.Ejecutar("Select  em.Nombre as NombreEmpleado,em.Apellido,e.Descripcion as Estado,* from Usuario u "
+            +" left outer join Estado e on e.idEstado = u.IdEstado"
             +" left outer join Empleado em on u.IdEmpleado = em.IdEmpleado");
             dgvUsuario.Rows.Clear();
             if (tabla.Rows.Count > 0)
@@ -35,11 +38,192 @@ namespace GestorInformatico
                 {
                     dgvUsuario.Rows.Add(tabla.Rows[i]["Nombre"]
                          , tabla.Rows[i]["Estado"]
-                        , tabla.Rows[i]["Empleado"]
+                        , tabla.Rows[i]["NombreEmpleado"]
+                        ,tabla.Rows[i]["Apellido"]
                         );
                 }
 
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            rbtActivo.Visible = true;
+            rbtInactivo.Visible = true;
+            label4.Visible = true;
+            txtNro.Enabled = false;
+            if (!string.IsNullOrEmpty(txtUsuario.Text))
+            {
+                DataTable table= Milibreria.Utilidades.Ejecutar("select * from usuario where Nombre ='" + txtUsuario.Text + "'");
+                if (table.Rows.Count>0)
+                {
+                    txtContraAnterior.Enabled = true;
+                     int estado = Convert.ToInt32( table.Rows[0]["IdEstado"].ToString());
+                     if (estado == 1)
+                    {
+                        rbtActivo.Checked = true;
+                    }
+                     else
+                     {
+                         if (estado == 2)
+                         {
+                            rbtInactivo.Checked = true;
+                         }
+                     }
+                }
+                else
+                {
+                    MessageBox.Show("No existe el usuario", "Informacion");
+                    return;
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Complete el Campo", "Informacion");
+                txtUsuario.Focus();
+                return;
+            }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            DataTable table;
+            txtContraAnterior.Enabled = false;
+            if (!string.IsNullOrEmpty(txtUsuario.Text))
+            {
+                if (!string.IsNullOrEmpty(txtContraseña.Text))
+                {
+                    if (!string.IsNullOrEmpty(txtConfirmar.Text))
+                    {
+                        if (txtConfirmar.Text == txtContraseña.Text)
+                        {
+                            if (!string.IsNullOrEmpty(txtNro.Text))
+                            {
+                                table = Milibreria.Utilidades.Ejecutar("Select IdEmpleado from Empleado where NroDoc = " + txtNro.Text);
+                                Milibreria.Utilidades.Insert("Insert Usuario values ('" + txtUsuario.Text + "'," + txtContraseña.Text + "," + table.Rows[0]["IdEmpleado"].ToString()+",1)");
+                                MessageBox.Show("Creacion de usuario Exitosa", "Informacion");
+                                return;
+                            }
+                            else
+                            {
+                                MessageBox.Show("El Empleado no existe", "Informacion");
+                                txtNro.Focus();
+                                return;
+                            }
+                           
+                        }
+                        else
+                        {
+                            MessageBox.Show("Las Contraseñas no coinciden", "Informacion");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Complete el Campo", "Informacion");
+                        txtConfirmar.Focus();
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Complete el Campo", "Informacion");
+                    txtContraseña.Focus();
+                    return;
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Complete el Campo", "Informacion");
+                txtUsuario.Focus();
+                return;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LlenarGrilla();
+            rbtActivo.Visible = false;
+            rbtInactivo.Visible = false;
+            label4.Visible = false;
+            txtUsuario.Text = "";
+            txtNro.Text = "";
+            txtContraseña.Text = "";
+            txtConfirmar.Text = "";
+            txtContraAnterior.Text = "";
+            txtContraAnterior.Enabled = false;
+            rbtActivo.Checked = false;
+            rbtInactivo.Checked = false;
+            txtNro.Enabled = false;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtUsuario.Text))
+            {
+                Milibreria.Utilidades.Update("Update Usuario  set IdEstado =2 where Nombre = '" + txtUsuario.Text+"'");
+                MessageBox.Show("Usuario Dado de Baja", "Informacion");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Complete el Campo", "Informacion");
+                txtUsuario.Focus();
+                return;
+            }
+
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtUsuario.Text))
+            {
+               DataTable table=  Milibreria.Utilidades.Ejecutar("select e.IdEmpleado,* from Usuario u"
+                + " join Empleado e on u.IdEmpleado = e.IdEmpleado where u.Nombre ='" + txtUsuario.Text + "'");
+               txtNro.Text = table.Rows[0]["NroDoc"].ToString();
+               if (txtUsuario.Text != table.Rows[0]["Nombre"].ToString() || txtUsuario.Text == table.Rows[0]["Nombre"].ToString())
+               {
+                   string sql = "update usuario set Nombre ='" + txtUsuario.Text;
+                   if (txtContraAnterior.Text !=table.Rows[0]["Contraseña"].ToString())
+                   {
+                       MessageBox.Show("Contraseña Anterior incorrecta", "Informacion");
+                       return;
+                   }
+                   else
+                   {
+                       if (txtContraseña.Text == txtConfirmar.Text && !string.IsNullOrEmpty(txtContraseña.Text) && !string.IsNullOrEmpty(txtConfirmar.Text))
+                       {
+                           sql += " ," + txtContraseña.Text +",";
+                       }
+                       else
+                       {
+                           MessageBox.Show("Las Contraseñas no coinciden", "Informacion");
+                           return;
+                       }
+                   }
+                   if (rbtInactivo.Checked)
+                   {
+                       sql += " IdEstado = " + 2;
+
+                   }
+                   if (rbtActivo.Checked)
+                   {
+                       sql += " IdEstado = " + 1;
+
+                   }
+                   Milibreria.Utilidades.Update(sql);
+               }
+            }
+            else
+            {
+                MessageBox.Show("Complete el Campo", "Informacion");
+                txtUsuario.Focus();
+                return;
+            }
+        }
+
+      
     }
 }
