@@ -25,11 +25,19 @@ namespace GestorInformatico
                 DataTable ds = Utilidades.Ejecutar(cmd);
                 
                 if (ds.Rows.Count >0)
-	            {
+                {
+                    if (ds.Rows[0]["IdEstado"].ToString() == "1")
+                    {
 		          MessageBox.Show("Inicio correcto","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
                   this.Hide();
                   Menu frmMenu = new Menu();
                   frmMenu.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario esta dado de Baja","Informacion");
+                        return;
+                    }
             	}
                
                     

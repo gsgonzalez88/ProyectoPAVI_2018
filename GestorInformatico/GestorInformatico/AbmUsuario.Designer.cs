@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AbmUsuario));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,21 +41,22 @@
             this.rbtActivo = new System.Windows.Forms.RadioButton();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRefescar = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNro = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtContraAnterior = new System.Windows.Forms.TextBox();
             this.label5CA = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtNro = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -157,6 +159,7 @@
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(27, 29);
             this.btnActualizar.TabIndex = 51;
+            this.toolTip1.SetToolTip(this.btnActualizar, "Modificar");
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
@@ -168,19 +171,21 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(27, 29);
             this.btnBuscar.TabIndex = 50;
+            this.toolTip1.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // button2
+            // btnRefescar
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(105, 14);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(27, 29);
-            this.button2.TabIndex = 49;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnRefescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefescar.Image")));
+            this.btnRefescar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefescar.Location = new System.Drawing.Point(105, 14);
+            this.btnRefescar.Name = "btnRefescar";
+            this.btnRefescar.Size = new System.Drawing.Size(27, 29);
+            this.btnRefescar.TabIndex = 49;
+            this.toolTip1.SetToolTip(this.btnRefescar, "Refrescar");
+            this.btnRefescar.UseVisualStyleBackColor = true;
+            this.btnRefescar.Click += new System.EventHandler(this.button2_Click);
             // 
             // BtnSalir
             // 
@@ -189,7 +194,9 @@
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(27, 29);
             this.BtnSalir.TabIndex = 48;
+            this.toolTip1.SetToolTip(this.BtnSalir, "Salir");
             this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // btnAceptar
             // 
@@ -199,6 +206,7 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(27, 29);
             this.btnAceptar.TabIndex = 47;
+            this.toolTip1.SetToolTip(this.btnAceptar, "Aceptar");
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
@@ -217,26 +225,6 @@
             this.dgvUsuario.Name = "dgvUsuario";
             this.dgvUsuario.Size = new System.Drawing.Size(445, 221);
             this.dgvUsuario.TabIndex = 52;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Usuario";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            // 
-            // Empleado
-            // 
-            this.Empleado.HeaderText = "Nombre";
-            this.Empleado.Name = "Empleado";
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
             // 
             // groupBox1
             // 
@@ -259,6 +247,13 @@
             this.groupBox1.Size = new System.Drawing.Size(334, 258);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
+            // 
+            // txtNro
+            // 
+            this.txtNro.Location = new System.Drawing.Point(126, 135);
+            this.txtNro.Name = "txtNro";
+            this.txtNro.Size = new System.Drawing.Size(190, 20);
+            this.txtNro.TabIndex = 47;
             // 
             // label5
             // 
@@ -294,20 +289,13 @@
             this.groupBox2.Controls.Add(this.btnActualizar);
             this.groupBox2.Controls.Add(this.BtnSalir);
             this.groupBox2.Controls.Add(this.btnBuscar);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.btnRefescar);
             this.groupBox2.Controls.Add(this.btnAceptar);
             this.groupBox2.Location = new System.Drawing.Point(6, 191);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(308, 52);
             this.groupBox2.TabIndex = 43;
             this.groupBox2.TabStop = false;
-            // 
-            // txtNro
-            // 
-            this.txtNro.Location = new System.Drawing.Point(126, 135);
-            this.txtNro.Name = "txtNro";
-            this.txtNro.Size = new System.Drawing.Size(190, 20);
-            this.txtNro.TabIndex = 47;
             // 
             // btnEliminar
             // 
@@ -317,8 +305,29 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(27, 29);
             this.btnEliminar.TabIndex = 52;
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Usuario";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            // 
+            // Empleado
+            // 
+            this.Empleado.HeaderText = "Nombre";
+            this.Empleado.Name = "Empleado";
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
             // 
             // AbmUsuario
             // 
@@ -352,20 +361,21 @@
         public System.Windows.Forms.RadioButton rbtActivo;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRefescar;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.DataGridView dgvUsuario;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.TextBox txtContraAnterior;
         private System.Windows.Forms.Label label5CA;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNro;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
     }
 }

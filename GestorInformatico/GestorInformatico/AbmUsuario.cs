@@ -24,6 +24,7 @@ namespace GestorInformatico
             rbtActivo.Visible = false;
             rbtInactivo.Visible = false;
             label4.Visible = false;
+            txtContraAnterior.Enabled = false;
         }
 
         private void LlenarGrilla()
@@ -54,9 +55,11 @@ namespace GestorInformatico
             txtNro.Enabled = false;
             if (!string.IsNullOrEmpty(txtUsuario.Text))
             {
-                DataTable table= Milibreria.Utilidades.Ejecutar("select * from usuario where Nombre ='" + txtUsuario.Text + "'");
+                DataTable table = Milibreria.Utilidades.Ejecutar("select e.NroDoc,* from Usuario u"
+                + " join Empleado e on u.IdEmpleado = e.IdEmpleado where u.Nombre ='" + txtUsuario.Text + "'");
                 if (table.Rows.Count>0)
                 {
+                    txtNro.Text = table.Rows[0]["NroDoc"].ToString();
                     txtContraAnterior.Enabled = true;
                      int estado = Convert.ToInt32( table.Rows[0]["IdEstado"].ToString());
                      if (estado == 1)
@@ -156,7 +159,7 @@ namespace GestorInformatico
             txtContraAnterior.Enabled = false;
             rbtActivo.Checked = false;
             rbtInactivo.Checked = false;
-            txtNro.Enabled = false;
+            txtNro.Enabled = true;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -186,21 +189,29 @@ namespace GestorInformatico
                if (txtUsuario.Text != table.Rows[0]["Nombre"].ToString() || txtUsuario.Text == table.Rows[0]["Nombre"].ToString())
                {
                    string sql = "update usuario set Nombre ='" + txtUsuario.Text;
-                   if (txtContraAnterior.Text !=table.Rows[0]["Contraseña"].ToString())
+                   if (txtContraAnterior.Text != table.Rows[0]["Contraseña"].ToString() && !string.IsNullOrEmpty(txtContraAnterior.Text))
                    {
                        MessageBox.Show("Contraseña Anterior incorrecta", "Informacion");
                        return;
                    }
                    else
                    {
-                       if (txtContraseña.Text == txtConfirmar.Text && !string.IsNullOrEmpty(txtContraseña.Text) && !string.IsNullOrEmpty(txtConfirmar.Text))
+                       if (!string.IsNullOrEmpty(txtContraseña.Text) || !string.IsNullOrEmpty(txtConfirmar.Text))
                        {
-                           sql += " ," + txtContraseña.Text +",";
+                           if (txtContraseña.Text == txtConfirmar.Text)
+                           {
+                               sql += "',Contraseña = " + txtContraseña.Text + ",";
+                           }
+                           else
+                           {
+                               MessageBox.Show("Contraseña no coinciden", "Informacion");
+                               return;
+                           }
+                          
                        }
                        else
                        {
-                           MessageBox.Show("Las Contraseñas no coinciden", "Informacion");
-                           return;
+                           sql += "',Contraseña = " + table.Rows[0]["Contraseña"].ToString() + ",";
                        }
                    }
                    if (rbtInactivo.Checked)
@@ -213,7 +224,9 @@ namespace GestorInformatico
                        sql += " IdEstado = " + 1;
 
                    }
+                   sql += " where IdEmpleado =  " + table.Rows[0]["IdEmpleado"].ToString() + " and IdUsuario = " + table.Rows[0]["IdUsuario"].ToString();
                    Milibreria.Utilidades.Update(sql);
+                   MessageBox.Show("Actulizacion Correcta", "Informacion");
                }
             }
             else
@@ -222,6 +235,11 @@ namespace GestorInformatico
                 txtUsuario.Focus();
                 return;
             }
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
       
