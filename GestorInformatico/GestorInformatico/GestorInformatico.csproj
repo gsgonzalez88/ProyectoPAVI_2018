@@ -70,6 +70,12 @@
     <Compile Include="AbmDepto.Designer.cs">
       <DependentUpon>AbmDepto.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMEmpleado.Designer.cs">
+      <DependentUpon>ABMEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="AbmLocalidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AbmDepto.resx">
       <DependentUpon>AbmDepto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMEmpleado.resx">
+      <DependentUpon>ABMEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AbmLocalidad.resx">
       <DependentUpon>AbmLocalidad.cs</DependentUpon>

@@ -66,6 +66,12 @@ namespace GestorInformatico
             ABMProvincia Provincia = new ABMProvincia();
             Provincia.ShowDialog();
         }
+                
+        private void empleadoToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            ABMEmpleado empleado = new ABMEmpleado();
+            empleado.ShowDialog();
+        }
 
       
 

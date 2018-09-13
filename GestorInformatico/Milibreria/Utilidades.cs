@@ -20,6 +20,7 @@ namespace Milibreria
             {
 
                 string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
+                //string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BD;User ID=sa;Password=Ataquero88";
                
 
                 SqlConnection con = new SqlConnection();

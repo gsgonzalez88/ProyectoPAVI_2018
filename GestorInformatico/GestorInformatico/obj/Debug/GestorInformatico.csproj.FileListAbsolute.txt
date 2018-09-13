@@ -57,3 +57,4 @@ C:\git\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInf
 C:\git\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Menu.resources
 C:\git\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Properties.Resources.resources
 C:\git\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.csproj.GenerateResource.Cache
+C:\git\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.ABMEmpleado.resources
