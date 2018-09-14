@@ -19,11 +19,9 @@ namespace GestorInformatico
             InitializeComponent();
         }
         int a = 0;
-       
 
         private void ABMCliente_Load(object sender, EventArgs e)
         {
-          
             cmbBarrio.SelectedIndex = -1;
             cmbDepto.SelectedIndex = -1;
             cmbLocalidad.SelectedIndex = -1;
@@ -36,16 +34,12 @@ namespace GestorInformatico
             cmbProvin.DisplayMember = "Descripcion";
             cmbProvin.ValueMember = "idProvincia";
             cmbProvin.SelectedIndex = -1;
-
             cmbTdoc.DataSource = Milibreria.Utilidades.Ejecutar("Select * from TipoDoc"); 
             cmbTdoc.DisplayMember = "Descripcion";
             cmbTdoc.ValueMember = "IdTipoDoc";
             cmbTdoc.SelectedIndex = -1;
-
             LlenarGrilla();
-
             a = 1;
-           
         }
 
         private void EstaSeguro(object sender, FormClosingEventArgs e)
@@ -72,124 +66,123 @@ namespace GestorInformatico
             loc.ShowDialog();
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (rbtEmpresa.Checked || rbtParticular.Checked )
+            if (rbtEmpresa.Checked || rbtParticular.Checked)
             {
-                if (txtNom.Text != "")
+                if (!string.IsNullOrEmpty(txtNom.Text))
                 {
-                    if (txtCalle.Text != "")
+                    if (!string.IsNullOrEmpty(txtCalle.Text))
                     {
-                        if (cmbProvin.Text != "" || cmbProvin.SelectedIndex != -1)
+                        if (!string.IsNullOrEmpty(cmbProvin.Text) || cmbProvin.SelectedIndex != -1)
                         {
-                            if (cmbDepto.Text != "" || cmbDepto.SelectedIndex != -1)
+                            if (!string.IsNullOrEmpty(cmbDepto.Text) || cmbDepto.SelectedIndex != -1)
                             {
-                                if (cmbLocalidad.Text != "" || cmbLocalidad.SelectedIndex != -1)
+                                if (!string.IsNullOrEmpty(cmbLocalidad.Text) || cmbLocalidad.SelectedIndex != -1)
                                 {
-                                    if (cmbBarrio.Text != "" || cmbBarrio.SelectedIndex != -1)
+                                    if (!string.IsNullOrEmpty(cmbBarrio.Text) || cmbBarrio.SelectedIndex != -1)
                                     {
-                                        if (txtNroCalle.Text != "")
+                                        if (!string.IsNullOrEmpty(cmbProvin.Text))
                                         {
                                             if (rbtEmpresa.Checked == true)
                                             {
-                                                if (txtCuit.Text != "")
+                                                if (!string.IsNullOrEmpty(txtCuit.Text))
                                                 {
-
                                                     Insert(sender, e);
                                                 }
                                                 else
                                                 {
-                                                    MessageBox.Show("Debe ingresar Cuit", "Informacion");
+                                                    MessageBox.Show("Ingrese Cuit", "Informacion");
+                                                    txtCuit.BackColor = Color.LightBlue;
                                                     txtCuit.Focus();
                                                 }
-
                                             }
                                             else
                                             {
-                                                if (txtApellido.Text != "")
+                                                if (!string.IsNullOrEmpty(txtApellido.Text))
                                                 {
-                                                    if (cmbTdoc.Text != "" || cmbTdoc.SelectedIndex != -1)
+                                                    if (!string.IsNullOrEmpty(cmbTdoc.Text) || cmbTdoc.SelectedIndex != -1)
                                                     {
-                                                        if (txtNroDoc.Text != "")
+                                                        if (!string.IsNullOrEmpty(txtNroDoc.Text))
                                                         {
+                                                            txtCuit.Text = "NUll";
                                                             Insert(sender, e);
                                                         }
                                                         else
                                                         {
-                                                            MessageBox.Show("Debe ingresar Nro", "Informacion");
+                                                            MessageBox.Show("Ingrese Nro", "Informacion");
+                                                            txtNroDoc.BackColor = Color.LightBlue;
                                                             txtNroDoc.Focus();
                                                         }
                                                     }
                                                     else
                                                     {
-                                                        MessageBox.Show("Debe ingresar Tipo Documento", "Informacion");
+                                                        MessageBox.Show("Ingrese Tipo Documento", "Informacion");
+                                                        cmbTdoc.BackColor = Color.LightBlue;
                                                         cmbTdoc.Focus();
                                                     }
                                                 }
                                                 else
                                                 {
-                                                    MessageBox.Show("Debe ingresar Apellido", "Informacion");
+                                                    MessageBox.Show("Ingrese Apellido", "Informacion");
+                                                    txtApellido.BackColor = Color.LightBlue;
                                                     txtApellido.Focus();
                                                 }
-
-
                                             }
-
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Debe ingresar un nro Calle", "Informacion");
+                                            MessageBox.Show("Ingrese un nro Calle", "Informacion");
+                                            txtNroCalle.BackColor = Color.LightBlue;
                                             txtNroCalle.Focus();
                                         }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Debe ingresar un Barrio", "Informacion");
+                                        MessageBox.Show("Ingrese un Barrio", "Informacion");
+                                        cmbBarrio.BackColor = Color.LightBlue;
                                         cmbBarrio.Focus();
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Debe ingresar una Localidad", "Informacion");
+                                    MessageBox.Show("Ingrese una Localidad", "Informacion");
+                                    cmbLocalidad.BackColor = Color.LightBlue;
                                     cmbLocalidad.Focus();
                                 }
                             }
-
                             else
                             {
-                                MessageBox.Show("Debe ingresar una Departamento", "Informacion");
+                                MessageBox.Show("Ingrese una Departamento", "Informacion");
+                                cmbDepto.BackColor = Color.LightBlue;
                                 cmbDepto.Focus();
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Debe ingresar una Provincia", "Informacion");
+                            MessageBox.Show("Ingrese una Provincia", "Informacion");
+                            cmbProvin.BackColor = Color.LightBlue;
                             cmbProvin.Focus();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Debe ingresar una Calle", "Informacion");
+                        MessageBox.Show("Ingrese una Calle", "Informacion");
+                        txtCalle.BackColor = Color.LightBlue;
                         txtCalle.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Debe ingresar un Nombre", "Informacion");
+                    MessageBox.Show("Ingrese un Nombre", "Informacion");
+                    txtNom.BackColor = Color.LightBlue;
                     txtNom.Focus();
                 }
-
-      
             }
             else
             {
                 MessageBox.Show("Seleccione un tipo de cliente", "Informacion");
             }
-           
-           
-                
-
-  
         }
 
         private void cmbProvin_SelectedIndexChanged(object sender, EventArgs e)
@@ -242,7 +235,6 @@ namespace GestorInformatico
          
             if (rbtParticular.Checked)
             {
-                
                 label6.Visible = false;
                 txtCuit.Visible = false;
                 rbtEmpresa.Visible = false;
@@ -251,8 +243,7 @@ namespace GestorInformatico
                 cmbTdoc.Visible = true;
                 label2.Visible = true;
                 label3.Visible = true;
-                label4.Visible = true;
-                
+                label4.Visible = true;        
             }
             else
             {
@@ -293,12 +284,9 @@ namespace GestorInformatico
             rbtActivo.Visible = false;
             rbtInactivo.Checked = false;
             rbtActivo.Checked = false;
-
-
             txtNroDoc.Enabled = true;
             txtCuit.Enabled = true;
             cmbTdoc.Enabled = true;
-
             txtNom.Enabled = true;
             txtApellido.Enabled = true;
             txtTelefono.Enabled = true;
@@ -310,29 +298,19 @@ namespace GestorInformatico
             cmbBarrio.Enabled = true;
             cmbLocalidad.Enabled = true;
             LlenarGrilla();
-
             a = 1;
          }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             int nro;
-            if (txtBuscar.Text != "")
+            if (!string.IsNullOrEmpty(txtBuscar.Text))
             {
-
-
                 DataTable table;
                 nro = Convert.ToInt32(txtBuscar.Text);
-
-              
-                   table = Milibreria.Utilidades.ConsultarCliente(nro);
-
-
-               
-
+                table = Milibreria.Utilidades.ConsultarCliente(nro);
                 if (table.Rows.Count > 0)
                 {
-
                     string tipo = table.Rows[0]["TipoCliente"].ToString();
                     if (tipo == "Empresa")
                     {
@@ -377,8 +355,6 @@ namespace GestorInformatico
                     txtCuit.Enabled = false;
                     txtNroDoc.Enabled = false;
                     cmbTdoc.Enabled = false;
-
-
                 }
                 else
                 {
@@ -389,8 +365,6 @@ namespace GestorInformatico
             {
                 MessageBox.Show("Ingrese un nro de documento", "Informacion");
             }
-            
-
         }
 
         private void rbtEmpresa_CheckedChanged(object sender, EventArgs e)
@@ -427,7 +401,7 @@ namespace GestorInformatico
                     nro = Convert.ToInt32(txtBuscar.Text);
 
                     Milibreria.Utilidades.Ejecutar("Update Cliente set IdEstado =2where Cuit =  " + txtBuscar.Text);
-                    MessageBox.Show("Cliente  eliminado", "Informacion");
+                    MessageBox.Show("Cliente  dado de Baja", "Informacion");
                 }
                 if (rbtParticular.Checked)
                 {
@@ -437,7 +411,7 @@ namespace GestorInformatico
                         nro = Convert.ToInt32(txtBuscar.Text);
 
                         Milibreria.Utilidades.Ejecutar("Update Cliente set IdEstado =2 where NroDoc =  " + txtBuscar.Text);
-                        MessageBox.Show("Cliente  eliminado", "Informacion");
+                        MessageBox.Show("Cliente dado de Baja", "Informacion");
                     }
                 }
             }
@@ -445,12 +419,7 @@ namespace GestorInformatico
             {
                 MessageBox.Show("Busque el cliente a eliminar", "Informacion");
             }
-
-            
         }
-
-
-
         private void Insert(object sender, EventArgs e)
         {
             DataTable table = new DataTable();
@@ -471,24 +440,44 @@ namespace GestorInformatico
             }
             else
             {
+                if (rbtEmpresa.Checked == true)
+                {
 
+                    Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','"
+                        + txtApellido.Text + "'," 
+                        + txtCuit.Text +","
+                        + "NULL,NULL,'"
+                        + rbtEmpresa.Text + "',"
+                        + cmbBarrio.SelectedValue + ","
+                        + cmbLocalidad.SelectedValue + ","
+                        + cmbDepto.SelectedValue + ","
+                        + cmbProvin.SelectedValue + ",'"
+                        + txtTelefono.Text + "','"
+                        + txtEmail.Text + "','" 
+                        + txtCalle.Text  + "',"
+                        + txtNroCalle.Text + ",1)");
+                    MessageBox.Show("Se creo correctamente", "Informacion");
+                }
+                else
+                {
 
-                Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','" 
-                    + txtApellido.Text + "'," + txtCuit.Text + "," 
-                    + cmbTdoc.SelectedValue.ToString() + "," 
-                    + txtNroDoc.Text + ",'"
-                    + rbtEmpresa.Text + "',"
-                    + cmbBarrio.SelectedValue.ToString() + ","
-                    + cmbLocalidad.SelectedValue.ToString() + ","
-                    + cmbDepto.SelectedValue.ToString() + ","
-                    + cmbProvin.SelectedValue.ToString() + ","
-                    + txtTelefono.Text.ToString() + ",'"
-                    + txtEmail.Text.ToString()
-                    + "','" + txtCalle.Text + "',"
-                    + txtNroCalle.Text + ",1)");
+                
+                Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','"
+                       + txtApellido.Text + "',NULL," 
+                       + cmbTdoc.SelectedValue + ","
+                       + txtNroDoc.Text + ",'"
+                       + rbtEmpresa.Text + "',"
+                       + cmbBarrio.SelectedValue + ","
+                       + cmbLocalidad.SelectedValue + ","
+                       + cmbDepto.SelectedValue + ","
+                       + cmbProvin.SelectedValue + ","
+                       + txtTelefono.Text.ToString() + ",'"
+                       + txtEmail.Text.ToString()
+                       + "','" + txtCalle.Text + "',"
+                       + txtNroCalle.Text + ",1)");
                 MessageBox.Show("Se creo correctamente", "Informacion");
-
-            }
+                    }
+                }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -513,8 +502,6 @@ namespace GestorInformatico
                 string sql = "Update Cliente ";
                     if (tabla.Rows.Count>0)
             	{
-	    	    
-	           
                 if (txtApellido.Text != tabla.Rows[0]["Apellido"].ToString() || txtNom.Text !=tabla.Rows[0]["Nombre"].ToString() ||
                     txtNroCalle.Text != tabla.Rows[0]["NroCalle"].ToString() || txtCalle.Text != tabla.Rows[0]["Calle"].ToString() ||
                     txtTelefono.Text != tabla.Rows[0]["nroTelefono"].ToString() || txtEmail.Text != tabla.Rows[0]["Email"].ToString() ||
@@ -601,7 +588,6 @@ namespace GestorInformatico
                         , tabla.Rows[i]["Estado"]
                         );
                 }
-
             }
         }
 

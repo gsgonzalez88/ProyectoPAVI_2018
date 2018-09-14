@@ -19,31 +19,63 @@ namespace GestorInformatico
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            try
+            if (!string.IsNullOrEmpty(txtUsuario.Text))
             {
-                string cmd = string.Format("Select * from Usuario where Nombre = '{0}' and Contraseña ='{1}'", txtUsuario.Text.Trim(), txtContraseña.Text.Trim());
-                DataTable ds = Utilidades.Ejecutar(cmd);
-                
-                if (ds.Rows.Count >0)
+
+                if (!string.IsNullOrEmpty(txtContraseña.Text))
                 {
-                    if (ds.Rows[0]["IdEstado"].ToString() == "1")
-                    {
-		          MessageBox.Show("Inicio correcto","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                  this.Hide();
-                  Menu frmMenu = new Menu();
-                  frmMenu.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show("El usuario esta dado de Baja","Informacion");
-                        return;
-                    }
-            	}
                     
+               
+                try
+                {
+                    DataTable ds = Utilidades.Ejecutar("Select * from Usuario where Nombre = '" + txtUsuario.Text + "'");
+
+                    if (ds.Rows.Count > 0)
+                    {
+                        if (txtContraseña.Text == ds.Rows[0]["Contraseña"].ToString())
+                        {
+                            if (ds.Rows[0]["IdEstado"].ToString() == "1")
+                            {
+                                MessageBox.Show("Inicio correcto", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Visible = false;
+                                Menu frmMenu = new Menu();
+                                frmMenu.Show();
+                                return;
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario esta dado de Baja", "Informacion");
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Contraseña Erronea", "Informacion");
+                            return;
+                        }
+
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Usuario o Constraseña incorrecto", "Inicio Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                }
+                else
+                {
+                    MessageBox.Show("Complete Campo Contraseña", "Informacion");
+                    txtContraseña.BackColor = Color.LightBlue;
+                    txtContraseña.Focus();
+                    return;
+                }
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Usuario o Constraseña incorrecto","Inicio Incorrecto",MessageBoxButtons.OK,MessageBoxIcon.Error);  
+                MessageBox.Show("Complete Campo Usuario ", "Informacion");
+                txtUsuario.BackColor = Color.LightBlue;
+                txtUsuario.Focus();
+                return;
             }
            
         }
@@ -63,5 +95,6 @@ namespace GestorInformatico
         {
             Close();
         }
+
     }
 }

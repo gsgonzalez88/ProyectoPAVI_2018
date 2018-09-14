@@ -25,6 +25,11 @@ namespace GestorInformatico
             rbtInactivo.Visible = false;
             label4.Visible = false;
             txtContraAnterior.Enabled = false;
+            label5.Visible = true;
+            label6.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
         }
 
         private void LlenarGrilla()
@@ -110,7 +115,8 @@ namespace GestorInformatico
                             }
                             else
                             {
-                                MessageBox.Show("El Empleado no existe", "Informacion");
+                                MessageBox.Show("Ingrese nro de empelado", "Informacion");
+                                label9.Visible = true;
                                 txtNro.Focus();
                                 return;
                             }
@@ -125,6 +131,7 @@ namespace GestorInformatico
                     else
                     {
                         MessageBox.Show("Complete el Campo", "Informacion");
+                        label8.Visible = true;
                         txtConfirmar.Focus();
                         return;
                     }
@@ -132,7 +139,9 @@ namespace GestorInformatico
                 else
                 {
                     MessageBox.Show("Complete el Campo", "Informacion");
+                    label7.Visible = true;
                     txtContraseña.Focus();
+                   
                     return;
                 }
 
@@ -140,6 +149,7 @@ namespace GestorInformatico
             else
             {
                 MessageBox.Show("Complete el Campo", "Informacion");
+                label6.Visible = true;
                 txtUsuario.Focus();
                 return;
             }
@@ -160,6 +170,10 @@ namespace GestorInformatico
             rbtActivo.Checked = false;
             rbtInactivo.Checked = false;
             txtNro.Enabled = true;
+            label6.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
