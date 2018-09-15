@@ -257,10 +257,10 @@ namespace GestorInformatico
         {
             Close();
         }
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        private void btnBuscarEmpleado_Click(object sender, EventArgs e)
         {
-
+            ABMEmpleado empleado = new ABMEmpleado();
+            empleado.ShowDialog();
         }
     }
 }

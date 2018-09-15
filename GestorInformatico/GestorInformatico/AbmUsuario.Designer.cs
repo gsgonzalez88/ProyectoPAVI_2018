@@ -50,6 +50,8 @@
             this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarEmpleado = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtNro = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtContraAnterior = new System.Windows.Forms.TextBox();
@@ -57,7 +59,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -89,7 +90,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(190, 20);
             this.txtUsuario.TabIndex = 2;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // txtContraseña
             // 
@@ -223,9 +223,9 @@
             this.Empleado,
             this.Apellido});
             this.dgvUsuario.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvUsuario.Location = new System.Drawing.Point(345, 12);
+            this.dgvUsuario.Location = new System.Drawing.Point(376, 12);
             this.dgvUsuario.Name = "dgvUsuario";
-            this.dgvUsuario.Size = new System.Drawing.Size(445, 275);
+            this.dgvUsuario.Size = new System.Drawing.Size(447, 275);
             this.dgvUsuario.TabIndex = 52;
             // 
             // Nombre
@@ -250,6 +250,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnBuscarEmpleado);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtNro);
             this.groupBox1.Controls.Add(this.label5);
@@ -267,9 +268,32 @@
             this.groupBox1.Controls.Add(this.rbtActivo);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(327, 275);
+            this.groupBox1.Size = new System.Drawing.Size(358, 275);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
+            // 
+            // btnBuscarEmpleado
+            // 
+            this.btnBuscarEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarEmpleado.Image")));
+            this.btnBuscarEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarEmpleado.Location = new System.Drawing.Point(322, 159);
+            this.btnBuscarEmpleado.Name = "btnBuscarEmpleado";
+            this.btnBuscarEmpleado.Size = new System.Drawing.Size(27, 29);
+            this.btnBuscarEmpleado.TabIndex = 54;
+            this.toolTip1.SetToolTip(this.btnBuscarEmpleado, "Buscar");
+            this.btnBuscarEmpleado.UseVisualStyleBackColor = true;
+            this.btnBuscarEmpleado.Click += new System.EventHandler(this.btnBuscarEmpleado_Click);
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(132, 20);
+            this.label10.TabIndex = 52;
+            this.label10.Text = "Campos Obligatorios";
             // 
             // txtNro
             // 
@@ -332,23 +356,12 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(132, 20);
-            this.label10.TabIndex = 52;
-            this.label10.Text = "Campos Obligatorios";
-            // 
             // AbmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(800, 312);
+            this.ClientSize = new System.Drawing.Size(835, 312);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvUsuario);
             this.Name = "AbmUsuario";
@@ -392,5 +405,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnBuscarEmpleado;
     }
 }

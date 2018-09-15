@@ -20,6 +20,7 @@ namespace GestorInformatico
         private void ABMProvincia_Load(object sender, EventArgs e)
         {
             LlenarGrilla();
+
         }
 
         private void LlenarGrilla()
@@ -39,28 +40,30 @@ namespace GestorInformatico
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtProvincia.Text != "")
+            if (!string.IsNullOrEmpty(txtProvincia.Text))
             {
                 DataTable table;
                 table = Milibreria.Utilidades.Ejecutar("Select * from Provincia"
                     + "  where Descripcion = '" + txtProvincia.Text + "'");
                 if (table.Rows.Count == 0)
                 {
-                    Milibreria.Utilidades.Insert("Insert Provincia Values('" + txtProvincia.Text + "'," + ")");
+                    Milibreria.Utilidades.Insert("Insert Provincia Values('" + txtProvincia.Text  + "')");
                     MessageBox.Show("Gurdado Correctamente", "Informacion");
                     return;
+                    btnRefescar_Click(sender, e);
                 }
                 else
                 {
                     MessageBox.Show("La provincia ya existe", "Informacion");
                     return;
                 }
-               
             }
             else
             {
-                MessageBox.Show("Complete el campo", "Informacion");
+                label2.Visible = true;
+                label2.BackColor = Color.LightBlue;
                 txtProvincia.Focus();
+                txtProvincia.BackColor = Color.LightBlue;
             }
            
         }
@@ -69,6 +72,8 @@ namespace GestorInformatico
         {
             LlenarGrilla();
             txtProvincia.Clear();
+            label2.BackColor = Color.White;
+            txtProvincia.BackColor = Color.White;
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -87,8 +92,5 @@ namespace GestorInformatico
                 e.Cancel = true;
             }
         }
-
-      
-
     }
 }
