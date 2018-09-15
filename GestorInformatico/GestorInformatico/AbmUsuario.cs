@@ -25,11 +25,7 @@ namespace GestorInformatico
             rbtInactivo.Visible = false;
             label4.Visible = false;
             txtContraAnterior.Enabled = false;
-            label5.Visible = true;
-            label6.Visible = false;
-            label7.Visible = false;
-            label8.Visible = false;
-            label9.Visible = false;
+            label10.Visible = false;
         }
 
         private void LlenarGrilla()
@@ -115,8 +111,7 @@ namespace GestorInformatico
                             }
                             else
                             {
-                                MessageBox.Show("Ingrese nro de empelado", "Informacion");
-                                label9.Visible = true;
+                                confirmar(sender, e);
                                 txtNro.Focus();
                                 return;
                             }
@@ -130,26 +125,22 @@ namespace GestorInformatico
                     }
                     else
                     {
-                        MessageBox.Show("Complete el Campo", "Informacion");
-                        label8.Visible = true;
+                        confirmar(sender, e);
                         txtConfirmar.Focus();
                         return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Complete el Campo", "Informacion");
-                    label7.Visible = true;
+                    confirmar(sender, e);
                     txtContraseña.Focus();
-                   
                     return;
                 }
 
             }
             else
             {
-                MessageBox.Show("Complete el Campo", "Informacion");
-                label6.Visible = true;
+                confirmar(sender,e);
                 txtUsuario.Focus();
                 return;
             }
@@ -170,10 +161,20 @@ namespace GestorInformatico
             rbtActivo.Checked = false;
             rbtInactivo.Checked = false;
             txtNro.Enabled = true;
-            label6.Visible = false;
-            label7.Visible = false;
-            label8.Visible = false;
-            label9.Visible = false;
+            label10.Visible = false;
+            txtUsuario.BackColor = Color.White;
+            txtNro.BackColor = Color.White;
+            txtContraseña.BackColor = Color.White;
+            txtConfirmar.BackColor = Color.White;
+        }
+        public void confirmar(object sender, EventArgs e)
+        {
+            label10.Visible = true;
+            txtUsuario.BackColor = Color.LightBlue;
+            txtNro.BackColor = Color.LightBlue;
+            txtContraseña.BackColor = Color.LightBlue;
+            txtConfirmar.BackColor = Color.LightBlue;
+            label10.BackColor = Color.LightBlue;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

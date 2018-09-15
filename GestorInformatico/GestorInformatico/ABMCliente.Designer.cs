@@ -54,6 +54,7 @@
             this.cmbTdoc = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.rbtInactivo = new System.Windows.Forms.RadioButton();
             this.rbtActivo = new System.Windows.Forms.RadioButton();
             this.lblEstado = new System.Windows.Forms.Label();
@@ -352,6 +353,17 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(325, 55);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(127, 20);
+            this.label15.TabIndex = 48;
+            this.label15.Text = "Campos Obligatorios";
             // 
             // rbtInactivo
             // 
@@ -665,6 +677,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1245, 334);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.dgvParticular);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -740,5 +753,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.Label label15;
     }
 }
