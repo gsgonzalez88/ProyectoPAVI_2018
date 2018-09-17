@@ -54,7 +54,6 @@
             this.cmbTdoc = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.rbtInactivo = new System.Windows.Forms.RadioButton();
             this.rbtActivo = new System.Windows.Forms.RadioButton();
             this.lblEstado = new System.Windows.Forms.Label();
@@ -73,6 +72,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -347,23 +347,12 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtNroDoc);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(12, 70);
+            this.groupBox1.Location = new System.Drawing.Point(12, 78);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(672, 252);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
-            // 
-            // label15
-            // 
-            this.label15.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(325, 55);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(127, 20);
-            this.label15.TabIndex = 48;
-            this.label15.Text = "Campos Obligatorios";
             // 
             // rbtInactivo
             // 
@@ -567,6 +556,17 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "C.U.I.T";
             // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(18, 55);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(127, 20);
+            this.label15.TabIndex = 48;
+            this.label15.Text = "Campos Obligatorios";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtBuscar);
@@ -641,7 +641,7 @@
             this.dgvParticular.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvParticular.Location = new System.Drawing.Point(690, 12);
             this.dgvParticular.Name = "dgvParticular";
-            this.dgvParticular.Size = new System.Drawing.Size(543, 310);
+            this.dgvParticular.Size = new System.Drawing.Size(543, 318);
             this.dgvParticular.TabIndex = 49;
             // 
             // dataGridViewTextBoxColumn1
@@ -676,7 +676,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1245, 334);
+            this.ClientSize = new System.Drawing.Size(1245, 352);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.dgvParticular);
             this.Controls.Add(this.groupBox2);

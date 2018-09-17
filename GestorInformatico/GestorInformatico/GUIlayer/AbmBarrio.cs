@@ -28,7 +28,6 @@ namespace GestorInformatico
             cmbProvincia.SelectedIndex = -1;
             a = 1;
             LlenarGrilla();
-
         }
 
 
@@ -146,24 +145,24 @@ namespace GestorInformatico
                             MessageBox.Show("Guardado Correctament", "Informacion");
                             return;
                         }
-                     
-                        MessageBox.Show("Campos no pueden quedar vacio", "Informacion");
+
+                        confirmar(sender, e);
                         cmbLocalidad.Focus();
                         return;
                     }
-                 
-                    MessageBox.Show("Campos no pueden quedar vacio", "Informacion");
+
+                    confirmar(sender, e);
                     cmbDepartamento.Focus();
                     return;
                 }
-         
-                MessageBox.Show("Campos no pueden quedar vacio", "Informacion");
+
+                confirmar(sender, e);
                 cmbProvincia.Focus();
                 return;
             }
             else
             {
-                 MessageBox.Show("Campos no pueden quedar vacio", "Informacion");
+                confirmar(sender,e);
                 txtBarrio.Focus();
             }
         }
@@ -191,7 +190,13 @@ namespace GestorInformatico
             provincia.ShowDialog();
         }
 
-       
+       private void confirmar(object sender, EventArgs e )
+        {
+            cmbDepartamento.BackColor = Color.LightBlue;
+            cmbLocalidad.BackColor = Color.LightBlue;
+            cmbProvincia.BackColor = Color.LightBlue;
+            label5.BackColor = Color.LightBlue;
+        }
     }
 
 }

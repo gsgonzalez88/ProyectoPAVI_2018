@@ -25,7 +25,7 @@ namespace GestorInformatico
             rbtInactivo.Visible = false;
             label4.Visible = false;
             txtContraAnterior.Enabled = false;
-            label10.Visible = false;
+            label10.Visible = true;
         }
 
         private void LlenarGrilla()
@@ -85,6 +85,7 @@ namespace GestorInformatico
             else
             {
                 MessageBox.Show("Complete el Campo", "Informacion");
+                txtUsuario.BackColor = Color.LightBlue;
                 txtUsuario.Focus();
                 return;
             }
@@ -161,11 +162,12 @@ namespace GestorInformatico
             rbtActivo.Checked = false;
             rbtInactivo.Checked = false;
             txtNro.Enabled = true;
-            label10.Visible = false;
+            label10.Visible = true;
             txtUsuario.BackColor = Color.White;
             txtNro.BackColor = Color.White;
             txtContraseña.BackColor = Color.White;
             txtConfirmar.BackColor = Color.White;
+            label10.BackColor = Color.White;
         }
         public void confirmar(object sender, EventArgs e)
         {
@@ -188,6 +190,7 @@ namespace GestorInformatico
             else
             {
                 MessageBox.Show("Complete el Campo", "Informacion");
+                txtUsuario.BackColor = Color.LightBlue;
                 txtUsuario.Focus();
                 return;
             }
@@ -247,7 +250,7 @@ namespace GestorInformatico
             }
             else
             {
-                MessageBox.Show("Complete el Campo", "Informacion");
+                txtUsuario.BackColor = Color.LightBlue;
                 txtUsuario.Focus();
                 return;
             }

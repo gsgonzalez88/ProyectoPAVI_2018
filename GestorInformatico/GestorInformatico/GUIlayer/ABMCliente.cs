@@ -39,7 +39,7 @@ namespace GestorInformatico
             cmbTdoc.ValueMember = "IdTipoDoc";
             cmbTdoc.SelectedIndex = -1;
             LlenarGrilla();
-            label15.Visible = false;
+            label15.Visible = true;
             a = 1;
         }
 
@@ -83,61 +83,70 @@ namespace GestorInformatico
                                 {
                                     if (!string.IsNullOrEmpty(cmbBarrio.Text) || cmbBarrio.SelectedIndex != -1)
                                     {
-                                        if (!string.IsNullOrEmpty(cmbProvin.Text))
+                                        if (!string.IsNullOrEmpty(txtTelefono.Text))
                                         {
-                                            if (rbtEmpresa.Checked == true)
+                                            if (!string.IsNullOrEmpty(cmbProvin.Text))
                                             {
-                                                if (!string.IsNullOrEmpty(txtCuit.Text))
+                                                if (rbtEmpresa.Checked == true)
                                                 {
-                                                    Insert(sender, e);
-                                                    return;
+                                                    if (!string.IsNullOrEmpty(txtCuit.Text))
+                                                    {
+                                                        Insert(sender, e);
+                                                        return;
+                                                    }
+                                                    else
+                                                    {
+                                                        txtCuit.Focus();
+                                                        confirmar(sender, e);
+                                                        return;
+
+                                                    }
                                                 }
                                                 else
                                                 {
-                                                    txtCuit.Focus();
-                                                    confirmar(sender, e);
-                                                    return;
-                                                    
-                                                }
-                                            }
-                                            else
-                                            {
-                                                if (!string.IsNullOrEmpty(txtApellido.Text))
-                                                {
-                                                    if (!string.IsNullOrEmpty(cmbTdoc.Text) || cmbTdoc.SelectedIndex != -1)
+                                                    if (!string.IsNullOrEmpty(txtApellido.Text))
                                                     {
-                                                        if (!string.IsNullOrEmpty(txtNroDoc.Text))
+                                                        if (!string.IsNullOrEmpty(cmbTdoc.Text) || cmbTdoc.SelectedIndex != -1)
                                                         {
-                                                            txtCuit.Text = "NUll";
-                                                            Insert(sender, e);
-                                                            return;
+                                                            if (!string.IsNullOrEmpty(txtNroDoc.Text))
+                                                            {
+                                                                txtCuit.Text = "NUll";
+                                                                Insert(sender, e);
+                                                                return;
+                                                            }
+                                                            else
+                                                            {
+                                                                txtNroDoc.Focus();
+                                                                confirmar(sender, e);
+                                                                return;
+                                                            }
                                                         }
                                                         else
                                                         {
-                                                            txtNroDoc.Focus();
+                                                            cmbTdoc.Focus();
                                                             confirmar(sender, e);
                                                             return;
                                                         }
                                                     }
                                                     else
                                                     {
-                                                        cmbTdoc.Focus();
                                                         confirmar(sender, e);
+                                                        txtApellido.Focus();
                                                         return;
                                                     }
                                                 }
-                                                else
-                                                {
-                                                    confirmar(sender, e);
-                                                    txtApellido.Focus();
-                                                    return;
-                                                }
+                                            }
+                                            else
+                                            {
+                                                confirmar(sender, e);
+                                                txtNroCalle.Focus();
+                                                return;
                                             }
                                         }
                                         else
                                         {
                                             confirmar(sender, e);
-                                            txtNroCalle.Focus();
+                                            txtTelefono.Focus();
                                             return;
                                         }
                                     }
@@ -203,6 +212,7 @@ namespace GestorInformatico
             txtCalle.BackColor = Color.LightBlue;
             txtNom.BackColor = Color.LightBlue;
             txtCuit.BackColor = Color.LightBlue;
+            txtTelefono.BackColor = Color.LightBlue;
         }
 
         private void cmbProvin_SelectedIndexChanged(object sender, EventArgs e)
@@ -330,8 +340,10 @@ namespace GestorInformatico
             txtCalle.BackColor = Color.White;
             txtNom.BackColor = Color.White;
             txtCuit.BackColor = Color.White;
+            txtTelefono.BackColor = Color.White;
             txtBuscar.BackColor = Color.White;
-            label15.Visible = false;
+            label15.Visible = true;
+            label15.BackColor = Color.White;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -427,7 +439,7 @@ namespace GestorInformatico
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             int nro;
-            if (txtBuscar.Text != "")
+            if (!string.IsNullOrEmpty(txtBuscar.Text))
             {
                 if (rbtEmpresa.Checked)
                 {
@@ -451,6 +463,8 @@ namespace GestorInformatico
             else
             {
                 MessageBox.Show("Busque el cliente a eliminar", "Informacion");
+                txtBuscar.BackColor = Color.LightBlue;
+                txtBuscar.Focus();
             }
         }
         private void Insert(object sender, EventArgs e)
@@ -518,7 +532,7 @@ namespace GestorInformatico
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (txtBuscar.Text != "")
+            if (!string.IsNullOrEmpty(txtBuscar.Text))
             {
                 txtNroDoc.Enabled = false;
                 txtCuit.Enabled = false;
@@ -587,6 +601,8 @@ namespace GestorInformatico
             else
             {
                 MessageBox.Show("Busque cliente a modificar", "Informar");
+                txtBuscar.BackColor = Color.LightBlue;
+                txtBuscar.Focus();
             }
         }
 
