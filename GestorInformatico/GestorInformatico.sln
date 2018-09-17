@@ -1,12 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Windows Desktop
+# Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorInformatico", "GestorInformatico\GestorInformatico.csproj", "{1AAC442A-BB34-414D-B4A8-F0069DA7F55F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{A9B95F7C-F56E-4816-BC47-2569DF48B999} = {A9B95F7C-F56E-4816-BC47-2569DF48B999}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milibreria", "Milibreria\Milibreria.csproj", "{A9B95F7C-F56E-4816-BC47-2569DF48B999}"
 EndProject
