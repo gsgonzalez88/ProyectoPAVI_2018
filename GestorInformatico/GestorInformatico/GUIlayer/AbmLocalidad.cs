@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Milibreria;
+using DBHelper;
 
 namespace GestorInformatico
 {
@@ -22,7 +22,7 @@ namespace GestorInformatico
         private void LlenarGrilla()
         {
             DataTable table;
-            table = Milibreria.Utilidades.Ejecutar("Select l.Descripcion as Localidad,l.CodigoPostal as Codigo,d.Descripcion as Departamento,P.Descripcion as Provincia"
+            table = Utilidades.Ejecutar("Select l.Descripcion as Localidad,l.CodigoPostal as Codigo,d.Descripcion as Departamento,P.Descripcion as Provincia"
             + " from Localidad l"
             + " join Departamento d on d.IdDepartamento = l.IdDepartamento"
                + " join Provincia p on p.IdProvincia =d.IdProvincia");
@@ -57,7 +57,7 @@ namespace GestorInformatico
 
             LlenarGrilla();
             
-            DataTable tabla = Milibreria.Utilidades.Ejecutar("Select * from Provincia");
+            DataTable tabla = Utilidades.Ejecutar("Select * from Provincia");
 
             cmbProvincia.DataSource = tabla;
             cmbProvincia.DisplayMember = "Descripcion";
@@ -71,7 +71,7 @@ namespace GestorInformatico
             if (a == 1 && cmbProvincia.SelectedValue != null)
             {
                 a = 0;
-                cmbDepartamento.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Departamento"
+                cmbDepartamento.DataSource = Utilidades.Ejecutar("Select * from Departamento"
                 + " where IdProvincia = " + cmbProvincia.SelectedValue.ToString());
                 cmbDepartamento.DisplayMember = "Descripcion";
                 cmbDepartamento.ValueMember = "IdDepartamento";
@@ -109,7 +109,7 @@ namespace GestorInformatico
 
                     if (txtCod.Text != "")
                     {
-                        Milibreria.Utilidades.Insert("Insert Localidad Values ('" + txtLoc.Text + "'," + cmbDepartamento.SelectedValue.ToString() + "," + txtCod.Text + ")");
+                        Utilidades.Insert("Insert Localidad Values ('" + txtLoc.Text + "'," + cmbDepartamento.SelectedValue.ToString() + "," + txtCod.Text + ")");
                         MessageBox.Show("Guardado Correctamente", "Informacion");
                         txtCod.Focus();
                         return;
