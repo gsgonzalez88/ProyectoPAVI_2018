@@ -158,7 +158,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="BusinessLayer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\accept.ico" />
+    <Content Include="Resources\add.ico" />
+    <Content Include="Resources\cancel.ico" />
+    <Content Include="Resources\delete.ico" />
+    <Content Include="Resources\Exe.ico" />
+    <Content Include="Resources\pencil_add.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

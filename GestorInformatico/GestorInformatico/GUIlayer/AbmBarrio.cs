@@ -142,7 +142,7 @@ namespace GestorInformatico
                         if (cmbLocalidad.SelectedValue != null)
                         {
                             Utilidades.Insert("Insert Barrio Values ('"+txtBarrio.Text+"',"+cmbLocalidad.SelectedValue +")");
-                            MessageBox.Show("Guardado Correctament", "Informacion");
+                            MessageBox.Show("Guardado Correctamente", "Informacion");
                             return;
                         }
 
