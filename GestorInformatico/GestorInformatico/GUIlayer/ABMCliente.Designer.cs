@@ -561,7 +561,7 @@
             this.label15.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(18, 55);
+            this.label15.Location = new System.Drawing.Point(325, 55);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(127, 20);
             this.label15.TabIndex = 48;
