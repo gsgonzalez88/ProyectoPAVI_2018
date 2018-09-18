@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBHelper;
 
 namespace GestorInformatico
 {
@@ -26,7 +27,7 @@ namespace GestorInformatico
         private void LlenarGrilla()
         {
             DataTable table;
-            table = Milibreria.Utilidades.Ejecutar("Select d.Descripcion,P.Descripcion as Provincia"
+            table = Utilidades.Ejecutar("Select d.Descripcion,P.Descripcion as Provincia"
             + " from Departamento d "
             + " join Provincia p on p.IdProvincia =d.IdProvincia");
             dvgDepartamento.Rows.Clear();

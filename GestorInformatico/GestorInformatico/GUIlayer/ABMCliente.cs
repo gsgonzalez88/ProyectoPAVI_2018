@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Milibreria;
+using DBHelper;
 
 namespace GestorInformatico
 {
@@ -30,16 +30,16 @@ namespace GestorInformatico
             rbtActivo.Visible = false;
             rbtInactivo.Checked = false;
             rbtActivo.Checked = false;
-            cmbProvin.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Provincia");
+            cmbProvin.DataSource = Utilidades.Ejecutar("Select * from Provincia");
             cmbProvin.DisplayMember = "Descripcion";
             cmbProvin.ValueMember = "idProvincia";
             cmbProvin.SelectedIndex = -1;
-            cmbTdoc.DataSource = Milibreria.Utilidades.Ejecutar("Select * from TipoDoc");
+            cmbTdoc.DataSource = Utilidades.Ejecutar("Select * from TipoDoc");
             cmbTdoc.DisplayMember = "Descripcion";
             cmbTdoc.ValueMember = "IdTipoDoc";
             cmbTdoc.SelectedIndex = -1;
             LlenarGrilla();
-            label15.Visible = false;
+            label15.Visible = true;
             a = 1;
         }
 
@@ -83,61 +83,70 @@ namespace GestorInformatico
                                 {
                                     if (!string.IsNullOrEmpty(cmbBarrio.Text) || cmbBarrio.SelectedIndex != -1)
                                     {
-                                        if (!string.IsNullOrEmpty(cmbProvin.Text))
+                                        if (!string.IsNullOrEmpty(txtTelefono.Text))
                                         {
-                                            if (rbtEmpresa.Checked == true)
+                                            if (!string.IsNullOrEmpty(cmbProvin.Text))
                                             {
-                                                if (!string.IsNullOrEmpty(txtCuit.Text))
+                                                if (rbtEmpresa.Checked == true)
                                                 {
-                                                    Insert(sender, e);
-                                                    return;
+                                                    if (!string.IsNullOrEmpty(txtCuit.Text))
+                                                    {
+                                                        Insert(sender, e);
+                                                        return;
+                                                    }
+                                                    else
+                                                    {
+                                                        txtCuit.Focus();
+                                                        confirmar(sender, e);
+                                                        return;
+
+                                                    }
                                                 }
                                                 else
                                                 {
-                                                    txtCuit.Focus();
-                                                    confirmar(sender, e);
-                                                    return;
-                                                    
-                                                }
-                                            }
-                                            else
-                                            {
-                                                if (!string.IsNullOrEmpty(txtApellido.Text))
-                                                {
-                                                    if (!string.IsNullOrEmpty(cmbTdoc.Text) || cmbTdoc.SelectedIndex != -1)
+                                                    if (!string.IsNullOrEmpty(txtApellido.Text))
                                                     {
-                                                        if (!string.IsNullOrEmpty(txtNroDoc.Text))
+                                                        if (!string.IsNullOrEmpty(cmbTdoc.Text) || cmbTdoc.SelectedIndex != -1)
                                                         {
-                                                            txtCuit.Text = "NUll";
-                                                            Insert(sender, e);
-                                                            return;
+                                                            if (!string.IsNullOrEmpty(txtNroDoc.Text))
+                                                            {
+                                                                txtCuit.Text = "NUll";
+                                                                Insert(sender, e);
+                                                                return;
+                                                            }
+                                                            else
+                                                            {
+                                                                txtNroDoc.Focus();
+                                                                confirmar(sender, e);
+                                                                return;
+                                                            }
                                                         }
                                                         else
                                                         {
-                                                            txtNroDoc.Focus();
+                                                            cmbTdoc.Focus();
                                                             confirmar(sender, e);
                                                             return;
                                                         }
                                                     }
                                                     else
                                                     {
-                                                        cmbTdoc.Focus();
                                                         confirmar(sender, e);
+                                                        txtApellido.Focus();
                                                         return;
                                                     }
                                                 }
-                                                else
-                                                {
-                                                    confirmar(sender, e);
-                                                    txtApellido.Focus();
-                                                    return;
-                                                }
+                                            }
+                                            else
+                                            {
+                                                confirmar(sender, e);
+                                                txtNroCalle.Focus();
+                                                return;
                                             }
                                         }
                                         else
                                         {
                                             confirmar(sender, e);
-                                            txtNroCalle.Focus();
+                                            txtTelefono.Focus();
                                             return;
                                         }
                                     }
@@ -203,6 +212,7 @@ namespace GestorInformatico
             txtCalle.BackColor = Color.LightBlue;
             txtNom.BackColor = Color.LightBlue;
             txtCuit.BackColor = Color.LightBlue;
+            txtTelefono.BackColor = Color.LightBlue;
         }
 
         private void cmbProvin_SelectedIndexChanged(object sender, EventArgs e)
@@ -210,7 +220,7 @@ namespace GestorInformatico
             if (a == 1 && cmbProvin.SelectedValue != null)
             {
                 a = 0;
-                cmbDepto.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Departamento where IdProvincia = " + cmbProvin.SelectedValue.ToString());
+                cmbDepto.DataSource = Utilidades.Ejecutar("Select * from Departamento where IdProvincia = " + cmbProvin.SelectedValue.ToString());
                 cmbDepto.DisplayMember = "Descripcion";
                 cmbDepto.ValueMember = "IdDepartamento";
                 cmbDepto.SelectedIndex = -1;
@@ -226,7 +236,7 @@ namespace GestorInformatico
             if (a == 1 && cmbDepto.SelectedValue != null)
             {
                 a = 0;
-                cmbLocalidad.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Localidad where IdDepartamento = " + cmbDepto.SelectedValue.ToString());
+                cmbLocalidad.DataSource = Utilidades.Ejecutar("Select * from Localidad where IdDepartamento = " + cmbDepto.SelectedValue.ToString());
                 cmbLocalidad.DisplayMember = "Descripcion";
                 cmbLocalidad.ValueMember = "IdLocalidad";
                 cmbLocalidad.SelectedIndex = -1;
@@ -241,7 +251,7 @@ namespace GestorInformatico
             if (a == 1 && cmbLocalidad.SelectedValue != null)
             {
                 a = 0;
-                cmbBarrio.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Barrio where IdLocalidad = " + cmbLocalidad.SelectedValue.ToString());
+                cmbBarrio.DataSource = Utilidades.Ejecutar("Select * from Barrio where IdLocalidad = " + cmbLocalidad.SelectedValue.ToString());
                 cmbBarrio.DisplayMember = "Descripcion";
                 cmbBarrio.ValueMember = "IdBarrio";
                 cmbBarrio.SelectedIndex = -1;
@@ -330,8 +340,10 @@ namespace GestorInformatico
             txtCalle.BackColor = Color.White;
             txtNom.BackColor = Color.White;
             txtCuit.BackColor = Color.White;
+            txtTelefono.BackColor = Color.White;
             txtBuscar.BackColor = Color.White;
-            label15.Visible = false;
+            label15.Visible = true;
+            label15.BackColor = Color.White;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -341,7 +353,7 @@ namespace GestorInformatico
             {
                 DataTable table;
                 nro = Convert.ToInt32(txtBuscar.Text);
-                table = Milibreria.Utilidades.ConsultarCliente(nro);
+                table = Utilidades.ConsultarCliente(nro);
                 if (table.Rows.Count > 0)
                 {
                     string tipo = table.Rows[0]["TipoCliente"].ToString();
@@ -427,13 +439,13 @@ namespace GestorInformatico
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             int nro;
-            if (txtBuscar.Text != "")
+            if (!string.IsNullOrEmpty(txtBuscar.Text))
             {
                 if (rbtEmpresa.Checked)
                 {
                     nro = Convert.ToInt32(txtBuscar.Text);
 
-                    Milibreria.Utilidades.Ejecutar("Update Cliente set IdEstado =2where Cuit =  " + txtBuscar.Text);
+                    Utilidades.Ejecutar("Update Cliente set IdEstado =2where Cuit =  " + txtBuscar.Text);
                     MessageBox.Show("Cliente  dado de Baja", "Informacion");
                 }
                 if (rbtParticular.Checked)
@@ -443,7 +455,7 @@ namespace GestorInformatico
                     {
                         nro = Convert.ToInt32(txtBuscar.Text);
 
-                        Milibreria.Utilidades.Ejecutar("Update Cliente set IdEstado =2 where NroDoc =  " + txtBuscar.Text);
+                        Utilidades.Ejecutar("Update Cliente set IdEstado =2 where NroDoc =  " + txtBuscar.Text);
                         MessageBox.Show("Cliente dado de Baja", "Informacion");
                     }
                 }
@@ -451,6 +463,8 @@ namespace GestorInformatico
             else
             {
                 MessageBox.Show("Busque el cliente a eliminar", "Informacion");
+                txtBuscar.BackColor = Color.LightBlue;
+                txtBuscar.Focus();
             }
         }
         private void Insert(object sender, EventArgs e)
@@ -458,12 +472,12 @@ namespace GestorInformatico
             DataTable table = new DataTable();
             if (rbtParticular.Checked)
             {
-                table = Milibreria.Utilidades.Ejecutar("select c.NroDoc from Cliente c where c.NroDoc =" + txtNroDoc.Text);
+                table = Utilidades.Ejecutar("select c.NroDoc from Cliente c where c.NroDoc =" + txtNroDoc.Text);
 
             }
             else
             {
-                table = Milibreria.Utilidades.Ejecutar("select c.Cuit from Cliente c where c.Cuit =" + txtCuit.Text);
+                table = Utilidades.Ejecutar("select c.Cuit from Cliente c where c.Cuit =" + txtCuit.Text);
 
             }
 
@@ -477,7 +491,7 @@ namespace GestorInformatico
                 if (rbtEmpresa.Checked == true)
                 {
 
-                    Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','"
+                    Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','"
                         + txtApellido.Text + "',"
                         + txtCuit.Text + ","
                         + "NULL,NULL,'"
@@ -496,7 +510,7 @@ namespace GestorInformatico
                 }
                 else
                 {
-                    Milibreria.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','"
+                    Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','"
                            + txtApellido.Text + "',NULL,"
                            + cmbTdoc.SelectedValue + ","
                            + txtNroDoc.Text + ",'"
@@ -518,7 +532,7 @@ namespace GestorInformatico
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (txtBuscar.Text != "")
+            if (!string.IsNullOrEmpty(txtBuscar.Text))
             {
                 txtNroDoc.Enabled = false;
                 txtCuit.Enabled = false;
@@ -533,7 +547,7 @@ namespace GestorInformatico
                 cmbDepto.Enabled = true;
                 cmbBarrio.Enabled = true;
                 cmbLocalidad.Enabled = true;
-                DataTable tabla = Milibreria.Utilidades.ConsultarCliente(Convert.ToInt32(txtBuscar.Text));
+                DataTable tabla = Utilidades.ConsultarCliente(Convert.ToInt32(txtBuscar.Text));
                 string sql = "Update Cliente ";
                 if (tabla.Rows.Count > 0)
                 {
@@ -547,7 +561,7 @@ namespace GestorInformatico
                             + " NroCalle = " + txtNroCalle.Text + "," + " Calle = '" + txtCalle.Text + "',"
                             + " nroTelefono= " + txtTelefono.Text + "," + " Email = '" + txtEmail.Text + "',";
 
-                        DataTable table = Milibreria.Utilidades.Ejecutar("select b.IdBarrio,l.IdLocalidad,d.IdDepartamento,d.IdProvincia from Barrio b"
+                        DataTable table = Utilidades.Ejecutar("select b.IdBarrio,l.IdLocalidad,d.IdDepartamento,d.IdProvincia from Barrio b"
                         + " join Localidad l on b.IdLocalidad = l.IdLocalidad "
                         + " join Departamento d on l.IdDepartamento = d.IdDepartamento "
                         + " where b.Descripcion = '" + cmbBarrio.Text + "'");
@@ -580,13 +594,15 @@ namespace GestorInformatico
                     {
                         sql += " where Cuit = " + txtCuit.Text;
                     }
-                    Milibreria.Utilidades.Update(sql);
+                    Utilidades.Update(sql);
                     MessageBox.Show("Se guardo correctamento", "Informacion");
                 }
             }
             else
             {
                 MessageBox.Show("Busque cliente a modificar", "Informar");
+                txtBuscar.BackColor = Color.LightBlue;
+                txtBuscar.Focus();
             }
         }
 
@@ -604,7 +620,7 @@ namespace GestorInformatico
 
         private void LlenarGrilla()
         {
-            DataTable tabla = Milibreria.Utilidades.Ejecutar("Select  e.Descripcion as Estado,* from cliente c  left outer join Estado e on e.idEstado = c.IdEstado");
+            DataTable tabla = Utilidades.Ejecutar("Select  e.Descripcion as Estado,* from cliente c  left outer join Estado e on e.idEstado = c.IdEstado");
             dgvParticular.Rows.Clear();
             if (tabla.Rows.Count > 0)
             {

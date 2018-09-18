@@ -347,7 +347,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtNroDoc);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(12, 70);
+            this.groupBox1.Location = new System.Drawing.Point(12, 78);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(672, 252);
             this.groupBox1.TabIndex = 41;
@@ -641,7 +641,7 @@
             this.dgvParticular.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvParticular.Location = new System.Drawing.Point(690, 12);
             this.dgvParticular.Name = "dgvParticular";
-            this.dgvParticular.Size = new System.Drawing.Size(543, 310);
+            this.dgvParticular.Size = new System.Drawing.Size(543, 318);
             this.dgvParticular.TabIndex = 49;
             // 
             // dataGridViewTextBoxColumn1
@@ -676,7 +676,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1245, 334);
+            this.ClientSize = new System.Drawing.Size(1245, 352);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.dgvParticular);
             this.Controls.Add(this.groupBox2);

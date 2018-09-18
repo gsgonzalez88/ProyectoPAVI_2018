@@ -52,87 +52,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbmBarrio.cs">
+    <Compile Include="DataLayer\DBHelper.cs" />
+    <Compile Include="GUIlayer\AbmBarrio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmBarrio.Designer.cs">
+    <Compile Include="GUIlayer\AbmBarrio.Designer.cs">
       <DependentUpon>AbmBarrio.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMCliente.cs">
+    <Compile Include="GUIlayer\ABMCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMCliente.Designer.cs">
+    <Compile Include="GUIlayer\ABMCliente.Designer.cs">
       <DependentUpon>ABMCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmDepto.cs">
+    <Compile Include="GUIlayer\AbmDepto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmDepto.Designer.cs">
+    <Compile Include="GUIlayer\AbmDepto.Designer.cs">
       <DependentUpon>AbmDepto.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMEmpleado.cs">
+    <Compile Include="GUIlayer\ABMEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMEmpleado.Designer.cs">
+    <Compile Include="GUIlayer\ABMEmpleado.Designer.cs">
       <DependentUpon>ABMEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmLocalidad.cs">
+    <Compile Include="GUIlayer\AbmLocalidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmLocalidad.Designer.cs">
+    <Compile Include="GUIlayer\AbmLocalidad.Designer.cs">
       <DependentUpon>AbmLocalidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMProvincia.cs">
+    <Compile Include="GUIlayer\ABMProvincia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMProvincia.Designer.cs">
+    <Compile Include="GUIlayer\ABMProvincia.Designer.cs">
       <DependentUpon>ABMProvincia.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmUsuario.cs">
+    <Compile Include="GUIlayer\AbmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmUsuario.Designer.cs">
+    <Compile Include="GUIlayer\AbmUsuario.Designer.cs">
       <DependentUpon>AbmUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="GUIlayer\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="GUIlayer\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="GUIlayer\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="GUIlayer\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AbmBarrio.resx">
+    <EmbeddedResource Include="GUIlayer\AbmBarrio.resx">
       <DependentUpon>AbmBarrio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMCliente.resx">
+    <EmbeddedResource Include="GUIlayer\ABMCliente.resx">
       <DependentUpon>ABMCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmDepto.resx">
+    <EmbeddedResource Include="GUIlayer\AbmDepto.resx">
       <DependentUpon>AbmDepto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMEmpleado.resx">
+    <EmbeddedResource Include="GUIlayer\ABMEmpleado.resx">
       <DependentUpon>ABMEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmLocalidad.resx">
+    <EmbeddedResource Include="GUIlayer\AbmLocalidad.resx">
       <DependentUpon>AbmLocalidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMProvincia.resx">
+    <EmbeddedResource Include="GUIlayer\ABMProvincia.resx">
       <DependentUpon>ABMProvincia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AbmUsuario.resx">
+    <EmbeddedResource Include="GUIlayer\AbmUsuario.resx">
       <DependentUpon>AbmUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="GUIlayer\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="GUIlayer\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -156,6 +157,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BusinessLayer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\accept.ico" />
+    <Content Include="Resources\add.ico" />
+    <Content Include="Resources\cancel.ico" />
+    <Content Include="Resources\delete.ico" />
+    <Content Include="Resources\Exe.ico" />
+    <Content Include="Resources\pencil_add.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

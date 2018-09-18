@@ -37,9 +37,10 @@
             this.BtnSalir = new System.Windows.Forms.Button();
             this.btnRefescar = new System.Windows.Forms.Button();
             this.dvgProvincia = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dvgProvincia)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -47,7 +48,7 @@
             // 
             // txtProvincia
             // 
-            this.txtProvincia.Location = new System.Drawing.Point(74, 16);
+            this.txtProvincia.Location = new System.Drawing.Point(125, 46);
             this.txtProvincia.Name = "txtProvincia";
             this.txtProvincia.Size = new System.Drawing.Size(206, 20);
             this.txtProvincia.TabIndex = 16;
@@ -57,9 +58,9 @@
             this.label1.BackColor = System.Drawing.SystemColors.Window;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 16);
+            this.label1.Location = new System.Drawing.Point(6, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 19);
+            this.label1.Size = new System.Drawing.Size(113, 19);
             this.label1.TabIndex = 15;
             this.label1.Text = "Nombre";
             // 
@@ -104,24 +105,20 @@
             this.dvgProvincia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgProvincia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre});
-            this.dvgProvincia.Location = new System.Drawing.Point(306, 8);
+            this.dvgProvincia.Location = new System.Drawing.Point(357, 12);
             this.dvgProvincia.Name = "dvgProvincia";
-            this.dvgProvincia.Size = new System.Drawing.Size(146, 122);
+            this.dvgProvincia.Size = new System.Drawing.Size(167, 122);
             this.dvgProvincia.TabIndex = 19;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtProvincia);
             this.groupBox1.Location = new System.Drawing.Point(5, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(295, 122);
+            this.groupBox1.Size = new System.Drawing.Size(346, 122);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
@@ -132,16 +129,33 @@
             this.groupBox2.Controls.Add(this.btnRefescar);
             this.groupBox2.Location = new System.Drawing.Point(6, 69);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(274, 47);
+            this.groupBox2.Size = new System.Drawing.Size(325, 47);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.SystemColors.Window;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 19);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Campo Obligatorio";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 120;
             // 
             // ABMProvincia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(464, 144);
+            this.ClientSize = new System.Drawing.Size(536, 136);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dvgProvincia);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -163,11 +177,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridView dvgProvincia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Button btnRefescar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
 }
