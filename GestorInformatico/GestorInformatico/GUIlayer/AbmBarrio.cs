@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Milibreria;
+using DBHelper;
 
 namespace GestorInformatico
 {
@@ -22,7 +22,7 @@ namespace GestorInformatico
         private void AbmBarrio_Load(object sender, EventArgs e)
         {
 
-            cmbProvincia.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Provincia");
+            cmbProvincia.DataSource = Utilidades.Ejecutar("Select * from Provincia");
             cmbProvincia.DisplayMember = "Descripcion";
             cmbProvincia.ValueMember = "idProvincia";
             cmbProvincia.SelectedIndex = -1;
@@ -48,7 +48,7 @@ namespace GestorInformatico
             if (a == 1 && cmbProvincia.SelectedValue != null)
             {
                 a = 0;
-                cmbDepartamento.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Departamento"
+                cmbDepartamento.DataSource = Utilidades.Ejecutar("Select * from Departamento"
                 + " where IdProvincia = " + cmbProvincia.SelectedValue.ToString());
                 cmbDepartamento.DisplayMember = "Descripcion";
                 cmbDepartamento.ValueMember = "IdDepartamento";
@@ -63,7 +63,7 @@ namespace GestorInformatico
             if (txtBarrio.Text != "")
             {
                 DataTable table;
-                table = Milibreria.Utilidades.Ejecutar("Select l.Descripcion as Localidad,D.Descripcion as Departamento,P.Descripcion as Provincia,b.Descripcion  from barrio b"
+                table = Utilidades.Ejecutar("Select l.Descripcion as Localidad,D.Descripcion as Departamento,P.Descripcion as Provincia,b.Descripcion  from barrio b"
                 + " join Localidad l on b.IdLocalidad = l.IdLocalidad"
                 + " join Departamento d on d.IdDepartamento = l.IdDepartamento "
                 + " join Provincia p on d.IdProvincia = p.IdProvincia"
@@ -85,7 +85,7 @@ namespace GestorInformatico
             if (a == 1 && cmbDepartamento.SelectedValue != null)
             {
                 a = 0;
-                cmbLocalidad.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Localidad"
+                cmbLocalidad.DataSource = Utilidades.Ejecutar("Select * from Localidad"
                 + " where IdDepartamento = " + cmbDepartamento.SelectedValue.ToString());
                 cmbLocalidad.DisplayMember = "Descripcion";
                 cmbLocalidad.ValueMember = "IdLocalidad";
@@ -98,7 +98,7 @@ namespace GestorInformatico
         private void LlenarGrilla()
         {
             DataTable table;
-            table = Milibreria.Utilidades.Ejecutar("Select b.Descripcion,l.Descripcion as Localidad,d.Descripcion as Departamento,P.Descripcion as Provincia"
+            table = Utilidades.Ejecutar("Select b.Descripcion,l.Descripcion as Localidad,d.Descripcion as Departamento,P.Descripcion as Provincia"
             + " from barrio b "
             + "  join Localidad l on b.IdLocalidad = l.IdLocalidad"
             + " join Departamento d on d.IdDepartamento = l.IdDepartamento"
@@ -128,6 +128,11 @@ namespace GestorInformatico
             cmbLocalidad.Enabled = true;
             cmbDepartamento.Enabled = true;
             cmbProvincia.Enabled = true;
+            cmbDepartamento.BackColor = Color.White;
+            cmbLocalidad.BackColor = Color.White;
+            cmbProvincia.BackColor = Color.White;
+            txtBarrio.BackColor = Color.White;
+            label5.BackColor = Color.White;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -141,8 +146,8 @@ namespace GestorInformatico
                     {
                         if (cmbLocalidad.SelectedValue != null)
                         {
-                            Milibreria.Utilidades.Insert("Insert Barrio Values ('"+txtBarrio.Text+"',"+cmbLocalidad.SelectedValue +")");
-                            MessageBox.Show("Guardado Correctament", "Informacion");
+                            Utilidades.Insert("Insert Barrio Values ('"+txtBarrio.Text+"',"+cmbLocalidad.SelectedValue +")");
+                            MessageBox.Show("Guardado Correctamente", "Informacion");
                             return;
                         }
 
@@ -195,7 +200,9 @@ namespace GestorInformatico
             cmbDepartamento.BackColor = Color.LightBlue;
             cmbLocalidad.BackColor = Color.LightBlue;
             cmbProvincia.BackColor = Color.LightBlue;
+            txtBarrio.BackColor = Color.LightBlue;
             label5.BackColor = Color.LightBlue;
+            MessageBox.Show("Complete los campos Sombreados", "Informacion");
         }
     }
 

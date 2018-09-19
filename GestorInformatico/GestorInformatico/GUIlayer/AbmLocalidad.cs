@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Milibreria;
+using DBHelper;
 
 namespace GestorInformatico
 {
@@ -22,7 +22,7 @@ namespace GestorInformatico
         private void LlenarGrilla()
         {
             DataTable table;
-            table = Milibreria.Utilidades.Ejecutar("Select l.Descripcion as Localidad,l.CodigoPostal as Codigo,d.Descripcion as Departamento,P.Descripcion as Provincia"
+            table = Utilidades.Ejecutar("Select l.Descripcion as Localidad,l.CodigoPostal as Codigo,d.Descripcion as Departamento,P.Descripcion as Provincia"
             + " from Localidad l"
             + " join Departamento d on d.IdDepartamento = l.IdDepartamento"
                + " join Provincia p on p.IdProvincia =d.IdProvincia");
@@ -35,7 +35,7 @@ namespace GestorInformatico
                     dgvLocalidad.Rows.Add(table.Rows[i]["Localidad"].ToString()
                                    , table.Rows[i]["Codigo"].ToString()
                                    , table.Rows[i]["Departamento"].ToString()
-                                    ,table.Rows[i]["Provincia"].ToString());
+                                    , table.Rows[i]["Provincia"].ToString());
                 }
             }
         }
@@ -56,8 +56,8 @@ namespace GestorInformatico
         {
 
             LlenarGrilla();
-            
-            DataTable tabla = Milibreria.Utilidades.Ejecutar("Select * from Provincia");
+
+            DataTable tabla = Utilidades.Ejecutar("Select * from Provincia");
 
             cmbProvincia.DataSource = tabla;
             cmbProvincia.DisplayMember = "Descripcion";
@@ -71,14 +71,14 @@ namespace GestorInformatico
             if (a == 1 && cmbProvincia.SelectedValue != null)
             {
                 a = 0;
-                cmbDepartamento.DataSource = Milibreria.Utilidades.Ejecutar("Select * from Departamento"
+                cmbDepartamento.DataSource = Utilidades.Ejecutar("Select * from Departamento"
                 + " where IdProvincia = " + cmbProvincia.SelectedValue.ToString());
                 cmbDepartamento.DisplayMember = "Descripcion";
                 cmbDepartamento.ValueMember = "IdDepartamento";
                 cmbDepartamento.SelectedIndex = -1;
                 a = 1;
             }
-            
+
         }
 
         private void btnRefescar_Click(object sender, EventArgs e)
@@ -89,6 +89,11 @@ namespace GestorInformatico
             txtCod.Clear();
             dgvLocalidad.Rows.Clear();
             LlenarGrilla();
+            txtLoc.BackColor = Color.White;
+            cmbDepartamento.BackColor = Color.White;
+            cmbProvincia.BackColor = Color.White;
+            label5.BackColor = Color.White;
+            txtCod.BackColor = Color.White;
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -98,44 +103,50 @@ namespace GestorInformatico
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtLoc.Text != "")
+            if (!string.IsNullOrEmpty(txtLoc.Text))
             {
-                
-           
-            if (cmbProvincia.SelectedValue != null)
-            {
-                if (cmbDepartamento.SelectedValue != null)
+                if (!string.IsNullOrEmpty(cmbProvincia.SelectedValue.ToString()))
                 {
-
-                    if (txtCod.Text != "")
+                    if (!string.IsNullOrEmpty(cmbDepartamento.SelectedValue.ToString()))
                     {
-                        Milibreria.Utilidades.Insert("Insert Localidad Values ('" + txtLoc.Text + "'," + cmbDepartamento.SelectedValue.ToString() + "," + txtCod.Text + ")");
-                        MessageBox.Show("Guardado Correctamente", "Informacion");
+
+                        if (!string.IsNullOrEmpty(txtCod.Text))
+                        {
+                            Utilidades.Insert("Insert Localidad Values ('" + txtLoc.Text + "'," + cmbDepartamento.SelectedValue.ToString() + "," + txtCod.Text + ")");
+                            MessageBox.Show("Guardado Correctamente", "Informacion");
+                            return;
+                        }
+                        confirmar(sender, e);
                         txtCod.Focus();
                         return;
-                    }
-                    MessageBox.Show("Complete los campos", "Informacion");
-                    txtCod.Focus();
+
+                    } 
+                    confirmar(sender, e);
+                    cmbDepartamento.Focus();
                     return;
-                   
+
                 }
-                MessageBox.Show("Complete los campos", "Informacion");
-                cmbDepartamento.Focus();
+                confirmar(sender, e);
+                cmbProvincia.Focus();
                 return;
-                   
-            }
-            MessageBox.Show("Complete los campos", "Informacion");
-            cmbProvincia.Focus();
-            return;
-                   
+
             }
             else
             {
-                MessageBox.Show("Complete los campos", "Informacion");
+                confirmar(sender, e);
                 txtLoc.Focus();
             }
         }
 
-       
+        private void confirmar(object sender, EventArgs e)
+        {
+            txtLoc.BackColor = Color.LightBlue;
+            txtCod.BackColor = Color.LightBlue;
+            cmbDepartamento.BackColor = Color.LightBlue;
+            cmbProvincia.BackColor = Color.LightBlue;
+            label5.BackColor = Color.LightBlue;
+            MessageBox.Show("Complete los campos Sombreados", "Informacion");
+        }
+
     }
 }

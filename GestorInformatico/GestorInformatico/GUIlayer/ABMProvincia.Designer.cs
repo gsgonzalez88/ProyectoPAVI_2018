@@ -38,8 +38,8 @@
             this.btnRefescar = new System.Windows.Forms.Button();
             this.dvgProvincia = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dvgProvincia)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -107,7 +107,7 @@
             this.Nombre});
             this.dvgProvincia.Location = new System.Drawing.Point(357, 12);
             this.dvgProvincia.Name = "dvgProvincia";
-            this.dvgProvincia.Size = new System.Drawing.Size(167, 122);
+            this.dvgProvincia.Size = new System.Drawing.Size(198, 217);
             this.dvgProvincia.TabIndex = 19;
             // 
             // groupBox1
@@ -122,17 +122,6 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnAceptar);
-            this.groupBox2.Controls.Add(this.BtnSalir);
-            this.groupBox2.Controls.Add(this.btnRefescar);
-            this.groupBox2.Location = new System.Drawing.Point(6, 69);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(325, 47);
-            this.groupBox2.TabIndex = 17;
-            this.groupBox2.TabStop = false;
-            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.SystemColors.Window;
@@ -144,18 +133,29 @@
             this.label2.TabIndex = 18;
             this.label2.Text = "Campo Obligatorio";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnAceptar);
+            this.groupBox2.Controls.Add(this.BtnSalir);
+            this.groupBox2.Controls.Add(this.btnRefescar);
+            this.groupBox2.Location = new System.Drawing.Point(6, 69);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(325, 47);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 120;
+            this.Nombre.Width = 150;
             // 
             // ABMProvincia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(536, 136);
+            this.ClientSize = new System.Drawing.Size(570, 253);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dvgProvincia);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

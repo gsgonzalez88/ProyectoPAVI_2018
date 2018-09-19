@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBHelper;
 
 namespace GestorInformatico
 {
@@ -30,7 +31,7 @@ namespace GestorInformatico
 
         private void LlenarGrilla()
         {
-            DataTable tabla = Milibreria.Utilidades.Ejecutar("Select  em.Nombre as NombreEmpleado,em.Apellido,e.Descripcion as Estado,* from Usuario u "
+            DataTable tabla = Utilidades.Ejecutar("Select  em.Nombre as NombreEmpleado,em.Apellido,e.Descripcion as Estado,* from Usuario u "
             +" left outer join Estado e on e.idEstado = u.IdEstado"
             +" left outer join Empleado em on u.IdEmpleado = em.IdEmpleado");
             dgvUsuario.Rows.Clear();
@@ -56,7 +57,7 @@ namespace GestorInformatico
             rbtInactivo.Visible = true;
             label4.Visible = true;
             txtNro.Enabled = false;
-                DataTable table = Milibreria.Utilidades.Ejecutar("select e.NroDoc,* from Usuario u"
+                DataTable table = Utilidades.Ejecutar("select e.NroDoc,* from Usuario u"
                 + " join Empleado e on u.IdEmpleado = e.IdEmpleado where u.Nombre ='" + txtUsuario.Text + "'");
                 if (table.Rows.Count>0)
                 {
@@ -105,8 +106,8 @@ namespace GestorInformatico
                         {
                             if (!string.IsNullOrEmpty(txtNro.Text))
                             {
-                                table = Milibreria.Utilidades.Ejecutar("Select IdEmpleado from Empleado where NroDoc = " + txtNro.Text);
-                                Milibreria.Utilidades.Insert("Insert Usuario values ('" + txtUsuario.Text + "'," + txtContraseña.Text + "," + table.Rows[0]["IdEmpleado"].ToString()+",1)");
+                                table = Utilidades.Ejecutar("Select IdEmpleado from Empleado where NroDoc = " + txtNro.Text);
+                                Utilidades.Insert("Insert Usuario values ('" + txtUsuario.Text + "'," + txtContraseña.Text + "," + table.Rows[0]["IdEmpleado"].ToString()+",1)");
                                 MessageBox.Show("Creacion de usuario Exitosa", "Informacion");
                                 return;
                             }
@@ -183,7 +184,7 @@ namespace GestorInformatico
         {
             if (!string.IsNullOrEmpty(txtUsuario.Text))
             {
-                Milibreria.Utilidades.Update("Update Usuario  set IdEstado =2 where Nombre = '" + txtUsuario.Text+"'");
+                Utilidades.Update("Update Usuario  set IdEstado =2 where Nombre = '" + txtUsuario.Text+"'");
                 MessageBox.Show("Usuario Dado de Baja", "Informacion");
                 return;
             }
@@ -201,7 +202,7 @@ namespace GestorInformatico
         {
             if (!string.IsNullOrEmpty(txtUsuario.Text))
             {
-               DataTable table=  Milibreria.Utilidades.Ejecutar("select e.IdEmpleado,* from Usuario u"
+               DataTable table=  Utilidades.Ejecutar("select e.IdEmpleado,* from Usuario u"
                 + " join Empleado e on u.IdEmpleado = e.IdEmpleado where u.Nombre ='" + txtUsuario.Text + "'");
                txtNro.Text = table.Rows[0]["NroDoc"].ToString();
                if (txtUsuario.Text != table.Rows[0]["Nombre"].ToString() || txtUsuario.Text == table.Rows[0]["Nombre"].ToString())
@@ -243,7 +244,7 @@ namespace GestorInformatico
 
                    }
                    sql += " where IdEmpleado =  " + table.Rows[0]["IdEmpleado"].ToString() + " and IdUsuario = " + table.Rows[0]["IdUsuario"].ToString();
-                   Milibreria.Utilidades.Update(sql);
+                   Utilidades.Update(sql);
                    MessageBox.Show("Actulizacion Correcta", "Informacion");
                    return;
                }

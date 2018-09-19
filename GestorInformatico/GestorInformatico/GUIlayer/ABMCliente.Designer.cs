@@ -488,7 +488,7 @@
             this.groupBox3.Controls.Add(this.txtEmail);
             this.groupBox3.Location = new System.Drawing.Point(6, 166);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(637, 47);
+            this.groupBox3.Size = new System.Drawing.Size(660, 47);
             this.groupBox3.TabIndex = 43;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacion de Contacto";
@@ -668,7 +668,7 @@
             this.dgvParticular.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvParticular.Location = new System.Drawing.Point(690, 12);
             this.dgvParticular.Name = "dgvParticular";
-            this.dgvParticular.Size = new System.Drawing.Size(543, 318);
+            this.dgvParticular.Size = new System.Drawing.Size(565, 318);
             this.dgvParticular.TabIndex = 49;
             // 
             // ABMCliente
@@ -676,7 +676,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1245, 352);
+            this.ClientSize = new System.Drawing.Size(1266, 352);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.dgvParticular);
             this.Controls.Add(this.groupBox2);
