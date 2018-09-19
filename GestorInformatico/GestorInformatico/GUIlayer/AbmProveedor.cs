@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace GestorInformatico.GUIlayer
 {
-    public partial class Proveedor : Form
+    public partial class AbmProveedor : Form
     {
-        public Proveedor()
+        public AbmProveedor()
         {
             InitializeComponent();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
