@@ -213,6 +213,7 @@ namespace GestorInformatico
             txtNom.BackColor = Color.LightBlue;
             txtCuit.BackColor = Color.LightBlue;
             txtTelefono.BackColor = Color.LightBlue;
+            MessageBox.Show("Complete los campos Sombreados", "Informacion");
         }
 
         private void cmbProvin_SelectedIndexChanged(object sender, EventArgs e)

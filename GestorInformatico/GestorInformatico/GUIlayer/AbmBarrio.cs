@@ -128,6 +128,11 @@ namespace GestorInformatico
             cmbLocalidad.Enabled = true;
             cmbDepartamento.Enabled = true;
             cmbProvincia.Enabled = true;
+            cmbDepartamento.BackColor = Color.White;
+            cmbLocalidad.BackColor = Color.White;
+            cmbProvincia.BackColor = Color.White;
+            txtBarrio.BackColor = Color.White;
+            label5.BackColor = Color.White;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -195,7 +200,9 @@ namespace GestorInformatico
             cmbDepartamento.BackColor = Color.LightBlue;
             cmbLocalidad.BackColor = Color.LightBlue;
             cmbProvincia.BackColor = Color.LightBlue;
+            txtBarrio.BackColor = Color.LightBlue;
             label5.BackColor = Color.LightBlue;
+            MessageBox.Show("Complete los campos Sombreados", "Informacion");
         }
     }
 

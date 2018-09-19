@@ -35,7 +35,7 @@ namespace GestorInformatico
                     dgvLocalidad.Rows.Add(table.Rows[i]["Localidad"].ToString()
                                    , table.Rows[i]["Codigo"].ToString()
                                    , table.Rows[i]["Departamento"].ToString()
-                                    ,table.Rows[i]["Provincia"].ToString());
+                                    , table.Rows[i]["Provincia"].ToString());
                 }
             }
         }
@@ -56,7 +56,7 @@ namespace GestorInformatico
         {
 
             LlenarGrilla();
-            
+
             DataTable tabla = Utilidades.Ejecutar("Select * from Provincia");
 
             cmbProvincia.DataSource = tabla;
@@ -78,7 +78,7 @@ namespace GestorInformatico
                 cmbDepartamento.SelectedIndex = -1;
                 a = 1;
             }
-            
+
         }
 
         private void btnRefescar_Click(object sender, EventArgs e)
@@ -89,6 +89,11 @@ namespace GestorInformatico
             txtCod.Clear();
             dgvLocalidad.Rows.Clear();
             LlenarGrilla();
+            txtLoc.BackColor = Color.White;
+            cmbDepartamento.BackColor = Color.White;
+            cmbProvincia.BackColor = Color.White;
+            label5.BackColor = Color.White;
+            txtCod.BackColor = Color.White;
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -98,44 +103,50 @@ namespace GestorInformatico
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtLoc.Text != "")
+            if (!string.IsNullOrEmpty(txtLoc.Text))
             {
-                
-           
-            if (cmbProvincia.SelectedValue != null)
-            {
-                if (cmbDepartamento.SelectedValue != null)
+                if (!string.IsNullOrEmpty(cmbProvincia.SelectedValue.ToString()))
                 {
-
-                    if (txtCod.Text != "")
+                    if (!string.IsNullOrEmpty(cmbDepartamento.SelectedValue.ToString()))
                     {
-                        Utilidades.Insert("Insert Localidad Values ('" + txtLoc.Text + "'," + cmbDepartamento.SelectedValue.ToString() + "," + txtCod.Text + ")");
-                        MessageBox.Show("Guardado Correctamente", "Informacion");
+
+                        if (!string.IsNullOrEmpty(txtCod.Text))
+                        {
+                            Utilidades.Insert("Insert Localidad Values ('" + txtLoc.Text + "'," + cmbDepartamento.SelectedValue.ToString() + "," + txtCod.Text + ")");
+                            MessageBox.Show("Guardado Correctamente", "Informacion");
+                            return;
+                        }
+                        confirmar(sender, e);
                         txtCod.Focus();
                         return;
-                    }
-                    MessageBox.Show("Complete los campos", "Informacion");
-                    txtCod.Focus();
+
+                    } 
+                    confirmar(sender, e);
+                    cmbDepartamento.Focus();
                     return;
-                   
+
                 }
-                MessageBox.Show("Complete los campos", "Informacion");
-                cmbDepartamento.Focus();
+                confirmar(sender, e);
+                cmbProvincia.Focus();
                 return;
-                   
-            }
-            MessageBox.Show("Complete los campos", "Informacion");
-            cmbProvincia.Focus();
-            return;
-                   
+
             }
             else
             {
-                MessageBox.Show("Complete los campos", "Informacion");
+                confirmar(sender, e);
                 txtLoc.Focus();
             }
         }
 
-       
+        private void confirmar(object sender, EventArgs e)
+        {
+            txtLoc.BackColor = Color.LightBlue;
+            txtCod.BackColor = Color.LightBlue;
+            cmbDepartamento.BackColor = Color.LightBlue;
+            cmbProvincia.BackColor = Color.LightBlue;
+            label5.BackColor = Color.LightBlue;
+            MessageBox.Show("Complete los campos Sombreados", "Informacion");
+        }
+
     }
 }
