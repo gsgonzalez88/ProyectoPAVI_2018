@@ -117,4 +117,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="Nombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Apellido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Telefono.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Estado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEACACoCAAAFgAAACgAAAAgAAAAQAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAABAMDAAYFBAAIBQMACQYFAAsKCQAPDQwAEAwJABUPDQAWEQ8AGxEMABcXFwAbFBEAIRgUACca
+        FAAuHhcAJR8cADYhGAA5IxoALCUhAComJAA2LikANTEvAD0zLgA3NzcAOjY0ADo6OgBDKh8ARSofAEw3
+        LQBVNScASTs1AEQ+OgBDQD4AREE/AGRCNABmSjwAaUs9AHxPOwBMSEYAS0lIAE9NSwBWSkQAUk5MAFVP
+        TABWUU4AWFRRAF5aVgBkTEEAYU9GAGpPQwBhT0oAaFBEAGFRSgBiVk8AalRLAG1VTwBsWE8AdllJAGxZ
+        UgBoXFUAa15ZAHZZUQByXFMAdF1TAHxeUABkYF0AaWJdAHtgUAB9YlIAeWBUAH1iVQBxYloAc2RbAHhn
+        XQBiYmIAaWRhAGloZgBuaWYAaGhoAG1qaQBvbWsAdGliAHRrZgB0bGcAe2xjAH5sYQB+bWUAcGtoAHRt
+        aABzcW8AdHFvAHh1cwB8eXcAgl5MAIFeVwCFX1cAgWFRAIhhUQCNZlEAjmpVAIZiWwCAZlkAgWhZAIdq
+        XQCMaVoAjW5cAJRpVQCSbl8AnnRcAI5pYQCQa2QAgXBnAIpwYQCCcWgAiHZrAJRxYQCTdGIAk3NlAJp1
+        YQCddmMAm3NmAJp1ZgCadGsAnnptAJh9bwCefW0AjnxyAIF+fACJf3gAln5yAJF+dACdf3EApHpiAKF+
+        agCsf2kAoHx0AISAfgCOgnsAi4R/AJCAdgCXhn0AmoN4AJ2FewCeiHsApYB0AKGEdQCnhnUAqoN1AKGH
+        egCliHkAqYx8ALmUfwCGgoAAh4aEAImGhACNiocAjouIAJ6LgACcjIMAmI2HAJKRkACYl5UApY6BAKWR
+        hgCokYMArJKDAKmShQCslYcAoJKJAKeTigCilY8AqZOKAKqViQCtl4oAqZeMAK6YiwCsmY4AspCBALaT
+        ggC1lYYAt5mLAKmakgCtn5cAoJ6eALGdkgCuoJgAt6KRALaglAC9oZEAsKGZALajmAC1pJoAsKWfALSm
+        ngC4pJkAvaWYAKakogCnp6cAqqmnAKSnqQCqqqoArKysALWqpACxq6kAvbGvALOzsQC0tLQAuLe1ALm5
+        uQC8u7sAvr6+AMCllwDCqZoAxaqcAMSvpADBsqoAxbSpAMG6tQDKvLQAwb26AMG+vQDOv7gAwMC/AKvS
+        4QDBwcEAxcPBAMXFxQDPx8AAysfFAMzKxgDLyskAz83KAM7OzQDQysYA0dHQANTT0QDU1NMA1tXVANjW
+        1QDZ2NcA2dnZANzb2QDd3d0A4+PiAOTj4wDm5uYA6enpAO7u7gDy8vIA9fX1APn5+QD8/PwAv7H/ANrR
+        /wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAysfF0tPT39/f4eHi4+Pj39DT5c3MzsrK0c/KyQAAAADi39/f39/f3+Hh4eHh4eLi
+        4uPi3d3i4eHT0tHhAAAAAEsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLC08AAAAAGAAAAAAAAAAAAAAA
+        AQYCAAAAAAAAAAAAAAAAGgAAAAAYAAAAAAAAAAAAAAA1gz0AABAfAgAAAAAAAAAaAAAAABgAAAAAAAAA
+        AAAAADmNqxkJQGg/AQAAAAAAABoAAAAAGAAAAAAAAAAKAAAMj8vBqnZ0gq4gAAAAAAAAGgAAAAAYAAAA
+        AAAAD2w3GyWsy7qfj5WesA0BAAAAAAAaAAAAABgAAAAAAAAjfpJihMLCr4ykrqiSHB4EAAAAABoAAAAA
+        GAAAAAAAADSxqqOnrapVNkiQpn0kYxcAAAAAGgAAAAAYAAAAAAAABzFWc38qBQAAAAJxZ0WGFQAAAAAa
+        AAAAABgAAAAAAwQSXqWkFAAAAAAAAEFEahMAAAAAABoAAAAAGAAAAAARHiaXuRYAAAAAAAAIaTpkDgAA
+        AAAAGgAAAABNIiIiIh1hk8SpIiIiIiIiIUZ6YW13IiIiIiJQAAAAAFEnJycnZqSMclInJycnJyc1lHpj
+        hUonJycnJ1oAAAAAWysrKys8cJbDji0rKyssO3yRh3UsKysrKysrXAAAAABcLi4uLi4wa699PjMzOG57
+        iLKYLy4uLi4uLi5dAAAAAF0vLy8vLzJ4wL98YF9lb3mz1b1DLy8vLy8vL4AAAAAAgEJCQkJCSdi2vNnU
+        tLXV14pMVEJCQkJCQkJCmQAAAACJTExMTExMU0xH1tu3ut6gTExMTExMTExMTEybAAAAAIlOTk5OTk5O
+        Tle+i05ZgU5OTk5OTk5OTk5OTpwAAAAAmVhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYnQAAAACiKSgo
+        KCgoKCgoKCgoKCgoKCgoKCgoKCgoKCm4AAAAAPPl7e/x8e/u7e7u8PDw8fHx8fHw8O7t6+fj3OsAAAAA
+        5Lv1+vz8+/r5+vr6+/v8/Pz8/Pv7+vn49vC72gAAAADz6vf6/Pz7+vr5+vr7+/z8/Pz8+/r6+fj289zn
+        AAAAAPTg7+bo7/Ls6OLo7Pr7/Pz//Pz7+vr59+7p4+MAAAAAysjGysnKysnJycnKysrKysrKysrJyce4
+        mpqboQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAP//////////wAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AA
+        AAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AA
+        AAPAAAADwAAAA///////////
+</value>
+  </data>
 </root>
