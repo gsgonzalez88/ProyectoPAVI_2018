@@ -394,9 +394,9 @@
             // button4
             // 
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(637, 140);
+            this.button4.Location = new System.Drawing.Point(637, 139);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(29, 24);
+            this.button4.Size = new System.Drawing.Size(29, 29);
             this.button4.TabIndex = 46;
             this.button4.Tag = "Nuevo";
             this.toolTip1.SetToolTip(this.button4, "Nuevo");
@@ -437,9 +437,9 @@
             // button3
             // 
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(637, 110);
+            this.button3.Location = new System.Drawing.Point(637, 105);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(29, 24);
+            this.button3.Size = new System.Drawing.Size(29, 29);
             this.button3.TabIndex = 45;
             this.toolTip1.SetToolTip(this.button3, "Nuevo");
             this.button3.UseVisualStyleBackColor = true;

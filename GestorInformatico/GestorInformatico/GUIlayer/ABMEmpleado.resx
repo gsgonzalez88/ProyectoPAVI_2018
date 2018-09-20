@@ -118,10 +118,52 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnProvincia.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vwAADr8BOAVTJAAAAedJREFUOE+1kWFLU1Ech/ehohcFYSEYFAQ2NIWKmk0dzYxsLt1slhd3WxPWNpW0
+        RHLUZozQbS316hTDZNOVDtKcJRFRBEF9gaed05aOWdaLHjhwufc+v/M/v6P7b/hmOlGizXSOm1HjVvKv
+        98YzbefBspfkxzkyX9Isf17k6WaYjvhFLI/r/xzkmrjKRDbM1vcsUx+ijGzcZWjdR/jdCPOfZlBnrdQN
+        V+0eInaOvQmS/bbG4JqHO0vduFM38WdUudwrN4hthbHFGzEO15SG9C508frritzRu6rifNFBga4lK+1z
+        JuwLTUTejlJ1r7w4wDvtkB/EqK6kA2WxDeuUOa+DKVSDZfIsl+O19L+6hWf+Oufu7ziKaFp7H5WjCvl3
+        NMVOYU80EMwMUuE+tB1gf9LI2OYj1LQNR6ol/3spIsCmGQllBjjiOrAd0B2z0JfKlbXq5NpzE5cS56kL
+        6fPaT1EscYTelMJtrQ29/3hxD/WhSjmFNWGgWTsjz1xAyOZINVditYytBzjs3l8sC1pGjfKKIhsPfxVW
+        EHfKotAKd1lpgMAwdJLWcYMM6Usq2CYv0P7MIJ+lHKzmoLJvd7mAuJ4T/WX0zNoIvPQTSPtxaq1y7KLm
+        9+L0gJ6jOaE813al79jfi/+GTvcDzNCuqiqzz1gAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnDpto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAAedJREFUOE+1kWFLU1Ech/ehohcFYSEYFAQ2NIWKmk0dzYxsLt1slhd3WxPWNpW0
+        RHLUZozQbS316hTDZNOVDtKcJRFRBEF9gaed05aOWdaLHjhwufc+v/M/v6P7b/hmOlGizXSOm1HjVvKv
+        98YzbefBspfkxzkyX9Isf17k6WaYjvhFLI/r/xzkmrjKRDbM1vcsUx+ijGzcZWjdR/jdCPOfZlBnrdQN
+        V+0eInaOvQmS/bbG4JqHO0vduFM38WdUudwrN4hthbHFGzEO15SG9C508frritzRu6rifNFBga4lK+1z
+        JuwLTUTejlJ1r7w4wDvtkB/EqK6kA2WxDeuUOa+DKVSDZfIsl+O19L+6hWf+Oufu7ziKaFp7H5WjCvl3
+        NMVOYU80EMwMUuE+tB1gf9LI2OYj1LQNR6ol/3spIsCmGQllBjjiOrAd0B2z0JfKlbXq5NpzE5cS56kL
+        6fPaT1EscYTelMJtrQ29/3hxD/WhSjmFNWGgWTsjz1xAyOZINVditYytBzjs3l8sC1pGjfKKIhsPfxVW
+        EHfKotAKd1lpgMAwdJLWcYMM6Usq2CYv0P7MIJ+lHKzmoLJvd7mAuJ4T/WX0zNoIvPQTSPtxaq1y7KLm
+        9+L0gJ6jOaE813al79jfi/+GTvcDzNCuqiqzz1gAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnLoc.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAAedJREFUOE+1kWFLU1Ech/ehohcFYSEYFAQ2NIWKmk0dzYxsLt1slhd3WxPWNpW0
+        RHLUZozQbS316hTDZNOVDtKcJRFRBEF9gaed05aOWdaLHjhwufc+v/M/v6P7b/hmOlGizXSOm1HjVvKv
+        98YzbefBspfkxzkyX9Isf17k6WaYjvhFLI/r/xzkmrjKRDbM1vcsUx+ijGzcZWjdR/jdCPOfZlBnrdQN
+        V+0eInaOvQmS/bbG4JqHO0vduFM38WdUudwrN4hthbHFGzEO15SG9C508frritzRu6rifNFBga4lK+1z
+        JuwLTUTejlJ1r7w4wDvtkB/EqK6kA2WxDeuUOa+DKVSDZfIsl+O19L+6hWf+Oufu7ziKaFp7H5WjCvl3
+        NMVOYU80EMwMUuE+tB1gf9LI2OYj1LQNR6ol/3spIsCmGQllBjjiOrAd0B2z0JfKlbXq5NpzE5cS56kL
+        6fPaT1EscYTelMJtrQ29/3hxD/WhSjmFNWGgWTsjz1xAyOZINVditYytBzjs3l8sC1pGjfKKIhsPfxVW
+        EHfKotAKd1lpgMAwdJLWcYMM6Usq2CYv0P7MIJ+lHKzmoLJvd7mAuJ4T/WX0zNoIvPQTSPtxaq1y7KLm
+        9+L0gJ6jOaE813al79jfi/+GTvcDzNCuqiqzz1gAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnBarrio.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAedJREFUOE+1kWFLU1Ech/ehohcFYSEYFAQ2NIWKmk0dzYxsLt1slhd3WxPWNpW0
+        wAAADsABataJCQAAAedJREFUOE+1kWFLU1Ech/ehohcFYSEYFAQ2NIWKmk0dzYxsLt1slhd3WxPWNpW0
         RHLUZozQbS316hTDZNOVDtKcJRFRBEF9gaed05aOWdaLHjhwufc+v/M/v6P7b/hmOlGizXSOm1HjVvKv
         98YzbefBspfkxzkyX9Isf17k6WaYjvhFLI/r/xzkmrjKRDbM1vcsUx+ijGzcZWjdR/jdCPOfZlBnrdQN
         V+0eInaOvQmS/bbG4JqHO0vduFM38WdUudwrN4hthbHFGzEO15SG9C508frritzRu6rifNFBga4lK+1z
