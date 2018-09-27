@@ -247,7 +247,7 @@
             // 
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(606, 219);
+            this.btnGuardar.Location = new System.Drawing.Point(606, 218);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(27, 29);
             this.btnGuardar.TabIndex = 26;
@@ -258,7 +258,7 @@
             // BtnSalir
             // 
             this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
-            this.BtnSalir.Location = new System.Drawing.Point(639, 219);
+            this.BtnSalir.Location = new System.Drawing.Point(639, 218);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(27, 29);
             this.BtnSalir.TabIndex = 27;
@@ -379,6 +379,7 @@
             this.rbtActivo.TabStop = true;
             this.rbtActivo.Text = "Activo";
             this.rbtActivo.UseVisualStyleBackColor = false;
+            this.rbtActivo.CheckedChanged += new System.EventHandler(this.rbtActivo_CheckedChanged);
             // 
             // lblEstado
             // 
@@ -407,7 +408,7 @@
             // 
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(540, 219);
+            this.btnEliminar.Location = new System.Drawing.Point(540, 218);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(27, 29);
             this.btnEliminar.TabIndex = 47;
@@ -426,7 +427,7 @@
             // 
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(507, 217);
+            this.btnActualizar.Location = new System.Drawing.Point(507, 218);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(27, 29);
             this.btnActualizar.TabIndex = 46;
@@ -449,7 +450,7 @@
             // 
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(474, 217);
+            this.btnBuscar.Location = new System.Drawing.Point(474, 218);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(27, 29);
             this.btnBuscar.TabIndex = 45;
@@ -461,7 +462,7 @@
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(573, 219);
+            this.button2.Location = new System.Drawing.Point(573, 218);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(27, 29);
             this.button2.TabIndex = 44;
@@ -670,6 +671,7 @@
             this.dgvParticular.Name = "dgvParticular";
             this.dgvParticular.Size = new System.Drawing.Size(565, 318);
             this.dgvParticular.TabIndex = 49;
+            this.dgvParticular.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParticular_CellContentClick);
             // 
             // ABMCliente
             // 

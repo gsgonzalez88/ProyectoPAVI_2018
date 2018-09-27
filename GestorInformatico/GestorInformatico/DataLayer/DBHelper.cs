@@ -11,6 +11,7 @@ namespace DBHelper
 
     public class Utilidades
     {
+        
 
         public static DataTable Ejecutar(string Ejec)
         {
@@ -49,6 +50,7 @@ namespace DBHelper
             {
                 string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
                 //string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BD;User ID=sa;Password=";
+
                 Conexion.ConnectionString = cadena;
                 Conexion.Open();
                 t = Conexion.BeginTransaction();

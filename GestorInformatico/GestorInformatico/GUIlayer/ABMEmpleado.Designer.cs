@@ -30,12 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABMEmpleado));
             this.grBoxEmpleados = new System.Windows.Forms.GroupBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtNroDocumento = new System.Windows.Forms.TextBox();
+            this.Telefono = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.txtTipoDoc = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombreEmp = new System.Windows.Forms.TextBox();
             this.lblCalle = new System.Windows.Forms.Label();
@@ -44,9 +47,10 @@
             this.lblLocalidad = new System.Windows.Forms.Label();
             this.lblDepartamento = new System.Windows.Forms.Label();
             this.lblBarrio = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.Telefono = new System.Windows.Forms.Label();
             this.grBoxDomicilio = new System.Windows.Forms.GroupBox();
+            this.btnProvincia = new System.Windows.Forms.Button();
+            this.btnDpto = new System.Windows.Forms.Button();
+            this.btnLoc = new System.Windows.Forms.Button();
             this.btnBarrio = new System.Windows.Forms.Button();
             this.cmbProvin = new System.Windows.Forms.ComboBox();
             this.cmbDepto = new System.Windows.Forms.ComboBox();
@@ -58,19 +62,29 @@
             this.rbtInactivo = new System.Windows.Forms.RadioButton();
             this.rbtActivo = new System.Windows.Forms.RadioButton();
             this.lblEstado = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnLoc = new System.Windows.Forms.Button();
-            this.btnDpto = new System.Windows.Forms.Button();
-            this.btnProvincia = new System.Windows.Forms.Button();
+            this.dgvEmpleado = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbTDoc = new System.Windows.Forms.ComboBox();
+            this.lblCamposOb = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.BtnSalir = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.grBoxEmpleados.SuspendLayout();
             this.grBoxDomicilio.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
             // grBoxEmpleados
             // 
+            this.grBoxEmpleados.Controls.Add(this.cmbTDoc);
             this.grBoxEmpleados.Controls.Add(this.txtTelefono);
             this.grBoxEmpleados.Controls.Add(this.txtNroDocumento);
             this.grBoxEmpleados.Controls.Add(this.Telefono);
@@ -80,7 +94,6 @@
             this.grBoxEmpleados.Controls.Add(this.label2);
             this.grBoxEmpleados.Controls.Add(this.lblApellido);
             this.grBoxEmpleados.Controls.Add(this.lblNombre);
-            this.grBoxEmpleados.Controls.Add(this.txtTipoDoc);
             this.grBoxEmpleados.Controls.Add(this.txtApellido);
             this.grBoxEmpleados.Controls.Add(this.txtNombreEmp);
             this.grBoxEmpleados.Location = new System.Drawing.Point(12, 12);
@@ -90,12 +103,30 @@
             this.grBoxEmpleados.TabStop = false;
             this.grBoxEmpleados.Text = "Datos Personales";
             // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(130, 176);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(119, 20);
+            this.txtTelefono.TabIndex = 26;
+            // 
             // txtNroDocumento
             // 
             this.txtNroDocumento.Location = new System.Drawing.Point(130, 112);
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.Size = new System.Drawing.Size(119, 20);
             this.txtNroDocumento.TabIndex = 26;
+            // 
+            // Telefono
+            // 
+            this.Telefono.BackColor = System.Drawing.SystemColors.Control;
+            this.Telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Telefono.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Telefono.Location = new System.Drawing.Point(6, 177);
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Size = new System.Drawing.Size(103, 21);
+            this.Telefono.TabIndex = 25;
+            this.Telefono.Text = "Telefono";
             // 
             // label3
             // 
@@ -107,6 +138,24 @@
             this.label3.Size = new System.Drawing.Size(103, 21);
             this.label3.TabIndex = 17;
             this.label3.Text = "N° Documento";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(130, 144);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(119, 20);
+            this.txtEmail.TabIndex = 18;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.BackColor = System.Drawing.SystemColors.Control;
+            this.lblEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEmail.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(6, 145);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(103, 21);
+            this.lblEmail.TabIndex = 24;
+            this.lblEmail.Text = "Email";
             // 
             // label2
             // 
@@ -140,13 +189,6 @@
             this.lblNombre.Size = new System.Drawing.Size(103, 21);
             this.lblNombre.TabIndex = 14;
             this.lblNombre.Text = "Nombre";
-            // 
-            // txtTipoDoc
-            // 
-            this.txtTipoDoc.Location = new System.Drawing.Point(130, 80);
-            this.txtTipoDoc.Name = "txtTipoDoc";
-            this.txtTipoDoc.Size = new System.Drawing.Size(119, 20);
-            this.txtTipoDoc.TabIndex = 11;
             // 
             // txtApellido
             // 
@@ -228,28 +270,6 @@
             this.lblBarrio.TabIndex = 23;
             this.lblBarrio.Text = "Barrio";
             // 
-            // lblEmail
-            // 
-            this.lblEmail.BackColor = System.Drawing.SystemColors.Control;
-            this.lblEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEmail.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(6, 145);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(103, 21);
-            this.lblEmail.TabIndex = 24;
-            this.lblEmail.Text = "Email";
-            // 
-            // Telefono
-            // 
-            this.Telefono.BackColor = System.Drawing.SystemColors.Control;
-            this.Telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Telefono.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Telefono.Location = new System.Drawing.Point(6, 177);
-            this.Telefono.Name = "Telefono";
-            this.Telefono.Size = new System.Drawing.Size(103, 21);
-            this.Telefono.TabIndex = 25;
-            this.Telefono.Text = "Telefono";
-            // 
             // grBoxDomicilio
             // 
             this.grBoxDomicilio.Controls.Add(this.btnProvincia);
@@ -274,6 +294,36 @@
             this.grBoxDomicilio.TabIndex = 27;
             this.grBoxDomicilio.TabStop = false;
             this.grBoxDomicilio.Text = "Domicilio Personal";
+            // 
+            // btnProvincia
+            // 
+            this.btnProvincia.Image = ((System.Drawing.Image)(resources.GetObject("btnProvincia.Image")));
+            this.btnProvincia.Location = new System.Drawing.Point(251, 76);
+            this.btnProvincia.Name = "btnProvincia";
+            this.btnProvincia.Size = new System.Drawing.Size(29, 29);
+            this.btnProvincia.TabIndex = 47;
+            this.btnProvincia.UseVisualStyleBackColor = true;
+            this.btnProvincia.Click += new System.EventHandler(this.btnProvincia_Click);
+            // 
+            // btnDpto
+            // 
+            this.btnDpto.Image = ((System.Drawing.Image)(resources.GetObject("btnDpto.Image")));
+            this.btnDpto.Location = new System.Drawing.Point(251, 109);
+            this.btnDpto.Name = "btnDpto";
+            this.btnDpto.Size = new System.Drawing.Size(29, 29);
+            this.btnDpto.TabIndex = 46;
+            this.btnDpto.UseVisualStyleBackColor = true;
+            this.btnDpto.Click += new System.EventHandler(this.btnDpto_Click);
+            // 
+            // btnLoc
+            // 
+            this.btnLoc.Image = ((System.Drawing.Image)(resources.GetObject("btnLoc.Image")));
+            this.btnLoc.Location = new System.Drawing.Point(251, 144);
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.Size = new System.Drawing.Size(29, 29);
+            this.btnLoc.TabIndex = 46;
+            this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // btnBarrio
             // 
@@ -365,6 +415,7 @@
             this.rbtActivo.TabStop = true;
             this.rbtActivo.Text = "Activo";
             this.rbtActivo.UseVisualStyleBackColor = false;
+            this.rbtActivo.CheckedChanged += new System.EventHandler(this.rbtActivo_CheckedChanged);
             // 
             // lblEstado
             // 
@@ -377,22 +428,14 @@
             this.lblEstado.TabIndex = 41;
             this.lblEstado.Text = "Estado";
             // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(130, 176);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(119, 20);
-            this.txtTelefono.TabIndex = 26;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(130, 144);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(119, 20);
-            this.txtEmail.TabIndex = 18;
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEliminar);
+            this.groupBox1.Controls.Add(this.btnActualizar);
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.BtnSalir);
+            this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.lblEstado);
             this.groupBox1.Controls.Add(this.rbtInactivo);
             this.groupBox1.Controls.Add(this.rbtActivo);
@@ -402,42 +445,130 @@
             this.groupBox1.TabIndex = 45;
             this.groupBox1.TabStop = false;
             // 
-            // btnLoc
+            // dgvEmpleado
             // 
-            this.btnLoc.Image = ((System.Drawing.Image)(resources.GetObject("btnLoc.Image")));
-            this.btnLoc.Location = new System.Drawing.Point(251, 144);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(29, 29);
-            this.btnLoc.TabIndex = 46;
-            this.btnLoc.UseVisualStyleBackColor = true;
-            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
+            this.dgvEmpleado.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.Apellido,
+            this.dataGridViewTextBoxColumn2,
+            this.Estado});
+            this.dgvEmpleado.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvEmpleado.Location = new System.Drawing.Point(614, 12);
+            this.dgvEmpleado.Name = "dgvEmpleado";
+            this.dgvEmpleado.Size = new System.Drawing.Size(473, 265);
+            this.dgvEmpleado.TabIndex = 50;
             // 
-            // btnDpto
+            // dataGridViewTextBoxColumn1
             // 
-            this.btnDpto.Image = ((System.Drawing.Image)(resources.GetObject("btnDpto.Image")));
-            this.btnDpto.Location = new System.Drawing.Point(251, 109);
-            this.btnDpto.Name = "btnDpto";
-            this.btnDpto.Size = new System.Drawing.Size(29, 29);
-            this.btnDpto.TabIndex = 46;
-            this.btnDpto.UseVisualStyleBackColor = true;
-            this.btnDpto.Click += new System.EventHandler(this.btnDpto_Click);
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 110;
             // 
-            // btnProvincia
+            // Apellido
             // 
-            this.btnProvincia.Image = ((System.Drawing.Image)(resources.GetObject("btnProvincia.Image")));
-            this.btnProvincia.Location = new System.Drawing.Point(251, 76);
-            this.btnProvincia.Name = "btnProvincia";
-            this.btnProvincia.Size = new System.Drawing.Size(29, 29);
-            this.btnProvincia.TabIndex = 47;
-            this.btnProvincia.UseVisualStyleBackColor = true;
-            this.btnProvincia.Click += new System.EventHandler(this.btnProvincia_Click);
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "NroDocumento";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            // 
+            // cmbTDoc
+            // 
+            this.cmbTDoc.FormattingEnabled = true;
+            this.cmbTDoc.Location = new System.Drawing.Point(130, 81);
+            this.cmbTDoc.Name = "cmbTDoc";
+            this.cmbTDoc.Size = new System.Drawing.Size(119, 21);
+            this.cmbTDoc.TabIndex = 48;
+            // 
+            // lblCamposOb
+            // 
+            this.lblCamposOb.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCamposOb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCamposOb.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCamposOb.Location = new System.Drawing.Point(12, 280);
+            this.lblCamposOb.Name = "lblCamposOb";
+            this.lblCamposOb.Size = new System.Drawing.Size(127, 20);
+            this.lblCamposOb.TabIndex = 51;
+            this.lblCamposOb.Text = "Campos Obligatorios";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(439, 13);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(27, 29);
+            this.btnEliminar.TabIndex = 53;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.Location = new System.Drawing.Point(406, 13);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(27, 29);
+            this.btnActualizar.TabIndex = 52;
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(373, 13);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(27, 29);
+            this.btnBuscar.TabIndex = 51;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(472, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(27, 29);
+            this.button2.TabIndex = 50;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
+            this.BtnSalir.Location = new System.Drawing.Point(538, 13);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(27, 29);
+            this.BtnSalir.TabIndex = 49;
+            this.BtnSalir.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(505, 13);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(27, 29);
+            this.btnGuardar.TabIndex = 48;
+            this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // ABMEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1099, 296);
+            this.ClientSize = new System.Drawing.Size(1101, 309);
+            this.Controls.Add(this.lblCamposOb);
+            this.Controls.Add(this.dgvEmpleado);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grBoxDomicilio);
             this.Controls.Add(this.grBoxEmpleados);
@@ -451,6 +582,7 @@
             this.grBoxDomicilio.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,7 +592,6 @@
 
         private System.Windows.Forms.GroupBox grBoxEmpleados;
         private System.Windows.Forms.TextBox txtNombreEmp;
-        private System.Windows.Forms.TextBox txtTipoDoc;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNroDocumento;
         private System.Windows.Forms.Label Telefono;
@@ -493,5 +624,18 @@
         private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Button btnDpto;
         private System.Windows.Forms.Button btnProvincia;
+        private System.Windows.Forms.DataGridView dgvEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        public System.Windows.Forms.ComboBox cmbTDoc;
+        private System.Windows.Forms.Label lblCamposOb;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnSalir;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }
