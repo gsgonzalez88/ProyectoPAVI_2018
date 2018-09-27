@@ -19,17 +19,49 @@ namespace GestorInformatico
         {
             InitializeComponent();
         }
-        int a = 0;
-
         
+        int a = 0;        
 
         private void ABMEmpleado_Load(object sender, EventArgs e)
         {
+            lblEstado.Visible = false;
+            rbtInactivo.Visible = false;
+            rbtActivo.Visible = false;
+            rbtInactivo.Checked = false;
+            rbtActivo.Checked = false;
             cmbProvin.DataSource = Utilidades.Ejecutar("Select * from Provincia");
             cmbProvin.DisplayMember = "Descripcion";
             cmbProvin.ValueMember = "idProvincia";
             cmbProvin.SelectedIndex = -1;
+            cmbTDoc.DataSource = Utilidades.Ejecutar("Select * from TipoDoc");
+            cmbTDoc.DisplayMember = "Descripcion";
+            cmbTDoc.ValueMember = "idTipoDoc";
+            cmbTDoc.SelectedIndex = -1;
+            cmbBarrio.SelectedIndex = -1;
+            cmbDepto.SelectedIndex = -1;
+            cmbLocalidad.SelectedIndex = -1;
+            LlenarGrilla();
+            lblCamposOb.Visible = true;
+            a = 1;
         }
+
+        private void LlenarGrilla()
+        {
+            DataTable tabla = Utilidades.Ejecutar("Select e.Descripcion as Estado,* from empleado emp left outer join Estado e on e.idEstado = emp.IdEstado");
+            dgvEmpleado.Rows.Clear();
+            if (tabla.Rows.Count > 0)
+            {
+                for (int i=0;i<tabla.Rows.Count;i++)
+                {
+                    dgvEmpleado.Rows.Add(tabla.Rows[i]["Nombre"]
+                        , tabla.Rows[i]["Apellido"]
+                        , tabla.Rows[i]["NroDoc"]
+                        , tabla.Rows[i]["Estado"]
+                        );
+                }
+            }
+        }
+        
 
         private void EstaSeguro(object sender, FormClosingEventArgs e)
         {
@@ -41,17 +73,6 @@ namespace GestorInformatico
             {
                 e.Cancel = true;
             }
-        }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void btnBarrio_Click(object sender, EventArgs e)
@@ -79,6 +100,11 @@ namespace GestorInformatico
         }
 
         private void cmbProvin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbtActivo_CheckedChanged(object sender, EventArgs e)
         {
 
         }
