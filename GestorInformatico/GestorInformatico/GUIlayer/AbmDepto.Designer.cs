@@ -45,6 +45,7 @@
             this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDepartamento)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -55,7 +56,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.Window;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Location = new System.Drawing.Point(6, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 19);
             this.label1.TabIndex = 1;
@@ -66,7 +67,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.Window;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 47);
+            this.label2.Location = new System.Drawing.Point(6, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 19);
             this.label2.TabIndex = 2;
@@ -74,7 +75,7 @@
             // 
             // txtDepto
             // 
-            this.txtDepto.Location = new System.Drawing.Point(73, 15);
+            this.txtDepto.Location = new System.Drawing.Point(73, 40);
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.Size = new System.Drawing.Size(206, 20);
             this.txtDepto.TabIndex = 5;
@@ -82,7 +83,7 @@
             // cmbProvincia
             // 
             this.cmbProvincia.FormattingEnabled = true;
-            this.cmbProvincia.Location = new System.Drawing.Point(73, 47);
+            this.cmbProvincia.Location = new System.Drawing.Point(72, 74);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(206, 21);
             this.cmbProvincia.TabIndex = 6;
@@ -90,19 +91,21 @@
             // btnBuscar
             // 
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(74, 15);
+            this.btnBuscar.Location = new System.Drawing.Point(108, 15);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(28, 32);
             this.btnBuscar.TabIndex = 13;
             this.toolTip1.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Visible = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnNuevo
             // 
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.Location = new System.Drawing.Point(285, 47);
+            this.btnNuevo.Location = new System.Drawing.Point(284, 68);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(28, 26);
+            this.btnNuevo.Size = new System.Drawing.Size(28, 30);
             this.btnNuevo.TabIndex = 12;
             this.toolTip1.SetToolTip(this.btnNuevo, "Nuevo");
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -110,7 +113,7 @@
             // BtnSalir
             // 
             this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
-            this.BtnSalir.Location = new System.Drawing.Point(108, 15);
+            this.BtnSalir.Location = new System.Drawing.Point(74, 15);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(28, 32);
             this.BtnSalir.TabIndex = 50;
@@ -127,6 +130,7 @@
             this.btnRefescar.TabIndex = 49;
             this.toolTip1.SetToolTip(this.btnRefescar, "Refescar");
             this.btnRefescar.UseVisualStyleBackColor = true;
+            this.btnRefescar.Click += new System.EventHandler(this.btnRefescar_Click);
             // 
             // btnAceptar
             // 
@@ -138,6 +142,7 @@
             this.btnAceptar.TabIndex = 48;
             this.toolTip1.SetToolTip(this.btnAceptar, "Guardar");
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // dvgDepartamento
             // 
@@ -149,7 +154,7 @@
             this.dvgDepartamento.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dvgDepartamento.Location = new System.Drawing.Point(336, 10);
             this.dvgDepartamento.Name = "dvgDepartamento";
-            this.dvgDepartamento.Size = new System.Drawing.Size(251, 142);
+            this.dvgDepartamento.Size = new System.Drawing.Size(251, 175);
             this.dvgDepartamento.TabIndex = 17;
             // 
             // Departamento
@@ -164,6 +169,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -172,10 +178,9 @@
             this.groupBox1.Controls.Add(this.btnNuevo);
             this.groupBox1.Location = new System.Drawing.Point(9, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(318, 139);
+            this.groupBox1.Size = new System.Drawing.Size(318, 172);
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Departameno";
             // 
             // groupBox2
             // 
@@ -183,18 +188,29 @@
             this.groupBox2.Controls.Add(this.btnRefescar);
             this.groupBox2.Controls.Add(this.BtnSalir);
             this.groupBox2.Controls.Add(this.btnBuscar);
-            this.groupBox2.Location = new System.Drawing.Point(6, 79);
+            this.groupBox2.Location = new System.Drawing.Point(6, 112);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(306, 54);
+            this.groupBox2.Size = new System.Drawing.Size(273, 54);
             this.groupBox2.TabIndex = 51;
             this.groupBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.SystemColors.Window;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 19);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "Campos Obligatorio";
             // 
             // AbmDepto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(606, 164);
+            this.ClientSize = new System.Drawing.Size(598, 193);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dvgDepartamento);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -226,5 +242,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label3;
     }
 }

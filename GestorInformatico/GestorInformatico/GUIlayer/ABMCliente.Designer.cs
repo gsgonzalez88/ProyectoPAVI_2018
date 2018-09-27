@@ -79,12 +79,12 @@
             this.rbtParticular = new System.Windows.Forms.RadioButton();
             this.rbtEmpresa = new System.Windows.Forms.RadioButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.dgvParticular = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvParticular = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -488,7 +488,7 @@
             this.groupBox3.Controls.Add(this.txtEmail);
             this.groupBox3.Location = new System.Drawing.Point(6, 166);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(637, 47);
+            this.groupBox3.Size = new System.Drawing.Size(660, 47);
             this.groupBox3.TabIndex = 43;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacion de Contacto";
@@ -561,7 +561,7 @@
             this.label15.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(325, 55);
+            this.label15.Location = new System.Drawing.Point(18, 55);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(127, 20);
             this.label15.TabIndex = 48;
@@ -627,6 +627,33 @@
             this.rbtEmpresa.UseVisualStyleBackColor = false;
             this.rbtEmpresa.CheckedChanged += new System.EventHandler(this.rbtEmpresa_CheckedChanged);
             // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            // 
+            // Cuit
+            // 
+            this.Cuit.HeaderText = "Cuit";
+            this.Cuit.Name = "Cuit";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "NroDocumento";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 110;
+            // 
             // dgvParticular
             // 
             this.dgvParticular.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
@@ -641,42 +668,15 @@
             this.dgvParticular.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvParticular.Location = new System.Drawing.Point(690, 12);
             this.dgvParticular.Name = "dgvParticular";
-            this.dgvParticular.Size = new System.Drawing.Size(543, 318);
+            this.dgvParticular.Size = new System.Drawing.Size(565, 318);
             this.dgvParticular.TabIndex = 49;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 110;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.Width = 110;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "NroDocumento";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // Cuit
-            // 
-            this.Cuit.HeaderText = "Cuit";
-            this.Cuit.Name = "Cuit";
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
             // 
             // ABMCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1245, 352);
+            this.ClientSize = new System.Drawing.Size(1266, 352);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.dgvParticular);
             this.Controls.Add(this.groupBox2);
@@ -744,15 +744,15 @@
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.RadioButton rbtParticular;
         public System.Windows.Forms.RadioButton rbtEmpresa;
-        private System.Windows.Forms.DataGridView dgvParticular;
         private System.Windows.Forms.Label lblEstado;
         public System.Windows.Forms.RadioButton rbtActivo;
         public System.Windows.Forms.RadioButton rbtInactivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dgvParticular;
     }
 }

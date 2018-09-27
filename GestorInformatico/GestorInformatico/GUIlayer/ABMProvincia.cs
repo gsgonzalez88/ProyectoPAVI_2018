@@ -51,7 +51,6 @@ namespace GestorInformatico
                     Utilidades.Insert("Insert Provincia Values('" + txtProvincia.Text  + "')");
                     MessageBox.Show("Gurdado Correctamente", "Informacion");
                     return;
-                    //btnRefescar_Click(sender, e);<<--- Ver porque da error
                 }
                 else
                 {
