@@ -110,6 +110,12 @@
     <Compile Include="GUIlayer\AbmUsuario.Designer.cs">
       <DependentUpon>AbmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIlayer\frmVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIlayer\frmVenta.Designer.cs">
+      <DependentUpon>frmVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUIlayer\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUIlayer\AbmUsuario.resx">
       <DependentUpon>AbmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIlayer\frmVenta.resx">
+      <DependentUpon>frmVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUIlayer\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
