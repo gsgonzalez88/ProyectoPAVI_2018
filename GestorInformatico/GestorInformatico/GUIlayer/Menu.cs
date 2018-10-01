@@ -79,6 +79,12 @@ namespace GestorInformatico
             venta.ShowDialog();
         }
 
+        private void equipoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GestorInformatico.GUIlayer.AbmEquipo equipo = new GUIlayer.AbmEquipo();
+            equipo.ShowDialog();
+        }
+
       
 
     

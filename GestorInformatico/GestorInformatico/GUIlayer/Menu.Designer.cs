@@ -113,14 +113,15 @@
             // marcaToolStripMenuItem3
             // 
             this.marcaToolStripMenuItem3.Name = "marcaToolStripMenuItem3";
-            this.marcaToolStripMenuItem3.Size = new System.Drawing.Size(111, 22);
+            this.marcaToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.marcaToolStripMenuItem3.Text = "Marca";
             // 
             // equipoToolStripMenuItem1
             // 
             this.equipoToolStripMenuItem1.Name = "equipoToolStripMenuItem1";
-            this.equipoToolStripMenuItem1.Size = new System.Drawing.Size(111, 22);
+            this.equipoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.equipoToolStripMenuItem1.Text = "Equipo";
+            this.equipoToolStripMenuItem1.Click += new System.EventHandler(this.equipoToolStripMenuItem1_Click);
             // 
             // proveedorToolStripMenuItem
             // 
@@ -198,20 +199,20 @@
             // consultarVentaToolStripMenuItem
             // 
             this.consultarVentaToolStripMenuItem.Name = "consultarVentaToolStripMenuItem";
-            this.consultarVentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consultarVentaToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.consultarVentaToolStripMenuItem.Text = "Venta";
             this.consultarVentaToolStripMenuItem.Click += new System.EventHandler(this.consultarVentaToolStripMenuItem_Click);
             // 
             // compraToolStripMenuItem
             // 
             this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
-            this.compraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.compraToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.compraToolStripMenuItem.Text = "Compra";
             // 
             // articuloToolStripMenuItem
             // 
             this.articuloToolStripMenuItem.Name = "articuloToolStripMenuItem";
-            this.articuloToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.articuloToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.articuloToolStripMenuItem.Text = "Articulo";
             // 
             // menuStrip1

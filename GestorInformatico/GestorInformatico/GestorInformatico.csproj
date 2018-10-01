@@ -92,6 +92,12 @@
     <Compile Include="GUIlayer\ABMEmpleado.Designer.cs">
       <DependentUpon>ABMEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIlayer\AbmEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIlayer\AbmEquipo.Designer.cs">
+      <DependentUpon>AbmEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUIlayer\AbmLocalidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     <EmbeddedResource Include="GUIlayer\ABMEmpleado.resx">
       <DependentUpon>ABMEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUIlayer\AbmEquipo.resx">
+      <DependentUpon>AbmEquipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUIlayer\AbmLocalidad.resx">
       <DependentUpon>AbmLocalidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +177,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -187,9 +197,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\accept.ico" />
+    <None Include="Resources\pencil_add1.ico" />
+    <None Include="Resources\accept1.ico" />
     <Content Include="Resources\add.ico" />
+    <None Include="Resources\application_view_detail.ico" />
+    <None Include="Resources\add1.ico" />
     <Content Include="Resources\cancel.ico" />
     <Content Include="Resources\delete.ico" />
+    <None Include="Resources\delete1.ico" />
     <Content Include="Resources\Exe.ico" />
     <Content Include="Resources\pencil_add.ico" />
   </ItemGroup>
