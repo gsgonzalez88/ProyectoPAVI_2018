@@ -96,10 +96,12 @@ namespace GestorInformatico.GUIlayer
         {
             if (!string.IsNullOrEmpty(txtBuscar.Text))
             {
+                btnNuevaMarca.Enabled = false;
+                btnNuevoCliente.Enabled = false;
                 DataTable table;
                 if (!string.IsNullOrEmpty(cboFiltro.Text))
                 {
-                    table = Utilidades.Ejecutar("select m.Descripcion as Marca , c.Apellido,es.IdEstado as Estado, * from Equipo e"
+                    table = Utilidades.Ejecutar("select m.Descripcion as Marca , (c.Nombre +' '+ c.Apellido) as Cliente,es.IdEstado as Estado, * from Equipo e"
               + " join Marca m on m.IdMarca = e.IdMarca"
               + " join Cliente c on c.IdCliente = e.IdCliente"
               + " join Estado es on e.IdEstado = es.IdEstado"
@@ -107,8 +109,10 @@ namespace GestorInformatico.GUIlayer
                 }
                 else
                 {
-                    table = Utilidades.Ejecutar("select m.Descripcion as Marca , c.Apellido,es.IdEstado as Estado, * from Equipo e"
+                    table = Utilidades.Ejecutar("select m.Descripcion as Marca , (c.Nombre +' '+ c.Apellido) as Cliente,es.IdEstado as Estado, * from Equipo e"
                     + " join Estado es on e.IdEstado = es.IdEstado"
+                     + " join Cliente c on c.IdCliente = e.IdCliente"
+                      + " join Marca m on m.IdMarca = e.IdMarca"
                    + "  where e.IdEquipo ='" + txtBuscar.Text + "'");
                 }
                 if (table.Rows.Count>0)
@@ -118,7 +122,7 @@ namespace GestorInformatico.GUIlayer
                     rbtActivo.Enabled = true;
                     rbtInactivo.Enabled = true;
                     txtDescripcion.Text = table.Rows[0]["Descripcion"].ToString();
-                    cmbCliente.Text = table.Rows[0]["Apellido"].ToString();
+                    cmbCliente.Text = table.Rows[0]["Cliente"].ToString();
                     txtObservaciones.Text = table.Rows[0]["Observaciones"].ToString();
                     cboMarca.SelectedText = table.Rows[0]["Marca"].ToString();
                     if (table.Rows[0]["Estado"].ToString() == "1" )
@@ -211,16 +215,20 @@ namespace GestorInformatico.GUIlayer
             label3.BackColor = Color.White;
             cboMarca.BackColor = Color.White;
             txtDescripcion.Text = "";
-            cmbCliente.SelectedIndex = -1;
-            cboMarca.SelectedIndex = -1;
+            cmbCliente.SelectedText = "";
+            cboMarca.SelectedText = "";
             txtObservaciones.Text = "";
             txtBuscar.Text = "";
             rbtActivo.Visible = true;
             rbtInactivo.Visible = true;
             rbtActivo.Checked = false;
             rbtInactivo.Checked = false;
-            btnCliente.Visible = true;
             cboFiltro.SelectedIndex = -1;
+            btnNuevaMarca.Enabled = true;
+            btnNuevoCliente.Enabled = true;
+            cmbCliente.Enabled = true;
+            cboMarca.Enabled = true;
+            btnCliente.Visible = false;
         }
 
         private void btnNuevoCliente_Click(object sender, EventArgs e)
@@ -242,6 +250,72 @@ namespace GestorInformatico.GUIlayer
         {
             DetalleCliente detalle = new DetalleCliente(numero);
             detalle.ShowDialog();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtBuscar.Text))
+            {
+              DataTable table = Utilidades.Ejecutar("select  * from Equipo e"
+                   + "  where e.IdEquipo ='" + txtBuscar.Text + "'");
+
+              Utilidades.Update("Update Equipo set idEstado = 2 where idEquipo = " + txtBuscar.Text);
+              MessageBox.Show("Equipo Dado de Baja");
+              return;
+            }
+            else
+            {
+                MessageBox.Show("Complete el campo");
+                txtBuscar.BackColor = Color.LightBlue;
+            }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtBuscar.Text))
+            {
+                DataTable table = Utilidades.Ejecutar("select  * from Equipo e"
+                     + "  where e.IdEquipo ='" + txtBuscar.Text + "'");
+
+                string sql = "Update Equipo set";
+                if (txtDescripcion.Text.ToString() == table.Rows[0]["Descripcion"].ToString())
+                {
+                    sql += " Descripcion ='" + table.Rows[0]["Descripcion"] + "',";
+                }
+                else
+                {
+                    sql += " Descripcion = '" + txtDescripcion.Text + "',";
+                }
+                if (txtObservaciones.Text.ToString()== table.Rows[0]["Observaciones"].ToString())
+                {
+                    sql += " Observaciones =' " + table.Rows[0]["Observaciones"] + "',";
+                }
+                else
+                {
+                    sql += " Observaciones = '" + txtObservaciones.Text + "',";
+                }
+                if (rbtActivo.Checked)
+                {
+                    sql += " idEstado =  1";
+                }
+                else
+                {
+                    if (rbtInactivo.Checked)
+                    {
+                        sql += " idEstado = 2";
+                    }
+                }
+                Utilidades.Update(sql);
+
+
+                MessageBox.Show("Equipo actualizado");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Complete el campo");
+                txtBuscar.BackColor = Color.LightBlue;
+            }
         }
 
     }

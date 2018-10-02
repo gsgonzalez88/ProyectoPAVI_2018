@@ -331,6 +331,7 @@
             this.btnEliminar.TabIndex = 69;
             this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -342,6 +343,7 @@
             this.btnActualizar.TabIndex = 68;
             this.toolTip1.SetToolTip(this.btnActualizar, "Modificar");
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnGuardar
             // 
@@ -380,7 +382,7 @@
             this.dgvEquipo.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvEquipo.Location = new System.Drawing.Point(404, 62);
             this.dgvEquipo.Name = "dgvEquipo";
-            this.dgvEquipo.Size = new System.Drawing.Size(547, 322);
+            this.dgvEquipo.Size = new System.Drawing.Size(547, 276);
             this.dgvEquipo.TabIndex = 2;
             this.dgvEquipo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEquipo_CellClick);
             // 
