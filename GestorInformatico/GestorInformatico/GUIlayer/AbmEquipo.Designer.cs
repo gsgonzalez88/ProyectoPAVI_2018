@@ -319,6 +319,7 @@
             this.btnCliente.TabIndex = 70;
             this.toolTip1.SetToolTip(this.btnCliente, "Ver Cliente");
             this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
             // btnEliminar
             // 

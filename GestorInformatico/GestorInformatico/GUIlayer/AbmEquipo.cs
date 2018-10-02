@@ -17,7 +17,7 @@ namespace GestorInformatico.GUIlayer
         {
             InitializeComponent();
         }
-
+        string numero;
         int a = 0;
         private void AbmEquipo_Load(object sender, EventArgs e)
         {
@@ -231,11 +231,18 @@ namespace GestorInformatico.GUIlayer
 
         private void dgvEquipo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnCliente.Visible = true;
-            DetalleCliente frmDetalle = new DetalleCliente();
-            frmDetalle.ShowDialog();
+            if (e.RowIndex >= 0)
+            {
+                numero = dgvEquipo.Rows[e.RowIndex].Cells[0].Value.ToString();
+                btnCliente.Visible = true;
+            }
         }
 
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            DetalleCliente detalle = new DetalleCliente(numero);
+            detalle.ShowDialog();
+        }
 
     }
 }
