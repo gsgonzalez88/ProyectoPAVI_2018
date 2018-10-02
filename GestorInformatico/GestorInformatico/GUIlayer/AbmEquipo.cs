@@ -33,10 +33,13 @@ namespace GestorInformatico.GUIlayer
             llegargrilla(sender, e);
             a = 1;
 
-            cmbCliente.DataSource = Utilidades.Ejecutar("Select (c.Nombre + ' ' + c.Apellido) as Nombre,c.IdCliente from Cliente c");
+            rbtActivo.Enabled = false;
+            rbtInactivo.Enabled = false;
+            cmbCliente.DataSource = Utilidades.Ejecutar("Select (c.Nombre + ' ' + c.Apellido) as Nombre,c.IdCliente from Cliente c where c.IdEstado = 1");
             cmbCliente.DisplayMember = "Nombre";
             cmbCliente.ValueMember = "IdCliente";
             cmbCliente.SelectedIndex = -1;
+            btnCliente.Visible = false;
         }
 
         private void llegargrilla(object sender, EventArgs e)
@@ -112,6 +115,8 @@ namespace GestorInformatico.GUIlayer
                 {
                     cboMarca.Enabled = false;
                     cmbCliente.Enabled = false;
+                    rbtActivo.Enabled = true;
+                    rbtInactivo.Enabled = true;
                     txtDescripcion.Text = table.Rows[0]["Descripcion"].ToString();
                     cmbCliente.Text = table.Rows[0]["Apellido"].ToString();
                     txtObservaciones.Text = table.Rows[0]["Observaciones"].ToString();
@@ -156,7 +161,7 @@ namespace GestorInformatico.GUIlayer
                 }
                 if (!string.IsNullOrEmpty(cmbCliente.Text))
                 {
-                    sql += "," + cmbCliente.SelectedIndex;
+                    sql += "," + cmbCliente.SelectedValue;
                 }
                 else
                 {
@@ -165,7 +170,7 @@ namespace GestorInformatico.GUIlayer
                 }
                 if (!string.IsNullOrEmpty(cboMarca.Text))
                 {
-                    sql += "," + cboMarca.SelectedIndex;
+                    sql += "," + cboMarca.SelectedValue;
                 }
                 else
                 {
@@ -214,6 +219,7 @@ namespace GestorInformatico.GUIlayer
             rbtInactivo.Visible = true;
             rbtActivo.Checked = false;
             rbtInactivo.Checked = false;
+            btnCliente.Visible = true;
             cboFiltro.SelectedIndex = -1;
         }
 
@@ -222,6 +228,14 @@ namespace GestorInformatico.GUIlayer
             ABMCliente cliente = new ABMCliente();
             cliente.ShowDialog();
         }
+
+        private void dgvEquipo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnCliente.Visible = true;
+            DetalleCliente frmDetalle = new DetalleCliente();
+            frmDetalle.ShowDialog();
+        }
+
 
     }
 }

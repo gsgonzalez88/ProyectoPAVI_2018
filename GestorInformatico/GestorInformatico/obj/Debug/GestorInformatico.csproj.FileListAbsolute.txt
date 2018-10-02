@@ -96,3 +96,4 @@ C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\Ges
 C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.csproj.GenerateResource.Cache
 D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.GUIlayer.AbmEquipo.resources
 D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.GUIlayer.frmVenta.resources
+D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.GUIlayer.DetalleCliente.resources

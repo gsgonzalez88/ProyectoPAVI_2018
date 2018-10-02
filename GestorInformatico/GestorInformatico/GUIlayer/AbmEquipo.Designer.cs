@@ -36,6 +36,9 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnNuevoCliente = new System.Windows.Forms.Button();
+            this.cmbCliente = new System.Windows.Forms.ComboBox();
+            this.btnNuevaMarca = new System.Windows.Forms.Button();
             this.rbtInactivo = new System.Windows.Forms.RadioButton();
             this.rbtActivo = new System.Windows.Forms.RadioButton();
             this.cboMarca = new System.Windows.Forms.ComboBox();
@@ -48,6 +51,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCliente = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvEquipo = new System.Windows.Forms.DataGridView();
             this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Decripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,15 +64,6 @@
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.cmbCliente = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnCliente = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnNuevaMarca = new System.Windows.Forms.Button();
-            this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -141,6 +141,37 @@
             this.groupBox2.Size = new System.Drawing.Size(386, 222);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // btnNuevoCliente
+            // 
+            this.btnNuevoCliente.Image = global::GestorInformatico.Properties.Resources.add;
+            this.btnNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoCliente.Location = new System.Drawing.Point(342, 103);
+            this.btnNuevoCliente.Name = "btnNuevoCliente";
+            this.btnNuevoCliente.Size = new System.Drawing.Size(24, 25);
+            this.btnNuevoCliente.TabIndex = 73;
+            this.toolTip1.SetToolTip(this.btnNuevoCliente, "Nuevo Cliente");
+            this.btnNuevoCliente.UseVisualStyleBackColor = true;
+            this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
+            // 
+            // cmbCliente
+            // 
+            this.cmbCliente.FormattingEnabled = true;
+            this.cmbCliente.Location = new System.Drawing.Point(131, 103);
+            this.cmbCliente.Name = "cmbCliente";
+            this.cmbCliente.Size = new System.Drawing.Size(206, 21);
+            this.cmbCliente.TabIndex = 72;
+            // 
+            // btnNuevaMarca
+            // 
+            this.btnNuevaMarca.Image = global::GestorInformatico.Properties.Resources.add;
+            this.btnNuevaMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaMarca.Location = new System.Drawing.Point(342, 75);
+            this.btnNuevaMarca.Name = "btnNuevaMarca";
+            this.btnNuevaMarca.Size = new System.Drawing.Size(24, 25);
+            this.btnNuevaMarca.TabIndex = 71;
+            this.toolTip1.SetToolTip(this.btnNuevaMarca, "Nueva Marca");
+            this.btnNuevaMarca.UseVisualStyleBackColor = true;
             // 
             // rbtInactivo
             // 
@@ -266,55 +297,6 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             // 
-            // dgvEquipo
-            // 
-            this.dgvEquipo.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvEquipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEquipo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nro,
-            this.Decripcion,
-            this.Cliente,
-            this.Marca,
-            this.Estado});
-            this.dgvEquipo.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvEquipo.Location = new System.Drawing.Point(404, 62);
-            this.dgvEquipo.Name = "dgvEquipo";
-            this.dgvEquipo.Size = new System.Drawing.Size(547, 322);
-            this.dgvEquipo.TabIndex = 2;
-            // 
-            // Nro
-            // 
-            this.Nro.HeaderText = "Nro";
-            this.Nro.Name = "Nro";
-            // 
-            // Decripcion
-            // 
-            this.Decripcion.HeaderText = "Descripcion";
-            this.Decripcion.Name = "Decripcion";
-            // 
-            // Cliente
-            // 
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.Name = "Cliente";
-            // 
-            // Marca
-            // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            // 
-            // cmbCliente
-            // 
-            this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(131, 103);
-            this.cmbCliente.Name = "cmbCliente";
-            this.cmbCliente.Size = new System.Drawing.Size(206, 21);
-            this.cmbCliente.TabIndex = 72;
-            // 
             // button1
             // 
             this.button1.Image = global::GestorInformatico.Properties.Resources.arrow_refresh;
@@ -384,28 +366,47 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // btnNuevaMarca
+            // dgvEquipo
             // 
-            this.btnNuevaMarca.Image = global::GestorInformatico.Properties.Resources.add;
-            this.btnNuevaMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevaMarca.Location = new System.Drawing.Point(342, 75);
-            this.btnNuevaMarca.Name = "btnNuevaMarca";
-            this.btnNuevaMarca.Size = new System.Drawing.Size(24, 25);
-            this.btnNuevaMarca.TabIndex = 71;
-            this.toolTip1.SetToolTip(this.btnNuevaMarca, "Nueva Marca");
-            this.btnNuevaMarca.UseVisualStyleBackColor = true;
+            this.dgvEquipo.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvEquipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEquipo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nro,
+            this.Decripcion,
+            this.Cliente,
+            this.Marca,
+            this.Estado});
+            this.dgvEquipo.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvEquipo.Location = new System.Drawing.Point(404, 62);
+            this.dgvEquipo.Name = "dgvEquipo";
+            this.dgvEquipo.Size = new System.Drawing.Size(547, 322);
+            this.dgvEquipo.TabIndex = 2;
+            this.dgvEquipo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEquipo_CellClick);
             // 
-            // btnNuevoCliente
+            // Nro
             // 
-            this.btnNuevoCliente.Image = global::GestorInformatico.Properties.Resources.add;
-            this.btnNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(342, 103);
-            this.btnNuevoCliente.Name = "btnNuevoCliente";
-            this.btnNuevoCliente.Size = new System.Drawing.Size(24, 25);
-            this.btnNuevoCliente.TabIndex = 73;
-            this.toolTip1.SetToolTip(this.btnNuevoCliente, "Nuevo Cliente");
-            this.btnNuevoCliente.UseVisualStyleBackColor = true;
-            this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
+            this.Nro.HeaderText = "Nro";
+            this.Nro.Name = "Nro";
+            // 
+            // Decripcion
+            // 
+            this.Decripcion.HeaderText = "Descripcion";
+            this.Decripcion.Name = "Decripcion";
+            // 
+            // Cliente
+            // 
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.Name = "Cliente";
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
             // 
             // AbmEquipo
             // 
@@ -417,6 +418,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AbmEquipo";
             this.Text = "Equipo";
             this.Load += new System.EventHandler(this.AbmEquipo_Load);
