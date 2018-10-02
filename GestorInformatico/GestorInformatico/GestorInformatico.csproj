@@ -202,6 +202,7 @@
     <Content Include="Resources\add.ico" />
     <None Include="Resources\application_view_detail.ico" />
     <None Include="Resources\add1.ico" />
+    <None Include="Resources\arrow_refresh.ico" />
     <Content Include="Resources\cancel.ico" />
     <Content Include="Resources\delete.ico" />
     <None Include="Resources\delete1.ico" />

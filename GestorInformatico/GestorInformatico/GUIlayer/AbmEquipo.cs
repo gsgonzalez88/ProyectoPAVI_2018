@@ -37,8 +37,6 @@ namespace GestorInformatico.GUIlayer
             cmbCliente.DisplayMember = "Nombre";
             cmbCliente.ValueMember = "IdCliente";
             cmbCliente.SelectedIndex = -1;
-
-
         }
 
         private void llegargrilla(object sender, EventArgs e)
@@ -112,9 +110,8 @@ namespace GestorInformatico.GUIlayer
                 }
                 if (table.Rows.Count>0)
                 {
-                    txtNro.Enabled = false;
                     cboMarca.Enabled = false;
-                    txtNro.Text = table.Rows[0]["idEquipo"].ToString();
+                    cmbCliente.Enabled = false;
                     txtDescripcion.Text = table.Rows[0]["Descripcion"].ToString();
                     cmbCliente.Text = table.Rows[0]["Apellido"].ToString();
                     txtObservaciones.Text = table.Rows[0]["Observaciones"].ToString();
@@ -146,21 +143,7 @@ namespace GestorInformatico.GUIlayer
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            DataTable table = Utilidades.Ejecutar("select es.IdEstado as Estado, * from Equipo e"
-                 + " join Estado es on e.IdEstado = es.IdEstado"
-                + "  where e.IdEquipo ='" + txtNro.Text + "'");
-            if (table.Rows.Count >0)
-            {
-                if (table.Rows[0]["Estado"].ToString() =="2")
-                {
-                    MessageBox.Show("El Equipo esta inactivo");
-                    return;
-                }
-                MessageBox.Show("El Equipo ya existe");
-                return;
-            }
-            else
-            {
+            
                 string sql = "insert equipo values(";
                 if (!string.IsNullOrEmpty(txtDescripcion.Text))
                 {
@@ -191,7 +174,7 @@ namespace GestorInformatico.GUIlayer
                 }
                 if (!string.IsNullOrEmpty(txtObservaciones.Text))
                 {
-                    sql += "," + txtObservaciones.Text;
+                    sql += ",'" + txtObservaciones.Text +"'";
                 }
                 else
                 {
@@ -203,7 +186,7 @@ namespace GestorInformatico.GUIlayer
                 MessageBox.Show("Guardado Correctamente");
                 return;
 
-            }
+            
         }
 
         private void obligatorio(object sender, EventArgs e)
@@ -213,6 +196,31 @@ namespace GestorInformatico.GUIlayer
             label3.BackColor = Color.LightBlue;
             cboMarca.BackColor = Color.LightBlue;
             MessageBox.Show("Complete el campo");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            llegargrilla(sender, e);
+            txtDescripcion.BackColor = Color.White;
+            cmbCliente.BackColor = Color.White;
+            label3.BackColor = Color.White;
+            cboMarca.BackColor = Color.White;
+            txtDescripcion.Text = "";
+            cmbCliente.SelectedIndex = -1;
+            cboMarca.SelectedIndex = -1;
+            txtObservaciones.Text = "";
+            txtBuscar.Text = "";
+            rbtActivo.Visible = true;
+            rbtInactivo.Visible = true;
+            rbtActivo.Checked = false;
+            rbtInactivo.Checked = false;
+            cboFiltro.SelectedIndex = -1;
+        }
+
+        private void btnNuevoCliente_Click(object sender, EventArgs e)
+        {
+            ABMCliente cliente = new ABMCliente();
+            cliente.ShowDialog();
         }
 
     }
