@@ -36,6 +36,8 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.grbVenta = new System.Windows.Forms.GroupBox();
+            this.cboEmpleado = new System.Windows.Forms.ComboBox();
+            this.lblEmpleado = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.btnDpto = new System.Windows.Forms.Button();
             this.txtPrecio = new System.Windows.Forms.TextBox();
@@ -64,8 +66,7 @@
             this.lblDescTotal = new System.Windows.Forms.Label();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.lblSubtotal = new System.Windows.Forms.Label();
-            this.lblEmpleado = new System.Windows.Forms.Label();
-            this.cboEmpleado = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.grbVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.grbDetalles.SuspendLayout();
@@ -130,6 +131,7 @@
             // 
             // grbVenta
             // 
+            this.grbVenta.Controls.Add(this.textBox1);
             this.grbVenta.Controls.Add(this.cboEmpleado);
             this.grbVenta.Controls.Add(this.lblEmpleado);
             this.grbVenta.Controls.Add(this.txtCliente);
@@ -155,6 +157,26 @@
             this.grbVenta.TabIndex = 25;
             this.grbVenta.TabStop = false;
             this.grbVenta.Text = "Venta";
+            // 
+            // cboEmpleado
+            // 
+            this.cboEmpleado.FormattingEnabled = true;
+            this.cboEmpleado.Location = new System.Drawing.Point(293, 40);
+            this.cboEmpleado.Name = "cboEmpleado";
+            this.cboEmpleado.Size = new System.Drawing.Size(126, 21);
+            this.cboEmpleado.TabIndex = 69;
+            // 
+            // lblEmpleado
+            // 
+            this.lblEmpleado.AutoSize = true;
+            this.lblEmpleado.BackColor = System.Drawing.SystemColors.Control;
+            this.lblEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEmpleado.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpleado.Location = new System.Drawing.Point(226, 43);
+            this.lblEmpleado.Name = "lblEmpleado";
+            this.lblEmpleado.Size = new System.Drawing.Size(57, 17);
+            this.lblEmpleado.TabIndex = 68;
+            this.lblEmpleado.Text = "Empleado";
             // 
             // txtCliente
             // 
@@ -416,25 +438,12 @@
             this.lblSubtotal.TabIndex = 67;
             this.lblSubtotal.Text = "Subtotal";
             // 
-            // lblEmpleado
+            // textBox1
             // 
-            this.lblEmpleado.AutoSize = true;
-            this.lblEmpleado.BackColor = System.Drawing.SystemColors.Control;
-            this.lblEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEmpleado.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpleado.Location = new System.Drawing.Point(226, 43);
-            this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(57, 17);
-            this.lblEmpleado.TabIndex = 68;
-            this.lblEmpleado.Text = "Empleado";
-            // 
-            // cboEmpleado
-            // 
-            this.cboEmpleado.FormattingEnabled = true;
-            this.cboEmpleado.Location = new System.Drawing.Point(293, 40);
-            this.cboEmpleado.Name = "cboEmpleado";
-            this.cboEmpleado.Size = new System.Drawing.Size(126, 21);
-            this.cboEmpleado.TabIndex = 69;
+            this.textBox1.Location = new System.Drawing.Point(293, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(126, 20);
+            this.textBox1.TabIndex = 70;
             // 
             // frmVenta
             // 
@@ -496,5 +505,6 @@
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.ComboBox cboEmpleado;
         private System.Windows.Forms.Label lblEmpleado;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

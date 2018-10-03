@@ -17,7 +17,7 @@ namespace GestorInformatico.GUIlayer
             InitializeComponent();
         }
         string sql = "";
-
+        int a = 0;
         private void OrdenDeTrabajo_Load(object sender, EventArgs e)
         {
             cmbMarca.DataSource = Utilidades.Ejecutar("Select * from Marca");
@@ -35,6 +35,7 @@ namespace GestorInformatico.GUIlayer
             cmbTarea.ValueMember = "IdTarea";
             cmbTarea.SelectedIndex = -1;
             llenargrilla(sender,e, sql);
+            a = 1;
         }
 
         private void llenargrilla(object sender, EventArgs e,string sql)
@@ -71,6 +72,7 @@ namespace GestorInformatico.GUIlayer
                                     , table.Rows[i]["Estado"].ToString());
                 }
             }
+            sql = string.Empty;
         }
 
         private void btnVerEquipo_Click(object sender, EventArgs e)
@@ -80,21 +82,30 @@ namespace GestorInformatico.GUIlayer
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sql += " where idMarca = "+ cmbMarca.SelectedValue.ToString();
-            llenargrilla(sender, e, sql);        
+            if (a==1)
+            {
+                sql += " where e.idMarca = " + cmbMarca.SelectedValue.ToString();
+                llenargrilla(sender, e, sql);    
+            }
+                    
         }
 
         private void cmbTarea_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sql += " where IdTarea = " + cmbTarea.SelectedValue.ToString();
-            llenargrilla(sender, e, sql); 
-
+            if (a == 1)
+            {
+                sql += " where o.IdTarea = " + cmbTarea.SelectedValue.ToString();
+                llenargrilla(sender, e, sql);
+            }
         }
 
         private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sql += " where IdTarea = " + cmbEstado.SelectedValue.ToString();
+            if (a==1)
+	        {
+            sql += " where o.IdEstado = " + cmbEstado.SelectedValue.ToString();
             llenargrilla(sender, e, sql); 
+            }
         }
 
     }

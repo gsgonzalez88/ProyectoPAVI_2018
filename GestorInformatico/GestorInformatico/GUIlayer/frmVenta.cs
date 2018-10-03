@@ -59,5 +59,7 @@ namespace GestorInformatico.GUIlayer
                 txtDescuento.Text = "";
             }
         }
+
+  
     }
 }
