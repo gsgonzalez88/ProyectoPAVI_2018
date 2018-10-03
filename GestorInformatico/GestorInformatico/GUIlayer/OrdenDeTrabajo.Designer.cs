@@ -57,6 +57,7 @@
             this.TiempoRealizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVerEquipo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -169,6 +170,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnVerEquipo);
             this.groupBox3.Controls.Add(this.btnNueva);
             this.groupBox3.Controls.Add(this.btnCerrar);
             this.groupBox3.Controls.Add(this.btnRefescar);
@@ -294,6 +296,16 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             // 
+            // btnVerEquipo
+            // 
+            this.btnVerEquipo.Image = ((System.Drawing.Image)(resources.GetObject("btnVerEquipo.Image")));
+            this.btnVerEquipo.Location = new System.Drawing.Point(533, 8);
+            this.btnVerEquipo.Name = "btnVerEquipo";
+            this.btnVerEquipo.Size = new System.Drawing.Size(28, 32);
+            this.btnVerEquipo.TabIndex = 52;
+            this.toolTip1.SetToolTip(this.btnVerEquipo, "Ver Equipo");
+            this.btnVerEquipo.UseVisualStyleBackColor = true;
+            // 
             // OrdenDeTrabajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,5 +355,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TiempoRealizado;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaEntrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.Button btnVerEquipo;
     }
 }
