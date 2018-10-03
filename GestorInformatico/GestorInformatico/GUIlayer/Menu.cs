@@ -73,6 +73,18 @@ namespace GestorInformatico
             empleado.ShowDialog();
         }
 
+        private void consultarVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestorInformatico.GUIlayer.frmVenta venta = new GestorInformatico.GUIlayer.frmVenta();
+            venta.ShowDialog();
+        }
+
+        private void equipoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GestorInformatico.GUIlayer.AbmEquipo equipo = new GUIlayer.AbmEquipo();
+            equipo.ShowDialog();
+        }
+
       
 
     

@@ -197,6 +197,7 @@ namespace GestorInformatico
                 MessageBox.Show("Seleccione un tipo de cliente", "Informacion");
             }
         }
+
         public void confirmar(object sender, EventArgs e)
         {
             label15.Visible = true;
@@ -468,6 +469,7 @@ namespace GestorInformatico
                 txtBuscar.Focus();
             }
         }
+
         private void Insert(object sender, EventArgs e)
         {
             DataTable table = new DataTable();

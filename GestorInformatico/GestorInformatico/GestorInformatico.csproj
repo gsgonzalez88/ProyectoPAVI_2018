@@ -92,6 +92,12 @@
     <Compile Include="GUIlayer\ABMEmpleado.Designer.cs">
       <DependentUpon>ABMEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIlayer\AbmEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIlayer\AbmEquipo.Designer.cs">
+      <DependentUpon>AbmEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUIlayer\AbmLocalidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,18 @@
     <Compile Include="GUIlayer\AbmUsuario.Designer.cs">
       <DependentUpon>AbmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIlayer\DetalleCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIlayer\DetalleCliente.Designer.cs">
+      <DependentUpon>DetalleCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIlayer\frmVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIlayer\frmVenta.Designer.cs">
+      <DependentUpon>frmVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUIlayer\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +139,12 @@
     </Compile>
     <Compile Include="GUIlayer\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIlayer\OrdenDeTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIlayer\OrdenDeTrabajo.Designer.cs">
+      <DependentUpon>OrdenDeTrabajo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,6 +160,9 @@
     <EmbeddedResource Include="GUIlayer\ABMEmpleado.resx">
       <DependentUpon>ABMEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUIlayer\AbmEquipo.resx">
+      <DependentUpon>AbmEquipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUIlayer\AbmLocalidad.resx">
       <DependentUpon>AbmLocalidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,11 +172,20 @@
     <EmbeddedResource Include="GUIlayer\AbmUsuario.resx">
       <DependentUpon>AbmUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUIlayer\DetalleCliente.resx">
+      <DependentUpon>DetalleCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIlayer\frmVenta.resx">
+      <DependentUpon>frmVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUIlayer\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUIlayer\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIlayer\OrdenDeTrabajo.resx">
+      <DependentUpon>OrdenDeTrabajo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -159,6 +195,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -178,9 +215,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\accept.ico" />
+    <None Include="Resources\pencil_add1.ico" />
+    <None Include="Resources\accept1.ico" />
     <Content Include="Resources\add.ico" />
+    <None Include="Resources\application_view_detail.ico" />
+    <None Include="Resources\add1.ico" />
+    <None Include="Resources\arrow_refresh.ico" />
     <Content Include="Resources\cancel.ico" />
     <Content Include="Resources\delete.ico" />
+    <None Include="Resources\delete1.ico" />
     <Content Include="Resources\Exe.ico" />
     <Content Include="Resources\pencil_add.ico" />
   </ItemGroup>
