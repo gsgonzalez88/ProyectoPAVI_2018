@@ -16,18 +16,14 @@ namespace GestorInformatico.GUIlayer
         {
             InitializeComponent();
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        string sql = "";
 
         private void OrdenDeTrabajo_Load(object sender, EventArgs e)
         {
-            cmbEquipo.DataSource = Utilidades.Ejecutar("Select * from Marca");
-            cmbEquipo.DisplayMember = "Descripcion";
-            cmbEquipo.ValueMember = "IdMarca";
-            cmbEquipo.SelectedIndex = -1;
+            cmbMarca.DataSource = Utilidades.Ejecutar("Select * from Marca");
+            cmbMarca.DisplayMember = "Descripcion";
+            cmbMarca.ValueMember = "IdMarca";
+            cmbMarca.SelectedIndex = -1;
 
             cmbEstado.DataSource = Utilidades.Ejecutar("Select * from Estado");
             cmbEstado.DisplayMember = "Descripcion";
@@ -38,19 +34,25 @@ namespace GestorInformatico.GUIlayer
             cmbTarea.DisplayMember = "Descripcion";
             cmbTarea.ValueMember = "IdTarea";
             cmbTarea.SelectedIndex = -1;
-            llenargrilla(sender,e);
+            llenargrilla(sender,e, sql);
         }
 
-        private void llenargrilla(object sender, EventArgs e)
+        private void llenargrilla(object sender, EventArgs e,string sql)
         {
             DataTable table;
-            table = Utilidades.Ejecutar("select e.Descripcion as Equipo ,t.Descripcion as Tarea,(em.Nombre +' '+em.Apellido) as EmpleadoG,es.Descripcion as Estado ,"
+            string eje= "select e.Descripcion as Equipo ,t.Descripcion as Tarea,(em.Nombre +' '+em.Apellido) as EmpleadoG,es.Descripcion as Estado ,"
             + "(ema.Nombre +' '+ema.Apellido) as EmpleadoA, * from Orden o"
             + " join Equipo e on e.IdEquipo = o.IdEquipo"
             + " join Tarea t on o.IdTarea = t.IdTarea"
             + " join Empleado em on em.IdEmpleado=o.IdEmpleadoG"
             + " join Estado es on es.IdEstado = o.IdEstado"
-            + " join Empleado ema on ema.IdEmpleado=o.IdEmpleadoAsi");
+            + " join Empleado ema on ema.IdEmpleado=o.IdEmpleadoAsi";
+            if (!string.IsNullOrEmpty(sql))
+	            {
+                    eje += sql;    
+	            }
+            table = Utilidades.Ejecutar(eje);
+            
             dataGridView1.Rows.Clear();
             if (table.Rows.Count > 0)
             {
@@ -70,5 +72,30 @@ namespace GestorInformatico.GUIlayer
                 }
             }
         }
+
+        private void btnVerEquipo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            sql += " where idMarca = "+ cmbMarca.SelectedValue.ToString();
+            llenargrilla(sender, e, sql);        
+        }
+
+        private void cmbTarea_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            sql += " where IdTarea = " + cmbTarea.SelectedValue.ToString();
+            llenargrilla(sender, e, sql); 
+
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            sql += " where IdTarea = " + cmbEstado.SelectedValue.ToString();
+            llenargrilla(sender, e, sql); 
+        }
+
     }
 }
