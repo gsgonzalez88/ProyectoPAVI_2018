@@ -62,11 +62,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.txtDescTotal = new System.Windows.Forms.TextBox();
-            this.lblDescTotal = new System.Windows.Forms.Label();
-            this.txtSubtotal = new System.Windows.Forms.TextBox();
-            this.lblSubtotal = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.grbVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.grbDetalles.SuspendLayout();
@@ -131,7 +126,6 @@
             // 
             // grbVenta
             // 
-            this.grbVenta.Controls.Add(this.textBox1);
             this.grbVenta.Controls.Add(this.cboEmpleado);
             this.grbVenta.Controls.Add(this.lblEmpleado);
             this.grbVenta.Controls.Add(this.txtCliente);
@@ -352,10 +346,6 @@
             this.grbDetalles.Controls.Add(this.btnModificar);
             this.grbDetalles.Controls.Add(this.lblTotal);
             this.grbDetalles.Controls.Add(this.txtTotal);
-            this.grbDetalles.Controls.Add(this.txtDescTotal);
-            this.grbDetalles.Controls.Add(this.lblDescTotal);
-            this.grbDetalles.Controls.Add(this.txtSubtotal);
-            this.grbDetalles.Controls.Add(this.lblSubtotal);
             this.grbDetalles.Controls.Add(this.dgvDetalles);
             this.grbDetalles.Location = new System.Drawing.Point(12, 132);
             this.grbDetalles.Name = "grbDetalles";
@@ -401,49 +391,6 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(72, 20);
             this.txtTotal.TabIndex = 69;
-            // 
-            // txtDescTotal
-            // 
-            this.txtDescTotal.Location = new System.Drawing.Point(586, 190);
-            this.txtDescTotal.Name = "txtDescTotal";
-            this.txtDescTotal.Size = new System.Drawing.Size(72, 20);
-            this.txtDescTotal.TabIndex = 68;
-            // 
-            // lblDescTotal
-            // 
-            this.lblDescTotal.BackColor = System.Drawing.SystemColors.Control;
-            this.lblDescTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDescTotal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescTotal.Location = new System.Drawing.Point(519, 191);
-            this.lblDescTotal.Name = "lblDescTotal";
-            this.lblDescTotal.Size = new System.Drawing.Size(61, 17);
-            this.lblDescTotal.TabIndex = 67;
-            this.lblDescTotal.Text = "Descuento";
-            // 
-            // txtSubtotal
-            // 
-            this.txtSubtotal.Location = new System.Drawing.Point(586, 169);
-            this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.Size = new System.Drawing.Size(72, 20);
-            this.txtSubtotal.TabIndex = 67;
-            // 
-            // lblSubtotal
-            // 
-            this.lblSubtotal.BackColor = System.Drawing.SystemColors.Control;
-            this.lblSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSubtotal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtotal.Location = new System.Drawing.Point(519, 170);
-            this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(61, 17);
-            this.lblSubtotal.TabIndex = 67;
-            this.lblSubtotal.Text = "Subtotal";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(293, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 20);
-            this.textBox1.TabIndex = 70;
             // 
             // frmVenta
             // 
@@ -496,15 +443,10 @@
         private System.Windows.Forms.GroupBox grbDetalles;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.TextBox txtDescTotal;
-        private System.Windows.Forms.Label lblDescTotal;
-        private System.Windows.Forms.TextBox txtSubtotal;
-        private System.Windows.Forms.Label lblSubtotal;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.ComboBox cboEmpleado;
         private System.Windows.Forms.Label lblEmpleado;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
