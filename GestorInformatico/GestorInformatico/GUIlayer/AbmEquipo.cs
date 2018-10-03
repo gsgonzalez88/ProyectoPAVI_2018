@@ -239,7 +239,7 @@ namespace GestorInformatico.GUIlayer
 
         private void dgvEquipo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex > 0)
             {
                 numero = dgvEquipo.Rows[e.RowIndex].Cells[0].Value.ToString();
                 btnCliente.Visible = true;
