@@ -38,7 +38,11 @@ namespace GestorInformatico.GUIlayer
             cmbTarea.DisplayMember = "Descripcion";
             cmbTarea.ValueMember = "IdTarea";
             cmbTarea.SelectedIndex = -1;
-
+        }
+        
+        private void  llenargrilla(object sender, EventArgs e,int marca,int tarea,int estado)
+        {
+           
         }
     }
 }
