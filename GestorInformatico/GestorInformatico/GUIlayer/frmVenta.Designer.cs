@@ -36,34 +36,36 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.grbVenta = new System.Windows.Forms.GroupBox();
-            this.lblFormaDePago = new System.Windows.Forms.Label();
-            this.cboFormaPago = new System.Windows.Forms.ComboBox();
-            this.lblArtículo = new System.Windows.Forms.Label();
-            this.lblCantidad = new System.Windows.Forms.Label();
-            this.lblPrecio = new System.Windows.Forms.Label();
-            this.lblDescuento = new System.Windows.Forms.Label();
-            this.cboArticulo = new System.Windows.Forms.ComboBox();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.txtDescuento = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.dgvDetalles = new System.Windows.Forms.DataGridView();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.btnDpto = new System.Windows.Forms.Button();
-            this.grbDetalles = new System.Windows.Forms.GroupBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtDescuento = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.cboArticulo = new System.Windows.Forms.ComboBox();
+            this.lblDescuento = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.lblArtículo = new System.Windows.Forms.Label();
+            this.cboFormaPago = new System.Windows.Forms.ComboBox();
+            this.lblFormaDePago = new System.Windows.Forms.Label();
+            this.dgvDetalles = new System.Windows.Forms.DataGridView();
             this.colCodProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblSubtotal = new System.Windows.Forms.Label();
-            this.txtSubtotal = new System.Windows.Forms.TextBox();
-            this.lblDescTotal = new System.Windows.Forms.Label();
-            this.txtDescTotal = new System.Windows.Forms.TextBox();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.lblTotal = new System.Windows.Forms.Label();
+            this.grbDetalles = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtDescTotal = new System.Windows.Forms.TextBox();
+            this.lblDescTotal = new System.Windows.Forms.Label();
+            this.txtSubtotal = new System.Windows.Forms.TextBox();
+            this.lblSubtotal = new System.Windows.Forms.Label();
+            this.lblEmpleado = new System.Windows.Forms.Label();
+            this.cboEmpleado = new System.Windows.Forms.ComboBox();
             this.grbVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.grbDetalles.SuspendLayout();
@@ -128,6 +130,8 @@
             // 
             // grbVenta
             // 
+            this.grbVenta.Controls.Add(this.cboEmpleado);
+            this.grbVenta.Controls.Add(this.lblEmpleado);
             this.grbVenta.Controls.Add(this.txtCliente);
             this.grbVenta.Controls.Add(this.btnDpto);
             this.grbVenta.Controls.Add(this.txtPrecio);
@@ -152,49 +156,62 @@
             this.grbVenta.TabStop = false;
             this.grbVenta.Text = "Venta";
             // 
-            // lblFormaDePago
+            // txtCliente
             // 
-            this.lblFormaDePago.AutoSize = true;
-            this.lblFormaDePago.BackColor = System.Drawing.SystemColors.Control;
-            this.lblFormaDePago.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFormaDePago.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormaDePago.Location = new System.Drawing.Point(446, 42);
-            this.lblFormaDePago.Name = "lblFormaDePago";
-            this.lblFormaDePago.Size = new System.Drawing.Size(80, 17);
-            this.lblFormaDePago.TabIndex = 55;
-            this.lblFormaDePago.Text = "Forma de Pago";
+            this.txtCliente.Location = new System.Drawing.Point(82, 40);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(126, 20);
+            this.txtCliente.TabIndex = 67;
             // 
-            // cboFormaPago
+            // btnDpto
             // 
-            this.cboFormaPago.FormattingEnabled = true;
-            this.cboFormaPago.Location = new System.Drawing.Point(541, 40);
-            this.cboFormaPago.Name = "cboFormaPago";
-            this.cboFormaPago.Size = new System.Drawing.Size(126, 21);
-            this.cboFormaPago.TabIndex = 57;
+            this.btnDpto.Image = ((System.Drawing.Image)(resources.GetObject("btnDpto.Image")));
+            this.btnDpto.Location = new System.Drawing.Point(6, 72);
+            this.btnDpto.Name = "btnDpto";
+            this.btnDpto.Size = new System.Drawing.Size(29, 29);
+            this.btnDpto.TabIndex = 66;
+            this.btnDpto.UseVisualStyleBackColor = true;
             // 
-            // lblArtículo
+            // txtPrecio
             // 
-            this.lblArtículo.AutoSize = true;
-            this.lblArtículo.BackColor = System.Drawing.SystemColors.Control;
-            this.lblArtículo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblArtículo.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArtículo.Location = new System.Drawing.Point(41, 79);
-            this.lblArtículo.Name = "lblArtículo";
-            this.lblArtículo.Size = new System.Drawing.Size(49, 17);
-            this.lblArtículo.TabIndex = 58;
-            this.lblArtículo.Text = "Artículo";
+            this.txtPrecio.Location = new System.Drawing.Point(437, 78);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(61, 20);
+            this.txtPrecio.TabIndex = 65;
             // 
-            // lblCantidad
+            // txtDescuento
             // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.BackColor = System.Drawing.SystemColors.Control;
-            this.lblCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCantidad.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidad.Location = new System.Drawing.Point(247, 81);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(52, 17);
-            this.lblCantidad.TabIndex = 59;
-            this.lblCantidad.Text = "Cantidad";
+            this.txtDescuento.Location = new System.Drawing.Point(595, 77);
+            this.txtDescuento.Name = "txtDescuento";
+            this.txtDescuento.Size = new System.Drawing.Size(72, 20);
+            this.txtDescuento.TabIndex = 64;
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(307, 78);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(61, 20);
+            this.txtCantidad.TabIndex = 63;
+            // 
+            // cboArticulo
+            // 
+            this.cboArticulo.FormattingEnabled = true;
+            this.cboArticulo.Location = new System.Drawing.Point(96, 78);
+            this.cboArticulo.Name = "cboArticulo";
+            this.cboArticulo.Size = new System.Drawing.Size(126, 21);
+            this.cboArticulo.TabIndex = 62;
+            this.cboArticulo.TextChanged += new System.EventHandler(this.cboArticulo_TextChanged);
+            // 
+            // lblDescuento
+            // 
+            this.lblDescuento.BackColor = System.Drawing.SystemColors.Control;
+            this.lblDescuento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDescuento.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescuento.Location = new System.Drawing.Point(528, 78);
+            this.lblDescuento.Name = "lblDescuento";
+            this.lblDescuento.Size = new System.Drawing.Size(61, 17);
+            this.lblDescuento.TabIndex = 61;
+            this.lblDescuento.Text = "Descuento";
             // 
             // lblPrecio
             // 
@@ -208,45 +225,50 @@
             this.lblPrecio.TabIndex = 60;
             this.lblPrecio.Text = "Precio";
             // 
-            // lblDescuento
+            // lblCantidad
             // 
-            this.lblDescuento.BackColor = System.Drawing.SystemColors.Control;
-            this.lblDescuento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDescuento.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescuento.Location = new System.Drawing.Point(528, 78);
-            this.lblDescuento.Name = "lblDescuento";
-            this.lblDescuento.Size = new System.Drawing.Size(61, 17);
-            this.lblDescuento.TabIndex = 61;
-            this.lblDescuento.Text = "Descuento";
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCantidad.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad.Location = new System.Drawing.Point(247, 81);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(52, 17);
+            this.lblCantidad.TabIndex = 59;
+            this.lblCantidad.Text = "Cantidad";
             // 
-            // cboArticulo
+            // lblArtículo
             // 
-            this.cboArticulo.FormattingEnabled = true;
-            this.cboArticulo.Location = new System.Drawing.Point(96, 78);
-            this.cboArticulo.Name = "cboArticulo";
-            this.cboArticulo.Size = new System.Drawing.Size(126, 21);
-            this.cboArticulo.TabIndex = 62;
+            this.lblArtículo.AutoSize = true;
+            this.lblArtículo.BackColor = System.Drawing.SystemColors.Control;
+            this.lblArtículo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblArtículo.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArtículo.Location = new System.Drawing.Point(41, 79);
+            this.lblArtículo.Name = "lblArtículo";
+            this.lblArtículo.Size = new System.Drawing.Size(49, 17);
+            this.lblArtículo.TabIndex = 58;
+            this.lblArtículo.Text = "Artículo";
             // 
-            // txtCantidad
+            // cboFormaPago
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(307, 78);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(61, 20);
-            this.txtCantidad.TabIndex = 63;
+            this.cboFormaPago.FormattingEnabled = true;
+            this.cboFormaPago.Location = new System.Drawing.Point(541, 40);
+            this.cboFormaPago.Name = "cboFormaPago";
+            this.cboFormaPago.Size = new System.Drawing.Size(126, 21);
+            this.cboFormaPago.TabIndex = 57;
+            this.cboFormaPago.SelectedIndexChanged += new System.EventHandler(this.cboFormaPago_SelectedIndexChanged);
             // 
-            // txtDescuento
+            // lblFormaDePago
             // 
-            this.txtDescuento.Location = new System.Drawing.Point(595, 77);
-            this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(72, 20);
-            this.txtDescuento.TabIndex = 64;
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(437, 78);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(61, 20);
-            this.txtPrecio.TabIndex = 65;
+            this.lblFormaDePago.AutoSize = true;
+            this.lblFormaDePago.BackColor = System.Drawing.SystemColors.Control;
+            this.lblFormaDePago.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFormaDePago.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormaDePago.Location = new System.Drawing.Point(446, 42);
+            this.lblFormaDePago.Name = "lblFormaDePago";
+            this.lblFormaDePago.Size = new System.Drawing.Size(80, 17);
+            this.lblFormaDePago.TabIndex = 55;
+            this.lblFormaDePago.Text = "Forma de Pago";
             // 
             // dgvDetalles
             // 
@@ -265,33 +287,6 @@
             this.dgvDetalles.ReadOnly = true;
             this.dgvDetalles.Size = new System.Drawing.Size(643, 150);
             this.dgvDetalles.TabIndex = 66;
-            // 
-            // btnDpto
-            // 
-            this.btnDpto.Image = ((System.Drawing.Image)(resources.GetObject("btnDpto.Image")));
-            this.btnDpto.Location = new System.Drawing.Point(6, 72);
-            this.btnDpto.Name = "btnDpto";
-            this.btnDpto.Size = new System.Drawing.Size(29, 29);
-            this.btnDpto.TabIndex = 66;
-            this.btnDpto.UseVisualStyleBackColor = true;
-            // 
-            // grbDetalles
-            // 
-            this.grbDetalles.Controls.Add(this.btnEliminar);
-            this.grbDetalles.Controls.Add(this.btnModificar);
-            this.grbDetalles.Controls.Add(this.lblTotal);
-            this.grbDetalles.Controls.Add(this.txtTotal);
-            this.grbDetalles.Controls.Add(this.txtDescTotal);
-            this.grbDetalles.Controls.Add(this.lblDescTotal);
-            this.grbDetalles.Controls.Add(this.txtSubtotal);
-            this.grbDetalles.Controls.Add(this.lblSubtotal);
-            this.grbDetalles.Controls.Add(this.dgvDetalles);
-            this.grbDetalles.Location = new System.Drawing.Point(12, 132);
-            this.grbDetalles.Name = "grbDetalles";
-            this.grbDetalles.Size = new System.Drawing.Size(676, 239);
-            this.grbDetalles.TabIndex = 67;
-            this.grbDetalles.TabStop = false;
-            this.grbDetalles.Text = "Detalles";
             // 
             // colCodProd
             // 
@@ -329,59 +324,23 @@
             this.colSubtotal.Name = "colSubtotal";
             this.colSubtotal.ReadOnly = true;
             // 
-            // lblSubtotal
+            // grbDetalles
             // 
-            this.lblSubtotal.BackColor = System.Drawing.SystemColors.Control;
-            this.lblSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSubtotal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtotal.Location = new System.Drawing.Point(519, 170);
-            this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(61, 17);
-            this.lblSubtotal.TabIndex = 67;
-            this.lblSubtotal.Text = "Subtotal";
-            // 
-            // txtSubtotal
-            // 
-            this.txtSubtotal.Location = new System.Drawing.Point(586, 169);
-            this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.Size = new System.Drawing.Size(72, 20);
-            this.txtSubtotal.TabIndex = 67;
-            // 
-            // lblDescTotal
-            // 
-            this.lblDescTotal.BackColor = System.Drawing.SystemColors.Control;
-            this.lblDescTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDescTotal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescTotal.Location = new System.Drawing.Point(519, 191);
-            this.lblDescTotal.Name = "lblDescTotal";
-            this.lblDescTotal.Size = new System.Drawing.Size(61, 17);
-            this.lblDescTotal.TabIndex = 67;
-            this.lblDescTotal.Text = "Descuento";
-            // 
-            // txtDescTotal
-            // 
-            this.txtDescTotal.Location = new System.Drawing.Point(586, 190);
-            this.txtDescTotal.Name = "txtDescTotal";
-            this.txtDescTotal.Size = new System.Drawing.Size(72, 20);
-            this.txtDescTotal.TabIndex = 68;
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Location = new System.Drawing.Point(586, 211);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(72, 20);
-            this.txtTotal.TabIndex = 69;
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.BackColor = System.Drawing.SystemColors.Control;
-            this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTotal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(519, 212);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(61, 17);
-            this.lblTotal.TabIndex = 70;
-            this.lblTotal.Text = "Total";
+            this.grbDetalles.Controls.Add(this.btnEliminar);
+            this.grbDetalles.Controls.Add(this.btnModificar);
+            this.grbDetalles.Controls.Add(this.lblTotal);
+            this.grbDetalles.Controls.Add(this.txtTotal);
+            this.grbDetalles.Controls.Add(this.txtDescTotal);
+            this.grbDetalles.Controls.Add(this.lblDescTotal);
+            this.grbDetalles.Controls.Add(this.txtSubtotal);
+            this.grbDetalles.Controls.Add(this.lblSubtotal);
+            this.grbDetalles.Controls.Add(this.dgvDetalles);
+            this.grbDetalles.Location = new System.Drawing.Point(12, 132);
+            this.grbDetalles.Name = "grbDetalles";
+            this.grbDetalles.Size = new System.Drawing.Size(676, 239);
+            this.grbDetalles.TabIndex = 67;
+            this.grbDetalles.TabStop = false;
+            this.grbDetalles.Text = "Detalles";
             // 
             // btnEliminar
             // 
@@ -403,12 +362,79 @@
             this.btnModificar.TabIndex = 71;
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // txtCliente
+            // lblTotal
             // 
-            this.txtCliente.Location = new System.Drawing.Point(82, 40);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(126, 20);
-            this.txtCliente.TabIndex = 67;
+            this.lblTotal.BackColor = System.Drawing.SystemColors.Control;
+            this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTotal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(519, 212);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(61, 17);
+            this.lblTotal.TabIndex = 70;
+            this.lblTotal.Text = "Total";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(586, 211);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(72, 20);
+            this.txtTotal.TabIndex = 69;
+            // 
+            // txtDescTotal
+            // 
+            this.txtDescTotal.Location = new System.Drawing.Point(586, 190);
+            this.txtDescTotal.Name = "txtDescTotal";
+            this.txtDescTotal.Size = new System.Drawing.Size(72, 20);
+            this.txtDescTotal.TabIndex = 68;
+            // 
+            // lblDescTotal
+            // 
+            this.lblDescTotal.BackColor = System.Drawing.SystemColors.Control;
+            this.lblDescTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDescTotal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescTotal.Location = new System.Drawing.Point(519, 191);
+            this.lblDescTotal.Name = "lblDescTotal";
+            this.lblDescTotal.Size = new System.Drawing.Size(61, 17);
+            this.lblDescTotal.TabIndex = 67;
+            this.lblDescTotal.Text = "Descuento";
+            // 
+            // txtSubtotal
+            // 
+            this.txtSubtotal.Location = new System.Drawing.Point(586, 169);
+            this.txtSubtotal.Name = "txtSubtotal";
+            this.txtSubtotal.Size = new System.Drawing.Size(72, 20);
+            this.txtSubtotal.TabIndex = 67;
+            // 
+            // lblSubtotal
+            // 
+            this.lblSubtotal.BackColor = System.Drawing.SystemColors.Control;
+            this.lblSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSubtotal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtotal.Location = new System.Drawing.Point(519, 170);
+            this.lblSubtotal.Name = "lblSubtotal";
+            this.lblSubtotal.Size = new System.Drawing.Size(61, 17);
+            this.lblSubtotal.TabIndex = 67;
+            this.lblSubtotal.Text = "Subtotal";
+            // 
+            // lblEmpleado
+            // 
+            this.lblEmpleado.AutoSize = true;
+            this.lblEmpleado.BackColor = System.Drawing.SystemColors.Control;
+            this.lblEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEmpleado.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpleado.Location = new System.Drawing.Point(226, 43);
+            this.lblEmpleado.Name = "lblEmpleado";
+            this.lblEmpleado.Size = new System.Drawing.Size(57, 17);
+            this.lblEmpleado.TabIndex = 68;
+            this.lblEmpleado.Text = "Empleado";
+            // 
+            // cboEmpleado
+            // 
+            this.cboEmpleado.FormattingEnabled = true;
+            this.cboEmpleado.Location = new System.Drawing.Point(293, 40);
+            this.cboEmpleado.Name = "cboEmpleado";
+            this.cboEmpleado.Size = new System.Drawing.Size(126, 21);
+            this.cboEmpleado.TabIndex = 69;
             // 
             // frmVenta
             // 
@@ -468,5 +494,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.ComboBox cboEmpleado;
+        private System.Windows.Forms.Label lblEmpleado;
     }
 }
