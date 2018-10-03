@@ -126,37 +126,5 @@ namespace DBHelper
                 throw new Exception("" + e.Message);
             }
         }
-
-        public DataTable consultarArticulo(string strSql)
-        {
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            DataTable tabla = new DataTable();
-            try
-            {
-                //string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
-                string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BD;User ID=sa;Password=";
-                conexion.ConnectionString = cadena;
-                conexion.Open();
-                comando.Connection = conexion;
-                comando.CommandType = CommandType.Text;
-                comando.CommandText = strSql;
-
-                tabla.Load(comando.ExecuteReader());
-                return tabla;
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                if((conexion.State == ConnectionState.Open))
-                {
-                    conexion.Close();
-                }
-                conexion.Dispose();
-            }
-        }
     }
 }
