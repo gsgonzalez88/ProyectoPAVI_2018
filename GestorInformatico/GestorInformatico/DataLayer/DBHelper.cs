@@ -19,8 +19,8 @@ namespace DBHelper
             DataTable table;
             try
             {
-                string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
-                //string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BD;User ID=sa;Password=";
+                //string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
+                string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BD;User ID=sa;Password=2xdpn5fv0";
                 Conexion.ConnectionString = cadena;
                 Conexion.Open();
                 Comando.Connection = Conexion;
