@@ -60,7 +60,7 @@ namespace GestorInformatico.GUIlayer
 
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    dataGridView1.Rows.Add(table.Rows[i]["Nro"].ToString()
+                    dataGridView1.Rows.Add(table.Rows[i]["IdOrden"].ToString()
                                    , table.Rows[i]["Equipo"].ToString()
                                    , table.Rows[i]["EmpleadoA"].ToString()
                                    , table.Rows[i]["Tarea"].ToString()
@@ -71,8 +71,14 @@ namespace GestorInformatico.GUIlayer
                                     , table.Rows[i]["FechaEntrega"].ToString()
                                     , table.Rows[i]["Estado"].ToString());
                 }
+
             }
-            sql = string.Empty;
+            else
+            {
+                MessageBox.Show("No existe orden");
+               
+            }
+          
         }
 
         private void btnVerEquipo_Click(object sender, EventArgs e)
@@ -84,8 +90,11 @@ namespace GestorInformatico.GUIlayer
         {
             if (a==1)
             {
+                sql = ""; 
                 sql += " where e.idMarca = " + cmbMarca.SelectedValue.ToString();
-                llenargrilla(sender, e, sql);    
+                llenargrilla(sender, e, sql);
+                cmbTarea.Enabled = false;
+                cmbEstado.Enabled = false;
             }
                     
         }
@@ -94,8 +103,11 @@ namespace GestorInformatico.GUIlayer
         {
             if (a == 1)
             {
+                sql = ""; 
                 sql += " where o.IdTarea = " + cmbTarea.SelectedValue.ToString();
                 llenargrilla(sender, e, sql);
+                cmbMarca.Enabled = false;
+                cmbEstado.Enabled = false;
             }
         }
 
@@ -103,9 +115,69 @@ namespace GestorInformatico.GUIlayer
         {
             if (a==1)
 	        {
+                sql = "";
             sql += " where o.IdEstado = " + cmbEstado.SelectedValue.ToString();
-            llenargrilla(sender, e, sql); 
+            llenargrilla(sender, e, sql);
+            cmbTarea.Enabled = false;
+            cmbEstado.Enabled = false;
             }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtBuscar.Text))
+            {
+             
+                if (cmbEstado.SelectedIndex != -1)
+                {
+                    sql += " and o.Nro = " + txtBuscar.Text;
+                    llenargrilla(sender, e, sql);
+                    return;
+                }
+                if (cmbMarca.SelectedIndex != -1)
+                {
+                    sql += " and o.Nro = " + txtBuscar.Text;
+                    llenargrilla(sender, e, sql);
+                    return;
+                }
+                if (cmbTarea.SelectedIndex != -1)
+                {
+                     sql += " and o.Nro = " + txtBuscar.Text;
+                    llenargrilla(sender, e, sql);
+                      return;
+                }
+	           if (!string.IsNullOrEmpty(txtBuscar.Text))
+               { sql += " where o.Nro = " + txtBuscar.Text;
+                    llenargrilla(sender, e, sql);
+                   return;
+               }
+                
+
+            }
+            else
+            {
+                txtBuscar.BackColor = Color.LightBlue;
+                MessageBox.Show("Complete el campo");
+            }
+        }
+
+        private void btnRefescar_Click(object sender, EventArgs e)
+        {
+            cmbTarea.Enabled = true;
+            cmbEstado.Enabled = true;
+            cmbMarca.Enabled = true;
+            txtBuscar.Text = "";
+        }
+
+        private void btnNueva_Click(object sender, EventArgs e)
+        {
+            AbmOrden orden = new AbmOrden();
+            orden.ShowDialog();
         }
 
     }
