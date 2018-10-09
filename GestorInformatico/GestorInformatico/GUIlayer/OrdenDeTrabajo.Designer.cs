@@ -32,9 +32,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdenDeTrabajo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnVerEquipo = new System.Windows.Forms.Button();
+            this.btnNueva = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnRefescar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.cmbTarea = new System.Windows.Forms.ComboBox();
+            this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.idOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpleadoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,20 +59,6 @@
             this.TiempoRealizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.cmbTarea = new System.Windows.Forms.ComboBox();
-            this.cmbMarca = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnVerEquipo = new System.Windows.Forms.Button();
-            this.btnNueva = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnRefescar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -93,6 +93,72 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.Location = new System.Drawing.Point(477, 8);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(28, 32);
+            this.btnEditar.TabIndex = 53;
+            this.toolTip1.SetToolTip(this.btnEditar, "Editar Orden");
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnVerEquipo
+            // 
+            this.btnVerEquipo.Image = ((System.Drawing.Image)(resources.GetObject("btnVerEquipo.Image")));
+            this.btnVerEquipo.Location = new System.Drawing.Point(533, 8);
+            this.btnVerEquipo.Name = "btnVerEquipo";
+            this.btnVerEquipo.Size = new System.Drawing.Size(28, 32);
+            this.btnVerEquipo.TabIndex = 52;
+            this.toolTip1.SetToolTip(this.btnVerEquipo, "Ver Equipo");
+            this.btnVerEquipo.UseVisualStyleBackColor = true;
+            this.btnVerEquipo.Click += new System.EventHandler(this.btnVerEquipo_Click);
+            // 
+            // btnNueva
+            // 
+            this.btnNueva.Image = global::GestorInformatico.Properties.Resources.add;
+            this.btnNueva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNueva.Location = new System.Drawing.Point(369, 8);
+            this.btnNueva.Name = "btnNueva";
+            this.btnNueva.Size = new System.Drawing.Size(28, 32);
+            this.btnNueva.TabIndex = 51;
+            this.toolTip1.SetToolTip(this.btnNueva, "Crear Orden");
+            this.btnNueva.UseVisualStyleBackColor = true;
+            this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(437, 8);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(28, 32);
+            this.btnCerrar.TabIndex = 50;
+            this.toolTip1.SetToolTip(this.btnCerrar, "Cerrar Orden");
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            // 
+            // btnRefescar
+            // 
+            this.btnRefescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefescar.Image")));
+            this.btnRefescar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefescar.Location = new System.Drawing.Point(403, 8);
+            this.btnRefescar.Name = "btnRefescar";
+            this.btnRefescar.Size = new System.Drawing.Size(28, 32);
+            this.btnRefescar.TabIndex = 49;
+            this.toolTip1.SetToolTip(this.btnRefescar, "Refrescar");
+            this.btnRefescar.UseVisualStyleBackColor = true;
+            this.btnRefescar.Click += new System.EventHandler(this.btnRefescar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Location = new System.Drawing.Point(335, 8);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(28, 32);
+            this.btnBuscar.TabIndex = 24;
+            this.toolTip1.SetToolTip(this.btnBuscar, "Buscar Por Numero");
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
             // 
@@ -132,58 +198,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1033, 383);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // idOrden
-            // 
-            this.idOrden.HeaderText = "Nro";
-            this.idOrden.Name = "idOrden";
-            this.idOrden.Width = 80;
-            // 
-            // NroEquipo
-            // 
-            this.NroEquipo.HeaderText = "Equipo";
-            this.NroEquipo.Name = "NroEquipo";
-            // 
-            // EmpleadoE
-            // 
-            this.EmpleadoE.HeaderText = "EmpleadoEncargado";
-            this.EmpleadoE.Name = "EmpleadoE";
-            this.EmpleadoE.Width = 110;
-            // 
-            // Tarea
-            // 
-            this.Tarea.HeaderText = "Tarea";
-            this.Tarea.Name = "Tarea";
-            // 
-            // Falla
-            // 
-            this.Falla.HeaderText = "Falla";
-            this.Falla.Name = "Falla";
-            // 
-            // Respuesta
-            // 
-            this.Respuesta.HeaderText = "Respuesta";
-            this.Respuesta.Name = "Respuesta";
-            // 
-            // EmpleadoGenerador
-            // 
-            this.EmpleadoGenerador.HeaderText = "Solicitante";
-            this.EmpleadoGenerador.Name = "EmpleadoGenerador";
-            // 
-            // TiempoRealizado
-            // 
-            this.TiempoRealizado.HeaderText = "Tiempo Insumido";
-            this.TiempoRealizado.Name = "TiempoRealizado";
-            // 
-            // FechaEntrega
-            // 
-            this.FechaEntrega.HeaderText = "FechaEntrega";
-            this.FechaEntrega.Name = "FechaEntrega";
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
             // 
             // groupBox2
             // 
@@ -259,71 +273,57 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "Marca";
             // 
-            // btnEditar
+            // idOrden
             // 
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(477, 8);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(28, 32);
-            this.btnEditar.TabIndex = 53;
-            this.toolTip1.SetToolTip(this.btnEditar, "Editar Orden");
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.idOrden.HeaderText = "Nro";
+            this.idOrden.Name = "idOrden";
+            this.idOrden.Width = 80;
             // 
-            // btnVerEquipo
+            // NroEquipo
             // 
-            this.btnVerEquipo.Image = ((System.Drawing.Image)(resources.GetObject("btnVerEquipo.Image")));
-            this.btnVerEquipo.Location = new System.Drawing.Point(533, 8);
-            this.btnVerEquipo.Name = "btnVerEquipo";
-            this.btnVerEquipo.Size = new System.Drawing.Size(28, 32);
-            this.btnVerEquipo.TabIndex = 52;
-            this.toolTip1.SetToolTip(this.btnVerEquipo, "Ver Equipo");
-            this.btnVerEquipo.UseVisualStyleBackColor = true;
-            this.btnVerEquipo.Click += new System.EventHandler(this.btnVerEquipo_Click);
+            this.NroEquipo.HeaderText = "Equipo";
+            this.NroEquipo.Name = "NroEquipo";
             // 
-            // btnNueva
+            // EmpleadoE
             // 
-            this.btnNueva.Image = global::GestorInformatico.Properties.Resources.add;
-            this.btnNueva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNueva.Location = new System.Drawing.Point(369, 8);
-            this.btnNueva.Name = "btnNueva";
-            this.btnNueva.Size = new System.Drawing.Size(28, 32);
-            this.btnNueva.TabIndex = 51;
-            this.toolTip1.SetToolTip(this.btnNueva, "Crear Orden");
-            this.btnNueva.UseVisualStyleBackColor = true;
-            this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
+            this.EmpleadoE.HeaderText = "Encargado";
+            this.EmpleadoE.Name = "EmpleadoE";
+            this.EmpleadoE.Width = 110;
             // 
-            // btnCerrar
+            // Tarea
             // 
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(437, 8);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(28, 32);
-            this.btnCerrar.TabIndex = 50;
-            this.toolTip1.SetToolTip(this.btnCerrar, "Cerrar Orden");
-            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.Tarea.HeaderText = "Tarea";
+            this.Tarea.Name = "Tarea";
             // 
-            // btnRefescar
+            // Falla
             // 
-            this.btnRefescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefescar.Image")));
-            this.btnRefescar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefescar.Location = new System.Drawing.Point(403, 8);
-            this.btnRefescar.Name = "btnRefescar";
-            this.btnRefescar.Size = new System.Drawing.Size(28, 32);
-            this.btnRefescar.TabIndex = 49;
-            this.toolTip1.SetToolTip(this.btnRefescar, "Refrescar");
-            this.btnRefescar.UseVisualStyleBackColor = true;
-            this.btnRefescar.Click += new System.EventHandler(this.btnRefescar_Click);
+            this.Falla.HeaderText = "Falla";
+            this.Falla.Name = "Falla";
             // 
-            // btnBuscar
+            // Respuesta
             // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(335, 8);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(28, 32);
-            this.btnBuscar.TabIndex = 24;
-            this.toolTip1.SetToolTip(this.btnBuscar, "Buscar Por Numero");
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.Respuesta.HeaderText = "Respuesta";
+            this.Respuesta.Name = "Respuesta";
+            // 
+            // EmpleadoGenerador
+            // 
+            this.EmpleadoGenerador.HeaderText = "Solicitante";
+            this.EmpleadoGenerador.Name = "EmpleadoGenerador";
+            // 
+            // TiempoRealizado
+            // 
+            this.TiempoRealizado.HeaderText = "Tiempo Insumido";
+            this.TiempoRealizado.Name = "TiempoRealizado";
+            // 
+            // FechaEntrega
+            // 
+            this.FechaEntrega.HeaderText = "FechaEntrega";
+            this.FechaEntrega.Name = "FechaEntrega";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
             // 
             // OrdenDeTrabajo
             // 
@@ -364,6 +364,8 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnRefescar;
+        private System.Windows.Forms.Button btnVerEquipo;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idOrden;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroEquipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmpleadoE;
@@ -374,7 +376,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TiempoRealizado;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaEntrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.Button btnVerEquipo;
-        private System.Windows.Forms.Button btnEditar;
     }
 }

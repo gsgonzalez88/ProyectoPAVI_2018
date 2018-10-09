@@ -41,13 +41,14 @@ namespace GestorInformatico.GUIlayer
         private void llenargrilla(object sender, EventArgs e,string sql)
         {
             DataTable table;
-            string eje= "select e.Descripcion as Equipo ,t.Descripcion as Tarea,(em.Nombre +' '+em.Apellido) as EmpleadoG,es.Descripcion as Estado ,"
-            + "(ema.Nombre +' '+ema.Apellido) as EmpleadoA, * from Orden o"
-            + " join Equipo e on e.IdEquipo = o.IdEquipo"
-            + " join Tarea t on o.IdTarea = t.IdTarea"
-            + " join Empleado em on em.IdEmpleado=o.IdEmpleadoG"
-            + " join Estado es on es.IdEstado = o.IdEstado"
-            + " join Empleado ema on ema.IdEmpleado=o.IdEmpleadoAsi";
+            string eje= "select t.Descripcion as Tarea,eq.Descripcion as Equipo,es.Descripcion as Estado,"
+            +"(emA.Apellido + ' ' +emA.Nombre) as Encargado,(emG.Apellido + ' ' +emG.Nombre) as Solicitante ,* from orden o" 
+            +" left outer join TareaOT tot on tot.IdOT = o.IdOrden"
+            +" left outer join Tarea t on t.IdTarea = tot.IdTarea"
+            +" left outer join Equipo eq on eq.IdEquipo = tot.IdEquipo"
+            +" left outer join Estado es on es.IdEstado = tot.IdEstado"
+            +" left outer join Empleado emA on emA.IdEmpleado = o.IdEmpleadoAsi"
+            +" left outer join Empleado emG on emG.IdEmpleado = o.IdEmpleadoG";
             if (!string.IsNullOrEmpty(sql))
 	            {
                     eje += sql;    
@@ -62,11 +63,11 @@ namespace GestorInformatico.GUIlayer
                 {
                     dataGridView1.Rows.Add(table.Rows[i]["IdOrden"].ToString()
                                    , table.Rows[i]["Equipo"].ToString()
-                                   , table.Rows[i]["EmpleadoA"].ToString()
+                                   , table.Rows[i]["Encargado"].ToString()
                                    , table.Rows[i]["Tarea"].ToString()
                                    , table.Rows[i]["Falla"].ToString()
                                     ,table.Rows[i]["Respuesta"].ToString()
-                                    , table.Rows[i]["EmpleadoG"].ToString()
+                                    , table.Rows[i]["Solicitante"].ToString()
                                     , table.Rows[i]["TiempoRealizado"].ToString()
                                     , table.Rows[i]["FechaEntrega"].ToString()
                                     , table.Rows[i]["Estado"].ToString());
@@ -90,11 +91,15 @@ namespace GestorInformatico.GUIlayer
         {
             if (a==1)
             {
-                sql = ""; 
-                sql += " where e.idMarca = " + cmbMarca.SelectedValue.ToString();
-                llenargrilla(sender, e, sql);
-                cmbTarea.Enabled = false;
-                cmbEstado.Enabled = false;
+                sql = "";
+                if (cmbMarca.SelectedIndex != -1)
+                {
+                    sql += " where eq.idMarca = " + cmbMarca.SelectedValue.ToString();
+                    llenargrilla(sender, e, sql);
+                    cmbTarea.Enabled = false;
+                    cmbEstado.Enabled = false;
+                }
+               
             }
                     
         }
@@ -103,11 +108,15 @@ namespace GestorInformatico.GUIlayer
         {
             if (a == 1)
             {
-                sql = ""; 
-                sql += " where o.IdTarea = " + cmbTarea.SelectedValue.ToString();
-                llenargrilla(sender, e, sql);
-                cmbMarca.Enabled = false;
-                cmbEstado.Enabled = false;
+                sql = "";
+                if (cmbTarea.SelectedIndex != -1)
+                {
+                    sql += " where t.IdTarea = " + cmbTarea.SelectedValue.ToString();
+                    llenargrilla(sender, e, sql);
+                    cmbMarca.Enabled = false;
+                    cmbEstado.Enabled = false;
+                }
+
             }
         }
 
@@ -116,10 +125,15 @@ namespace GestorInformatico.GUIlayer
             if (a==1)
 	        {
                 sql = "";
-            sql += " where o.IdEstado = " + cmbEstado.SelectedValue.ToString();
-            llenargrilla(sender, e, sql);
-            cmbTarea.Enabled = false;
-            cmbEstado.Enabled = false;
+                if (cmbEstado.SelectedIndex != -1)
+                {
+                    sql += " where o.IdEstado = " + cmbEstado.SelectedValue.ToString();
+                    llenargrilla(sender, e, sql);
+                    cmbTarea.Enabled = false;
+                    cmbMarca.Enabled = false;
+                }
+             
+         
             }
         }
 
@@ -172,6 +186,11 @@ namespace GestorInformatico.GUIlayer
             cmbEstado.Enabled = true;
             cmbMarca.Enabled = true;
             txtBuscar.Text = "";
+
+            cmbTarea.SelectedIndex = -1;
+            cmbEstado.SelectedIndex = -1;
+            cmbMarca.SelectedIndex = -1;
+            llenargrilla(sender,e,sql="");
         }
 
         private void btnNueva_Click(object sender, EventArgs e)
