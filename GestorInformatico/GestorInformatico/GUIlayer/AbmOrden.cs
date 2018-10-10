@@ -42,14 +42,15 @@ namespace GestorInformatico.GUIlayer
                 DataTable tablet = Utilidades.Ejecutar("Select * from TareaOT where IdOT = " + txtNro.Text);
                 if (table.Rows.Count >0)
                 {
-                    cmbEquipo.DataSource = Utilidades.Ejecutar("Select e.IdEquipo from Equipo e");
+                    cmbEquipo.Text = tablet.Rows[0]["IdEquipo"].ToString();
+                    cmbEquipo.Enabled = false;
+                   
+                }else
+	            {
+                    cmbEquipo.DataSource = Utilidades.Ejecutar("Select e.IdEquipo from Equipo e " );
                     cmbEquipo.DisplayMember = "IdEquipo";
                     cmbEquipo.ValueMember = "IdEquipo";
                     cmbEquipo.SelectedIndex = -1;
-                }else
-	            {
-                    cmbEquipo.Text = tablet.Rows[0]["IdEquipo"].ToString();
-                    cmbEquipo.Enabled = false;
 
 	            }
                 
