@@ -18,6 +18,7 @@ namespace GestorInformatico.GUIlayer
         }
         string sql = "";
         int a = 0;
+        string idUsuarioSeleccionado;
         private void OrdenDeTrabajo_Load(object sender, EventArgs e)
         {
             cmbMarca.DataSource = Utilidades.Ejecutar("Select * from Marca");
@@ -36,6 +37,7 @@ namespace GestorInformatico.GUIlayer
             cmbTarea.SelectedIndex = -1;
             llenargrilla(sender,e, sql);
             a = 1;
+            btnCerrar.Enabled = false;
         }
 
         private void llenargrilla(object sender, EventArgs e,string sql)
@@ -137,11 +139,6 @@ namespace GestorInformatico.GUIlayer
             }
         }
 
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtBuscar.Text))
@@ -195,9 +192,31 @@ namespace GestorInformatico.GUIlayer
 
         private void btnNueva_Click(object sender, EventArgs e)
         {
-            AbmOrden orden = new AbmOrden();
+            idUsuarioSeleccionado = string.Empty;
+            AbmOrden orden = new AbmOrden(idUsuarioSeleccionado);
             orden.ShowDialog();
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            if (idUsuarioSeleccionado != string.Empty)
+            {
+                AbmOrden orden = new AbmOrden(idUsuarioSeleccionado);
+                orden.ShowDialog();
+            }
+           
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                 idUsuarioSeleccionado = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                btnCerrar.Enabled = true;
+            }
+        }
+
+      
 
     }
 }

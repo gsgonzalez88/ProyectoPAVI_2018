@@ -31,6 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AbmOrden));
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.txtDescripcionE = new System.Windows.Forms.TextBox();
+            this.cmbEquipo = new System.Windows.Forms.ComboBox();
+            this.cmbSolicitante = new System.Windows.Forms.ComboBox();
+            this.cmbEncargado = new System.Windows.Forms.ComboBox();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.txtTiempo = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -51,14 +58,12 @@
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtFechaRealizado = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.cmbTarea = new System.Windows.Forms.ComboBox();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.txtTiempoRealizado = new System.Windows.Forms.TextBox();
             this.txtRespuesta = new System.Windows.Forms.TextBox();
             this.txtFalla = new System.Windows.Forms.TextBox();
-            this.txtEquipo = new System.Windows.Forms.TextBox();
             this.txtNro = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -70,8 +75,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbEncargado = new System.Windows.Forms.ComboBox();
-            this.cmbSolicitante = new System.Windows.Forms.ComboBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgOrden)).BeginInit();
             this.SuspendLayout();
@@ -89,6 +93,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnUpdate);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.txtCliente);
+            this.groupBox1.Controls.Add(this.txtDescripcionE);
+            this.groupBox1.Controls.Add(this.cmbEquipo);
             this.groupBox1.Controls.Add(this.cmbSolicitante);
             this.groupBox1.Controls.Add(this.cmbEncargado);
             this.groupBox1.Controls.Add(this.BtnGuardar);
@@ -99,14 +109,12 @@
             this.groupBox1.Controls.Add(this.dvgOrden);
             this.groupBox1.Controls.Add(this.txtFechaRealizado);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.cmbEstado);
             this.groupBox1.Controls.Add(this.cmbTarea);
             this.groupBox1.Controls.Add(this.txtFecha);
             this.groupBox1.Controls.Add(this.txtTiempoRealizado);
             this.groupBox1.Controls.Add(this.txtRespuesta);
             this.groupBox1.Controls.Add(this.txtFalla);
-            this.groupBox1.Controls.Add(this.txtEquipo);
             this.groupBox1.Controls.Add(this.txtNro);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
@@ -124,6 +132,67 @@
             this.groupBox1.Size = new System.Drawing.Size(1200, 525);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.SystemColors.Window;
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(668, 48);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(135, 21);
+            this.label15.TabIndex = 63;
+            this.label15.Text = "Cliente";
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.SystemColors.Window;
+            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(354, 48);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(135, 21);
+            this.label14.TabIndex = 62;
+            this.label14.Text = "Descripcion";
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Location = new System.Drawing.Point(809, 49);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(161, 20);
+            this.txtCliente.TabIndex = 61;
+            // 
+            // txtDescripcionE
+            // 
+            this.txtDescripcionE.Location = new System.Drawing.Point(495, 49);
+            this.txtDescripcionE.Name = "txtDescripcionE";
+            this.txtDescripcionE.Size = new System.Drawing.Size(161, 20);
+            this.txtDescripcionE.TabIndex = 60;
+            // 
+            // cmbEquipo
+            // 
+            this.cmbEquipo.FormattingEnabled = true;
+            this.cmbEquipo.Location = new System.Drawing.Point(147, 50);
+            this.cmbEquipo.Name = "cmbEquipo";
+            this.cmbEquipo.Size = new System.Drawing.Size(167, 21);
+            this.cmbEquipo.TabIndex = 59;
+            this.cmbEquipo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // cmbSolicitante
+            // 
+            this.cmbSolicitante.FormattingEnabled = true;
+            this.cmbSolicitante.Location = new System.Drawing.Point(147, 120);
+            this.cmbSolicitante.Name = "cmbSolicitante";
+            this.cmbSolicitante.Size = new System.Drawing.Size(167, 21);
+            this.cmbSolicitante.TabIndex = 58;
+            // 
+            // cmbEncargado
+            // 
+            this.cmbEncargado.FormattingEnabled = true;
+            this.cmbEncargado.Location = new System.Drawing.Point(147, 85);
+            this.cmbEncargado.Name = "cmbEncargado";
+            this.cmbEncargado.Size = new System.Drawing.Size(167, 21);
+            this.cmbEncargado.TabIndex = 57;
             // 
             // BtnGuardar
             // 
@@ -278,16 +347,6 @@
             this.label12.TabIndex = 45;
             this.label12.Text = "Fecha Realizado";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(320, 44);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(28, 32);
-            this.btnBuscar.TabIndex = 43;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
@@ -321,24 +380,17 @@
             // 
             // txtRespuesta
             // 
-            this.txtRespuesta.Location = new System.Drawing.Point(495, 121);
+            this.txtRespuesta.Location = new System.Drawing.Point(809, 124);
             this.txtRespuesta.Name = "txtRespuesta";
             this.txtRespuesta.Size = new System.Drawing.Size(167, 20);
             this.txtRespuesta.TabIndex = 37;
             // 
             // txtFalla
             // 
-            this.txtFalla.Location = new System.Drawing.Point(147, 119);
+            this.txtFalla.Location = new System.Drawing.Point(495, 122);
             this.txtFalla.Name = "txtFalla";
             this.txtFalla.Size = new System.Drawing.Size(167, 20);
             this.txtFalla.TabIndex = 36;
-            // 
-            // txtEquipo
-            // 
-            this.txtEquipo.Location = new System.Drawing.Point(147, 51);
-            this.txtEquipo.Name = "txtEquipo";
-            this.txtEquipo.Size = new System.Drawing.Size(167, 20);
-            this.txtEquipo.TabIndex = 34;
             // 
             // txtNro
             // 
@@ -385,7 +437,7 @@
             this.label8.BackColor = System.Drawing.SystemColors.Window;
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(354, 50);
+            this.label8.Location = new System.Drawing.Point(6, 121);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(135, 21);
             this.label8.TabIndex = 29;
@@ -396,7 +448,7 @@
             this.label7.BackColor = System.Drawing.SystemColors.Window;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(354, 120);
+            this.label7.Location = new System.Drawing.Point(668, 124);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(135, 21);
             this.label7.TabIndex = 28;
@@ -407,7 +459,7 @@
             this.label6.BackColor = System.Drawing.SystemColors.Window;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 118);
+            this.label6.Location = new System.Drawing.Point(354, 121);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(135, 21);
             this.label6.TabIndex = 27;
@@ -457,32 +509,27 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Nro";
             // 
-            // cmbEncargado
+            // btnUpdate
             // 
-            this.cmbEncargado.FormattingEnabled = true;
-            this.cmbEncargado.Location = new System.Drawing.Point(147, 85);
-            this.cmbEncargado.Name = "cmbEncargado";
-            this.cmbEncargado.Size = new System.Drawing.Size(167, 21);
-            this.cmbEncargado.TabIndex = 57;
-            // 
-            // cmbSolicitante
-            // 
-            this.cmbSolicitante.FormattingEnabled = true;
-            this.cmbSolicitante.Location = new System.Drawing.Point(495, 49);
-            this.cmbSolicitante.Name = "cmbSolicitante";
-            this.cmbSolicitante.Size = new System.Drawing.Size(167, 21);
-            this.cmbSolicitante.TabIndex = 58;
+            this.btnUpdate.Image = global::GestorInformatico.Properties.Resources.pencil_add;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(181, 221);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(28, 32);
+            this.btnUpdate.TabIndex = 64;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // AbmOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1241, 549);
+            this.ClientSize = new System.Drawing.Size(1227, 549);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AbmOrden";
-            this.Text = "AbmOrden";
+            this.Text = "Orden";
             this.Load += new System.EventHandler(this.AbmOrden_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -506,14 +553,12 @@
         private System.Windows.Forms.TextBox txtTiempoRealizado;
         private System.Windows.Forms.TextBox txtRespuesta;
         private System.Windows.Forms.TextBox txtFalla;
-        private System.Windows.Forms.TextBox txtEquipo;
         private System.Windows.Forms.TextBox txtNro;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbEstado;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dvgOrden;
         private System.Windows.Forms.TextBox txtFechaRealizado;
         private System.Windows.Forms.Label label12;
@@ -536,5 +581,11 @@
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.ComboBox cmbSolicitante;
         private System.Windows.Forms.ComboBox cmbEncargado;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.TextBox txtDescripcionE;
+        private System.Windows.Forms.ComboBox cmbEquipo;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
