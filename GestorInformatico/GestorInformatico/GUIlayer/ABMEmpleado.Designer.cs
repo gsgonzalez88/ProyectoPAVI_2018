@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABMEmpleado));
             this.grBoxEmpleados = new System.Windows.Forms.GroupBox();
+            this.cmbTDoc = new System.Windows.Forms.ComboBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtNroDocumento = new System.Windows.Forms.TextBox();
             this.Telefono = new System.Windows.Forms.Label();
@@ -63,19 +64,18 @@
             this.rbtActivo = new System.Windows.Forms.RadioButton();
             this.lblEstado = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvEmpleado = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbTDoc = new System.Windows.Forms.ComboBox();
-            this.lblCamposOb = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.dgvEmpleado = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblCamposOb = new System.Windows.Forms.Label();
             this.grBoxEmpleados.SuspendLayout();
             this.grBoxDomicilio.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -103,6 +103,14 @@
             this.grBoxEmpleados.TabStop = false;
             this.grBoxEmpleados.Text = "Datos Personales";
             // 
+            // cmbTDoc
+            // 
+            this.cmbTDoc.FormattingEnabled = true;
+            this.cmbTDoc.Location = new System.Drawing.Point(130, 81);
+            this.cmbTDoc.Name = "cmbTDoc";
+            this.cmbTDoc.Size = new System.Drawing.Size(119, 21);
+            this.cmbTDoc.TabIndex = 48;
+            // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(130, 176);
@@ -119,7 +127,7 @@
             // 
             // Telefono
             // 
-            this.Telefono.BackColor = System.Drawing.SystemColors.Control;
+            this.Telefono.BackColor = System.Drawing.SystemColors.Window;
             this.Telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Telefono.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Telefono.Location = new System.Drawing.Point(6, 177);
@@ -130,7 +138,7 @@
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.BackColor = System.Drawing.SystemColors.Window;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(6, 113);
@@ -148,7 +156,7 @@
             // 
             // lblEmail
             // 
-            this.lblEmail.BackColor = System.Drawing.SystemColors.Control;
+            this.lblEmail.BackColor = System.Drawing.SystemColors.Window;
             this.lblEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmail.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(6, 145);
@@ -159,7 +167,7 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.BackColor = System.Drawing.SystemColors.Window;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(6, 81);
@@ -170,7 +178,7 @@
             // 
             // lblApellido
             // 
-            this.lblApellido.BackColor = System.Drawing.SystemColors.Control;
+            this.lblApellido.BackColor = System.Drawing.SystemColors.Window;
             this.lblApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblApellido.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.Location = new System.Drawing.Point(6, 49);
@@ -181,7 +189,7 @@
             // 
             // lblNombre
             // 
-            this.lblNombre.BackColor = System.Drawing.SystemColors.Control;
+            this.lblNombre.BackColor = System.Drawing.SystemColors.Window;
             this.lblNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblNombre.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(6, 17);
@@ -206,7 +214,7 @@
             // 
             // lblCalle
             // 
-            this.lblCalle.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCalle.BackColor = System.Drawing.SystemColors.Window;
             this.lblCalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCalle.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalle.Location = new System.Drawing.Point(6, 17);
@@ -217,7 +225,7 @@
             // 
             // lblNroCalle
             // 
-            this.lblNroCalle.BackColor = System.Drawing.SystemColors.Control;
+            this.lblNroCalle.BackColor = System.Drawing.SystemColors.Window;
             this.lblNroCalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblNroCalle.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNroCalle.Location = new System.Drawing.Point(6, 49);
@@ -228,7 +236,7 @@
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.BackColor = System.Drawing.SystemColors.Window;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(6, 81);
@@ -239,7 +247,7 @@
             // 
             // lblLocalidad
             // 
-            this.lblLocalidad.BackColor = System.Drawing.SystemColors.Control;
+            this.lblLocalidad.BackColor = System.Drawing.SystemColors.Window;
             this.lblLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblLocalidad.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocalidad.Location = new System.Drawing.Point(6, 145);
@@ -250,7 +258,7 @@
             // 
             // lblDepartamento
             // 
-            this.lblDepartamento.BackColor = System.Drawing.SystemColors.Control;
+            this.lblDepartamento.BackColor = System.Drawing.SystemColors.Window;
             this.lblDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDepartamento.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepartamento.Location = new System.Drawing.Point(6, 113);
@@ -261,7 +269,7 @@
             // 
             // lblBarrio
             // 
-            this.lblBarrio.BackColor = System.Drawing.SystemColors.Control;
+            this.lblBarrio.BackColor = System.Drawing.SystemColors.Window;
             this.lblBarrio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBarrio.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBarrio.Location = new System.Drawing.Point(6, 177);
@@ -419,7 +427,7 @@
             // 
             // lblEstado
             // 
-            this.lblEstado.BackColor = System.Drawing.SystemColors.Control;
+            this.lblEstado.BackColor = System.Drawing.SystemColors.Window;
             this.lblEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEstado.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.Location = new System.Drawing.Point(18, 18);
@@ -444,63 +452,6 @@
             this.groupBox1.Size = new System.Drawing.Size(576, 47);
             this.groupBox1.TabIndex = 45;
             this.groupBox1.TabStop = false;
-            // 
-            // dgvEmpleado
-            // 
-            this.dgvEmpleado.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.Apellido,
-            this.dataGridViewTextBoxColumn2,
-            this.Estado});
-            this.dgvEmpleado.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvEmpleado.Location = new System.Drawing.Point(614, 12);
-            this.dgvEmpleado.Name = "dgvEmpleado";
-            this.dgvEmpleado.Size = new System.Drawing.Size(473, 265);
-            this.dgvEmpleado.TabIndex = 50;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 110;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.Width = 110;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "NroDocumento";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            // 
-            // cmbTDoc
-            // 
-            this.cmbTDoc.FormattingEnabled = true;
-            this.cmbTDoc.Location = new System.Drawing.Point(130, 81);
-            this.cmbTDoc.Name = "cmbTDoc";
-            this.cmbTDoc.Size = new System.Drawing.Size(119, 21);
-            this.cmbTDoc.TabIndex = 48;
-            // 
-            // lblCamposOb
-            // 
-            this.lblCamposOb.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblCamposOb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCamposOb.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCamposOb.Location = new System.Drawing.Point(12, 280);
-            this.lblCamposOb.Name = "lblCamposOb";
-            this.lblCamposOb.Size = new System.Drawing.Size(127, 20);
-            this.lblCamposOb.TabIndex = 51;
-            this.lblCamposOb.Text = "Campos Obligatorios";
             // 
             // btnEliminar
             // 
@@ -560,6 +511,55 @@
             this.btnGuardar.Size = new System.Drawing.Size(27, 29);
             this.btnGuardar.TabIndex = 48;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // dgvEmpleado
+            // 
+            this.dgvEmpleado.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.Apellido,
+            this.dataGridViewTextBoxColumn2,
+            this.Estado});
+            this.dgvEmpleado.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvEmpleado.Location = new System.Drawing.Point(614, 12);
+            this.dgvEmpleado.Name = "dgvEmpleado";
+            this.dgvEmpleado.Size = new System.Drawing.Size(473, 265);
+            this.dgvEmpleado.TabIndex = 50;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 110;
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "NroDocumento";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            // 
+            // lblCamposOb
+            // 
+            this.lblCamposOb.BackColor = System.Drawing.SystemColors.Window;
+            this.lblCamposOb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCamposOb.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCamposOb.Location = new System.Drawing.Point(12, 280);
+            this.lblCamposOb.Name = "lblCamposOb";
+            this.lblCamposOb.Size = new System.Drawing.Size(127, 20);
+            this.lblCamposOb.TabIndex = 51;
+            this.lblCamposOb.Text = "Campos Obligatorios";
             // 
             // ABMEmpleado
             // 
