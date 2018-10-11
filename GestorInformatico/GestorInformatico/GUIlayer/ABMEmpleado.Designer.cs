@@ -76,10 +76,14 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCamposOb = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.grBoxEmpleados.SuspendLayout();
             this.grBoxDomicilio.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // grBoxEmpleados
@@ -96,7 +100,7 @@
             this.grBoxEmpleados.Controls.Add(this.lblNombre);
             this.grBoxEmpleados.Controls.Add(this.txtApellido);
             this.grBoxEmpleados.Controls.Add(this.txtNombreEmp);
-            this.grBoxEmpleados.Location = new System.Drawing.Point(12, 12);
+            this.grBoxEmpleados.Location = new System.Drawing.Point(11, 58);
             this.grBoxEmpleados.Name = "grBoxEmpleados";
             this.grBoxEmpleados.Size = new System.Drawing.Size(284, 212);
             this.grBoxEmpleados.TabIndex = 2;
@@ -296,7 +300,7 @@
             this.grBoxDomicilio.Controls.Add(this.lblBarrio);
             this.grBoxDomicilio.Controls.Add(this.lblLocalidad);
             this.grBoxDomicilio.Controls.Add(this.lblDepartamento);
-            this.grBoxDomicilio.Location = new System.Drawing.Point(302, 12);
+            this.grBoxDomicilio.Location = new System.Drawing.Point(301, 58);
             this.grBoxDomicilio.Name = "grBoxDomicilio";
             this.grBoxDomicilio.Size = new System.Drawing.Size(286, 212);
             this.grBoxDomicilio.TabIndex = 27;
@@ -393,7 +397,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(409, 67);
+            this.textBox4.Location = new System.Drawing.Point(408, 93);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(119, 20);
             this.textBox4.TabIndex = 3;
@@ -447,7 +451,7 @@
             this.groupBox1.Controls.Add(this.lblEstado);
             this.groupBox1.Controls.Add(this.rbtInactivo);
             this.groupBox1.Controls.Add(this.rbtActivo);
-            this.groupBox1.Location = new System.Drawing.Point(12, 230);
+            this.groupBox1.Location = new System.Drawing.Point(11, 276);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(576, 47);
             this.groupBox1.TabIndex = 45;
@@ -523,9 +527,9 @@
             this.dataGridViewTextBoxColumn2,
             this.Estado});
             this.dgvEmpleado.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvEmpleado.Location = new System.Drawing.Point(614, 12);
+            this.dgvEmpleado.Location = new System.Drawing.Point(613, 12);
             this.dgvEmpleado.Name = "dgvEmpleado";
-            this.dgvEmpleado.Size = new System.Drawing.Size(473, 265);
+            this.dgvEmpleado.Size = new System.Drawing.Size(473, 311);
             this.dgvEmpleado.TabIndex = 50;
             // 
             // dataGridViewTextBoxColumn1
@@ -555,19 +559,49 @@
             this.lblCamposOb.BackColor = System.Drawing.SystemColors.Window;
             this.lblCamposOb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCamposOb.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCamposOb.Location = new System.Drawing.Point(12, 280);
+            this.lblCamposOb.Location = new System.Drawing.Point(415, 14);
             this.lblCamposOb.Name = "lblCamposOb";
             this.lblCamposOb.Size = new System.Drawing.Size(127, 20);
             this.lblCamposOb.TabIndex = 51;
             this.lblCamposOb.Text = "Campos Obligatorios";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtBuscar);
+            this.groupBox2.Controls.Add(this.lblCamposOb);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(575, 40);
+            this.groupBox2.TabIndex = 52;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(142, 14);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(210, 20);
+            this.txtBuscar.TabIndex = 36;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.SystemColors.Control;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 14);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(127, 20);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "Buscar NroDoc/Cuit";
             // 
             // ABMEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1101, 309);
-            this.Controls.Add(this.lblCamposOb);
+            this.ClientSize = new System.Drawing.Size(1101, 337);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvEmpleado);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grBoxDomicilio);
@@ -583,6 +617,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -637,5 +673,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label11;
     }
 }
