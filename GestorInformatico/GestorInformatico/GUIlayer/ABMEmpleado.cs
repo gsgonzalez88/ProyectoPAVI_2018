@@ -101,10 +101,26 @@ namespace GestorInformatico
 
         private void cmbProvin_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (a == 1 && cmbProvin.SelectedValue != null )
+            {
+                a = 0;
+                cmbDepto.DataSource = Utilidades.Ejecutar("Select * from Departamento where IdProvincia = " + cmbProvin.SelectedValue.ToString());
+                cmbDepto.DisplayMember = "Descripcion";
+                cmbDepto.ValueMember = "IdDepartamento";
+                cmbDepto.SelectedIndex = -1;
+                a = 1;
+            }
+            cmbDepto.SelectedIndex = -1;
+            cmbLocalidad.SelectedIndex = -1;
+            cmbBarrio.SelectedIndex = -1;
         }
 
         private void rbtActivo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbTDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

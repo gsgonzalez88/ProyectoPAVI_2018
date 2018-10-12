@@ -114,6 +114,7 @@
             this.cmbTDoc.Name = "cmbTDoc";
             this.cmbTDoc.Size = new System.Drawing.Size(119, 21);
             this.cmbTDoc.TabIndex = 48;
+            this.cmbTDoc.SelectedIndexChanged += new System.EventHandler(this.cmbTDoc_SelectedIndexChanged);
             // 
             // txtTelefono
             // 
@@ -593,7 +594,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(127, 20);
             this.label11.TabIndex = 39;
-            this.label11.Text = "Buscar NroDoc/Cuit";
+            this.label11.Text = "Buscar NroDoc";
             // 
             // ABMEmpleado
             // 
