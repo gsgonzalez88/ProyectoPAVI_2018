@@ -109,6 +109,7 @@ namespace GestorInformatico.GUIlayer
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            editar = false;
             ver = true;
             if (idUsuarioSeleccionado != string.Empty)
             {
@@ -135,6 +136,7 @@ namespace GestorInformatico.GUIlayer
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            ver = false;
             editar = true;
             if (idUsuarioSeleccionado != string.Empty)
             {
