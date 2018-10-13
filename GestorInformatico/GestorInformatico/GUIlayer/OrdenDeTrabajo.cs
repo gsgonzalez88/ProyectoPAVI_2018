@@ -19,6 +19,9 @@ namespace GestorInformatico.GUIlayer
         string sql = "";
         int a = 0;
         string idUsuarioSeleccionado;
+        bool ver = false;
+        bool editar = false;
+
         private void OrdenDeTrabajo_Load(object sender, EventArgs e)
         {
             cmbMarca.DataSource = Utilidades.Ejecutar("Select * from Marca");
@@ -31,26 +34,18 @@ namespace GestorInformatico.GUIlayer
             cmbEstado.ValueMember = "IdEstado";
             cmbEstado.SelectedIndex = -1;
 
-            cmbTarea.DataSource = Utilidades.Ejecutar("Select * from Tarea");
-            cmbTarea.DisplayMember = "Descripcion";
-            cmbTarea.ValueMember = "IdTarea";
-            cmbTarea.SelectedIndex = -1;
             llenargrilla(sender,e, sql);
             a = 1;
             btnCerrar.Enabled = false;
+            btnBuscar.Enabled = false;
         }
 
         private void llenargrilla(object sender, EventArgs e,string sql)
         {
             DataTable table;
-            string eje= "select t.Descripcion as Tarea,eq.Descripcion as Equipo,es.Descripcion as Estado,"
-            +"(emA.Apellido + ' ' +emA.Nombre) as Encargado,(emG.Apellido + ' ' +emG.Nombre) as Solicitante ,* from orden o" 
-            +" left outer join TareaOT tot on tot.IdOT = o.IdOrden"
-            +" left outer join Tarea t on t.IdTarea = tot.IdTarea"
-            +" left outer join Equipo eq on eq.IdEquipo = tot.IdEquipo"
-            +" left outer join Estado es on es.IdEstado = tot.IdEstado"
-            +" left outer join Empleado emA on emA.IdEmpleado = o.IdEmpleadoAsi"
-            +" left outer join Empleado emG on emG.IdEmpleado = o.IdEmpleadoG";
+            string eje= "select distinct tot.IdOT,(emA.Apellido + '' +emA. Nombre) as Encargado ,es.Descripcion as Estado,(emG.Apellido + ' '+ emG.Nombre) as Solicitante,eq.Descripcion as Equipo,o.FechaEntrega from TareaOT tot"+
+          " join Orden o on o.IdOrden = tot.IdOT left  join Empleado emA on emA.IdEmpleado = o.IdEmpleadoAsi left  join Empleado emG on emG.IdEmpleado = o.IdEmpleadoG" +
+          " join Estado	 es on es.IdEstado = o.IdEstado  join Equipo eq on tot.IdEquipo = eq.IdEquipo";
             if (!string.IsNullOrEmpty(sql))
 	            {
                     eje += sql;    
@@ -63,14 +58,10 @@ namespace GestorInformatico.GUIlayer
 
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    dataGridView1.Rows.Add(table.Rows[i]["IdOrden"].ToString()
-                                   , table.Rows[i]["Equipo"].ToString()
+                    dataGridView1.Rows.Add(table.Rows[i]["IdOT"].ToString()
+                                   ,table.Rows[i]["Equipo"].ToString()
                                    , table.Rows[i]["Encargado"].ToString()
-                                   , table.Rows[i]["Tarea"].ToString()
-                                   , table.Rows[i]["Falla"].ToString()
-                                    ,table.Rows[i]["Respuesta"].ToString()
                                     , table.Rows[i]["Solicitante"].ToString()
-                                    , table.Rows[i]["TiempoRealizado"].ToString()
                                     , table.Rows[i]["FechaEntrega"].ToString()
                                     , table.Rows[i]["Estado"].ToString());
                 }
@@ -84,11 +75,6 @@ namespace GestorInformatico.GUIlayer
           
         }
 
-        private void btnVerEquipo_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (a==1)
@@ -98,28 +84,11 @@ namespace GestorInformatico.GUIlayer
                 {
                     sql += " where eq.idMarca = " + cmbMarca.SelectedValue.ToString();
                     llenargrilla(sender, e, sql);
-                    cmbTarea.Enabled = false;
                     cmbEstado.Enabled = false;
                 }
                
             }
                     
-        }
-
-        private void cmbTarea_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (a == 1)
-            {
-                sql = "";
-                if (cmbTarea.SelectedIndex != -1)
-                {
-                    sql += " where t.IdTarea = " + cmbTarea.SelectedValue.ToString();
-                    llenargrilla(sender, e, sql);
-                    cmbMarca.Enabled = false;
-                    cmbEstado.Enabled = false;
-                }
-
-            }
         }
 
         private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
@@ -131,7 +100,6 @@ namespace GestorInformatico.GUIlayer
                 {
                     sql += " where o.IdEstado = " + cmbEstado.SelectedValue.ToString();
                     llenargrilla(sender, e, sql);
-                    cmbTarea.Enabled = false;
                     cmbMarca.Enabled = false;
                 }
              
@@ -141,50 +109,18 @@ namespace GestorInformatico.GUIlayer
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtBuscar.Text))
+            ver = true;
+            if (idUsuarioSeleccionado != string.Empty)
             {
-             
-                if (cmbEstado.SelectedIndex != -1)
-                {
-                    sql += " and o.Nro = " + txtBuscar.Text;
-                    llenargrilla(sender, e, sql);
-                    return;
-                }
-                if (cmbMarca.SelectedIndex != -1)
-                {
-                    sql += " and o.Nro = " + txtBuscar.Text;
-                    llenargrilla(sender, e, sql);
-                    return;
-                }
-                if (cmbTarea.SelectedIndex != -1)
-                {
-                     sql += " and o.Nro = " + txtBuscar.Text;
-                    llenargrilla(sender, e, sql);
-                      return;
-                }
-	           if (!string.IsNullOrEmpty(txtBuscar.Text))
-               { sql += " where o.Nro = " + txtBuscar.Text;
-                    llenargrilla(sender, e, sql);
-                   return;
-               }
-                
-
-            }
-            else
-            {
-                txtBuscar.BackColor = Color.LightBlue;
-                MessageBox.Show("Complete el campo");
+                AbmOrden orden = new AbmOrden(idUsuarioSeleccionado,ver,editar);
+                orden.ShowDialog();
             }
         }
 
         private void btnRefescar_Click(object sender, EventArgs e)
         {
-            cmbTarea.Enabled = true;
             cmbEstado.Enabled = true;
             cmbMarca.Enabled = true;
-            txtBuscar.Text = "";
-
-            cmbTarea.SelectedIndex = -1;
             cmbEstado.SelectedIndex = -1;
             cmbMarca.SelectedIndex = -1;
             llenargrilla(sender,e,sql="");
@@ -193,15 +129,16 @@ namespace GestorInformatico.GUIlayer
         private void btnNueva_Click(object sender, EventArgs e)
         {
             idUsuarioSeleccionado = string.Empty;
-            AbmOrden orden = new AbmOrden(idUsuarioSeleccionado);
+            AbmOrden orden = new AbmOrden(idUsuarioSeleccionado,ver,editar);
             orden.ShowDialog();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            editar = true;
             if (idUsuarioSeleccionado != string.Empty)
             {
-                AbmOrden orden = new AbmOrden(idUsuarioSeleccionado);
+                AbmOrden orden = new AbmOrden(idUsuarioSeleccionado,ver,editar);
                 orden.ShowDialog();
             }
            
@@ -209,14 +146,26 @@ namespace GestorInformatico.GUIlayer
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            idUsuarioSeleccionado = "";
+            if (e.RowIndex > -1)
             {
+                
                  idUsuarioSeleccionado = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                btnCerrar.Enabled = true;
+                DataTable orden = Utilidades.Ejecutar("select * from Orden where IdOrden = "+idUsuarioSeleccionado.ToString());
+                if (orden.Rows[0]["IdEstado"].ToString() == "5")
+                {
+                    btnCerrar.Enabled = false;
+                    btnBuscar.Enabled = true;
+                    
+                }
+                else
+                {
+                    btnCerrar.Enabled = true;
+                    btnBuscar.Enabled = true;
+                }
+               
             }
         }
-
-      
 
     }
 }

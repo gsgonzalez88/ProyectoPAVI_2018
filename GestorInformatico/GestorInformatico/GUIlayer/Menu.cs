@@ -85,6 +85,12 @@ namespace GestorInformatico
             equipo.ShowDialog();
         }
 
+        private void ordenDeTrabajoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestorInformatico.GUIlayer.OrdenDeTrabajo orden = new GUIlayer.OrdenDeTrabajo();
+            orden.ShowDialog();
+        }
+
       
 
     
