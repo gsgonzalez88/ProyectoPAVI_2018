@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AbmOrden));
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
@@ -75,7 +78,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgOrden)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +96,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCerrar);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
@@ -132,6 +136,30 @@
             this.groupBox1.Size = new System.Drawing.Size(1200, 525);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrar.Location = new System.Drawing.Point(215, 221);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(28, 32);
+            this.btnCerrar.TabIndex = 65;
+            this.toolTip1.SetToolTip(this.btnCerrar, "Cerrar");
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Image = global::GestorInformatico.Properties.Resources.pencil_add;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(181, 221);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(28, 32);
+            this.btnUpdate.TabIndex = 64;
+            this.toolTip1.SetToolTip(this.btnUpdate, "Guardar Modificaciones");
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label15
             // 
@@ -202,6 +230,7 @@
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(28, 32);
             this.BtnGuardar.TabIndex = 56;
+            this.toolTip1.SetToolTip(this.BtnGuardar, "Guardar");
             this.BtnGuardar.UseVisualStyleBackColor = true;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
@@ -231,6 +260,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(28, 32);
             this.btnEliminar.TabIndex = 53;
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar Tarea");
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -242,6 +272,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(28, 32);
             this.btnAgregar.TabIndex = 52;
+            this.toolTip1.SetToolTip(this.btnAgregar, "Agregar Tarea");
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -267,6 +298,7 @@
             this.dvgOrden.Name = "dvgOrden";
             this.dvgOrden.Size = new System.Drawing.Size(1188, 264);
             this.dvgOrden.TabIndex = 47;
+            this.dvgOrden.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgOrden_CellClick);
             // 
             // Nro
             // 
@@ -509,17 +541,6 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Nro";
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Image = global::GestorInformatico.Properties.Resources.pencil_add;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(181, 221);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(28, 32);
-            this.btnUpdate.TabIndex = 64;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // AbmOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -587,5 +608,7 @@
         private System.Windows.Forms.TextBox txtDescripcionE;
         private System.Windows.Forms.ComboBox cmbEquipo;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
