@@ -79,6 +79,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.txtNroTarea = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgOrden)).BeginInit();
             this.SuspendLayout();
@@ -96,6 +97,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtNroTarea);
             this.groupBox1.Controls.Add(this.btnCerrar);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.label15);
@@ -133,7 +135,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1200, 525);
+            this.groupBox1.Size = new System.Drawing.Size(1233, 525);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
@@ -296,15 +298,15 @@
             this.dvgOrden.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dvgOrden.Location = new System.Drawing.Point(6, 255);
             this.dvgOrden.Name = "dvgOrden";
-            this.dvgOrden.Size = new System.Drawing.Size(1188, 264);
+            this.dvgOrden.Size = new System.Drawing.Size(1207, 264);
             this.dvgOrden.TabIndex = 47;
             this.dvgOrden.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgOrden_CellClick);
             // 
             // Nro
             // 
-            this.Nro.HeaderText = "Nro";
+            this.Nro.HeaderText = "NroTarea";
             this.Nro.Name = "Nro";
-            this.Nro.Width = 40;
+            this.Nro.Width = 60;
             // 
             // Equipo
             // 
@@ -338,7 +340,7 @@
             // 
             // FechaRealizado
             // 
-            this.FechaRealizado.HeaderText = "FechaRealizado";
+            this.FechaRealizado.HeaderText = "Fecha Realizado";
             this.FechaRealizado.Name = "FechaRealizado";
             // 
             // Tiempo
@@ -348,7 +350,7 @@
             // 
             // FechaEntrega
             // 
-            this.FechaEntrega.HeaderText = "FechaEntrega";
+            this.FechaEntrega.HeaderText = "Fecha Planificada ";
             this.FechaEntrega.Name = "FechaEntrega";
             // 
             // TiempoRealizado
@@ -451,7 +453,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(135, 21);
             this.label10.TabIndex = 31;
-            this.label10.Text = "Fecha Entrega";
+            this.label10.Text = "Fecha Planificada";
             // 
             // label9
             // 
@@ -541,12 +543,19 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Nro";
             // 
+            // txtNroTarea
+            // 
+            this.txtNroTarea.Location = new System.Drawing.Point(489, 15);
+            this.txtNroTarea.Name = "txtNroTarea";
+            this.txtNroTarea.Size = new System.Drawing.Size(167, 20);
+            this.txtNroTarea.TabIndex = 66;
+            // 
             // AbmOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1227, 549);
+            this.ClientSize = new System.Drawing.Size(1257, 549);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AbmOrden";
@@ -587,6 +596,17 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtTiempo;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button BtnGuardar;
+        private System.Windows.Forms.ComboBox cmbSolicitante;
+        private System.Windows.Forms.ComboBox cmbEncargado;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.TextBox txtDescripcionE;
+        private System.Windows.Forms.ComboBox cmbEquipo;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Equipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Encargado;
@@ -599,16 +619,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaEntrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn TiempoRealizado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.Button BtnGuardar;
-        private System.Windows.Forms.ComboBox cmbSolicitante;
-        private System.Windows.Forms.ComboBox cmbEncargado;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtCliente;
-        private System.Windows.Forms.TextBox txtDescripcionE;
-        private System.Windows.Forms.ComboBox cmbEquipo;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox txtNroTarea;
     }
 }

@@ -149,7 +149,7 @@ namespace GestorInformatico.GUIlayer
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             idUsuarioSeleccionado = "";
-            if (e.RowIndex > -1)
+            if ( dataGridView1.Rows[e.RowIndex].Cells[0].Value != null && e.RowIndex > -1  )
             {
                 
                  idUsuarioSeleccionado = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
