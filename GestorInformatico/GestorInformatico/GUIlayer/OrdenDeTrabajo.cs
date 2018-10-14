@@ -18,6 +18,10 @@ namespace GestorInformatico.GUIlayer
         }
         string sql = "";
         int a = 0;
+        string idUsuarioSeleccionado;
+        bool ver = false;
+        bool editar = false;
+
         private void OrdenDeTrabajo_Load(object sender, EventArgs e)
         {
             cmbMarca.DataSource = Utilidades.Ejecutar("Select * from Marca");
@@ -30,24 +34,18 @@ namespace GestorInformatico.GUIlayer
             cmbEstado.ValueMember = "IdEstado";
             cmbEstado.SelectedIndex = -1;
 
-            cmbTarea.DataSource = Utilidades.Ejecutar("Select * from Tarea");
-            cmbTarea.DisplayMember = "Descripcion";
-            cmbTarea.ValueMember = "IdTarea";
-            cmbTarea.SelectedIndex = -1;
             llenargrilla(sender,e, sql);
             a = 1;
+            btnCerrar.Enabled = false;
+            btnBuscar.Enabled = false;
         }
 
         private void llenargrilla(object sender, EventArgs e,string sql)
         {
             DataTable table;
-            string eje= "select e.Descripcion as Equipo ,t.Descripcion as Tarea,(em.Nombre +' '+em.Apellido) as EmpleadoG,es.Descripcion as Estado ,"
-            + "(ema.Nombre +' '+ema.Apellido) as EmpleadoA, * from Orden o"
-            + " join Equipo e on e.IdEquipo = o.IdEquipo"
-            + " join Tarea t on o.IdTarea = t.IdTarea"
-            + " join Empleado em on em.IdEmpleado=o.IdEmpleadoG"
-            + " join Estado es on es.IdEstado = o.IdEstado"
-            + " join Empleado ema on ema.IdEmpleado=o.IdEmpleadoAsi";
+            string eje= "select distinct tot.IdOT,(emA.Apellido + '' +emA. Nombre) as Encargado ,es.Descripcion as Estado,(emG.Apellido + ' '+ emG.Nombre) as Solicitante,eq.Descripcion as Equipo,o.FechaEntrega from TareaOT tot"+
+          " join Orden o on o.IdOrden = tot.IdOT left  join Empleado emA on emA.IdEmpleado = o.IdEmpleadoAsi left  join Empleado emG on emG.IdEmpleado = o.IdEmpleadoG" +
+          " join Estado	 es on es.IdEstado = o.IdEstado  join Equipo eq on tot.IdEquipo = eq.IdEquipo";
             if (!string.IsNullOrEmpty(sql))
 	            {
                     eje += sql;    
@@ -60,51 +58,114 @@ namespace GestorInformatico.GUIlayer
 
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    dataGridView1.Rows.Add(table.Rows[i]["Nro"].ToString()
-                                   , table.Rows[i]["Equipo"].ToString()
-                                   , table.Rows[i]["EmpleadoA"].ToString()
-                                   , table.Rows[i]["Tarea"].ToString()
-                                   , table.Rows[i]["Falla"].ToString()
-                                    ,table.Rows[i]["Respuesta"].ToString()
-                                    , table.Rows[i]["EmpleadoG"].ToString()
-                                    , table.Rows[i]["TiempoRealizado"].ToString()
+                    dataGridView1.Rows.Add(table.Rows[i]["IdOT"].ToString()
+                                   ,table.Rows[i]["Equipo"].ToString()
+                                   , table.Rows[i]["Encargado"].ToString()
+                                    , table.Rows[i]["Solicitante"].ToString()
                                     , table.Rows[i]["FechaEntrega"].ToString()
                                     , table.Rows[i]["Estado"].ToString());
                 }
+
             }
-            sql = string.Empty;
-        }
-
-        private void btnVerEquipo_Click(object sender, EventArgs e)
-        {
-
+            else
+            {
+                MessageBox.Show("No existe orden");
+               
+            }
+          
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (a==1)
             {
-                sql += " where e.idMarca = " + cmbMarca.SelectedValue.ToString();
-                llenargrilla(sender, e, sql);    
+                sql = "";
+                if (cmbMarca.SelectedIndex != -1)
+                {
+                    sql += " where eq.idMarca = " + cmbMarca.SelectedValue.ToString();
+                    llenargrilla(sender, e, sql);
+                    cmbEstado.Enabled = false;
+                }
+               
             }
                     
-        }
-
-        private void cmbTarea_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (a == 1)
-            {
-                sql += " where o.IdTarea = " + cmbTarea.SelectedValue.ToString();
-                llenargrilla(sender, e, sql);
-            }
         }
 
         private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (a==1)
 	        {
-            sql += " where o.IdEstado = " + cmbEstado.SelectedValue.ToString();
-            llenargrilla(sender, e, sql); 
+                sql = "";
+                if (cmbEstado.SelectedIndex != -1)
+                {
+                    sql += " where o.IdEstado = " + cmbEstado.SelectedValue.ToString();
+                    llenargrilla(sender, e, sql);
+                    cmbMarca.Enabled = false;
+                }
+             
+         
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            editar = false;
+            ver = true;
+            if (idUsuarioSeleccionado != string.Empty)
+            {
+                AbmOrden orden = new AbmOrden(idUsuarioSeleccionado,ver,editar);
+                orden.ShowDialog();
+            }
+        }
+
+        private void btnRefescar_Click(object sender, EventArgs e)
+        {
+            cmbEstado.Enabled = true;
+            cmbMarca.Enabled = true;
+            cmbEstado.SelectedIndex = -1;
+            cmbMarca.SelectedIndex = -1;
+            llenargrilla(sender,e,sql="");
+        }
+
+        private void btnNueva_Click(object sender, EventArgs e)
+        {
+            idUsuarioSeleccionado = string.Empty;
+            AbmOrden orden = new AbmOrden(idUsuarioSeleccionado,ver,editar);
+            orden.ShowDialog();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            ver = false;
+            editar = true;
+            if (idUsuarioSeleccionado != string.Empty)
+            {
+                AbmOrden orden = new AbmOrden(idUsuarioSeleccionado,ver,editar);
+                orden.ShowDialog();
+            }
+           
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idUsuarioSeleccionado = "";
+            if ( dataGridView1.Rows[e.RowIndex].Cells[0].Value != null && e.RowIndex > -1  )
+            {
+                
+                 idUsuarioSeleccionado = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                DataTable orden = Utilidades.Ejecutar("select * from Orden where IdOrden = "+idUsuarioSeleccionado.ToString());
+                if (orden.Rows[0]["IdEstado"].ToString() == "5")
+                {
+                    btnCerrar.Enabled = false;
+                    btnBuscar.Enabled = true;
+                    
+                }
+                else
+                {
+                    btnCerrar.Enabled = true;
+                    btnBuscar.Enabled = true;
+                }
+               
             }
         }
 

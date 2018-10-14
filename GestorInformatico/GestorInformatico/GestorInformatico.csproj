@@ -104,6 +104,12 @@
     <Compile Include="GUIlayer\AbmLocalidad.Designer.cs">
       <DependentUpon>AbmLocalidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIlayer\AbmOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIlayer\AbmOrden.Designer.cs">
+      <DependentUpon>AbmOrden.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUIlayer\ABMProvincia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUIlayer\AbmLocalidad.resx">
       <DependentUpon>AbmLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIlayer\AbmOrden.resx">
+      <DependentUpon>AbmOrden.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUIlayer\ABMProvincia.resx">
       <DependentUpon>ABMProvincia.cs</DependentUpon>
