@@ -10,8 +10,6 @@ using System.Windows.Forms;
 using DBHelper;
 using System.Data.SqlClient;
 
-
-
 namespace GestorInformatico.GUIlayer
 {
     public partial class AbmOrden : Form
@@ -32,6 +30,7 @@ namespace GestorInformatico.GUIlayer
         int a = 0;
         private void AbmOrden_Load(object sender, EventArgs e)
         {
+            txtNroTarea.Visible = false;
             if (visualizar == true)
             {
                 btnAgregar.Enabled = false;
@@ -54,6 +53,7 @@ namespace GestorInformatico.GUIlayer
                 txtCliente.Enabled = false;
                 txtDescripcionE.Enabled = false;
                 btnCerrar.Enabled = true;
+                txtFecha.Enabled = false;          
             }
                 if (idOrden != string.Empty)
                 {
@@ -355,7 +355,7 @@ namespace GestorInformatico.GUIlayer
             {
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    dvgOrden.Rows.Add(table.Rows[i]["IdOrden"].ToString()
+                    dvgOrden.Rows.Add(table.Rows[i]["Id"].ToString()
                                    , table.Rows[i]["Equipo"].ToString()
                                    , table.Rows[i]["Encargado"].ToString()
                                    ,table.Rows[i]["Solicitante"].ToString()
@@ -372,40 +372,48 @@ namespace GestorInformatico.GUIlayer
             
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender,EventArgs e)
         {
-            for (int i = 0; i < dvgOrden.Rows.Count; i++)
-            {
-                if (dvgOrden.Rows[i].Cells["Nro"].Value != null)
+            if (txtNroTarea.Text != "")
+	        {
+                string update = " Update TareaOT SET ";
+                if (!string.IsNullOrEmpty(txtFechaRealizado.Text))
                 {
-                    string tarea = "Insert TareaOT Values (";
-                    var Nro = dvgOrden.Rows[i].Cells["Nro"].Value.ToString();
-                    var tot = dvgOrden.Rows[i].Cells["Tarea"].Value.ToString();
-                    var equi = dvgOrden.Rows[i].Cells["Equipo"].Value.ToString();
-                    var Esta = dvgOrden.Rows[i].Cells["Estado"].Value.ToString();
-                    string Falla = dvgOrden.Rows[i].Cells["Falla"].Value.ToString();
-                    string Respuesta = dvgOrden.Rows[i].Cells["Respuesta"].Value.ToString();
-                    string FechaRealizado = dvgOrden.Rows[i].Cells["FechaRealizado"].Value.ToString();
-                    string TiempoRealizado = dvgOrden.Rows[i].Cells["TiempoRealizado"].Value.ToString();
-                    tarea += Nro + ",";
-                    DataTable tableTarea = Utilidades.Ejecutar("Select IdTarea from Tarea where Descripcion = '" + tot + "'");
-                    DataTable tableEquipo = Utilidades.Ejecutar("Select IdEquipo from Equipo where IdEquipo = '" + equi + "'");
-                    DataTable tableEstado = Utilidades.Ejecutar("Select IdEstado from Estado where Descripcion = '" + Esta + "'");
-                    tarea += tableTarea.Rows[0]["IdTarea"] + "," + tableEquipo.Rows[0]["IdEquipo"] + "," + tableEstado.Rows[0]["IdEstado"] + ",";
-                    tarea += "'"+Falla.ToString() + "',";
-                    tarea += Respuesta != "" ? "'" + Respuesta.ToString() + "'," : "null,";
-                    tarea += FechaRealizado != "" ? "'" + FechaRealizado.ToString() + "'," : "null,";
-                    tarea += TiempoRealizado != "" ? "'" + TiempoRealizado.ToString() + "'," : "null";
-                    tarea += ")";
-                    Utilidades.Insert(tarea);
+                    update += "FechaRealizado = '" + txtFechaRealizado.Text+"'";
                 }
+                else
+                {
+                    MessageBox.Show("Complete el Fecha realizada", "Informacion");
+                    return;
+                }
+                if (!string.IsNullOrEmpty(txtTiempoRealizado.Text))
+                {
+                    update += ",TiempoRealizado = " + txtTiempoRealizado.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Complete el tiempo realizado", "Informacion");
+                    return;
+                }
+                if (!string.IsNullOrEmpty(txtRespuesta.Text))
+                {
+                     update += ",Respuesta ='" + txtRespuesta.Text +"'";
+                }
+                else
+                {
+                    MessageBox.Show("Complete el Respuesta", "Informacion");
+                    return;
+                }
+                update += ",IdEstado = " + cmbEstado.SelectedValue;
+                update += " where Id = " + txtNroTarea.Text;
 
-            }
+                Utilidades.Update(update);
+	        } 
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta Seguro que desae Cerrar la Orden?","Informacion",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Esta Seguro que desea Cerrar la Orden?","Informacion",MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 SqlTransaction trasanccion;
                 SqlCommand comando = new SqlCommand();
@@ -439,11 +447,11 @@ namespace GestorInformatico.GUIlayer
 
         private void dvgOrden_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >-1)
+            if (e.RowIndex >-1 && dvgOrden.Rows[e.RowIndex].Cells[0].Value != null)
             {
                 if (dvgOrden.Rows[e.RowIndex].Cells["Nro"].Value != null)
                 {
-
+                    txtNroTarea.Text = dvgOrden.Rows[e.RowIndex].Cells["Nro"].Value.ToString();
                     btnAgregar.Enabled = false;
                     txtFalla.Enabled = false;
                     cmbTarea.Enabled = false;
@@ -467,6 +475,11 @@ namespace GestorInformatico.GUIlayer
                     {
                         txtFecha.Text = dvgOrden.Rows[e.RowIndex].Cells["FechaEntrega"].Value.ToString();
                     }
+                    if (dvgOrden.Rows[e.RowIndex].Cells["TiempoRealizado"].Value.ToString() != "")
+                    {
+                          txtTiempoRealizado.Text = dvgOrden.Rows[e.RowIndex].Cells["TiempoRealizado"].Value.ToString();
+                        txtTiempoRealizado.Enabled = false;
+                    }
                 }
                 else
                 {
@@ -484,5 +497,7 @@ namespace GestorInformatico.GUIlayer
                 }
             }
         }
+
+  
     }
 }
