@@ -85,10 +85,10 @@ namespace GestorInformatico
             equipo.ShowDialog();
         }
 
-        private void ordenDeTrabajoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void formaDePagoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestorInformatico.GUIlayer.OrdenDeTrabajo orden = new GUIlayer.OrdenDeTrabajo();
-            orden.ShowDialog();
+            GestorInformatico.GUIlayer.frmFormaPago formaPago = new GestorInformatico.GUIlayer.frmFormaPago();
+            formaPago.ShowDialog();
         }
 
       
