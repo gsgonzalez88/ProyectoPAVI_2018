@@ -16,7 +16,7 @@ namespace GestorInformatico
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GestorInformatico.GUIlayer.frmVenta());
+            Application.Run(new GestorInformatico.GUIlayer.frmFormaPago());
             
         }
     }

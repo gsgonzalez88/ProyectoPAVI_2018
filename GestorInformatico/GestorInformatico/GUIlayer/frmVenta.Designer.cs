@@ -36,18 +36,26 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblDNICli = new System.Windows.Forms.Label();
             this.grbVenta = new System.Windows.Forms.GroupBox();
+            this.lblCamposObli = new System.Windows.Forms.Label();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.grbCliente = new System.Windows.Forms.GroupBox();
+            this.btnRegCliente = new System.Windows.Forms.Button();
+            this.lblNombreCli = new System.Windows.Forms.Label();
+            this.txtNombreCli = new System.Windows.Forms.TextBox();
+            this.txtDNICli = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.cboEmpleado = new System.Windows.Forms.ComboBox();
             this.lblEmpleado = new System.Windows.Forms.Label();
-            this.txtDNICli = new System.Windows.Forms.TextBox();
             this.txtStock = new System.Windows.Forms.TextBox();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.cboArticulo = new System.Windows.Forms.ComboBox();
             this.lblStock = new System.Windows.Forms.Label();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.lblArtículo = new System.Windows.Forms.Label();
             this.cboFormaPago = new System.Windows.Forms.ComboBox();
             this.lblFormaDePago = new System.Windows.Forms.Label();
-            this.btnDpto = new System.Windows.Forms.Button();
             this.dgvDetalles = new System.Windows.Forms.DataGridView();
             this.colCodProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,23 +64,14 @@
             this.colDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbDetalles = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnGuargar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.grbCliente = new System.Windows.Forms.GroupBox();
-            this.txtNombreCli = new System.Windows.Forms.TextBox();
-            this.lblNombreCli = new System.Windows.Forms.Label();
-            this.lblPrecio = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.lblCamposObli = new System.Windows.Forms.Label();
-            this.btnRegCliente = new System.Windows.Forms.Button();
+            this.btnGuargar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.grbVenta.SuspendLayout();
+            this.grbCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.grbDetalles.SuspendLayout();
-            this.grbCliente.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNroVenta
@@ -104,7 +103,7 @@
             // btnImprimir
             // 
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
-            this.btnImprimir.Location = new System.Drawing.Point(395, 393);
+            this.btnImprimir.Location = new System.Drawing.Point(376, 393);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(37, 38);
             this.btnImprimir.TabIndex = 3;
@@ -142,7 +141,7 @@
             this.grbVenta.Controls.Add(this.cboEmpleado);
             this.grbVenta.Controls.Add(this.lblEmpleado);
             this.grbVenta.Controls.Add(this.txtStock);
-            this.grbVenta.Controls.Add(this.btnDpto);
+            this.grbVenta.Controls.Add(this.btnAgregar);
             this.grbVenta.Controls.Add(this.cboArticulo);
             this.grbVenta.Controls.Add(this.lblStock);
             this.grbVenta.Controls.Add(this.lblCantidad);
@@ -159,6 +158,101 @@
             this.grbVenta.TabIndex = 25;
             this.grbVenta.TabStop = false;
             this.grbVenta.Text = "Venta";
+            // 
+            // lblCamposObli
+            // 
+            this.lblCamposObli.AutoSize = true;
+            this.lblCamposObli.BackColor = System.Drawing.SystemColors.Window;
+            this.lblCamposObli.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCamposObli.Location = new System.Drawing.Point(272, 16);
+            this.lblCamposObli.Name = "lblCamposObli";
+            this.lblCamposObli.Size = new System.Drawing.Size(105, 15);
+            this.lblCamposObli.TabIndex = 78;
+            this.lblCamposObli.Text = "Campos Obligatorios";
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(463, 140);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(59, 20);
+            this.txtPrecio.TabIndex = 77;
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.BackColor = System.Drawing.SystemColors.Window;
+            this.lblPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPrecio.Location = new System.Drawing.Point(417, 141);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(40, 17);
+            this.lblPrecio.TabIndex = 76;
+            this.lblPrecio.Text = "Precio";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(608, 140);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(59, 20);
+            this.txtCantidad.TabIndex = 63;
+            // 
+            // grbCliente
+            // 
+            this.grbCliente.Controls.Add(this.btnRegCliente);
+            this.grbCliente.Controls.Add(this.lblNombreCli);
+            this.grbCliente.Controls.Add(this.txtNombreCli);
+            this.grbCliente.Controls.Add(this.txtDNICli);
+            this.grbCliente.Controls.Add(this.btnBuscar);
+            this.grbCliente.Controls.Add(this.lblDNICli);
+            this.grbCliente.Location = new System.Drawing.Point(6, 42);
+            this.grbCliente.Name = "grbCliente";
+            this.grbCliente.Size = new System.Drawing.Size(328, 78);
+            this.grbCliente.TabIndex = 75;
+            this.grbCliente.TabStop = false;
+            this.grbCliente.Text = "Cliente";
+            this.grbCliente.Enter += new System.EventHandler(this.grbCliente_Enter);
+            // 
+            // btnRegCliente
+            // 
+            this.btnRegCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnRegCliente.Image")));
+            this.btnRegCliente.Location = new System.Drawing.Point(281, 25);
+            this.btnRegCliente.Name = "btnRegCliente";
+            this.btnRegCliente.Size = new System.Drawing.Size(37, 38);
+            this.btnRegCliente.TabIndex = 79;
+            this.btnRegCliente.UseVisualStyleBackColor = true;
+            this.btnRegCliente.Click += new System.EventHandler(this.btnRegCliente_Click);
+            // 
+            // lblNombreCli
+            // 
+            this.lblNombreCli.BackColor = System.Drawing.SystemColors.Window;
+            this.lblNombreCli.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNombreCli.Location = new System.Drawing.Point(6, 49);
+            this.lblNombreCli.Name = "lblNombreCli";
+            this.lblNombreCli.Size = new System.Drawing.Size(50, 17);
+            this.lblNombreCli.TabIndex = 76;
+            this.lblNombreCli.Text = "Nombre";
+            // 
+            // txtNombreCli
+            // 
+            this.txtNombreCli.Location = new System.Drawing.Point(62, 47);
+            this.txtNombreCli.Name = "txtNombreCli";
+            this.txtNombreCli.Size = new System.Drawing.Size(171, 20);
+            this.txtNombreCli.TabIndex = 75;
+            // 
+            // txtDNICli
+            // 
+            this.txtDNICli.Location = new System.Drawing.Point(62, 21);
+            this.txtDNICli.Name = "txtDNICli";
+            this.txtDNICli.Size = new System.Drawing.Size(171, 20);
+            this.txtDNICli.TabIndex = 67;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Location = new System.Drawing.Point(239, 25);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(37, 38);
+            this.btnBuscar.TabIndex = 74;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // cboEmpleado
             // 
@@ -179,13 +273,6 @@
             this.lblEmpleado.TabIndex = 68;
             this.lblEmpleado.Text = "Empleado";
             // 
-            // txtDNICli
-            // 
-            this.txtDNICli.Location = new System.Drawing.Point(62, 21);
-            this.txtDNICli.Name = "txtDNICli";
-            this.txtDNICli.Size = new System.Drawing.Size(171, 20);
-            this.txtDNICli.TabIndex = 67;
-            // 
             // txtStock
             // 
             this.txtStock.Location = new System.Drawing.Point(330, 139);
@@ -193,12 +280,15 @@
             this.txtStock.Size = new System.Drawing.Size(59, 20);
             this.txtStock.TabIndex = 65;
             // 
-            // txtCantidad
+            // btnAgregar
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(608, 140);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(59, 20);
-            this.txtCantidad.TabIndex = 63;
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.Location = new System.Drawing.Point(12, 129);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(37, 38);
+            this.btnAgregar.TabIndex = 66;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnDpto_Click);
             // 
             // cboArticulo
             // 
@@ -265,15 +355,6 @@
             this.lblFormaDePago.Size = new System.Drawing.Size(80, 17);
             this.lblFormaDePago.TabIndex = 55;
             this.lblFormaDePago.Text = "Forma de Pago";
-            // 
-            // btnDpto
-            // 
-            this.btnDpto.Image = ((System.Drawing.Image)(resources.GetObject("btnDpto.Image")));
-            this.btnDpto.Location = new System.Drawing.Point(12, 129);
-            this.btnDpto.Name = "btnDpto";
-            this.btnDpto.Size = new System.Drawing.Size(37, 38);
-            this.btnDpto.TabIndex = 66;
-            this.btnDpto.UseVisualStyleBackColor = true;
             // 
             // dgvDetalles
             // 
@@ -342,43 +423,6 @@
             this.grbDetalles.TabStop = false;
             this.grbDetalles.Text = "Detalles";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(239, 25);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(37, 38);
-            this.btnBuscar.TabIndex = 74;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnGuargar
-            // 
-            this.btnGuargar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuargar.Image")));
-            this.btnGuargar.Location = new System.Drawing.Point(266, 393);
-            this.btnGuargar.Name = "btnGuargar";
-            this.btnGuargar.Size = new System.Drawing.Size(37, 38);
-            this.btnGuargar.TabIndex = 73;
-            this.btnGuargar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(352, 393);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(37, 38);
-            this.btnEliminar.TabIndex = 72;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.Location = new System.Drawing.Point(309, 393);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(37, 38);
-            this.btnModificar.TabIndex = 71;
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
             // lblTotal
             // 
             this.lblTotal.BackColor = System.Drawing.SystemColors.Window;
@@ -397,74 +441,25 @@
             this.txtTotal.Size = new System.Drawing.Size(72, 20);
             this.txtTotal.TabIndex = 69;
             // 
-            // grbCliente
+            // btnGuargar
             // 
-            this.grbCliente.Controls.Add(this.btnRegCliente);
-            this.grbCliente.Controls.Add(this.lblNombreCli);
-            this.grbCliente.Controls.Add(this.txtNombreCli);
-            this.grbCliente.Controls.Add(this.txtDNICli);
-            this.grbCliente.Controls.Add(this.btnBuscar);
-            this.grbCliente.Controls.Add(this.lblDNICli);
-            this.grbCliente.Location = new System.Drawing.Point(6, 42);
-            this.grbCliente.Name = "grbCliente";
-            this.grbCliente.Size = new System.Drawing.Size(328, 78);
-            this.grbCliente.TabIndex = 75;
-            this.grbCliente.TabStop = false;
-            this.grbCliente.Text = "Cliente";
+            this.btnGuargar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuargar.Image")));
+            this.btnGuargar.Location = new System.Drawing.Point(290, 393);
+            this.btnGuargar.Name = "btnGuargar";
+            this.btnGuargar.Size = new System.Drawing.Size(37, 38);
+            this.btnGuargar.TabIndex = 73;
+            this.btnGuargar.UseVisualStyleBackColor = true;
+            this.btnGuargar.Click += new System.EventHandler(this.btnGuargar_Click);
             // 
-            // txtNombreCli
+            // btnEliminar
             // 
-            this.txtNombreCli.Location = new System.Drawing.Point(62, 47);
-            this.txtNombreCli.Name = "txtNombreCli";
-            this.txtNombreCli.Size = new System.Drawing.Size(171, 20);
-            this.txtNombreCli.TabIndex = 75;
-            // 
-            // lblNombreCli
-            // 
-            this.lblNombreCli.BackColor = System.Drawing.SystemColors.Window;
-            this.lblNombreCli.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNombreCli.Location = new System.Drawing.Point(6, 49);
-            this.lblNombreCli.Name = "lblNombreCli";
-            this.lblNombreCli.Size = new System.Drawing.Size(50, 17);
-            this.lblNombreCli.TabIndex = 76;
-            this.lblNombreCli.Text = "Nombre";
-            // 
-            // lblPrecio
-            // 
-            this.lblPrecio.BackColor = System.Drawing.SystemColors.Window;
-            this.lblPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblPrecio.Location = new System.Drawing.Point(417, 141);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(40, 17);
-            this.lblPrecio.TabIndex = 76;
-            this.lblPrecio.Text = "Precio";
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(463, 140);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(59, 20);
-            this.txtPrecio.TabIndex = 77;
-            // 
-            // lblCamposObli
-            // 
-            this.lblCamposObli.AutoSize = true;
-            this.lblCamposObli.BackColor = System.Drawing.SystemColors.Window;
-            this.lblCamposObli.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCamposObli.Location = new System.Drawing.Point(272, 16);
-            this.lblCamposObli.Name = "lblCamposObli";
-            this.lblCamposObli.Size = new System.Drawing.Size(105, 15);
-            this.lblCamposObli.TabIndex = 78;
-            this.lblCamposObli.Text = "Campos Obligatorios";
-            // 
-            // btnRegCliente
-            // 
-            this.btnRegCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnRegCliente.Image")));
-            this.btnRegCliente.Location = new System.Drawing.Point(281, 25);
-            this.btnRegCliente.Name = "btnRegCliente";
-            this.btnRegCliente.Size = new System.Drawing.Size(37, 38);
-            this.btnRegCliente.TabIndex = 79;
-            this.btnRegCliente.UseVisualStyleBackColor = true;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Location = new System.Drawing.Point(333, 393);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(37, 38);
+            this.btnEliminar.TabIndex = 72;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmVenta
             // 
@@ -472,7 +467,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(700, 441);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnGuargar);
@@ -484,11 +478,11 @@
             this.Load += new System.EventHandler(this.frmVenta_Load);
             this.grbVenta.ResumeLayout(false);
             this.grbVenta.PerformLayout();
+            this.grbCliente.ResumeLayout(false);
+            this.grbCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();
             this.grbDetalles.ResumeLayout(false);
             this.grbDetalles.PerformLayout();
-            this.grbCliente.ResumeLayout(false);
-            this.grbCliente.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -511,7 +505,7 @@
         private System.Windows.Forms.Label lblArtículo;
         private System.Windows.Forms.ComboBox cboFormaPago;
         private System.Windows.Forms.Label lblFormaDePago;
-        private System.Windows.Forms.Button btnDpto;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecioUnitario;
@@ -522,7 +516,6 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.TextBox txtDNICli;
         private System.Windows.Forms.ComboBox cboEmpleado;
         private System.Windows.Forms.Label lblEmpleado;

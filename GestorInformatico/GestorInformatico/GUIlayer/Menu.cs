@@ -85,6 +85,12 @@ namespace GestorInformatico
             equipo.ShowDialog();
         }
 
+        private void formaDePagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestorInformatico.GUIlayer.frmFormaPago formaPago = new GestorInformatico.GUIlayer.frmFormaPago();
+            formaPago.ShowDialog();
+        }
+
       
 
     

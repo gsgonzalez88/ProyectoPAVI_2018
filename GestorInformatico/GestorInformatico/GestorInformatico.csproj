@@ -122,6 +122,12 @@
     <Compile Include="GUIlayer\DetalleCliente.Designer.cs">
       <DependentUpon>DetalleCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIlayer\frmFormaPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIlayer\frmFormaPago.Designer.cs">
+      <DependentUpon>frmFormaPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUIlayer\frmVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUIlayer\DetalleCliente.resx">
       <DependentUpon>DetalleCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIlayer\frmFormaPago.resx">
+      <DependentUpon>frmFormaPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUIlayer\frmVenta.resx">
       <DependentUpon>frmVenta.cs</DependentUpon>

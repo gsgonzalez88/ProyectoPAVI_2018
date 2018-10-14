@@ -52,6 +52,7 @@
             this.articuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.formaDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -113,13 +114,13 @@
             // marcaToolStripMenuItem3
             // 
             this.marcaToolStripMenuItem3.Name = "marcaToolStripMenuItem3";
-            this.marcaToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.marcaToolStripMenuItem3.Size = new System.Drawing.Size(111, 22);
             this.marcaToolStripMenuItem3.Text = "Marca";
             // 
             // equipoToolStripMenuItem1
             // 
             this.equipoToolStripMenuItem1.Name = "equipoToolStripMenuItem1";
-            this.equipoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.equipoToolStripMenuItem1.Size = new System.Drawing.Size(111, 22);
             this.equipoToolStripMenuItem1.Text = "Equipo";
             this.equipoToolStripMenuItem1.Click += new System.EventHandler(this.equipoToolStripMenuItem1_Click);
             // 
@@ -191,7 +192,8 @@
             this.ventaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultarVentaToolStripMenuItem,
             this.compraToolStripMenuItem,
-            this.articuloToolStripMenuItem});
+            this.articuloToolStripMenuItem,
+            this.formaDePagoToolStripMenuItem});
             this.ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
             this.ventaToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.ventaToolStripMenuItem.Text = "Comercial";
@@ -199,20 +201,20 @@
             // consultarVentaToolStripMenuItem
             // 
             this.consultarVentaToolStripMenuItem.Name = "consultarVentaToolStripMenuItem";
-            this.consultarVentaToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.consultarVentaToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.consultarVentaToolStripMenuItem.Text = "Venta";
             this.consultarVentaToolStripMenuItem.Click += new System.EventHandler(this.consultarVentaToolStripMenuItem_Click);
             // 
             // compraToolStripMenuItem
             // 
             this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
-            this.compraToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.compraToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.compraToolStripMenuItem.Text = "Compra";
             // 
             // articuloToolStripMenuItem
             // 
             this.articuloToolStripMenuItem.Name = "articuloToolStripMenuItem";
-            this.articuloToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.articuloToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.articuloToolStripMenuItem.Text = "Articulo";
             // 
             // menuStrip1
@@ -236,6 +238,13 @@
             this.pictureBox1.Size = new System.Drawing.Size(302, 253);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // formaDePagoToolStripMenuItem
+            // 
+            this.formaDePagoToolStripMenuItem.Name = "formaDePagoToolStripMenuItem";
+            this.formaDePagoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.formaDePagoToolStripMenuItem.Text = "Forma De Pago";
+            this.formaDePagoToolStripMenuItem.Click += new System.EventHandler(this.formaDePagoToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -283,6 +292,7 @@
         private System.Windows.Forms.ToolStripMenuItem empleadoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem equipoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem provinciaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem formaDePagoToolStripMenuItem;
 
     }
 }
