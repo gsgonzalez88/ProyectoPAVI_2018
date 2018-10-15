@@ -8,19 +8,21 @@ using System.Data.SqlClient;
 
 namespace DBHelper
 {
-
     public class Utilidades
     {
+        public static string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
+
+        public static SqlConnection Conexion = new SqlConnection();
+
+        public static SqlCommand Comando = new SqlCommand();
+
+        public static SqlTransaction t = null;
 
         public static DataTable Ejecutar(string Ejec)
         {
-            SqlConnection Conexion = new SqlConnection();
-            SqlCommand Comando = new SqlCommand();
             DataTable table;
             try
             {
-                //string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
-                string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BD;User ID=sa;Password=";
                 Conexion.ConnectionString = cadena;
                 Conexion.Open();
                 Comando.Connection = Conexion;
@@ -41,14 +43,9 @@ namespace DBHelper
 
         public static void Insert(string Ejec)
         {
-            SqlConnection Conexion = new SqlConnection();
-            SqlCommand Comando = new SqlCommand();
-            SqlTransaction t = null;
             int rtdo;
             try
             {
-                //string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
-                string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BD;User ID=sa;Password=";
                 Conexion.ConnectionString = cadena;
                 Conexion.Open();
                 t = Conexion.BeginTransaction();
@@ -56,8 +53,8 @@ namespace DBHelper
                 Comando.Transaction = t;
                 Comando.CommandType = CommandType.Text;
                 Comando.CommandText = Ejec;
-                  rtdo= Comando.ExecuteNonQuery();
-             
+                rtdo = Comando.ExecuteNonQuery();
+
                 t.Commit();
                 Conexion.Close();
             }
@@ -71,14 +68,9 @@ namespace DBHelper
 
         public static void Update(string Ejec)
         {
-            SqlConnection Conexion = new SqlConnection();
-            SqlCommand Comando = new SqlCommand();
-            SqlTransaction t = null;
             int rtdo;
             try
             {
-                //string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
-                string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BD;User ID=sa;Password=";
                 Conexion.ConnectionString = cadena;
                 Conexion.Open();
                 t = Conexion.BeginTransaction();
@@ -97,15 +89,12 @@ namespace DBHelper
             }
 
         }
+
         public static DataTable ConsultarCliente(int dni)
         {
-            SqlConnection Conexion = new SqlConnection();
-            SqlCommand Comando = new SqlCommand();
             DataTable table;
             try
             {
-                //string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
-                string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BD;User ID=sa;Password=";
                 Conexion.ConnectionString = cadena;
                 Conexion.Open();
                 Comando.Connection = Conexion;
@@ -126,7 +115,5 @@ namespace DBHelper
                 throw new Exception("" + e.Message);
             }
         }
-
-      
     }
 }
