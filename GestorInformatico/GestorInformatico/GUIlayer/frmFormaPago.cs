@@ -38,7 +38,7 @@ namespace GestorInformatico.GUIlayer
                         DBHelper.Utilidades.Insert("INSERT FormaPago Values (\'" + txtDescripcion.Text + "\',\'" + txtDescuento.Text + "\')");
                         txtDescripcion.BackColor = Color.White;
                         txtDescuento.BackColor = Color.White;
-                        lblCamposObli.BackColor = Color.White;
+                        label2.BackColor = Color.White;
                         txtDescripcion.Text = "";
                         txtDescuento.Text = "";
                         MessageBox.Show("Guardado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -57,7 +57,7 @@ namespace GestorInformatico.GUIlayer
             else
             {
                 MessageBox.Show("Debe completar los campos obligatorios.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblCamposObli.BackColor = Color.LightBlue;
+                label2.BackColor = Color.LightBlue;
                 txtDescripcion.BackColor = Color.LightBlue;
                 txtDescuento.BackColor = Color.LightBlue;
             }
@@ -74,7 +74,7 @@ namespace GestorInformatico.GUIlayer
                     DBHelper.Utilidades.Update("UPDATE FormaPago SET Descripcion = \'" + txtDescripcion.Text + "\',Descuento = \'" + txtDescuento.Text + "\' WHERE IdTipoFP = \'" + id2 + "\'");
                     txtDescripcion.BackColor = Color.White;
                     txtDescuento.BackColor = Color.White;
-                    lblCamposObli.BackColor = Color.White;
+                    label2.BackColor = Color.White;
                     txtDescripcion.Text = "";
                     txtDescuento.Text = "";
                     MessageBox.Show("Se ha realizado la modificación correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -92,7 +92,7 @@ namespace GestorInformatico.GUIlayer
             else
             {
                 MessageBox.Show("Debe completar los campos obligatorios.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblCamposObli.BackColor = Color.LightBlue;
+                label2.BackColor = Color.LightBlue;
                 txtDescripcion.BackColor = Color.LightBlue;
                 txtDescuento.BackColor = Color.LightBlue;
             }
