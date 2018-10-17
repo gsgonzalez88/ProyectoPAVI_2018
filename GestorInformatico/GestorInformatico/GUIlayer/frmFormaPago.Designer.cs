@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFormaPago));
             this.btnModificar = new System.Windows.Forms.Button();
             this.lblDescuento = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -37,9 +38,9 @@
             this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbFormaPago = new System.Windows.Forms.GroupBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFormaPago)).BeginInit();
             this.grbFormaPago.SuspendLayout();
             this.SuspendLayout();
@@ -130,15 +131,14 @@
             this.grbFormaPago.TabIndex = 8;
             this.grbFormaPago.TabStop = false;
             // 
-            // btnGuardar
+            // label2
             // 
-            this.btnGuardar.Image = global::GestorInformatico.Properties.Resources.accept;
-            this.btnGuardar.Location = new System.Drawing.Point(127, 98);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(38, 38);
-            this.btnGuardar.TabIndex = 0;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Location = new System.Drawing.Point(6, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Campos Obligatorios";
             // 
             // label1
             // 
@@ -149,14 +149,15 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Descripcion";
             // 
-            // label2
+            // btnGuardar
             // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(6, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 20);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Campos Obligatorios";
+            this.btnGuardar.Image = global::GestorInformatico.Properties.Resources.accept;
+            this.btnGuardar.Location = new System.Drawing.Point(127, 98);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(38, 38);
+            this.btnGuardar.TabIndex = 0;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // frmFormaPago
             // 
@@ -166,6 +167,7 @@
             this.ClientSize = new System.Drawing.Size(494, 168);
             this.Controls.Add(this.grbFormaPago);
             this.Controls.Add(this.dgvFormaPago);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmFormaPago";
             this.Text = "Forma de Pago";
             this.Load += new System.EventHandler(this.frmFormaPago_Load);

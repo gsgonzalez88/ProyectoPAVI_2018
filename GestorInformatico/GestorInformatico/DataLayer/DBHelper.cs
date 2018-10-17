@@ -10,7 +10,8 @@ namespace DBHelper
 {
     public class Utilidades
     {
-        public static string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
+        //public static string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
+        public static string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BD;User ID=sa;Password=2xdpn5fv0";
 
         public static SqlConnection Conexion = new SqlConnection();
 

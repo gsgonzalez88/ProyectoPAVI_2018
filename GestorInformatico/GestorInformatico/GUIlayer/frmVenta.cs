@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace GestorInformatico.GUIlayer
 {
     public partial class frmVenta : Form
     {
+        string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BD;User ID=sa;Password=2xdpn5fv0";
         int descuento = 0;
         int total = 0;
         public frmVenta()
@@ -25,7 +27,15 @@ namespace GestorInformatico.GUIlayer
             cargarCombo(cboArticulo, DBHelper.Utilidades.Ejecutar("SELECT * FROM  Articulo"), "Descripcion", "IdArticulo");
             cargarCombo(cboFormaPago, DBHelper.Utilidades.Ejecutar("SELECT * FROM FormaPago"), "Descripcion", "IdTipoFP");
             cargarCombo(cboEmpleado, DBHelper.Utilidades.Ejecutar("SELECT (Apellido + ' ' + Nombre) as Nombre, IdEmpleado FROM Empleado"), "Nombre", "IdEmpleado");
-            //"Select (c.Nombre + ' ' + c.Apellido) as Nombre,c.IdCliente from Cliente c where c.IdEstado = 1"
+            DataTable nro = DBHelper.Utilidades.Ejecutar("SELECT MAX(Nro)+1 as Nro FROM Venta");
+            if (!string.IsNullOrEmpty(nro.ToString()))
+            {
+                txtNroVenta.Text = nro.Rows[0].ItemArray[0].ToString();
+            }
+            else
+            {
+                txtNroVenta.Text = "1";
+            }
             txtFecha.Enabled = false;
             btnImprimir.Visible = false;
             lblCamposObli.Visible = false;
@@ -208,19 +218,58 @@ namespace GestorInformatico.GUIlayer
 
         private void btnGuargar_Click(object sender, EventArgs e)
         {
-            foreach(DataGridViewRow fila in dgvDetalles.Rows)
+            SqlTransaction transaccion;
+            SqlCommand comando = new SqlCommand();
+            SqlConnection conexion = new SqlConnection();
+            conexion.ConnectionString = cadena;
+
+            conexion.Open();
+            transaccion = conexion.BeginTransaction();
+            comando.Connection = conexion;
+            comando.Transaction = transaccion;
+            try
             {
-                int id = Convert.ToInt32(fila.Cells[0].Value);
-                DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT StockActual FROM Articulo WHERE Descripcion = \'" + fila.Cells[1].Value.ToString() + "\'");
-                if(tabla.Rows.Count == 1)
+                if(dgvDetalles.Rows.Count > 0)
                 {
-                    MessageBox.Show("paso", "titulo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    
+                    DateTime fecha = DateTime.ParseExact(txtFecha.Text, "dd/mm/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                    DateTime fecha2 = Convert.ToDateTime(txtFecha.Text);
+                    DataTable idCliente = DBHelper.Utilidades.Ejecutar("SELECT IdCliente FROM Cliente WHERE NroDoc = \'" + txtDNICli.Text + "\'");
+                    string sql = "INSERT INTO Venta VALUES (\'" + cboEmpleado.SelectedValue + "\',\'" + idCliente.Rows[0].ItemArray[0].ToString() + "\',\'" + txtNroVenta.Text + 
+                        "\',\'" + cboFormaPago.SelectedValue + "\',\'" + fecha + "\',\'" + txtTotal.Text + "\')";
+                    comando.CommandText = sql;
+                    comando.ExecuteNonQuery();
+
+                    for(int i = 0; i <= dgvDetalles.Rows.Count; i++)
+                    {
+                        string detVenta = "INSERT INTO detalleVenta VALUES (\'" + txtNroVenta.Text + "\'," + dgvDetalles.Rows[i].Cells[0].Value + "," + cboEmpleado.SelectedValue + ",\'" + 
+                            idCliente.Rows[0].ItemArray[0].ToString() + "\'," + dgvDetalles.Rows[i].Cells[4].Value + "," + dgvDetalles.Rows[0].Cells[3].Value + "," + 
+                            dgvDetalles.Rows[i].Cells[5].Value + ")";
+                        comando.CommandText = detVenta;
+                        comando.ExecuteNonQuery();
+
+                        DataTable StockActYMin = DBHelper.Utilidades.Ejecutar("SELECT StockActual, StockMinimo FROM Articulo WHERE IdArticulo = \'" + dgvDetalles.Rows[i].Cells[0].Value + "\'");
+                        int stockAct = Convert.ToInt32(StockActYMin.Rows[0].ItemArray[0]);
+                        int stockMin = Convert.ToInt32(StockActYMin.Rows[0].ItemArray[1]);
+                        stockAct = stockAct - (Convert.ToInt32(dgvDetalles.Rows[i].Cells[3].Value));
+                        string art = "UPDATE Articulo SET StockActual = " + stockAct + "WHERE IdArticulo = \'" + dgvDetalles.Rows[i].Cells[0].Value + "\'";
+                        DBHelper.Utilidades.Update(art);
+                    }
+                    transaccion.Commit();
+                    MessageBox.Show("La venta se guardó correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnImprimir.Visible = true;
                 }
-                int stock = Convert.ToInt32(tabla.Rows[0].ItemArray[0].ToString());
-                int cant = Convert.ToInt32(fila.Cells[3].Value);
-                int nuevo = stock - cant;
-                DBHelper.Utilidades.Update("UPDATE Articulo SET StockActual = " + nuevo + "WHERE IdArticulo = " + id);
-                
+                else
+                {
+                    MessageBox.Show("Debe cargar artículos a la orden de venta", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            catch(Exception ex)
+            {
+                transaccion.Rollback();
+                MessageBox.Show(ex.Message, "Error de carga", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
