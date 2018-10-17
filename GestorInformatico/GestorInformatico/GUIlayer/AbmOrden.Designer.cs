@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AbmOrden));
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNroTarea = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -79,7 +80,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.txtNroTarea = new System.Windows.Forms.TextBox();
+            this.btnRefescar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgOrden)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +98,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRefescar);
             this.groupBox1.Controls.Add(this.txtNroTarea);
             this.groupBox1.Controls.Add(this.btnCerrar);
             this.groupBox1.Controls.Add(this.btnUpdate);
@@ -138,6 +140,13 @@
             this.groupBox1.Size = new System.Drawing.Size(1233, 525);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
+            // 
+            // txtNroTarea
+            // 
+            this.txtNroTarea.Location = new System.Drawing.Point(489, 15);
+            this.txtNroTarea.Name = "txtNroTarea";
+            this.txtNroTarea.Size = new System.Drawing.Size(167, 20);
+            this.txtNroTarea.TabIndex = 66;
             // 
             // btnCerrar
             // 
@@ -543,12 +552,17 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Nro";
             // 
-            // txtNroTarea
+            // btnRefescar
             // 
-            this.txtNroTarea.Location = new System.Drawing.Point(489, 15);
-            this.txtNroTarea.Name = "txtNroTarea";
-            this.txtNroTarea.Size = new System.Drawing.Size(167, 20);
-            this.txtNroTarea.TabIndex = 66;
+            this.btnRefescar.Image = global::GestorInformatico.Properties.Resources.arrow_refresh;
+            this.btnRefescar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefescar.Location = new System.Drawing.Point(249, 221);
+            this.btnRefescar.Name = "btnRefescar";
+            this.btnRefescar.Size = new System.Drawing.Size(28, 32);
+            this.btnRefescar.TabIndex = 67;
+            this.toolTip1.SetToolTip(this.btnRefescar, "Refrescar");
+            this.btnRefescar.UseVisualStyleBackColor = true;
+            this.btnRefescar.Click += new System.EventHandler(this.btnRefescar_Click);
             // 
             // AbmOrden
             // 
@@ -620,5 +634,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TiempoRealizado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.TextBox txtNroTarea;
+        private System.Windows.Forms.Button btnRefescar;
     }
 }
