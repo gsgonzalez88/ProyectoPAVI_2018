@@ -285,16 +285,18 @@ namespace GestorInformatico.GUIlayer
             {
                 if (dvgOrden.Rows[0].Cells["Nro"].Value != null)
                 {
-                    string sql = "";
+                    string sql = ""; string tarea = "";
                     sql += "Insert orden Values("  + txtNro.Text +","+cmbEncargado.SelectedValue + "," + cmbSolicitante.SelectedValue + ",'" + txtFecha.Text + "'," + cmbEstado.SelectedValue + ")";
-                    comando.CommandText = sql;
-                    comando.ExecuteNonQuery();
+
+               
 
                     for (int i = 0; i < dvgOrden.Rows.Count; i++)
                     {
+                        
                         if (dvgOrden.Rows[i].Cells["Nro"].Value != null)
                         {
-                            string tarea = "Insert TareaOT Values (";
+                            tarea = "";
+                             tarea = "Insert TareaOT Values (";
                             var Nro = dvgOrden.Rows[i].Cells["Nro"].Value.ToString();
                             var tot = dvgOrden.Rows[i].Cells["Tarea"].Value.ToString();
                             var equi = dvgOrden.Rows[i].Cells["Equipo"].Value.ToString();
@@ -313,11 +315,22 @@ namespace GestorInformatico.GUIlayer
                             tarea += FechaRealizado != "" ? "'" + FechaRealizado.ToString() + "'," : "null,";
                             tarea += TiempoRealizado != "" ? "'" + TiempoRealizado.ToString() + "'," : "null";
                             tarea += ")";
-                            comando.CommandText = tarea;
-                            comando.ExecuteNonQuery();
+                            if (i != 0)
+	                        {
+                                sql += tarea;
+	                        }
+                            else
+                            {
+                                sql +=  tarea;
+                            }
+                           
                         }
+                        
 
                     }
+                    
+                    comando.CommandText = sql;
+                    comando.ExecuteNonQuery();
                     trasanccion.Commit();
                     MessageBox.Show("Se guardo Correctamente", "Informacion");
                     return;
