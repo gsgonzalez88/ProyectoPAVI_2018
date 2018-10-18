@@ -288,8 +288,6 @@ namespace GestorInformatico.GUIlayer
                     string sql = ""; string tarea = "";
                     sql += "Insert orden Values("  + txtNro.Text +","+cmbEncargado.SelectedValue + "," + cmbSolicitante.SelectedValue + ",'" + txtFecha.Text + "'," + cmbEstado.SelectedValue + ")";
 
-               
-
                     for (int i = 0; i < dvgOrden.Rows.Count; i++)
                     {
                         
@@ -532,7 +530,6 @@ namespace GestorInformatico.GUIlayer
         {
             llegargrilla(sender, e);
         }
-
   
     }
 }
