@@ -30,7 +30,7 @@ namespace GestorInformatico.GUIlayer
         {
             if (!string.IsNullOrEmpty(txtDescripcion.Text) && !string.IsNullOrEmpty(txtDescuento.Text))
             {
-                DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT * FROM FormaPago WHERE Descripcion = \'" + txtDescripcion + "\'");
+                DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT * FROM FormaPago WHERE Descripcion = \'" + txtDescripcion.Text + "\'");
                 if (tabla.Rows.Count == 0)
                 {
                     if ((MessageBox.Show("Desea guardar la nueva forma de pago", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)

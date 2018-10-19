@@ -13,7 +13,7 @@ namespace GestorInformatico.GUIlayer
 {
     public partial class frmVenta : Form
     {
-        string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BD;User ID=sa;Password=2xdpn5fv0";
+        string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BaseProyecto;User ID=sa;Password=2xdpn5fv0";
         int descuento = 0;
         int total = 0;
         public frmVenta()
@@ -23,19 +23,10 @@ namespace GestorInformatico.GUIlayer
 
         private void frmVenta_Load(object sender, EventArgs e)
         {
-            txtFecha.Text = DateTime.Today.ToShortDateString();
+            txtFecha.Text = DateTime.Today.ToShortDateString().ToString();
             cargarCombo(cboArticulo, DBHelper.Utilidades.Ejecutar("SELECT * FROM  Articulo"), "Descripcion", "IdArticulo");
             cargarCombo(cboFormaPago, DBHelper.Utilidades.Ejecutar("SELECT * FROM FormaPago"), "Descripcion", "IdTipoFP");
             cargarCombo(cboEmpleado, DBHelper.Utilidades.Ejecutar("SELECT (Apellido + ' ' + Nombre) as Nombre, IdEmpleado FROM Empleado"), "Nombre", "IdEmpleado");
-            DataTable nro = DBHelper.Utilidades.Ejecutar("SELECT MAX(Nro)+1 as Nro FROM Venta");
-            if (!string.IsNullOrEmpty(nro.ToString()))
-            {
-                txtNroVenta.Text = nro.Rows[0].ItemArray[0].ToString();
-            }
-            else
-            {
-                txtNroVenta.Text = "1";
-            }
             txtFecha.Enabled = false;
             btnImprimir.Visible = false;
             lblCamposObli.Visible = false;
@@ -44,7 +35,6 @@ namespace GestorInformatico.GUIlayer
             lblNombreCli.Visible = false;
             txtNombreCli.Visible = false;
             txtNombreCli.Enabled = false;
-            txtNroVenta.Enabled = false;
             txtTotal.Enabled = false;
             lblCamposObli.BackColor = Color.LightBlue;
         }
@@ -77,7 +67,7 @@ namespace GestorInformatico.GUIlayer
             DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT * FROM FormaPago WHERE Descripcion = \'" + cboFormaPago.Text + "\'");
             if (tabla.Rows.Count > 0 && cboFormaPago.SelectedIndex != -1)
             {
-                descuento = (int)tabla.Rows[0].ItemArray[2];
+                descuento = Convert.ToInt32(tabla.Rows[0].ItemArray[2]);
             }
             else
             {
@@ -95,6 +85,7 @@ namespace GestorInformatico.GUIlayer
                     lblNombreCli.Visible = true;
                     txtNombreCli.Visible = true;
                     txtNombreCli.Text = tabla.Rows[0].ItemArray[0].ToString();
+                    cboFormaPago.Focus();
                 }
                 else
                 {
@@ -141,6 +132,7 @@ namespace GestorInformatico.GUIlayer
                                     txtCantidad.Text = "";
                                     txtTotal.Text = total.ToString();
                                     cboFormaPago.Enabled = false;
+                                    cboArticulo.Focus();
                                 }
                                 else
                                 {
@@ -231,28 +223,24 @@ namespace GestorInformatico.GUIlayer
             {
                 if(dgvDetalles.Rows.Count > 0)
                 {
-                    
-                    DateTime fecha = DateTime.ParseExact(txtFecha.Text, "dd/mm/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                    DateTime fecha2 = Convert.ToDateTime(txtFecha.Text);
                     DataTable idCliente = DBHelper.Utilidades.Ejecutar("SELECT IdCliente FROM Cliente WHERE NroDoc = \'" + txtDNICli.Text + "\'");
-                    string sql = "INSERT INTO Venta VALUES (\'" + cboEmpleado.SelectedValue + "\',\'" + idCliente.Rows[0].ItemArray[0].ToString() + "\',\'" + txtNroVenta.Text + 
-                        "\',\'" + cboFormaPago.SelectedValue + "\',\'" + fecha + "\',\'" + txtTotal.Text + "\')";
+                    string sql = "INSERT INTO Venta VALUES (" + cboEmpleado.SelectedValue + ",'" + idCliente.Rows[0].ItemArray[0].ToString() +
+                        "'," + cboFormaPago.SelectedValue + ",CONVERT(date,'" + txtFecha.Text.ToString() + "',103)" + "," + txtTotal.Text + ")";
                     comando.CommandText = sql;
                     comando.ExecuteNonQuery();
-
-                    for(int i = 0; i <= dgvDetalles.Rows.Count; i++)
+                    DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT IDENT_CURRENT('Venta')");
+                    int identity = Convert.ToInt32(tabla.Rows[0].ItemArray[0]);
+                    for(int i = 0; i < dgvDetalles.Rows.Count; i++)
                     {
-                        string detVenta = "INSERT INTO detalleVenta VALUES (\'" + txtNroVenta.Text + "\'," + dgvDetalles.Rows[i].Cells[0].Value + "," + cboEmpleado.SelectedValue + ",\'" + 
-                            idCliente.Rows[0].ItemArray[0].ToString() + "\'," + dgvDetalles.Rows[i].Cells[4].Value + "," + dgvDetalles.Rows[0].Cells[3].Value + "," + 
-                            dgvDetalles.Rows[i].Cells[5].Value + ")";
+                        string detVenta = "INSERT INTO detalleVenta VALUES (" + identity + "," + dgvDetalles.Rows[i].Cells[0].Value + 
+                            "," + dgvDetalles.Rows[i].Cells[4].Value + "," + dgvDetalles.Rows[0].Cells[3].Value + "," + dgvDetalles.Rows[i].Cells[5].Value  + ")";
                         comando.CommandText = detVenta;
                         comando.ExecuteNonQuery();
-
-                        DataTable StockActYMin = DBHelper.Utilidades.Ejecutar("SELECT StockActual, StockMinimo FROM Articulo WHERE IdArticulo = \'" + dgvDetalles.Rows[i].Cells[0].Value + "\'");
+                        DataTable StockActYMin = DBHelper.Utilidades.Ejecutar("SELECT StockActual, StockMinimo FROM Articulo WHERE IdArticulo = " + dgvDetalles.Rows[i].Cells[0].Value + "");
                         int stockAct = Convert.ToInt32(StockActYMin.Rows[0].ItemArray[0]);
                         int stockMin = Convert.ToInt32(StockActYMin.Rows[0].ItemArray[1]);
                         stockAct = stockAct - (Convert.ToInt32(dgvDetalles.Rows[i].Cells[3].Value));
-                        string art = "UPDATE Articulo SET StockActual = " + stockAct + "WHERE IdArticulo = \'" + dgvDetalles.Rows[i].Cells[0].Value + "\'";
+                        string art = "UPDATE Articulo SET StockActual = " + stockAct + " WHERE IdArticulo = " + dgvDetalles.Rows[i].Cells[0].Value;
                         DBHelper.Utilidades.Update(art);
                     }
                     transaccion.Commit();

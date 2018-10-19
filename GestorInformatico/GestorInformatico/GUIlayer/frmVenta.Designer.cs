@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVenta));
-            this.txtNroVenta = new System.Windows.Forms.TextBox();
-            this.lblNroVenta = new System.Windows.Forms.Label();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -74,31 +72,12 @@
             this.grbDetalles.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtNroVenta
-            // 
-            this.txtNroVenta.Location = new System.Drawing.Point(82, 14);
-            this.txtNroVenta.Name = "txtNroVenta";
-            this.txtNroVenta.Size = new System.Drawing.Size(126, 20);
-            this.txtNroVenta.TabIndex = 7;
-            // 
-            // lblNroVenta
-            // 
-            this.lblNroVenta.AutoSize = true;
-            this.lblNroVenta.BackColor = System.Drawing.SystemColors.Window;
-            this.lblNroVenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNroVenta.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroVenta.Location = new System.Drawing.Point(6, 16);
-            this.lblNroVenta.Name = "lblNroVenta";
-            this.lblNroVenta.Size = new System.Drawing.Size(61, 17);
-            this.lblNroVenta.TabIndex = 15;
-            this.lblNroVenta.Text = "Nro. Venta";
-            // 
             // txtFecha
             // 
             this.txtFecha.Location = new System.Drawing.Point(541, 13);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(126, 20);
-            this.txtFecha.TabIndex = 18;
+            this.txtFecha.TabIndex = 14;
             // 
             // btnImprimir
             // 
@@ -106,7 +85,7 @@
             this.btnImprimir.Location = new System.Drawing.Point(376, 393);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(37, 38);
-            this.btnImprimir.TabIndex = 3;
+            this.btnImprimir.TabIndex = 10;
             this.btnImprimir.UseVisualStyleBackColor = true;
             // 
             // lblFecha
@@ -117,7 +96,7 @@
             this.lblFecha.Location = new System.Drawing.Point(446, 15);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(80, 17);
-            this.lblFecha.TabIndex = 19;
+            this.lblFecha.TabIndex = 13;
             this.lblFecha.Text = "Fecha";
             // 
             // lblDNICli
@@ -128,7 +107,7 @@
             this.lblDNICli.Location = new System.Drawing.Point(6, 22);
             this.lblDNICli.Name = "lblDNICli";
             this.lblDNICli.Size = new System.Drawing.Size(50, 17);
-            this.lblDNICli.TabIndex = 54;
+            this.lblDNICli.TabIndex = 15;
             this.lblDNICli.Text = "DNI";
             // 
             // grbVenta
@@ -148,14 +127,12 @@
             this.grbVenta.Controls.Add(this.lblArtículo);
             this.grbVenta.Controls.Add(this.cboFormaPago);
             this.grbVenta.Controls.Add(this.lblFormaDePago);
-            this.grbVenta.Controls.Add(this.lblNroVenta);
-            this.grbVenta.Controls.Add(this.txtNroVenta);
             this.grbVenta.Controls.Add(this.txtFecha);
             this.grbVenta.Controls.Add(this.lblFecha);
             this.grbVenta.Location = new System.Drawing.Point(12, 12);
             this.grbVenta.Name = "grbVenta";
             this.grbVenta.Size = new System.Drawing.Size(676, 175);
-            this.grbVenta.TabIndex = 25;
+            this.grbVenta.TabIndex = 29;
             this.grbVenta.TabStop = false;
             this.grbVenta.Text = "Venta";
             // 
@@ -164,10 +141,10 @@
             this.lblCamposObli.AutoSize = true;
             this.lblCamposObli.BackColor = System.Drawing.SystemColors.Window;
             this.lblCamposObli.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCamposObli.Location = new System.Drawing.Point(272, 16);
+            this.lblCamposObli.Location = new System.Drawing.Point(12, 18);
             this.lblCamposObli.Name = "lblCamposObli";
             this.lblCamposObli.Size = new System.Drawing.Size(105, 15);
-            this.lblCamposObli.TabIndex = 78;
+            this.lblCamposObli.TabIndex = 12;
             this.lblCamposObli.Text = "Campos Obligatorios";
             // 
             // txtPrecio
@@ -184,7 +161,7 @@
             this.lblPrecio.Location = new System.Drawing.Point(417, 141);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(40, 17);
-            this.lblPrecio.TabIndex = 76;
+            this.lblPrecio.TabIndex = 23;
             this.lblPrecio.Text = "Precio";
             // 
             // txtCantidad
@@ -192,7 +169,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(608, 140);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(59, 20);
-            this.txtCantidad.TabIndex = 63;
+            this.txtCantidad.TabIndex = 6;
             // 
             // grbCliente
             // 
@@ -216,7 +193,7 @@
             this.btnRegCliente.Location = new System.Drawing.Point(281, 25);
             this.btnRegCliente.Name = "btnRegCliente";
             this.btnRegCliente.Size = new System.Drawing.Size(37, 38);
-            this.btnRegCliente.TabIndex = 79;
+            this.btnRegCliente.TabIndex = 18;
             this.btnRegCliente.UseVisualStyleBackColor = true;
             this.btnRegCliente.Click += new System.EventHandler(this.btnRegCliente_Click);
             // 
@@ -227,7 +204,7 @@
             this.lblNombreCli.Location = new System.Drawing.Point(6, 49);
             this.lblNombreCli.Name = "lblNombreCli";
             this.lblNombreCli.Size = new System.Drawing.Size(50, 17);
-            this.lblNombreCli.TabIndex = 76;
+            this.lblNombreCli.TabIndex = 16;
             this.lblNombreCli.Text = "Nombre";
             // 
             // txtNombreCli
@@ -235,14 +212,14 @@
             this.txtNombreCli.Location = new System.Drawing.Point(62, 47);
             this.txtNombreCli.Name = "txtNombreCli";
             this.txtNombreCli.Size = new System.Drawing.Size(171, 20);
-            this.txtNombreCli.TabIndex = 75;
+            this.txtNombreCli.TabIndex = 17;
             // 
             // txtDNICli
             // 
             this.txtDNICli.Location = new System.Drawing.Point(62, 21);
             this.txtDNICli.Name = "txtDNICli";
             this.txtDNICli.Size = new System.Drawing.Size(171, 20);
-            this.txtDNICli.TabIndex = 67;
+            this.txtDNICli.TabIndex = 1;
             // 
             // btnBuscar
             // 
@@ -250,7 +227,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(239, 25);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(37, 38);
-            this.btnBuscar.TabIndex = 74;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -260,7 +237,7 @@
             this.cboEmpleado.Location = new System.Drawing.Point(541, 89);
             this.cboEmpleado.Name = "cboEmpleado";
             this.cboEmpleado.Size = new System.Drawing.Size(126, 21);
-            this.cboEmpleado.TabIndex = 69;
+            this.cboEmpleado.TabIndex = 4;
             // 
             // lblEmpleado
             // 
@@ -270,7 +247,7 @@
             this.lblEmpleado.Location = new System.Drawing.Point(446, 91);
             this.lblEmpleado.Name = "lblEmpleado";
             this.lblEmpleado.Size = new System.Drawing.Size(80, 17);
-            this.lblEmpleado.TabIndex = 68;
+            this.lblEmpleado.TabIndex = 20;
             this.lblEmpleado.Text = "Empleado";
             // 
             // txtStock
@@ -286,7 +263,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(12, 129);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(37, 38);
-            this.btnAgregar.TabIndex = 66;
+            this.btnAgregar.TabIndex = 7;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnDpto_Click);
             // 
@@ -296,7 +273,7 @@
             this.cboArticulo.Location = new System.Drawing.Point(110, 139);
             this.cboArticulo.Name = "cboArticulo";
             this.cboArticulo.Size = new System.Drawing.Size(147, 21);
-            this.cboArticulo.TabIndex = 62;
+            this.cboArticulo.TabIndex = 5;
             this.cboArticulo.TextChanged += new System.EventHandler(this.cboArticulo_TextChanged);
             // 
             // lblStock
@@ -308,7 +285,7 @@
             this.lblStock.Location = new System.Drawing.Point(288, 141);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(36, 17);
-            this.lblStock.TabIndex = 60;
+            this.lblStock.TabIndex = 22;
             this.lblStock.Text = "Stock";
             // 
             // lblCantidad
@@ -320,7 +297,7 @@
             this.lblCantidad.Location = new System.Drawing.Point(550, 141);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(52, 17);
-            this.lblCantidad.TabIndex = 59;
+            this.lblCantidad.TabIndex = 24;
             this.lblCantidad.Text = "Cantidad";
             // 
             // lblArtículo
@@ -332,7 +309,7 @@
             this.lblArtículo.Location = new System.Drawing.Point(55, 141);
             this.lblArtículo.Name = "lblArtículo";
             this.lblArtículo.Size = new System.Drawing.Size(49, 17);
-            this.lblArtículo.TabIndex = 58;
+            this.lblArtículo.TabIndex = 21;
             this.lblArtículo.Text = "Artículo";
             // 
             // cboFormaPago
@@ -341,7 +318,7 @@
             this.cboFormaPago.Location = new System.Drawing.Point(541, 51);
             this.cboFormaPago.Name = "cboFormaPago";
             this.cboFormaPago.Size = new System.Drawing.Size(126, 21);
-            this.cboFormaPago.TabIndex = 57;
+            this.cboFormaPago.TabIndex = 3;
             this.cboFormaPago.SelectedIndexChanged += new System.EventHandler(this.cboFormaPago_SelectedIndexChanged);
             // 
             // lblFormaDePago
@@ -353,7 +330,7 @@
             this.lblFormaDePago.Location = new System.Drawing.Point(446, 53);
             this.lblFormaDePago.Name = "lblFormaDePago";
             this.lblFormaDePago.Size = new System.Drawing.Size(80, 17);
-            this.lblFormaDePago.TabIndex = 55;
+            this.lblFormaDePago.TabIndex = 19;
             this.lblFormaDePago.Text = "Forma de Pago";
             // 
             // dgvDetalles
@@ -373,7 +350,7 @@
             this.dgvDetalles.Name = "dgvDetalles";
             this.dgvDetalles.ReadOnly = true;
             this.dgvDetalles.Size = new System.Drawing.Size(652, 142);
-            this.dgvDetalles.TabIndex = 66;
+            this.dgvDetalles.TabIndex = 27;
             // 
             // colCodProd
             // 
@@ -419,7 +396,7 @@
             this.grbDetalles.Location = new System.Drawing.Point(12, 193);
             this.grbDetalles.Name = "grbDetalles";
             this.grbDetalles.Size = new System.Drawing.Size(676, 194);
-            this.grbDetalles.TabIndex = 67;
+            this.grbDetalles.TabIndex = 28;
             this.grbDetalles.TabStop = false;
             this.grbDetalles.Text = "Detalles";
             // 
@@ -431,7 +408,7 @@
             this.lblTotal.Location = new System.Drawing.Point(528, 168);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(61, 17);
-            this.lblTotal.TabIndex = 70;
+            this.lblTotal.TabIndex = 25;
             this.lblTotal.Text = "Total";
             // 
             // txtTotal
@@ -439,7 +416,7 @@
             this.txtTotal.Location = new System.Drawing.Point(595, 167);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(72, 20);
-            this.txtTotal.TabIndex = 69;
+            this.txtTotal.TabIndex = 26;
             // 
             // btnGuargar
             // 
@@ -447,7 +424,7 @@
             this.btnGuargar.Location = new System.Drawing.Point(290, 393);
             this.btnGuargar.Name = "btnGuargar";
             this.btnGuargar.Size = new System.Drawing.Size(37, 38);
-            this.btnGuargar.TabIndex = 73;
+            this.btnGuargar.TabIndex = 8;
             this.btnGuargar.UseVisualStyleBackColor = true;
             this.btnGuargar.Click += new System.EventHandler(this.btnGuargar_Click);
             // 
@@ -457,7 +434,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(333, 393);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(37, 38);
-            this.btnEliminar.TabIndex = 72;
+            this.btnEliminar.TabIndex = 9;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -489,8 +466,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtNroVenta;
-        private System.Windows.Forms.Label lblNroVenta;
         private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Label lblFecha;

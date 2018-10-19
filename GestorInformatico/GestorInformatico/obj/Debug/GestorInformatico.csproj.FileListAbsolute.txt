@@ -105,3 +105,4 @@ C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\Ges
 D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.GUIlayer.AbmOrden.resources
 D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.GUIlayer.frmFormaPago.resources
 C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.GUIlayer.AbmOrden.resources
+C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.GUIlayer.frmMarca.resources
