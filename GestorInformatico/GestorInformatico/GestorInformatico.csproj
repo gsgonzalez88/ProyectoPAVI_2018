@@ -243,6 +243,7 @@
     <Content Include="Resources\delete.ico" />
     <None Include="Resources\delete1.ico" />
     <Content Include="Resources\Exe.ico" />
+    <None Include="Resources\login.png" />
     <Content Include="Resources\pencil_add.ico" />
   </ItemGroup>
   <ItemGroup>

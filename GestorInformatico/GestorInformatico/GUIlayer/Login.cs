@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DBHelper;
+
 namespace GestorInformatico
 {
     public partial class Login : Form
@@ -38,8 +39,8 @@ namespace GestorInformatico
                                     {
                                         MessageBox.Show("Inicio correcto", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         this.Visible = false;
-                                        Menu frmMenu = new Menu();
-                                        frmMenu.Show();
+                                        GestorInformatico.Menu menu = new Menu();
+                                        menu.Show();
                                         return;
                                     }
                                     else
@@ -97,11 +98,6 @@ namespace GestorInformatico
         	{
                 e.Cancel = true;
 	        }
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void Login_Load(object sender, EventArgs e)
