@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtDepto = new System.Windows.Forms.TextBox();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.BtnSalir = new System.Windows.Forms.Button();
@@ -44,8 +43,8 @@
             this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDepartamento)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -88,18 +87,6 @@
             this.cmbProvincia.Size = new System.Drawing.Size(206, 21);
             this.cmbProvincia.TabIndex = 6;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(108, 15);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(28, 32);
-            this.btnBuscar.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.btnBuscar, "Buscar");
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Visible = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // btnNuevo
             // 
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
@@ -109,6 +96,7 @@
             this.btnNuevo.TabIndex = 12;
             this.toolTip1.SetToolTip(this.btnNuevo, "Nuevo");
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // BtnSalir
             // 
@@ -182,18 +170,6 @@
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnAceptar);
-            this.groupBox2.Controls.Add(this.btnRefescar);
-            this.groupBox2.Controls.Add(this.BtnSalir);
-            this.groupBox2.Controls.Add(this.btnBuscar);
-            this.groupBox2.Location = new System.Drawing.Point(6, 112);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(273, 54);
-            this.groupBox2.TabIndex = 51;
-            this.groupBox2.TabStop = false;
-            // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.SystemColors.Window;
@@ -204,6 +180,17 @@
             this.label3.Size = new System.Drawing.Size(119, 19);
             this.label3.TabIndex = 52;
             this.label3.Text = "Campos Obligatorio";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnAceptar);
+            this.groupBox2.Controls.Add(this.btnRefescar);
+            this.groupBox2.Controls.Add(this.BtnSalir);
+            this.groupBox2.Location = new System.Drawing.Point(6, 112);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(273, 54);
+            this.groupBox2.TabIndex = 51;
+            this.groupBox2.TabStop = false;
             // 
             // AbmDepto
             // 
@@ -231,7 +218,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDepto;
         private System.Windows.Forms.ComboBox cmbProvincia;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridView dvgDepartamento;

@@ -103,12 +103,33 @@ namespace GestorInformatico
             formaPago.Show();
         }
 
+<<<<<<< HEAD
+        private void marcaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            GestorInformatico.GUIlayer.frmMarca marca = new GestorInformatico.GUIlayer.frmMarca();
+            marca.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+      
+
+    
+
+     
+
+      
+=======
         private void ordenDeTrabajoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GestorInformatico.GUIlayer.OrdenDeTrabajo orden = new GUIlayer.OrdenDeTrabajo();
             orden.MdiParent = this;
             orden.Show();
         }
+>>>>>>> master
 
        
         

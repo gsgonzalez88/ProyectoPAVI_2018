@@ -21,7 +21,6 @@ namespace GestorInformatico
         private void AbmDepto_Load(object sender, EventArgs e)
         {
             LlenarGrilla();
-
             cmbProvincia.DataSource = Utilidades.Ejecutar("Select * from Provincia");
             cmbProvincia.DisplayMember = "Descripcion";
             cmbProvincia.ValueMember = "idProvincia";
@@ -101,9 +100,10 @@ namespace GestorInformatico
             MessageBox.Show("Complete los campos Sombreados", "Informacion");
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
         {
-            
+            ABMProvincia provincia = new ABMProvincia();
+            provincia.ShowDialog();
         }
     }
 }

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace GestorInformatico.GUIlayer
 {
     public partial class frmVenta : Form
     {
+        string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BaseProyecto;User ID=sa;Password=2xdpn5fv0";
         int descuento = 0;
         int total = 0;
         public frmVenta()
@@ -21,11 +23,10 @@ namespace GestorInformatico.GUIlayer
 
         private void frmVenta_Load(object sender, EventArgs e)
         {
-            txtFecha.Text = DateTime.Today.ToShortDateString();
+            txtFecha.Text = DateTime.Today.ToShortDateString().ToString();
             cargarCombo(cboArticulo, DBHelper.Utilidades.Ejecutar("SELECT * FROM  Articulo"), "Descripcion", "IdArticulo");
             cargarCombo(cboFormaPago, DBHelper.Utilidades.Ejecutar("SELECT * FROM FormaPago"), "Descripcion", "IdTipoFP");
             cargarCombo(cboEmpleado, DBHelper.Utilidades.Ejecutar("SELECT (Apellido + ' ' + Nombre) as Nombre, IdEmpleado FROM Empleado"), "Nombre", "IdEmpleado");
-            //"Select (c.Nombre + ' ' + c.Apellido) as Nombre,c.IdCliente from Cliente c where c.IdEstado = 1"
             txtFecha.Enabled = false;
             btnImprimir.Visible = false;
             lblCamposObli.Visible = false;
@@ -34,7 +35,6 @@ namespace GestorInformatico.GUIlayer
             lblNombreCli.Visible = false;
             txtNombreCli.Visible = false;
             txtNombreCli.Enabled = false;
-            txtNroVenta.Enabled = false;
             txtTotal.Enabled = false;
             lblCamposObli.BackColor = Color.LightBlue;
         }
@@ -67,7 +67,7 @@ namespace GestorInformatico.GUIlayer
             DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT * FROM FormaPago WHERE Descripcion = \'" + cboFormaPago.Text + "\'");
             if (tabla.Rows.Count > 0 && cboFormaPago.SelectedIndex != -1)
             {
-                descuento = (int)tabla.Rows[0].ItemArray[2];
+                descuento = Convert.ToInt32(tabla.Rows[0].ItemArray[2]);
             }
             else
             {
@@ -85,6 +85,7 @@ namespace GestorInformatico.GUIlayer
                     lblNombreCli.Visible = true;
                     txtNombreCli.Visible = true;
                     txtNombreCli.Text = tabla.Rows[0].ItemArray[0].ToString();
+                    cboFormaPago.Focus();
                 }
                 else
                 {
@@ -131,6 +132,7 @@ namespace GestorInformatico.GUIlayer
                                     txtCantidad.Text = "";
                                     txtTotal.Text = total.ToString();
                                     cboFormaPago.Enabled = false;
+                                    cboArticulo.Focus();
                                 }
                                 else
                                 {
@@ -208,19 +210,54 @@ namespace GestorInformatico.GUIlayer
 
         private void btnGuargar_Click(object sender, EventArgs e)
         {
-            foreach(DataGridViewRow fila in dgvDetalles.Rows)
+            SqlTransaction transaccion;
+            SqlCommand comando = new SqlCommand();
+            SqlConnection conexion = new SqlConnection();
+            conexion.ConnectionString = cadena;
+
+            conexion.Open();
+            transaccion = conexion.BeginTransaction();
+            comando.Connection = conexion;
+            comando.Transaction = transaccion;
+            try
             {
-                int id = Convert.ToInt32(fila.Cells[0].Value);
-                DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT StockActual FROM Articulo WHERE Descripcion = \'" + fila.Cells[1].Value.ToString() + "\'");
-                if(tabla.Rows.Count == 1)
+                if(dgvDetalles.Rows.Count > 0)
                 {
-                    MessageBox.Show("paso", "titulo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    DataTable idCliente = DBHelper.Utilidades.Ejecutar("SELECT IdCliente FROM Cliente WHERE NroDoc = \'" + txtDNICli.Text + "\'");
+                    string sql = "INSERT INTO Venta VALUES (" + cboEmpleado.SelectedValue + ",'" + idCliente.Rows[0].ItemArray[0].ToString() +
+                        "'," + cboFormaPago.SelectedValue + ",CONVERT(date,'" + txtFecha.Text.ToString() + "',103)" + "," + txtTotal.Text + ")";
+                    comando.CommandText = sql;
+                    comando.ExecuteNonQuery();
+                    DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT IDENT_CURRENT('Venta')");
+                    int identity = Convert.ToInt32(tabla.Rows[0].ItemArray[0]);
+                    for(int i = 0; i < dgvDetalles.Rows.Count; i++)
+                    {
+                        string detVenta = "INSERT INTO detalleVenta VALUES (" + identity + "," + dgvDetalles.Rows[i].Cells[0].Value + 
+                            "," + dgvDetalles.Rows[i].Cells[4].Value + "," + dgvDetalles.Rows[0].Cells[3].Value + "," + dgvDetalles.Rows[i].Cells[5].Value  + ")";
+                        comando.CommandText = detVenta;
+                        comando.ExecuteNonQuery();
+                        DataTable StockActYMin = DBHelper.Utilidades.Ejecutar("SELECT StockActual, StockMinimo FROM Articulo WHERE IdArticulo = " + dgvDetalles.Rows[i].Cells[0].Value + "");
+                        int stockAct = Convert.ToInt32(StockActYMin.Rows[0].ItemArray[0]);
+                        int stockMin = Convert.ToInt32(StockActYMin.Rows[0].ItemArray[1]);
+                        stockAct = stockAct - (Convert.ToInt32(dgvDetalles.Rows[i].Cells[3].Value));
+                        string art = "UPDATE Articulo SET StockActual = " + stockAct + " WHERE IdArticulo = " + dgvDetalles.Rows[i].Cells[0].Value;
+                        DBHelper.Utilidades.Update(art);
+                    }
+                    transaccion.Commit();
+                    MessageBox.Show("La venta se guardó correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnImprimir.Visible = true;
                 }
-                int stock = Convert.ToInt32(tabla.Rows[0].ItemArray[0].ToString());
-                int cant = Convert.ToInt32(fila.Cells[3].Value);
-                int nuevo = stock - cant;
-                DBHelper.Utilidades.Update("UPDATE Articulo SET StockActual = " + nuevo + "WHERE IdArticulo = " + id);
-                
+                else
+                {
+                    MessageBox.Show("Debe cargar artículos a la orden de venta", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            catch(Exception ex)
+            {
+                transaccion.Rollback();
+                MessageBox.Show(ex.Message, "Error de carga", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
