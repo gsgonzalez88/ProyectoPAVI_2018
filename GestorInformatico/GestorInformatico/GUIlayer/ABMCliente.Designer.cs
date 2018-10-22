@@ -405,12 +405,12 @@
             // 
             // label16
             // 
-            this.label16.BackColor = System.Drawing.SystemColors.Control;
+            this.label16.BackColor = System.Drawing.SystemColors.Window;
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(9, 106);
+            this.label16.Location = new System.Drawing.Point(11, 108);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(87, 21);
+            this.label16.Size = new System.Drawing.Size(85, 21);
             this.label16.TabIndex = 40;
             this.label16.Text = "Provincia";
             // 
@@ -534,20 +534,6 @@
             this.cmbDepto.TabIndex = 41;
             this.cmbDepto.SelectedIndexChanged += new System.EventHandler(this.cmbDepto_SelectedIndexChanged);
             // 
-<<<<<<< HEAD
-=======
-            // label16
-            // 
-            this.label16.BackColor = System.Drawing.SystemColors.Window;
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(313, 139);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(103, 21);
-            this.label16.TabIndex = 40;
-            this.label16.Text = "Provincia";
-            // 
->>>>>>> master
             // label14
             // 
             this.label14.BackColor = System.Drawing.SystemColors.Window;

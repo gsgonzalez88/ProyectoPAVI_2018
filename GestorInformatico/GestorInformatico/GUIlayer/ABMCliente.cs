@@ -449,11 +449,8 @@ namespace GestorInformatico
                 {
                     nro = Convert.ToInt32(txtBuscar.Text);
 
-<<<<<<< HEAD
                     DBHelper.Utilidades.Ejecutar("Update Cliente set IdEstado = 2 where Cuit =  " + txtBuscar.Text);
-=======
                     Utilidades.Ejecutar("Update Cliente set IdEstado =2 where Cuit =  " + txtBuscar.Text);
->>>>>>> master
                     MessageBox.Show("Cliente  dado de Baja", "Informacion");
                 }
                 if (rbtParticular.Checked)

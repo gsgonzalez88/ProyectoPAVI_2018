@@ -50,12 +50,11 @@
             this.articuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formaDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-<<<<<<< HEAD
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-=======
+           // this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            //
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
->>>>>>> master
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -235,15 +234,14 @@
             this.consultarToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.consultarToolStripMenuItem.Text = "Consultar";
             // 
-<<<<<<< HEAD
-=======
+
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
->>>>>>> master
+
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
