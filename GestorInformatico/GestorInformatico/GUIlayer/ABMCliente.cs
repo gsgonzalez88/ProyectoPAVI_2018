@@ -30,11 +30,11 @@ namespace GestorInformatico
             rbtActivo.Visible = false;
             rbtInactivo.Checked = false;
             rbtActivo.Checked = false;
-            cmbProvin.DataSource = Utilidades.Ejecutar("Select * from Provincia");
+            cmbProvin.DataSource = DBHelper.Utilidades.Ejecutar("Select * from Provincia");
             cmbProvin.DisplayMember = "Descripcion";
             cmbProvin.ValueMember = "idProvincia";
             cmbProvin.SelectedIndex = -1;
-            cmbTdoc.DataSource = Utilidades.Ejecutar("Select * from TipoDoc");
+            cmbTdoc.DataSource = DBHelper.Utilidades.Ejecutar("Select * from TipoDoc");
             cmbTdoc.DisplayMember = "Descripcion";
             cmbTdoc.ValueMember = "IdTipoDoc";
             cmbTdoc.SelectedIndex = -1;
@@ -45,7 +45,7 @@ namespace GestorInformatico
 
         private void EstaSeguro(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Desea salir sin guardar??", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Seguro que desea salir??", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 e.Cancel = false;
             }
@@ -222,7 +222,7 @@ namespace GestorInformatico
             if (a == 1 && cmbProvin.SelectedValue != null)
             {
                 a = 0;
-                cmbDepto.DataSource = Utilidades.Ejecutar("Select * from Departamento where IdProvincia = " + cmbProvin.SelectedValue.ToString());
+                cmbDepto.DataSource = DBHelper.Utilidades.Ejecutar("Select * from Departamento where IdProvincia = " + cmbProvin.SelectedValue.ToString());
                 cmbDepto.DisplayMember = "Descripcion";
                 cmbDepto.ValueMember = "IdDepartamento";
                 cmbDepto.SelectedIndex = -1;
@@ -238,7 +238,7 @@ namespace GestorInformatico
             if (a == 1 && cmbDepto.SelectedValue != null)
             {
                 a = 0;
-                cmbLocalidad.DataSource = Utilidades.Ejecutar("Select * from Localidad where IdDepartamento = " + cmbDepto.SelectedValue.ToString());
+                cmbLocalidad.DataSource = DBHelper.Utilidades.Ejecutar("Select * from Localidad where IdDepartamento = " + cmbDepto.SelectedValue.ToString());
                 cmbLocalidad.DisplayMember = "Descripcion";
                 cmbLocalidad.ValueMember = "IdLocalidad";
                 cmbLocalidad.SelectedIndex = -1;
@@ -253,7 +253,7 @@ namespace GestorInformatico
             if (a == 1 && cmbLocalidad.SelectedValue != null)
             {
                 a = 0;
-                cmbBarrio.DataSource = Utilidades.Ejecutar("Select * from Barrio where IdLocalidad = " + cmbLocalidad.SelectedValue.ToString());
+                cmbBarrio.DataSource = DBHelper.Utilidades.Ejecutar("Select * from Barrio where IdLocalidad = " + cmbLocalidad.SelectedValue.ToString());
                 cmbBarrio.DisplayMember = "Descripcion";
                 cmbBarrio.ValueMember = "IdBarrio";
                 cmbBarrio.SelectedIndex = -1;
@@ -355,7 +355,7 @@ namespace GestorInformatico
             {
                 DataTable table;
                 nro = Convert.ToInt32(txtBuscar.Text);
-                table = Utilidades.ConsultarCliente(nro);
+                table = DBHelper.Utilidades.ConsultarCliente(nro);
                 if (table.Rows.Count > 0)
                 {
                     string tipo = table.Rows[0]["TipoCliente"].ToString();
@@ -447,7 +447,7 @@ namespace GestorInformatico
                 {
                     nro = Convert.ToInt32(txtBuscar.Text);
 
-                    Utilidades.Ejecutar("Update Cliente set IdEstado =2where Cuit =  " + txtBuscar.Text);
+                    DBHelper.Utilidades.Ejecutar("Update Cliente set IdEstado = 2 where Cuit =  " + txtBuscar.Text);
                     MessageBox.Show("Cliente  dado de Baja", "Informacion");
                 }
                 if (rbtParticular.Checked)
@@ -457,7 +457,7 @@ namespace GestorInformatico
                     {
                         nro = Convert.ToInt32(txtBuscar.Text);
 
-                        Utilidades.Ejecutar("Update Cliente set IdEstado =2 where NroDoc =  " + txtBuscar.Text);
+                        DBHelper.Utilidades.Ejecutar("Update Cliente set IdEstado = 2 where NroDoc =  " + txtBuscar.Text);
                         MessageBox.Show("Cliente dado de Baja", "Informacion");
                     }
                 }
@@ -475,12 +475,12 @@ namespace GestorInformatico
             DataTable table = new DataTable();
             if (rbtParticular.Checked)
             {
-                table = Utilidades.Ejecutar("select c.NroDoc from Cliente c where c.NroDoc =" + txtNroDoc.Text);
+                table = DBHelper.Utilidades.Ejecutar("select c.NroDoc from Cliente c where c.NroDoc =" + txtNroDoc.Text);
 
             }
             else
             {
-                table = Utilidades.Ejecutar("select c.Cuit from Cliente c where c.Cuit =" + txtCuit.Text);
+                table = DBHelper.Utilidades.Ejecutar("select c.Cuit from Cliente c where c.Cuit =" + txtCuit.Text);
 
             }
 
@@ -494,7 +494,7 @@ namespace GestorInformatico
                 if (rbtEmpresa.Checked == true)
                 {
 
-                    Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','"
+                    DBHelper.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','"
                         + txtApellido.Text + "',"
                         + txtCuit.Text + ","
                         + "NULL,NULL,'"
@@ -513,7 +513,7 @@ namespace GestorInformatico
                 }
                 else
                 {
-                    Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','"
+                    DBHelper.Utilidades.Insert("Insert Cliente Values('" + txtNom.Text + "','"
                            + txtApellido.Text + "',NULL,"
                            + cmbTdoc.SelectedValue + ","
                            + txtNroDoc.Text + ",'"
@@ -550,7 +550,7 @@ namespace GestorInformatico
                 cmbDepto.Enabled = true;
                 cmbBarrio.Enabled = true;
                 cmbLocalidad.Enabled = true;
-                DataTable tabla = Utilidades.ConsultarCliente(Convert.ToInt32(txtBuscar.Text));
+                DataTable tabla = DBHelper.Utilidades.ConsultarCliente(Convert.ToInt32(txtBuscar.Text));
                 string sql = "Update Cliente ";
                 if (tabla.Rows.Count > 0)
                 {
@@ -564,7 +564,7 @@ namespace GestorInformatico
                             + " NroCalle = " + txtNroCalle.Text + "," + " Calle = '" + txtCalle.Text + "',"
                             + " nroTelefono= " + txtTelefono.Text + "," + " Email = '" + txtEmail.Text + "',";
 
-                        DataTable table = Utilidades.Ejecutar("select b.IdBarrio,l.IdLocalidad,d.IdDepartamento,d.IdProvincia from Barrio b"
+                        DataTable table = DBHelper.Utilidades.Ejecutar("select b.IdBarrio,l.IdLocalidad,d.IdDepartamento,d.IdProvincia from Barrio b"
                         + " join Localidad l on b.IdLocalidad = l.IdLocalidad "
                         + " join Departamento d on l.IdDepartamento = d.IdDepartamento "
                         + " where b.Descripcion = '" + cmbBarrio.Text + "'");
@@ -597,7 +597,7 @@ namespace GestorInformatico
                     {
                         sql += " where Cuit = " + txtCuit.Text;
                     }
-                    Utilidades.Update(sql);
+                    DBHelper.Utilidades.Update(sql);
                     MessageBox.Show("Se guardo correctamento", "Informacion");
                 }
             }
@@ -623,7 +623,7 @@ namespace GestorInformatico
 
         private void LlenarGrilla()
         {
-            DataTable tabla = Utilidades.Ejecutar("Select  e.Descripcion as Estado,* from cliente c  left outer join Estado e on e.idEstado = c.IdEstado");
+            DataTable tabla = DBHelper.Utilidades.Ejecutar("Select  e.Descripcion as Estado,* from cliente c  left outer join Estado e on e.idEstado = c.IdEstado");
             dgvParticular.Rows.Clear();
             if (tabla.Rows.Count > 0)
             {

@@ -35,11 +35,11 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBaja = new System.Windows.Forms.Button();
             this.dgvMarca = new System.Windows.Forms.DataGridView();
+            this.grbMarca = new System.Windows.Forms.GroupBox();
+            this.btnAlta = new System.Windows.Forms.Button();
             this.colIdMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grbMarca = new System.Windows.Forms.GroupBox();
-            this.btnAlta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).BeginInit();
             this.grbMarca.SuspendLayout();
             this.SuspendLayout();
@@ -109,28 +109,6 @@
             this.dgvMarca.TabIndex = 4;
             this.dgvMarca.SelectionChanged += new System.EventHandler(this.dgvMarca_SelectionChanged);
             // 
-            // colIdMarca
-            // 
-            this.colIdMarca.DataPropertyName = "IdMarca";
-            this.colIdMarca.HeaderText = "IdMarca";
-            this.colIdMarca.Name = "colIdMarca";
-            this.colIdMarca.ReadOnly = true;
-            this.colIdMarca.Visible = false;
-            // 
-            // colDescripcion
-            // 
-            this.colDescripcion.DataPropertyName = "Descripcion";
-            this.colDescripcion.HeaderText = "Descripción";
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.ReadOnly = true;
-            // 
-            // colEstado
-            // 
-            this.colEstado.DataPropertyName = "Descripcion1";
-            this.colEstado.HeaderText = "Estado";
-            this.colEstado.Name = "colEstado";
-            this.colEstado.ReadOnly = true;
-            // 
             // grbMarca
             // 
             this.grbMarca.Controls.Add(this.btnAlta);
@@ -153,6 +131,29 @@
             this.btnAlta.Size = new System.Drawing.Size(27, 30);
             this.btnAlta.TabIndex = 2;
             this.btnAlta.UseVisualStyleBackColor = true;
+            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
+            // 
+            // colIdMarca
+            // 
+            this.colIdMarca.DataPropertyName = "IdMarca";
+            this.colIdMarca.HeaderText = "IdMarca";
+            this.colIdMarca.Name = "colIdMarca";
+            this.colIdMarca.ReadOnly = true;
+            this.colIdMarca.Visible = false;
+            // 
+            // colDescripcion
+            // 
+            this.colDescripcion.DataPropertyName = "Descripcion";
+            this.colDescripcion.HeaderText = "Descripción";
+            this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.ReadOnly = true;
+            // 
+            // colEstado
+            // 
+            this.colEstado.DataPropertyName = "Descripcion1";
+            this.colEstado.HeaderText = "Estado";
+            this.colEstado.Name = "colEstado";
+            this.colEstado.ReadOnly = true;
             // 
             // frmMarca
             // 

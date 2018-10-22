@@ -318,6 +318,12 @@ namespace GestorInformatico.GUIlayer
             }
         }
 
+        private void btnNuevaMarca_Click(object sender, EventArgs e)
+        {
+            GestorInformatico.GUIlayer.frmMarca marca = new GestorInformatico.GUIlayer.frmMarca();
+            marca.ShowDialog();
+        }
+
     }
 }
 

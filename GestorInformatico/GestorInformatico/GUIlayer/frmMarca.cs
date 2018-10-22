@@ -20,7 +20,7 @@ namespace GestorInformatico.GUIlayer
 
         private void frmMarca_Load(object sender, EventArgs e)
         {
-            DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT m.Descripcion, e.Descripcion FROM Marca m, Estado e WHERE m.IdEstado = e.IdEstado");
+            DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT m.IdMarca, m.Descripcion, e.Descripcion FROM Marca m, Estado e WHERE m.IdEstado = e.IdEstado");
             if (tabla.Rows.Count > 0)
             {
                 dgvMarca.DataSource = tabla;
@@ -40,7 +40,7 @@ namespace GestorInformatico.GUIlayer
                         txtDescripcion.BackColor = Color.White;
                         lblCamposObli.BackColor = Color.White;
                         MessageBox.Show("Guardado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        DataTable tabla2 = DBHelper.Utilidades.Ejecutar("SELECT m.Descripcion, e.Descripcion FROM Marca m, Estado e WHERE m.IdEstado = e.IdEstado");
+                        DataTable tabla2 = DBHelper.Utilidades.Ejecutar("SELECT m.IdMarca, m.Descripcion, e.Descripcion FROM Marca m, Estado e WHERE m.IdEstado = e.IdEstado");
                         if (tabla2.Rows.Count > 0)
                         {
                             dgvMarca.DataSource = tabla2;
@@ -63,18 +63,29 @@ namespace GestorInformatico.GUIlayer
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            DBHelper.Utilidades.Update("UPDATE Marca SET IdEstado = 2 WHERE IdMarca = " + id);
-            DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT m.Descripcion, e.Descripcion FROM Marca m, Estado e WHERE m.IdEstado = e.IdEstado");
-            if (tabla.Rows.Count > 0)
-            {
-                dgvMarca.DataSource = tabla;
-            }
-
+            
+                DBHelper.Utilidades.Update("UPDATE Marca SET IdEstado = 2 WHERE IdMarca = " + id);
+                DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT m.IdMarca, m.Descripcion, e.Descripcion FROM Marca m, Estado e WHERE m.IdEstado = e.IdEstado");
+                if (tabla.Rows.Count > 0)
+                {
+                    dgvMarca.DataSource = tabla;
+                }
+            
         }
 
         private void dgvMarca_SelectionChanged(object sender, EventArgs e)
         {
-            id = dgvMarca.CurrentRow.Cells[0].Value.ToString();
+                id = dgvMarca.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void btnAlta_Click(object sender, EventArgs e)
+        {
+            DBHelper.Utilidades.Update("UPDATE Marca SET IdEstado = 1 WHERE IdMarca = " + id);
+            DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT m.IdMarca, m.Descripcion, e.Descripcion FROM Marca m, Estado e WHERE m.IdEstado = e.IdEstado");
+            if (tabla.Rows.Count > 0)
+            {
+                dgvMarca.DataSource = tabla;
+            }
         }
     }
 }

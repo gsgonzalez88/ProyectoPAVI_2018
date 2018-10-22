@@ -172,6 +172,7 @@
             this.btnNuevaMarca.TabIndex = 71;
             this.toolTip1.SetToolTip(this.btnNuevaMarca, "Nueva Marca");
             this.btnNuevaMarca.UseVisualStyleBackColor = true;
+            this.btnNuevaMarca.Click += new System.EventHandler(this.btnNuevaMarca_Click);
             // 
             // rbtInactivo
             // 
@@ -416,7 +417,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(969, 527);
+            this.ClientSize = new System.Drawing.Size(969, 349);
             this.Controls.Add(this.dgvEquipo);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

@@ -91,6 +91,17 @@ namespace GestorInformatico
             formaPago.ShowDialog();
         }
 
+        private void marcaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            GestorInformatico.GUIlayer.frmMarca marca = new GestorInformatico.GUIlayer.frmMarca();
+            marca.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
       
 
     
