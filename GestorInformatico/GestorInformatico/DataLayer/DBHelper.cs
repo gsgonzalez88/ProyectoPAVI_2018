@@ -10,8 +10,12 @@ namespace DBHelper
 {
     public class Utilidades
     {
+<<<<<<< HEAD
         //public static string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
         public static string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BaseProyecto;User ID=sa;Password=2xdpn5fv0";
+=======
+        public static string cadena = "	workstation id=pavGestor.mssql.somee.com;packet size=4096;user id=franfavaro9_SQLLogin_2;pwd=rsur3b2auh;data source=pavGestor.mssql.somee.com;persist security info=False;initial catalog=pavGestor";
+>>>>>>> master
 
         public static SqlConnection Conexion = new SqlConnection();
 

@@ -40,6 +40,8 @@ namespace GestorInformatico
             cmbTdoc.SelectedIndex = -1;
             LlenarGrilla();
             label15.Visible = true;
+            btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
             a = 1;
         }
 
@@ -447,7 +449,11 @@ namespace GestorInformatico
                 {
                     nro = Convert.ToInt32(txtBuscar.Text);
 
+<<<<<<< HEAD
                     DBHelper.Utilidades.Ejecutar("Update Cliente set IdEstado = 2 where Cuit =  " + txtBuscar.Text);
+=======
+                    Utilidades.Ejecutar("Update Cliente set IdEstado =2 where Cuit =  " + txtBuscar.Text);
+>>>>>>> master
                     MessageBox.Show("Cliente  dado de Baja", "Informacion");
                 }
                 if (rbtParticular.Checked)
@@ -639,7 +645,13 @@ namespace GestorInformatico
             }
         }
 
+        private void dgvParticular_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex != null)
+            {
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
+            }
         }
     }
 

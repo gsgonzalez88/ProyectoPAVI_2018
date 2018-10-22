@@ -16,7 +16,11 @@ namespace GestorInformatico
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new GestorInformatico.GUIlayer.AbmEquipo());
+=======
+            Application.Run(new Login());
+>>>>>>> master
             
         }
     }
