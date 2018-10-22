@@ -18,21 +18,29 @@ namespace GestorInformatico.GUIlayer
         private string idOrden = string.Empty;
         private bool visualizar = false;
         private bool Editartarea = false;
+        private bool NuevaA = false;
  
-        public AbmOrden( string id, bool ver,bool editar)
+        public AbmOrden( string id, bool ver,bool editar, bool nueva)
         {
             InitializeComponent();
             idOrden = id;
             visualizar = ver;
             Editartarea = editar;
+            NuevaA = nueva;
         }
 
         int a = 0;
         private void AbmOrden_Load(object sender, EventArgs e)
         {
             txtNroTarea.Visible = false;
+            if (NuevaA == true)
+            {
+                btnCerrar.Enabled = false;
+                btnRefescar.Enabled = false;
+            }
             if (visualizar == true)
             {
+                btnRefescar.Enabled = false;
                 btnAgregar.Enabled = false;
                 btnEliminar.Enabled = false;
                 btnUpdate.Enabled = false;
@@ -53,7 +61,8 @@ namespace GestorInformatico.GUIlayer
                 txtCliente.Enabled = false;
                 txtDescripcionE.Enabled = false;
                 btnCerrar.Enabled = true;
-                txtFecha.Enabled = false;          
+                txtFecha.Enabled = false;
+                btnRefescar.Enabled = true;
             }
                 if (idOrden != string.Empty)
                 {
@@ -90,7 +99,7 @@ namespace GestorInformatico.GUIlayer
                         cmbEquipo.SelectedIndex = -1;
                     }
 
-                    cmbEstado.DataSource = Utilidades.Ejecutar("Select * from Estado");
+                    cmbEstado.DataSource = Utilidades.Ejecutar("Select * from Estado where idEstado != 2");
                     cmbEstado.DisplayMember = "Descripcion";
                     cmbEstado.ValueMember = "IdEstado";
 
@@ -105,13 +114,22 @@ namespace GestorInformatico.GUIlayer
                 }
                 else
                 {
-                    DataTable table = Utilidades.Ejecutar("Select Max(IdOrden)+1 as Nro from Orden");
-                    txtNro.Text = table.Rows[0]["Nro"].ToString();
-                    btnUpdate.Enabled = false;
+                    DataTable table = Utilidades.Ejecutar("Select Max(NroOrden)+1 as NroOrden from Orden");
+                    if (table.Rows[0]["NroOrden"].ToString() == "")
+                    {
+                        txtNro.Text = "1";
+                        btnUpdate.Enabled = false;
+                    }
+                    else
+                    {
+                        txtNro.Text = table.Rows[0]["NroOrden"].ToString();
+                        btnUpdate.Enabled = false;
+                    }
+                    
                 }
 
 
-                cmbEstado.DataSource = Utilidades.Ejecutar("Select * from Estado");
+                cmbEstado.DataSource = Utilidades.Ejecutar("Select * from Estado where idEstado != 2");
                 cmbEstado.DisplayMember = "Descripcion";
                 cmbEstado.ValueMember = "IdEstado";
                 cmbEstado.SelectedIndex = -1;
@@ -267,16 +285,16 @@ namespace GestorInformatico.GUIlayer
             {
                 if (dvgOrden.Rows[0].Cells["Nro"].Value != null)
                 {
-                    string sql = "";
-                    sql += "Insert orden Values(" + cmbEncargado.SelectedValue + "," + cmbSolicitante.SelectedValue + ",'" + txtFecha.Text + "'," + cmbEstado.SelectedValue + ")";
-                    comando.CommandText = sql;
-                    comando.ExecuteNonQuery();
+                    string sql = ""; string tarea = "";
+                    sql += "Insert orden Values("  + txtNro.Text +","+cmbEncargado.SelectedValue + "," + cmbSolicitante.SelectedValue + ",'" + txtFecha.Text + "'," + cmbEstado.SelectedValue + ")";
 
                     for (int i = 0; i < dvgOrden.Rows.Count; i++)
                     {
+                        
                         if (dvgOrden.Rows[i].Cells["Nro"].Value != null)
                         {
-                            string tarea = "Insert TareaOT Values (";
+                            tarea = "";
+                             tarea = "Insert TareaOT Values (";
                             var Nro = dvgOrden.Rows[i].Cells["Nro"].Value.ToString();
                             var tot = dvgOrden.Rows[i].Cells["Tarea"].Value.ToString();
                             var equi = dvgOrden.Rows[i].Cells["Equipo"].Value.ToString();
@@ -295,14 +313,25 @@ namespace GestorInformatico.GUIlayer
                             tarea += FechaRealizado != "" ? "'" + FechaRealizado.ToString() + "'," : "null,";
                             tarea += TiempoRealizado != "" ? "'" + TiempoRealizado.ToString() + "'," : "null";
                             tarea += ")";
-                            comando.CommandText = tarea;
-                            comando.ExecuteNonQuery();
+                            if (i != 0)
+	                        {
+                                sql += tarea;
+	                        }
+                            else
+                            {
+                                sql +=  tarea;
+                            }
+                           
                         }
+                        
 
                     }
+                    
+                    comando.CommandText = sql;
+                    comando.ExecuteNonQuery();
                     trasanccion.Commit();
                     MessageBox.Show("Se guardo Correctamente", "Informacion");
-
+                    return;
                 }
                 else
                 {
@@ -316,11 +345,6 @@ namespace GestorInformatico.GUIlayer
                 MessageBox.Show("Error de carga : "+ex.Message);
                 return;
             }
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -408,11 +432,13 @@ namespace GestorInformatico.GUIlayer
                 update += " where Id = " + txtNroTarea.Text;
 
                 Utilidades.Update(update);
+                MessageBox.Show("Se guardo Correctamente", "Informacion");
 	        } 
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+
             if (MessageBox.Show("Esta Seguro que desea Cerrar la Orden?","Informacion",MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 SqlTransaction trasanccion;
@@ -483,12 +509,13 @@ namespace GestorInformatico.GUIlayer
                 }
                 else
                 {
-                    if (visualizar ==true)
+                    if (visualizar ==true && NuevaA == false)
                     {
                         btnAgregar.Enabled = false;
                     }
                     else
                     {
+
                         btnAgregar.Enabled = true;
                         txtFalla.Enabled = true;
                         cmbTarea.Enabled = true;
@@ -496,8 +523,13 @@ namespace GestorInformatico.GUIlayer
                   
                 }
             }
+       
         }
 
+        private void btnRefescar_Click(object sender, EventArgs e)
+        {
+            llegargrilla(sender, e);
+        }
   
     }
 }

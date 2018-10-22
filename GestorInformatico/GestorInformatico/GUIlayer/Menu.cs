@@ -34,71 +34,83 @@ namespace GestorInformatico
         {
             
             ABMCliente Cliente = new ABMCliente();
-            Cliente.ShowDialog();
+            Cliente.MdiParent = this;
+            Cliente.Show();
+
         }
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbmUsuario usuario = new AbmUsuario();
-            usuario.ShowDialog();
+            usuario.MdiParent = this;
+            usuario.Show();
+       
         }
 
         private void barrioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbmBarrio barrio = new AbmBarrio();
-            barrio.ShowDialog();
+            barrio.MdiParent = this;
+            barrio.Show();
         }
 
         private void localidadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbmLocalidad localidad = new AbmLocalidad();
-            localidad.ShowDialog();
+            localidad.MdiParent = this;
+            localidad.Show();
         }
 
         private void departamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbmDepto departamento = new AbmDepto();
-            departamento.ShowDialog();
+            departamento.MdiParent = this;
+            departamento.Show();
         }
 
         private void provinciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ABMProvincia Provincia = new ABMProvincia();
-            Provincia.ShowDialog();
+            Provincia.MdiParent = this;
+            Provincia.Show();
         }
                 
         private void empleadoToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             ABMEmpleado empleado = new ABMEmpleado();
-            empleado.ShowDialog();
+            empleado.MdiParent= this;
+            empleado.Show();
         }
 
         private void consultarVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GestorInformatico.GUIlayer.frmVenta venta = new GestorInformatico.GUIlayer.frmVenta();
-            venta.ShowDialog();
+            venta.MdiParent = this;
+            venta.Show();
         }
 
         private void equipoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             GestorInformatico.GUIlayer.AbmEquipo equipo = new GUIlayer.AbmEquipo();
-            equipo.ShowDialog();
+            equipo.MdiParent = this;
+            equipo.Show();
+        }
+
+        private void formaDePagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestorInformatico.GUIlayer.frmFormaPago formaPago = new GestorInformatico.GUIlayer.frmFormaPago();
+            formaPago.MdiParent = this;
+            formaPago.Show();
         }
 
         private void ordenDeTrabajoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GestorInformatico.GUIlayer.OrdenDeTrabajo orden = new GUIlayer.OrdenDeTrabajo();
-            orden.ShowDialog();
+            orden.MdiParent = this;
+            orden.Show();
         }
 
-      
-
-    
-
-     
-
-      
-
+       
         
     }
 }
