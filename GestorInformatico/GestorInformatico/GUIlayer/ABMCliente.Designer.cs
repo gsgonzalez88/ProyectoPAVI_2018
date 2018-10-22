@@ -93,7 +93,6 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(355, 15);
@@ -104,7 +103,6 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(9, 16);
@@ -115,7 +113,6 @@
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(9, 46);
@@ -126,7 +123,6 @@
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(355, 46);
@@ -137,7 +133,6 @@
             // 
             // label7
             // 
-            this.label7.BackColor = System.Drawing.SystemColors.Control;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(9, 76);
@@ -148,7 +143,6 @@
             // 
             // label8
             // 
-            this.label8.BackColor = System.Drawing.SystemColors.Control;
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(355, 77);
@@ -159,7 +153,6 @@
             // 
             // label9
             // 
-            this.label9.BackColor = System.Drawing.SystemColors.Control;
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 19);
@@ -170,7 +163,6 @@
             // 
             // label10
             // 
-            this.label10.BackColor = System.Drawing.SystemColors.Control;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(350, 19);
@@ -181,7 +173,6 @@
             // 
             // label12
             // 
-            this.label12.BackColor = System.Drawing.SystemColors.Control;
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(356, 139);
@@ -192,7 +183,6 @@
             // 
             // label13
             // 
-            this.label13.BackColor = System.Drawing.SystemColors.Control;
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(355, 108);
@@ -300,7 +290,6 @@
             // 
             // label11
             // 
-            this.label11.BackColor = System.Drawing.SystemColors.Control;
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(6, 14);
@@ -357,7 +346,6 @@
             // rbtInactivo
             // 
             this.rbtInactivo.AutoSize = true;
-            this.rbtInactivo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.rbtInactivo.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtInactivo.Location = new System.Drawing.Point(170, 223);
             this.rbtInactivo.Name = "rbtInactivo";
@@ -370,7 +358,6 @@
             // rbtActivo
             // 
             this.rbtActivo.AutoSize = true;
-            this.rbtActivo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.rbtActivo.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtActivo.Location = new System.Drawing.Point(102, 223);
             this.rbtActivo.Name = "rbtActivo";
@@ -379,11 +366,9 @@
             this.rbtActivo.TabStop = true;
             this.rbtActivo.Text = "Activo";
             this.rbtActivo.UseVisualStyleBackColor = false;
-            this.rbtActivo.CheckedChanged += new System.EventHandler(this.rbtActivo_CheckedChanged);
             // 
             // lblEstado
             // 
-            this.lblEstado.BackColor = System.Drawing.SystemColors.Control;
             this.lblEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEstado.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.Location = new System.Drawing.Point(9, 223);
@@ -537,7 +522,6 @@
             // 
             // label14
             // 
-            this.label14.BackColor = System.Drawing.SystemColors.Control;
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(9, 136);
@@ -559,7 +543,6 @@
             // 
             // label15
             // 
-            this.label15.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(18, 55);
@@ -591,7 +574,6 @@
             // 
             // label5
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.Control;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(370, 14);
@@ -603,7 +585,6 @@
             // rbtParticular
             // 
             this.rbtParticular.AutoSize = true;
-            this.rbtParticular.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.rbtParticular.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtParticular.Location = new System.Drawing.Point(479, 15);
             this.rbtParticular.Name = "rbtParticular";
@@ -617,7 +598,6 @@
             // rbtEmpresa
             // 
             this.rbtEmpresa.AutoSize = true;
-            this.rbtEmpresa.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.rbtEmpresa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtEmpresa.Location = new System.Drawing.Point(560, 15);
             this.rbtEmpresa.Name = "rbtEmpresa";
@@ -671,7 +651,6 @@
             this.dgvParticular.Name = "dgvParticular";
             this.dgvParticular.Size = new System.Drawing.Size(565, 318);
             this.dgvParticular.TabIndex = 49;
-            this.dgvParticular.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParticular_CellContentClick);
             // 
             // ABMCliente
             // 

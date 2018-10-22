@@ -21,6 +21,7 @@ namespace GestorInformatico.GUIlayer
         string idUsuarioSeleccionado;
         bool ver = false;
         bool editar = false;
+        bool nueva = false;
 
         private void OrdenDeTrabajo_Load(object sender, EventArgs e)
         {
@@ -70,7 +71,6 @@ namespace GestorInformatico.GUIlayer
             else
             {
                 MessageBox.Show("No existe orden");
-               
             }
           
         }
@@ -113,7 +113,7 @@ namespace GestorInformatico.GUIlayer
             ver = true;
             if (idUsuarioSeleccionado != string.Empty)
             {
-                AbmOrden orden = new AbmOrden(idUsuarioSeleccionado,ver,editar);
+                AbmOrden orden = new AbmOrden(idUsuarioSeleccionado,ver,editar,nueva);
                 orden.ShowDialog();
             }
         }
@@ -129,8 +129,9 @@ namespace GestorInformatico.GUIlayer
 
         private void btnNueva_Click(object sender, EventArgs e)
         {
+            nueva = true;
             idUsuarioSeleccionado = string.Empty;
-            AbmOrden orden = new AbmOrden(idUsuarioSeleccionado,ver,editar);
+            AbmOrden orden = new AbmOrden(idUsuarioSeleccionado, ver, editar, nueva);
             orden.ShowDialog();
         }
 
@@ -140,7 +141,7 @@ namespace GestorInformatico.GUIlayer
             editar = true;
             if (idUsuarioSeleccionado != string.Empty)
             {
-                AbmOrden orden = new AbmOrden(idUsuarioSeleccionado,ver,editar);
+                AbmOrden orden = new AbmOrden(idUsuarioSeleccionado, ver, editar, nueva);
                 orden.ShowDialog();
             }
            

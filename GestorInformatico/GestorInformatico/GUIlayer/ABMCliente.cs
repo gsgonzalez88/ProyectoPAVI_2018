@@ -639,14 +639,7 @@ namespace GestorInformatico
             }
         }
 
-        private void rbtActivo_CheckedChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void dgvParticular_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 
