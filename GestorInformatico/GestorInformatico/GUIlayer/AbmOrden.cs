@@ -14,7 +14,7 @@ namespace GestorInformatico.GUIlayer
 {
     public partial class AbmOrden : Form
     {
-        string cadena = "Data Source=DESKTOP-KRHUM84\\SQLEXPRESS;Initial Catalog=Pancho;Integrated Security=True";
+        string cadena = DBHelper.Utilidades.cadena;
         private string idOrden = string.Empty;
         private bool visualizar = false;
         private bool Editartarea = false;
@@ -377,6 +377,7 @@ namespace GestorInformatico.GUIlayer
             + " join Estado es on tot.IdEstado = es.IdEstado where idOT = " + idOrden);
             if (table.Rows.Count>0)
             {
+                dvgOrden.Rows.Clear();
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
                     dvgOrden.Rows.Add(table.Rows[i]["Id"].ToString()
@@ -445,19 +446,21 @@ namespace GestorInformatico.GUIlayer
                 SqlCommand comando = new SqlCommand();
                 SqlConnection conexion = new SqlConnection();
                 conexion.ConnectionString = cadena;
-
+                string sql = "";
                 conexion.Open();
                 trasanccion = conexion.BeginTransaction();
                 comando.Connection = conexion;
                 comando.Transaction = trasanccion;
                 try
                 {
-                    comando.CommandText = "Update Orden set idEstado  = 5 where idOrden ="+txtNro.Text;
-                    comando.ExecuteNonQuery();
-                    comando.CommandText = "Update TareaOT set idEstado = 5 where idOT = " + txtNro.Text;
+                    sql +=  "Update Orden set idEstado  = 5 where idOrden ="+txtNro.Text;
+                    sql+= " Update TareaOT set idEstado = 5 where idOT = " + txtNro.Text;
+                    comando.CommandText = sql;
                     comando.ExecuteNonQuery();
                     trasanccion.Commit();
                     conexion.Close();
+                    btnCerrar.Enabled = false;
+                    btnUpdate.Enabled = false;
                 }
                 catch (Exception ex)
                 {

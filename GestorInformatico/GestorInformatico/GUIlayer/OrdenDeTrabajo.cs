@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DBHelper;
+using GestorInformatico.Reportes;
 namespace GestorInformatico.GUIlayer
 {
     public partial class OrdenDeTrabajo : Form
@@ -19,6 +20,7 @@ namespace GestorInformatico.GUIlayer
         string sql = "";
         int a = 0;
         string idUsuarioSeleccionado;
+        int nroorden = -1;
         bool ver = false;
         bool editar = false;
         bool nueva = false;
@@ -39,6 +41,7 @@ namespace GestorInformatico.GUIlayer
             a = 1;
             btnCerrar.Enabled = false;
             btnBuscar.Enabled = false;
+            btnImprimir.Enabled = false;
         }
 
         private void llenargrilla(object sender, EventArgs e,string sql)
@@ -150,16 +153,17 @@ namespace GestorInformatico.GUIlayer
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             idUsuarioSeleccionado = "";
+            nroorden = -1;
             if ( dataGridView1.Rows[e.RowIndex].Cells[0].Value != null && e.RowIndex > -1  )
             {
-                
+                nroorden = Convert.ToInt32( dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                  idUsuarioSeleccionado = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 DataTable orden = Utilidades.Ejecutar("select * from Orden where IdOrden = "+idUsuarioSeleccionado.ToString());
                 if (orden.Rows[0]["IdEstado"].ToString() == "5")
                 {
                     btnCerrar.Enabled = false;
                     btnBuscar.Enabled = true;
-                    
+                    btnImprimir.Enabled = true;
                 }
                 else
                 {
@@ -168,6 +172,13 @@ namespace GestorInformatico.GUIlayer
                 }
                
             }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            Reportes.Impresion_orden imp = new Impresion_orden();
+            imp.idOT = nroorden;
+            imp.Show();
         }
 
     }

@@ -32,6 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdenDeTrabajo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmpleadoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmpleadoGenerador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnNueva = new System.Windows.Forms.Button();
@@ -43,12 +49,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.idOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NroEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpleadoE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpleadoGenerador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -83,6 +84,38 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // idOrden
+            // 
+            this.idOrden.HeaderText = "Nro";
+            this.idOrden.Name = "idOrden";
+            this.idOrden.Width = 80;
+            // 
+            // NroEquipo
+            // 
+            this.NroEquipo.HeaderText = "Equipo";
+            this.NroEquipo.Name = "NroEquipo";
+            // 
+            // EmpleadoE
+            // 
+            this.EmpleadoE.HeaderText = "Encargado";
+            this.EmpleadoE.Name = "EmpleadoE";
+            this.EmpleadoE.Width = 110;
+            // 
+            // EmpleadoGenerador
+            // 
+            this.EmpleadoGenerador.HeaderText = "Solicitante";
+            this.EmpleadoGenerador.Name = "EmpleadoGenerador";
+            // 
+            // FechaEntrega
+            // 
+            this.FechaEntrega.HeaderText = "Fecha Planificada";
+            this.FechaEntrega.Name = "FechaEntrega";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.groupBox3);
@@ -98,6 +131,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnImprimir);
             this.groupBox3.Controls.Add(this.btnNueva);
             this.groupBox3.Controls.Add(this.btnCerrar);
             this.groupBox3.Controls.Add(this.btnRefescar);
@@ -123,7 +157,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(108, 16);
+            this.btnCerrar.Location = new System.Drawing.Point(108, 15);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(28, 32);
             this.btnCerrar.TabIndex = 50;
@@ -194,37 +228,16 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "Marca";
             // 
-            // idOrden
+            // btnImprimir
             // 
-            this.idOrden.HeaderText = "Nro";
-            this.idOrden.Name = "idOrden";
-            this.idOrden.Width = 80;
-            // 
-            // NroEquipo
-            // 
-            this.NroEquipo.HeaderText = "Equipo";
-            this.NroEquipo.Name = "NroEquipo";
-            // 
-            // EmpleadoE
-            // 
-            this.EmpleadoE.HeaderText = "Encargado";
-            this.EmpleadoE.Name = "EmpleadoE";
-            this.EmpleadoE.Width = 110;
-            // 
-            // EmpleadoGenerador
-            // 
-            this.EmpleadoGenerador.HeaderText = "Solicitante";
-            this.EmpleadoGenerador.Name = "EmpleadoGenerador";
-            // 
-            // FechaEntrega
-            // 
-            this.FechaEntrega.HeaderText = "Fecha Planificada";
-            this.FechaEntrega.Name = "FechaEntrega";
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.Location = new System.Drawing.Point(142, 16);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(28, 32);
+            this.btnImprimir.TabIndex = 52;
+            this.toolTip1.SetToolTip(this.btnImprimir, "Cerrar Orden");
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // OrdenDeTrabajo
             // 
@@ -266,5 +279,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EmpleadoGenerador;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaEntrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }
