@@ -123,6 +123,13 @@ namespace GestorInformatico
             orden.Show();
         }
 
+        private void reporteOrdenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestorInformatico.Reportes.ReporteOrden re = new Reportes.ReporteOrden();
+            re.MdiParent = this;
+            re.Show();
+        }
+
         
     }
 }

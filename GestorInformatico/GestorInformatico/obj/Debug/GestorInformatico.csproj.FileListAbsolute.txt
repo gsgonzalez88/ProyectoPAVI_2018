@@ -110,3 +110,4 @@ D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInf
 D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Reportes.Impresion_orden.resources
 D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\RdlCompile.cache
 D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\RdlCompile.compiled
+D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Reportes.ReporteOrden.resources

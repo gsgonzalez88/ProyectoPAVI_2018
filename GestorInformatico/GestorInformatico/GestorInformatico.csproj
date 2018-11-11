@@ -180,6 +180,12 @@
     <Compile Include="Reportes\Impresion orden.Designer.cs">
       <DependentUpon>Impresion orden.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ReporteOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteOrden.Designer.cs">
+      <DependentUpon>ReporteOrden.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GUIlayer\AbmBarrio.resx">
       <DependentUpon>AbmBarrio.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +248,9 @@
     <EmbeddedResource Include="Reportes\Impresion orden.resx">
       <DependentUpon>Impresion orden.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteOrden.resx">
+      <DependentUpon>ReporteOrden.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataLayer\DataSet.xsc">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
@@ -269,6 +278,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\accept.ico" />
+    <None Include="Resources\printer1.ico" />
     <None Include="Resources\pencil_add1.ico" />
     <None Include="Resources\accept1.ico" />
     <Content Include="Resources\add.ico" />
