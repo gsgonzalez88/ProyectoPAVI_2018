@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBHelper;
 
 namespace GestorInformatico.Reportes
 {
@@ -24,24 +25,37 @@ namespace GestorInformatico.Reportes
             cmbEncargado.Enabled = false;
             cmbEstado.Enabled = false;
             cmbMarca.Enabled = false;
-            cmbSolicitante.Enabled = false;
             dtpDesde.Enabled = false;
             dtpHasta.Enabled = false;
+            btnImprimir.Enabled = false;
+
+            cmbEstado.DataSource = Utilidades.Ejecutar("Select * from Estado where idEstado != 2");
+            cmbEstado.DisplayMember = "Descripcion";
+            cmbEstado.ValueMember = "IdEstado";
+            cmbEstado.SelectedIndex = -1;
+
+            cmbEncargado.DataSource = Utilidades.Ejecutar("Select (e.Nombre +' '+ e.Apellido)as Empleado,e.IdEmpleado from Empleado e");
+            cmbEncargado.DisplayMember = "Empleado";
+            cmbEncargado.ValueMember = "IdEmpleado";
+            cmbEncargado.SelectedIndex = -1;
+
+            cmbMarca.DataSource = Utilidades.Ejecutar("Select * from Marca where idEstado != 2");
+            cmbMarca.DisplayMember = "Descripcion";
+            cmbMarca.ValueMember = "IdMarca";
+            cmbMarca.SelectedIndex = -1;
         }
         public void desCheck()
         {
             ckbEncargado.Checked = false;
             ckbFecha.Checked = false;
             ckbMarca.Checked = false;
-            ckbSolicitante.Checked = false;
             ckbEstado.Checked = false;
             dtpDesde.Value = DateTime.Today;
             dtpHasta.Value = DateTime.Today;
             cmbEncargado.SelectedText = "";
             cmbEstado.SelectedText = "";
             cmbMarca.SelectedText = "";
-            cmbSolicitante.SelectedText = "";
-           
+            btnImprimir.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -54,31 +68,23 @@ namespace GestorInformatico.Reportes
 
             if (ckbMarca.Checked)
             {
-                cmbEncargado.Enabled = true;
+                cmbMarca.Enabled = true;
+                btnImprimir.Enabled = true;
             }
             else
             {
-                cmbEncargado.Enabled = false;
+                cmbMarca.Enabled = false;
+                btnImprimir.Enabled = false;
             }
         }
 
-        private void ckbSolicitante_CheckedChanged(object sender, EventArgs e)
-        {
-          
-            if (ckbSolicitante.Checked)
-            {
-                cmbEncargado.Enabled = true;
-            }
-            else
-            {
-                ckbSolicitante.Enabled = false;
-            }
-        }
+
 
         private void ckbEncargado_CheckedChanged(object sender, EventArgs e)
         {
             if (ckbEncargado.Checked)
             {
+                btnImprimir.Enabled = true;
                 cmbEncargado.Enabled = true;
             }
             else
@@ -93,10 +99,12 @@ namespace GestorInformatico.Reportes
            
             if (ckbEstado.Checked)
             {
+                btnImprimir.Enabled = true;
                 cmbEstado.Enabled = true;
             }
             else
             {
+                btnImprimir.Enabled = false;
                 cmbEstado.Enabled = false;
             }
         }
@@ -105,6 +113,7 @@ namespace GestorInformatico.Reportes
         {
             if (ckbFecha.Checked)
             {
+                btnImprimir.Enabled = true;
                 dtpDesde.Enabled = true;
                 dtpHasta.Enabled = true;
             }
@@ -112,6 +121,7 @@ namespace GestorInformatico.Reportes
             {
                 dtpDesde.Enabled = false;
                 dtpHasta.Enabled = false;
+                btnImprimir.Enabled = false;
             }
             
         }
