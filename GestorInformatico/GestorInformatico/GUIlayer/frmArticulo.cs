@@ -18,6 +18,8 @@ namespace GestorInformatico.GUIlayer
             InitializeComponent();
         }
 
+
+
         private void frmArticulo_Load(object sender, EventArgs e)
         {
             DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT a.IdArticulo, a.Descripcion, a.StockActual, a.StockMinimo, a.Precio, e.Descripcion FROM Articulo a, Estado e WHERE a.Estado = e.IdEstado");
