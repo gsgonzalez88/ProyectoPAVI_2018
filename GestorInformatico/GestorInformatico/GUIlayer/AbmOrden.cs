@@ -114,7 +114,7 @@ namespace GestorInformatico.GUIlayer
                 }
                 else
                 {
-                    DataTable table = Utilidades.Ejecutar("Select Max(IdOrden)+1 as NroOrden from Orden");
+                    DataTable table = Utilidades.Ejecutar("Select Max(NroOrden)+1 as NroOrden from Orden");
                     if (table.Rows[0]["NroOrden"].ToString() == "")
                     {
                         txtNro.Text = "1";

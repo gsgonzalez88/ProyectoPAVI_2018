@@ -121,6 +121,3 @@ C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\Ges
 C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.GUIlayer.frmEditarArticulo.resources
 C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Reportes.ReporteVenta.resources
 C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Reportes.ReporteVentaFecha.resources
-=======
-D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Reportes.ImpresionReporteOT.resources
->>>>>>> master

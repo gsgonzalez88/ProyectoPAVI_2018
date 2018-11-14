@@ -40,7 +40,6 @@
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnNueva = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnRefescar = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -142,17 +142,6 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
-            this.btnImprimir.Location = new System.Drawing.Point(142, 16);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(28, 32);
-            this.btnImprimir.TabIndex = 52;
-            this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
             // btnNueva
             // 
             this.btnNueva.Image = global::GestorInformatico.Properties.Resources.add;
@@ -238,6 +227,17 @@
             this.label5.Size = new System.Drawing.Size(135, 21);
             this.label5.TabIndex = 21;
             this.label5.Text = "Marca";
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.Location = new System.Drawing.Point(142, 16);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(28, 32);
+            this.btnImprimir.TabIndex = 52;
+            this.toolTip1.SetToolTip(this.btnImprimir, "Cerrar Orden");
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // OrdenDeTrabajo
             // 

@@ -138,16 +138,16 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnImprimir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAetJREFUOE+Nk99rUmEYx8/fIl75RwjeFBYMpAsvPUUQCF7phZCQJELUoRsz8NIb
-        hxaDwEBiGHMzXcouZJxJjVxGy41+jJPTc7azvvl9nIfa3OqFD55znu/5vM/zqsrZdbeoY+FRU7jxeF24
-        /mAN2tI2TiMXLwa/GmN8H1qTT9Nha9dA4kUfdzLvL5cEtAYOhiY2Ptlo94/R3LGwsm3CPD7BxmcbqZd9
-        pBY3L5YsPHzjCEhj50gEvb2hdLb34xBX7q38W9CZ7KZ/OZEuKHmlH6K8+VNq/tTqfEE6nZbD4vxbg18i
-        oIgSdrH8biS1q/dXEQqF/pbkcjm0222wA4a6EwElFJDZKKxdS9dRq9UQjUankmw2i06ng8FggEQi8V8w
-        S0kkEoGSTCZh27bQarVgGMal1Ot1Jy8CGi3LEkqlEnq9nojmwVo+n3fyqqpCicfj0HVd4DjdbhfVanUu
-        zGia5uS9Xi+UWCyGSqUisMjzmN2fhTWOPLv3eDxQOEe5XBbYAQOEnbHGNgOBAHw+n/Bn3u12QwmHwygU
-        CvKALxafLWH59dpcFovPZVdm+dW7XC4oPBTuFgwGoT5pYDSe/pH2D6bsfhvj4/4QHwYGRuYR1ExDXvT7
-        /ed/kTczTdx++vYct7LrAq+ZOY1PlqL8BsAXithd+ySBAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHrSURBVDhPjZPfa1JhGMfP3yJe+UcI3hQWDKQLLz1FEAhe
+        6YWQkCRC1KEbM/DSG4cWg8BAYhhzM13KLmScSY1cRsuNfoyT03O2s775fZyH2tzqhQ+ec57v+bzP86rK
+        2XW3qGPhUVO48XhduP5gDdrSNk4jFy8GvxpjfB9ak0/TYWvXQOJFH3cy7y+XBLQGDoYmNj7ZaPeP0dyx
+        sLJtwjw+wcZnG6mXfaQWNy+WLDx84whIY+dIBL29oXS29+MQV+6t/FvQmeymfzmRLih5pR+ivPlTav7U
+        6nxBOp2Ww+L8W4NfIqCIEnax/G4ktav3VxEKhf6W5HI5tNttsAOGuhMBJRSQ2SisXUvXUavVEI1Gp5Js
+        NotOp4PBYIBEIvFfMEtJJBKBkkwmYdu20Gq1YBjGpdTrdScvAhotyxJKpRJ6vZ6I5sFaPp938qqqQonH
+        49B1XeA43W4X1Wp1LsxomubkvV4vlFgshkqlIrDI85jdn4U1jjy793g8UDhHuVwW2AEDhJ2xxjYDgQB8
+        Pp/wZ97tdkMJh8MoFArygC8Wny1h+fXaXBaLz2VXZvnVu1wuKDwU7hYMBqE+aWA0nv6R9g+m7H4b4+P+
+        EB8GBkbmEdRMQ170+/3nf5E3M03cfvr2HLey6wKvmTmNT5ai/AbAF4rYXfskgQAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
