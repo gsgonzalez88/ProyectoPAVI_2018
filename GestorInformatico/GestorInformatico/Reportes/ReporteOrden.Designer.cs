@@ -30,69 +30,33 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteOrden));
             this.cmbMarca = new System.Windows.Forms.ComboBox();
-            this.ckbMarca = new System.Windows.Forms.CheckBox();
-            this.ckbEncargado = new System.Windows.Forms.CheckBox();
-            this.ckbEstado = new System.Windows.Forms.CheckBox();
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.cmbEncargado = new System.Windows.Forms.ComboBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.ckbFecha = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbMarca
             // 
             this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(100, 91);
+            this.cmbMarca.Location = new System.Drawing.Point(100, 64);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(202, 21);
             this.cmbMarca.TabIndex = 2;
             // 
-            // ckbMarca
-            // 
-            this.ckbMarca.AutoSize = true;
-            this.ckbMarca.Location = new System.Drawing.Point(12, 87);
-            this.ckbMarca.Name = "ckbMarca";
-            this.ckbMarca.Size = new System.Drawing.Size(56, 17);
-            this.ckbMarca.TabIndex = 3;
-            this.ckbMarca.Text = "Marca";
-            this.ckbMarca.UseVisualStyleBackColor = true;
-            this.ckbMarca.CheckedChanged += new System.EventHandler(this.ckbMarca_CheckedChanged);
-            // 
-            // ckbEncargado
-            // 
-            this.ckbEncargado.AutoSize = true;
-            this.ckbEncargado.Location = new System.Drawing.Point(12, 39);
-            this.ckbEncargado.Name = "ckbEncargado";
-            this.ckbEncargado.Size = new System.Drawing.Size(78, 17);
-            this.ckbEncargado.TabIndex = 5;
-            this.ckbEncargado.Text = "Encargado";
-            this.ckbEncargado.UseVisualStyleBackColor = true;
-            this.ckbEncargado.CheckedChanged += new System.EventHandler(this.ckbEncargado_CheckedChanged);
-            // 
-            // ckbEstado
-            // 
-            this.ckbEstado.AutoSize = true;
-            this.ckbEstado.Location = new System.Drawing.Point(12, 64);
-            this.ckbEstado.Name = "ckbEstado";
-            this.ckbEstado.Size = new System.Drawing.Size(59, 17);
-            this.ckbEstado.TabIndex = 6;
-            this.ckbEstado.Text = "Estado";
-            this.ckbEstado.UseVisualStyleBackColor = true;
-            this.ckbEstado.CheckedChanged += new System.EventHandler(this.ckbEstado_CheckedChanged);
-            // 
             // btnRefrescar
             // 
             this.btnRefrescar.Image = global::GestorInformatico.Properties.Resources.arrow_refresh;
-            this.btnRefrescar.Location = new System.Drawing.Point(100, 118);
+            this.btnRefrescar.Location = new System.Drawing.Point(100, 91);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(75, 35);
             this.btnRefrescar.TabIndex = 8;
             this.btnRefrescar.UseVisualStyleBackColor = true;
-            this.btnRefrescar.Click += new System.EventHandler(this.button2_Click);
             // 
             // dtpDesde
             // 
@@ -122,55 +86,62 @@
             // btnImprimir
             // 
             this.btnImprimir.Image = global::GestorInformatico.Properties.Resources.printer;
-            this.btnImprimir.Location = new System.Drawing.Point(227, 118);
+            this.btnImprimir.Location = new System.Drawing.Point(227, 91);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 35);
             this.btnImprimir.TabIndex = 0;
             this.btnImprimir.UseVisualStyleBackColor = true;
-            // 
-            // cmbEncargado
-            // 
-            this.cmbEncargado.FormattingEnabled = true;
-            this.cmbEncargado.Location = new System.Drawing.Point(100, 37);
-            this.cmbEncargado.Name = "cmbEncargado";
-            this.cmbEncargado.Size = new System.Drawing.Size(202, 21);
-            this.cmbEncargado.TabIndex = 13;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(100, 64);
+            this.cmbEstado.Location = new System.Drawing.Point(100, 37);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(202, 21);
             this.cmbEstado.TabIndex = 14;
             // 
-            // ckbFecha
+            // label2
             // 
-            this.ckbFecha.AutoSize = true;
-            this.ckbFecha.Location = new System.Drawing.Point(12, 10);
-            this.ckbFecha.Name = "ckbFecha";
-            this.ckbFecha.Size = new System.Drawing.Size(91, 17);
-            this.ckbFecha.TabIndex = 7;
-            this.ckbFecha.Text = "Fecha desde:";
-            this.ckbFecha.UseVisualStyleBackColor = true;
-            this.ckbFecha.CheckedChanged += new System.EventHandler(this.ckbFecha_CheckedChanged);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Fecha Desde";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(45, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Estado";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(48, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Marca";
             // 
             // ReporteOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(376, 165);
+            this.ClientSize = new System.Drawing.Size(376, 147);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbEstado);
-            this.Controls.Add(this.cmbEncargado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpHasta);
             this.Controls.Add(this.dtpDesde);
             this.Controls.Add(this.btnRefrescar);
-            this.Controls.Add(this.ckbFecha);
-            this.Controls.Add(this.ckbEstado);
-            this.Controls.Add(this.ckbEncargado);
-            this.Controls.Add(this.ckbMarca);
             this.Controls.Add(this.cmbMarca);
             this.Controls.Add(this.btnImprimir);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -186,15 +157,13 @@
 
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.ComboBox cmbMarca;
-        private System.Windows.Forms.CheckBox ckbMarca;
-        private System.Windows.Forms.CheckBox ckbEncargado;
-        private System.Windows.Forms.CheckBox ckbEstado;
         private System.Windows.Forms.Button btnRefrescar;
         private System.Windows.Forms.DateTimePicker dtpDesde;
         private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbEncargado;
         private System.Windows.Forms.ComboBox cmbEstado;
-        private System.Windows.Forms.CheckBox ckbFecha;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

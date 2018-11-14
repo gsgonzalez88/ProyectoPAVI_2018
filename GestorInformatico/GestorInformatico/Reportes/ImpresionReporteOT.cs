@@ -17,9 +17,15 @@ namespace GestorInformatico.Reportes
             InitializeComponent();
         }
 
-        private void ImpresionReporteOT_Load(object sender, EventArgs e)
-        {
+        public DateTime fecha { get; set; }
+        public DateTime Fecha2 { get; set; }
+        public int idEsta { get; set; }
+        public int idmarc { get; set; }
 
+        private void ImpresionReporteOT_Load(object sender, EventArgs e)
+        { 
+            
+            this.reporteOTTableAdapter.Fill(this.dataSet.ReporteOT, fecha, Fecha2, idEsta, idmarc);
             this.reportViewer1.RefreshReport();
         }
     }
