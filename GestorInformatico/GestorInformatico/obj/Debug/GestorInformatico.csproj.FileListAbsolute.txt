@@ -111,3 +111,13 @@ D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInf
 D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\RdlCompile.cache
 D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\RdlCompile.compiled
 D:\Pav\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Reportes.ReporteOrden.resources
+C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Reportes.Impresion_orden.resources
+C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Reportes.ImpresionVenta.resources
+C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Reportes.ReporteOrden.resources
+C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\RdlCompile.cache
+C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\RdlCompile.compiled
+C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.GUIlayer.frmArticulo.resources
+C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.GUIlayer.frmNuevoArticulo.resources
+C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.GUIlayer.frmEditarArticulo.resources
+C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Reportes.ReporteVenta.resources
+C:\Users\usuario\Desktop\Facultad\3 Año\PAVI\ProyectosGit\ProyectoPAVI_2018\GestorInformatico\GestorInformatico\obj\Debug\GestorInformatico.Reportes.ReporteVentaFecha.resources
