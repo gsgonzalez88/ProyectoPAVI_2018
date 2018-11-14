@@ -87,6 +87,7 @@
             this.btnImprimir.Size = new System.Drawing.Size(37, 38);
             this.btnImprimir.TabIndex = 10;
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // lblFecha
             // 

@@ -130,6 +130,13 @@ namespace GestorInformatico
             re.Show();
         }
 
+        private void articuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GUIlayer.frmArticulo art = new GUIlayer.frmArticulo();
+            art.MdiParent = this;
+            art.Show();
+        }
+
         
     }
 }
