@@ -13,9 +13,10 @@ namespace GestorInformatico.GUIlayer
 {
     public partial class frmVenta : Form
     {
-        string cadena = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BaseProyecto;User ID=sa;Password=2xdpn5fv0";
+        string cadena = "workstation id=pavGestor.mssql.somee.com;packet size=4096;user id=franfavaro9_SQLLogin_2;pwd=rsur3b2auh;data source=pavGestor.mssql.somee.com;persist security info=False;initial catalog=pavGestor";
         int descuento = 0;
         int total = 0;
+        int identity = 0;
         public frmVenta()
         {
             InitializeComponent();
@@ -229,11 +230,11 @@ namespace GestorInformatico.GUIlayer
                     comando.CommandText = sql;
                     comando.ExecuteNonQuery();
                     DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT IDENT_CURRENT('Venta')");
-                    int identity = Convert.ToInt32(tabla.Rows[0].ItemArray[0]);
+                    identity = Convert.ToInt32(tabla.Rows[0].ItemArray[0]);
                     for(int i = 0; i < dgvDetalles.Rows.Count; i++)
                     {
-                        string detVenta = "INSERT INTO detalleVenta VALUES (" + identity + "," + dgvDetalles.Rows[i].Cells[0].Value + 
-                            "," + dgvDetalles.Rows[i].Cells[4].Value + "," + dgvDetalles.Rows[0].Cells[3].Value + "," + dgvDetalles.Rows[i].Cells[5].Value  + ")";
+                        string detVenta = "INSERT INTO detalleVenta VALUES (" + dgvDetalles.Rows[i].Cells[0].Value + 
+                            "," + dgvDetalles.Rows[i].Cells[4].Value + "," + dgvDetalles.Rows[0].Cells[3].Value + "," + dgvDetalles.Rows[i].Cells[5].Value + "," + identity + ")";
                         comando.CommandText = detVenta;
                         comando.ExecuteNonQuery();
                         DataTable StockActYMin = DBHelper.Utilidades.Ejecutar("SELECT StockActual, StockMinimo FROM Articulo WHERE IdArticulo = " + dgvDetalles.Rows[i].Cells[0].Value + "");
@@ -259,6 +260,13 @@ namespace GestorInformatico.GUIlayer
                 MessageBox.Show(ex.Message, "Error de carga", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            Reportes.ImpresionVenta reporte = new Reportes.ImpresionVenta(identity);
+            reporte.ShowDialog();
+            
         }
 
   

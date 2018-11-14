@@ -136,6 +136,18 @@
     <Compile Include="GUIlayer\DetalleCliente.Designer.cs">
       <DependentUpon>DetalleCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIlayer\frmArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIlayer\frmArticulo.Designer.cs">
+      <DependentUpon>frmArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIlayer\frmEditarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIlayer\frmEditarArticulo.Designer.cs">
+      <DependentUpon>frmEditarArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUIlayer\frmFormaPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +159,12 @@
     </Compile>
     <Compile Include="GUIlayer\frmMarca.Designer.cs">
       <DependentUpon>frmMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIlayer\frmNuevoArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIlayer\frmNuevoArticulo.Designer.cs">
+      <DependentUpon>frmNuevoArticulo.cs</DependentUpon>
     </Compile>
     <Compile Include="GUIlayer\frmVenta.cs">
       <SubType>Form</SubType>
@@ -180,17 +198,36 @@
     <Compile Include="Reportes\Impresion orden.Designer.cs">
       <DependentUpon>Impresion orden.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ImpresionVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ImpresionVenta.Designer.cs">
+      <DependentUpon>ImpresionVenta.cs</DependentUpon>
+=======
     <Compile Include="Reportes\ImpresionReporteOT.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\ImpresionReporteOT.Designer.cs">
       <DependentUpon>ImpresionReporteOT.cs</DependentUpon>
+>>>>>>> master
     </Compile>
     <Compile Include="Reportes\ReporteOrden.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\ReporteOrden.Designer.cs">
       <DependentUpon>ReporteOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteVenta.Designer.cs">
+      <DependentUpon>ReporteVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteVentaFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteVentaFecha.Designer.cs">
+      <DependentUpon>ReporteVentaFecha.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="GUIlayer\AbmBarrio.resx">
       <DependentUpon>AbmBarrio.cs</DependentUpon>
@@ -222,11 +259,20 @@
     <EmbeddedResource Include="GUIlayer\DetalleCliente.resx">
       <DependentUpon>DetalleCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUIlayer\frmArticulo.resx">
+      <DependentUpon>frmArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIlayer\frmEditarArticulo.resx">
+      <DependentUpon>frmEditarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUIlayer\frmFormaPago.resx">
       <DependentUpon>frmFormaPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUIlayer\frmMarca.resx">
       <DependentUpon>frmMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIlayer\frmNuevoArticulo.resx">
+      <DependentUpon>frmNuevoArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUIlayer\frmVenta.resx">
       <DependentUpon>frmVenta.cs</DependentUpon>
@@ -254,12 +300,25 @@
     <EmbeddedResource Include="Reportes\Impresion orden.resx">
       <DependentUpon>Impresion orden.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ImpresionVenta.resx">
+      <DependentUpon>ImpresionVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ImprimirVenta.rdlc" />
+=======
     <EmbeddedResource Include="Reportes\ImpresionReporteOT.resx">
       <DependentUpon>ImpresionReporteOT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\InformeOT.rdlc" />
+>>>>>>> master
     <EmbeddedResource Include="Reportes\ReporteOrden.resx">
       <DependentUpon>ReporteOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteVentaFecha.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteVenta.resx">
+      <DependentUpon>ReporteVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteVentaFecha.resx">
+      <DependentUpon>ReporteVentaFecha.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataLayer\DataSet.xsc">
       <DependentUpon>DataSet.xsd</DependentUpon>
@@ -267,7 +326,7 @@
     <None Include="DataLayer\DataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="DataLayer\DataSet.xss">
       <DependentUpon>DataSet.xsd</DependentUpon>
