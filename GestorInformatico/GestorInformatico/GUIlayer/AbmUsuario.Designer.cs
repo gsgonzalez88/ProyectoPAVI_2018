@@ -42,7 +42,6 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnRefescar = new System.Windows.Forms.Button();
-            this.BtnSalir = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -189,17 +188,6 @@
             this.btnRefescar.UseVisualStyleBackColor = true;
             this.btnRefescar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // BtnSalir
-            // 
-            this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
-            this.BtnSalir.Location = new System.Drawing.Point(175, 14);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(27, 29);
-            this.BtnSalir.TabIndex = 48;
-            this.toolTip1.SetToolTip(this.BtnSalir, "Salir");
-            this.BtnSalir.UseVisualStyleBackColor = true;
-            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
-            // 
             // btnAceptar
             // 
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
@@ -334,7 +322,6 @@
             // 
             this.groupBox2.Controls.Add(this.btnEliminar);
             this.groupBox2.Controls.Add(this.btnActualizar);
-            this.groupBox2.Controls.Add(this.BtnSalir);
             this.groupBox2.Controls.Add(this.btnBuscar);
             this.groupBox2.Controls.Add(this.btnRefescar);
             this.groupBox2.Controls.Add(this.btnAceptar);
@@ -389,7 +376,6 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnRefescar;
-        private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.DataGridView dgvUsuario;
         private System.Windows.Forms.GroupBox groupBox1;
