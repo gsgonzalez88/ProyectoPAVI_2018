@@ -203,6 +203,13 @@
     </Compile>
     <Compile Include="Reportes\ImpresionVenta.Designer.cs">
       <DependentUpon>ImpresionVenta.cs</DependentUpon>
+=======
+    <Compile Include="Reportes\ImpresionReporteOT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ImpresionReporteOT.Designer.cs">
+      <DependentUpon>ImpresionReporteOT.cs</DependentUpon>
+>>>>>>> master
     </Compile>
     <Compile Include="Reportes\ReporteOrden.cs">
       <SubType>Form</SubType>
@@ -297,6 +304,12 @@
       <DependentUpon>ImpresionVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ImprimirVenta.rdlc" />
+=======
+    <EmbeddedResource Include="Reportes\ImpresionReporteOT.resx">
+      <DependentUpon>ImpresionReporteOT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\InformeOT.rdlc" />
+>>>>>>> master
     <EmbeddedResource Include="Reportes\ReporteOrden.resx">
       <DependentUpon>ReporteOrden.cs</DependentUpon>
     </EmbeddedResource>
