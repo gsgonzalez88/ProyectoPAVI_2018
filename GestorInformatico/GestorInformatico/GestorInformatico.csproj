@@ -75,11 +75,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataLayer\DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DataLayer\DBHelper.cs" />
     <Compile Include="GUIlayer\AbmBarrio.cs">
       <SubType>Form</SubType>
