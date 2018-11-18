@@ -53,6 +53,7 @@
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteOrdenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.graficoVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -230,7 +231,8 @@
             // 
             this.consultarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteOrdenToolStripMenuItem,
-            this.reporteDeVentaToolStripMenuItem});
+            this.reporteDeVentaToolStripMenuItem,
+            this.graficoVentaToolStripMenuItem});
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
             this.consultarToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.consultarToolStripMenuItem.Text = "Consultar";
@@ -247,6 +249,13 @@
             this.reporteDeVentaToolStripMenuItem.Name = "reporteDeVentaToolStripMenuItem";
             this.reporteDeVentaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.reporteDeVentaToolStripMenuItem.Text = "Reporte de Venta";
+            // 
+            // graficoVentaToolStripMenuItem
+            // 
+            this.graficoVentaToolStripMenuItem.Name = "graficoVentaToolStripMenuItem";
+            this.graficoVentaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.graficoVentaToolStripMenuItem.Text = "Grafico Venta";
+            this.graficoVentaToolStripMenuItem.Click += new System.EventHandler(this.graficoVentaToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -295,6 +304,7 @@
         public System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteOrdenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeVentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem graficoVentaToolStripMenuItem;
 
     }
 }
