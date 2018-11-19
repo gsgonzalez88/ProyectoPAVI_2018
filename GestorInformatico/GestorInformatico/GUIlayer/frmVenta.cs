@@ -264,8 +264,8 @@ namespace GestorInformatico.GUIlayer
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            Reportes.ImpresionVenta reporte = new Reportes.ImpresionVenta(identity);
-            reporte.ShowDialog();
+            //Reportes.ImpresionVenta reporte = new Reportes.ImpresionVenta(identity);
+            //reporte.ShowDialog();
             
         }
 

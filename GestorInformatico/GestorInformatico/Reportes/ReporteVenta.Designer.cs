@@ -43,11 +43,12 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(6, 19);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(127, 20);
             this.dtpFecha.TabIndex = 1;
-            this.dtpFecha.Value = new System.DateTime(2018, 11, 14, 0, 0, 0, 0);
+            this.dtpFecha.Value = new System.DateTime(2018, 11, 19, 0, 0, 0, 0);
             // 
             // grbFecha
             // 
@@ -97,6 +98,7 @@
             this.btnInformeEmpleado.TabIndex = 0;
             this.btnInformeEmpleado.Text = "Generar";
             this.btnInformeEmpleado.UseVisualStyleBackColor = true;
+            this.btnInformeEmpleado.Click += new System.EventHandler(this.btnInformeEmpleado_Click);
             // 
             // grbArticulo
             // 

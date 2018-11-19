@@ -19,14 +19,29 @@ namespace GestorInformatico.Reportes
 
         private void ReporteVenta_Load(object sender, EventArgs e)
         {
+            cargarCombo(cboEmpleado, DBHelper.Utilidades.Ejecutar("SELECT (Apellido + ' ' + Nombre) as Nombre, IdEmpleado FROM Empleado"), "Nombre", "IdEmpleado");
+        }
 
+        private void cargarCombo(ComboBox cbo, Object source, string display, String value)
+        {
+            cbo.DataSource = source;
+            cbo.DisplayMember = display;
+            cbo.ValueMember = value;
+            cbo.SelectedIndex = -1;
         }
 
         private void btnInformeFecha_Click(object sender, EventArgs e)
         {
-            DateTime fecha = dtpFecha.Value.Date;
-            Reportes.ReporteVentaFecha rep = new Reportes.ReporteVentaFecha(fecha);
+            Reportes.ReporteVenFecha rep = new Reportes.ReporteVenFecha();
+            rep.fecha = dtpFecha.Value;
             rep.ShowDialog();
+        }
+
+        private void btnInformeEmpleado_Click(object sender, EventArgs e)
+        {
+            Reportes.ReporteVenEmp repo = new Reportes.ReporteVenEmp();
+            repo.emp = Convert.ToInt32(cboEmpleado.SelectedValue);
+            repo.ShowDialog();
         }
     }
 }

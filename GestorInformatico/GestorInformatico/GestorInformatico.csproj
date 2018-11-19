@@ -70,10 +70,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLayer\DataSet.cs">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataLayer\DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataLayer\DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataLayer\DBHelper.cs" />
     <Compile Include="GUIlayer\AbmBarrio.cs">
@@ -195,25 +203,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>pavGestorDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="pavGestorDataSetVentaFecha.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pavGestorDataSetVentaFecha.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\GraficoVenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\GraficoVenta.Designer.cs">
-      <DependentUpon>GraficoVenta.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\Impresion orden.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\Impresion orden.Designer.cs">
       <DependentUpon>Impresion orden.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\ImpresionVenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\ImpresionVenta.Designer.cs">
-      <DependentUpon>ImpresionVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\MostrarReporteOT.cs">
       <SubType>Form</SubType>
@@ -227,17 +228,23 @@
     <Compile Include="Reportes\ReporteOrden.Designer.cs">
       <DependentUpon>ReporteOrden.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ReporteVenEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteVenEmp.Designer.cs">
+      <DependentUpon>ReporteVenEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteVenFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteVenFecha.Designer.cs">
+      <DependentUpon>ReporteVenFecha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReporteVenta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\ReporteVenta.Designer.cs">
       <DependentUpon>ReporteVenta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\ReporteVentaFecha.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\ReporteVentaFecha.Designer.cs">
-      <DependentUpon>ReporteVentaFecha.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="GUIlayer\AbmBarrio.resx">
       <DependentUpon>AbmBarrio.cs</DependentUpon>
@@ -307,17 +314,10 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reportes\GraficoArticulos.rdlc" />
-    <EmbeddedResource Include="Reportes\GraficoVenta.resx">
-      <DependentUpon>GraficoVenta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ImporteObra.rdlc" />
     <EmbeddedResource Include="Reportes\Impresion orden.resx">
       <DependentUpon>Impresion orden.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ImpresionVenta.resx">
-      <DependentUpon>ImpresionVenta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ImprimirVenta.rdlc" />
     <EmbeddedResource Include="Reportes\InformeOT.rdlc" />
     <EmbeddedResource Include="Reportes\MostrarReporteOT.resx">
       <DependentUpon>MostrarReporteOT.cs</DependentUpon>
@@ -325,13 +325,18 @@
     <EmbeddedResource Include="Reportes\ReporteOrden.resx">
       <DependentUpon>ReporteOrden.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteVentaFecha.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteVenEmp.resx">
+      <DependentUpon>ReporteVenEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteVenFecha.resx">
+      <DependentUpon>ReporteVenFecha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteVenta.resx">
       <DependentUpon>ReporteVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteVentaFecha.resx">
-      <DependentUpon>ReporteVentaFecha.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteVentaEmpleado.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteVentaFecha.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteVentaGrafico.rdlc" />
     <None Include="DataLayer\DataSet.xsc">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
@@ -343,6 +348,17 @@
     <None Include="DataLayer\DataSet.xss">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
+    <None Include="DataLayer\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataLayer\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataLayer\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
     <None Include="pavGestorDataSet.xsc">
       <DependentUpon>pavGestorDataSet.xsd</DependentUpon>
     </None>
@@ -353,6 +369,17 @@
     </None>
     <None Include="pavGestorDataSet.xss">
       <DependentUpon>pavGestorDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pavGestorDataSetVentaFecha.xsc">
+      <DependentUpon>pavGestorDataSetVentaFecha.xsd</DependentUpon>
+    </None>
+    <None Include="pavGestorDataSetVentaFecha.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pavGestorDataSetVentaFecha.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pavGestorDataSetVentaFecha.xss">
+      <DependentUpon>pavGestorDataSetVentaFecha.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

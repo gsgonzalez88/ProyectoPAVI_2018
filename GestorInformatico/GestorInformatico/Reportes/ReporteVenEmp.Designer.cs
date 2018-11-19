@@ -1,6 +1,6 @@
 ﻿namespace GestorInformatico.Reportes
 {
-    partial class GraficoVenta
+    partial class ReporteVenEmp
     {
         /// <summary>
         /// Required designer variable.
@@ -31,50 +31,50 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.pavGestorDataSet = new GestorInformatico.pavGestorDataSet();
-            this.graficoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.graficoTableAdapter = new GestorInformatico.pavGestorDataSetTableAdapters.GraficoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.pavGestorDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.graficoBindingSource)).BeginInit();
+            this.dataSet2 = new GestorInformatico.DataLayer.DataSet2();
+            this.ventaEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.venta_EmpleadoTableAdapter = new GestorInformatico.DataLayer.DataSet2TableAdapters.Venta_EmpleadoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ventaEmpleadoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.graficoBindingSource;
+            reportDataSource1.Name = "DataSetVenEmp";
+            reportDataSource1.Value = this.ventaEmpleadoBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GestorInformatico.Reportes.GraficoArticulos.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GestorInformatico.Reportes.ReporteVentaEmpleado.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(726, 392);
+            this.reportViewer1.Size = new System.Drawing.Size(557, 486);
             this.reportViewer1.TabIndex = 0;
             // 
-            // pavGestorDataSet
+            // dataSet2
             // 
-            this.pavGestorDataSet.DataSetName = "pavGestorDataSet";
-            this.pavGestorDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // graficoBindingSource
+            // ventaEmpleadoBindingSource
             // 
-            this.graficoBindingSource.DataMember = "Grafico";
-            this.graficoBindingSource.DataSource = this.pavGestorDataSet;
+            this.ventaEmpleadoBindingSource.DataMember = "Venta_Empleado";
+            this.ventaEmpleadoBindingSource.DataSource = this.dataSet2;
             // 
-            // graficoTableAdapter
+            // venta_EmpleadoTableAdapter
             // 
-            this.graficoTableAdapter.ClearBeforeFill = true;
+            this.venta_EmpleadoTableAdapter.ClearBeforeFill = true;
             // 
-            // GraficoVenta
+            // ReporteVenEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 392);
+            this.ClientSize = new System.Drawing.Size(557, 486);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "GraficoVenta";
-            this.Text = "GraficoVenta";
-            this.Load += new System.EventHandler(this.GraficoVenta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pavGestorDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.graficoBindingSource)).EndInit();
+            this.Name = "ReporteVenEmp";
+            this.Text = "ReporteVenEmp";
+            this.Load += new System.EventHandler(this.ReporteVenEmp_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ventaEmpleadoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -82,9 +82,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private pavGestorDataSet pavGestorDataSet;
-        private System.Windows.Forms.BindingSource graficoBindingSource;
-        private pavGestorDataSetTableAdapters.GraficoTableAdapter graficoTableAdapter;
-
+        private System.Windows.Forms.BindingSource ventaEmpleadoBindingSource;
+        private DataLayer.DataSet2 dataSet2;
+        private DataLayer.DataSet2TableAdapters.Venta_EmpleadoTableAdapter venta_EmpleadoTableAdapter;
     }
 }

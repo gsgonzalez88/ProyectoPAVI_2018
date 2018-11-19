@@ -137,11 +137,11 @@ namespace GestorInformatico
             art.Show();
         }
 
-        private void graficoVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void reporteDeVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reportes.GraficoVenta gra = new Reportes.GraficoVenta();
-            gra.MdiParent = this;
-            gra.Show();
+            Reportes.ReporteVenta rep = new Reportes.ReporteVenta();
+            rep.MdiParent = this;
+            rep.Show();
         }
 
         
