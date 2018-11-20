@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace GestorInformatico.Reportes
 {
-    public partial class GraficoVenta : Form
+    public partial class ReporteVenEmp : Form
     {
-        public GraficoVenta()
+        public ReporteVenEmp()
         {
             InitializeComponent();
         }
 
-        private void GraficoVenta_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet2.Grafico_Venta' Puede moverla o quitarla según sea necesario.
-            this.grafico_VentaTableAdapter.Fill(this.dataSet2.Grafico_Venta);
+        public int emp { get; set; }
 
+        private void ReporteVenEmp_Load(object sender, EventArgs e)
+        {
+            this.venta_EmpleadoTableAdapter.Fill(this.dataSet2.Venta_Empleado, emp);
             this.reportViewer1.RefreshReport();
         }
     }

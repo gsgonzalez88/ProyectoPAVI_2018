@@ -43,11 +43,12 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(6, 19);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(127, 20);
             this.dtpFecha.TabIndex = 1;
-            this.dtpFecha.Value = new System.DateTime(2018, 11, 14, 0, 0, 0, 0);
+            this.dtpFecha.Value = new System.DateTime(2018, 11, 19, 0, 0, 0, 0);
             // 
             // grbFecha
             // 
@@ -97,6 +98,7 @@
             this.btnInformeEmpleado.TabIndex = 0;
             this.btnInformeEmpleado.Text = "Generar";
             this.btnInformeEmpleado.UseVisualStyleBackColor = true;
+            this.btnInformeEmpleado.Click += new System.EventHandler(this.btnInformeEmpleado_Click);
             // 
             // grbArticulo
             // 
@@ -106,7 +108,7 @@
             this.grbArticulo.Size = new System.Drawing.Size(137, 86);
             this.grbArticulo.TabIndex = 4;
             this.grbArticulo.TabStop = false;
-            this.grbArticulo.Text = "Articulos mas vendidos";
+            this.grbArticulo.Text = "Articulos vendidos";
             // 
             // btnInformeArticulo
             // 
@@ -116,6 +118,7 @@
             this.btnInformeArticulo.TabIndex = 0;
             this.btnInformeArticulo.Text = "Generar";
             this.btnInformeArticulo.UseVisualStyleBackColor = true;
+            this.btnInformeArticulo.Click += new System.EventHandler(this.btnInformeArticulo_Click);
             // 
             // ReporteVenta
             // 
@@ -126,7 +129,7 @@
             this.Controls.Add(this.grbEmpleado);
             this.Controls.Add(this.grbFecha);
             this.Name = "ReporteVenta";
-            this.Text = "ReporteVenta";
+            this.Text = "Reporte de Ventas";
             this.Load += new System.EventHandler(this.ReporteVenta_Load);
             this.grbFecha.ResumeLayout(false);
             this.grbEmpleado.ResumeLayout(false);

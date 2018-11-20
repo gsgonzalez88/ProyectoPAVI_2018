@@ -30,20 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ABMEmpleado));
             this.grBoxEmpleados = new System.Windows.Forms.GroupBox();
+            this.cmbTDoc = new System.Windows.Forms.ComboBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtNroDocumento = new System.Windows.Forms.TextBox();
-            this.Telefono = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblNroDoc = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTipoDoc = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombreEmp = new System.Windows.Forms.TextBox();
             this.lblCalle = new System.Windows.Forms.Label();
             this.lblNroCalle = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblProvincia = new System.Windows.Forms.Label();
             this.lblLocalidad = new System.Windows.Forms.Label();
             this.lblDepartamento = new System.Windows.Forms.Label();
             this.lblBarrio = new System.Windows.Forms.Label();
@@ -59,26 +60,27 @@
             this.txtNumeroCalle = new System.Windows.Forms.TextBox();
             this.txtCalle = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.rbtInactivo = new System.Windows.Forms.RadioButton();
-            this.rbtActivo = new System.Windows.Forms.RadioButton();
-            this.lblEstado = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBaja = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnAlta = new System.Windows.Forms.Button();
             this.dgvEmpleado = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbTDoc = new System.Windows.Forms.ComboBox();
+            this.ColIdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNroCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCamposOb = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.BtnSalir = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.grBoxEmpleados.SuspendLayout();
             this.grBoxDomicilio.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,21 +89,29 @@
             this.grBoxEmpleados.Controls.Add(this.cmbTDoc);
             this.grBoxEmpleados.Controls.Add(this.txtTelefono);
             this.grBoxEmpleados.Controls.Add(this.txtNroDocumento);
-            this.grBoxEmpleados.Controls.Add(this.Telefono);
-            this.grBoxEmpleados.Controls.Add(this.label3);
+            this.grBoxEmpleados.Controls.Add(this.lblTelefono);
+            this.grBoxEmpleados.Controls.Add(this.lblNroDoc);
             this.grBoxEmpleados.Controls.Add(this.txtEmail);
             this.grBoxEmpleados.Controls.Add(this.lblEmail);
-            this.grBoxEmpleados.Controls.Add(this.label2);
+            this.grBoxEmpleados.Controls.Add(this.lblTipoDoc);
             this.grBoxEmpleados.Controls.Add(this.lblApellido);
             this.grBoxEmpleados.Controls.Add(this.lblNombre);
             this.grBoxEmpleados.Controls.Add(this.txtApellido);
             this.grBoxEmpleados.Controls.Add(this.txtNombreEmp);
-            this.grBoxEmpleados.Location = new System.Drawing.Point(12, 12);
+            this.grBoxEmpleados.Location = new System.Drawing.Point(12, 46);
             this.grBoxEmpleados.Name = "grBoxEmpleados";
             this.grBoxEmpleados.Size = new System.Drawing.Size(284, 212);
             this.grBoxEmpleados.TabIndex = 2;
             this.grBoxEmpleados.TabStop = false;
             this.grBoxEmpleados.Text = "Datos Personales";
+            // 
+            // cmbTDoc
+            // 
+            this.cmbTDoc.FormattingEnabled = true;
+            this.cmbTDoc.Location = new System.Drawing.Point(130, 81);
+            this.cmbTDoc.Name = "cmbTDoc";
+            this.cmbTDoc.Size = new System.Drawing.Size(119, 21);
+            this.cmbTDoc.TabIndex = 48;
             // 
             // txtTelefono
             // 
@@ -117,27 +127,27 @@
             this.txtNroDocumento.Size = new System.Drawing.Size(119, 20);
             this.txtNroDocumento.TabIndex = 26;
             // 
-            // Telefono
+            // lblTelefono
             // 
-            this.Telefono.BackColor = System.Drawing.SystemColors.Control;
-            this.Telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Telefono.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Telefono.Location = new System.Drawing.Point(6, 177);
-            this.Telefono.Name = "Telefono";
-            this.Telefono.Size = new System.Drawing.Size(103, 21);
-            this.Telefono.TabIndex = 25;
-            this.Telefono.Text = "Telefono";
+            this.lblTelefono.BackColor = System.Drawing.SystemColors.Control;
+            this.lblTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTelefono.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.Location = new System.Drawing.Point(6, 177);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(103, 21);
+            this.lblTelefono.TabIndex = 25;
+            this.lblTelefono.Text = "Telefono";
             // 
-            // label3
+            // lblNroDoc
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 113);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 21);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "N° Documento";
+            this.lblNroDoc.BackColor = System.Drawing.SystemColors.Control;
+            this.lblNroDoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNroDoc.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNroDoc.Location = new System.Drawing.Point(6, 113);
+            this.lblNroDoc.Name = "lblNroDoc";
+            this.lblNroDoc.Size = new System.Drawing.Size(103, 21);
+            this.lblNroDoc.TabIndex = 17;
+            this.lblNroDoc.Text = "N° Documento";
             // 
             // txtEmail
             // 
@@ -157,16 +167,16 @@
             this.lblEmail.TabIndex = 24;
             this.lblEmail.Text = "Email";
             // 
-            // label2
+            // lblTipoDoc
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 21);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Tipo Documento";
+            this.lblTipoDoc.BackColor = System.Drawing.SystemColors.Control;
+            this.lblTipoDoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTipoDoc.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoDoc.Location = new System.Drawing.Point(6, 81);
+            this.lblTipoDoc.Name = "lblTipoDoc";
+            this.lblTipoDoc.Size = new System.Drawing.Size(103, 21);
+            this.lblTipoDoc.TabIndex = 16;
+            this.lblTipoDoc.Text = "Tipo Documento";
             // 
             // lblApellido
             // 
@@ -226,16 +236,16 @@
             this.lblNroCalle.TabIndex = 19;
             this.lblNroCalle.Text = "Numero";
             // 
-            // label4
+            // lblProvincia
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.Control;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 21);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Provincia";
+            this.lblProvincia.BackColor = System.Drawing.SystemColors.Control;
+            this.lblProvincia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblProvincia.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProvincia.Location = new System.Drawing.Point(6, 81);
+            this.lblProvincia.Name = "lblProvincia";
+            this.lblProvincia.Size = new System.Drawing.Size(103, 21);
+            this.lblProvincia.TabIndex = 20;
+            this.lblProvincia.Text = "Provincia";
             // 
             // lblLocalidad
             // 
@@ -284,11 +294,11 @@
             this.grBoxDomicilio.Controls.Add(this.txtCalle);
             this.grBoxDomicilio.Controls.Add(this.lblCalle);
             this.grBoxDomicilio.Controls.Add(this.lblNroCalle);
-            this.grBoxDomicilio.Controls.Add(this.label4);
+            this.grBoxDomicilio.Controls.Add(this.lblProvincia);
             this.grBoxDomicilio.Controls.Add(this.lblBarrio);
             this.grBoxDomicilio.Controls.Add(this.lblLocalidad);
             this.grBoxDomicilio.Controls.Add(this.lblDepartamento);
-            this.grBoxDomicilio.Location = new System.Drawing.Point(302, 12);
+            this.grBoxDomicilio.Location = new System.Drawing.Point(302, 46);
             this.grBoxDomicilio.Name = "grBoxDomicilio";
             this.grBoxDomicilio.Size = new System.Drawing.Size(286, 212);
             this.grBoxDomicilio.TabIndex = 27;
@@ -343,7 +353,7 @@
             this.cmbProvin.Name = "cmbProvin";
             this.cmbProvin.Size = new System.Drawing.Size(119, 21);
             this.cmbProvin.TabIndex = 46;
-            this.cmbProvin.SelectedIndexChanged += new System.EventHandler(this.cmbProvin_SelectedIndexChanged);
+            this.cmbProvin.TextChanged += new System.EventHandler(this.cmbProvin_TextChanged);
             // 
             // cmbDepto
             // 
@@ -352,6 +362,7 @@
             this.cmbDepto.Name = "cmbDepto";
             this.cmbDepto.Size = new System.Drawing.Size(119, 21);
             this.cmbDepto.TabIndex = 46;
+            this.cmbDepto.TextChanged += new System.EventHandler(this.cmbDepto_TextChanged);
             // 
             // cmbLocalidad
             // 
@@ -360,6 +371,7 @@
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(119, 21);
             this.cmbLocalidad.TabIndex = 46;
+            this.cmbLocalidad.TextChanged += new System.EventHandler(this.cmbLocalidad_TextChanged);
             // 
             // cmbBarrio
             // 
@@ -390,198 +402,207 @@
             this.textBox4.Size = new System.Drawing.Size(119, 20);
             this.textBox4.TabIndex = 3;
             // 
-            // rbtInactivo
+            // btnBaja
             // 
-            this.rbtInactivo.AutoSize = true;
-            this.rbtInactivo.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.rbtInactivo.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtInactivo.Location = new System.Drawing.Point(161, 18);
-            this.rbtInactivo.Name = "rbtInactivo";
-            this.rbtInactivo.Size = new System.Drawing.Size(69, 19);
-            this.rbtInactivo.TabIndex = 43;
-            this.rbtInactivo.TabStop = true;
-            this.rbtInactivo.Text = "Inactivo";
-            this.rbtInactivo.UseVisualStyleBackColor = false;
+            this.btnBaja.Image = ((System.Drawing.Image)(resources.GetObject("btnBaja.Image")));
+            this.btnBaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBaja.Location = new System.Drawing.Point(554, 12);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(27, 29);
+            this.btnBaja.TabIndex = 53;
+            this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
-            // rbtActivo
+            // btnEditar
             // 
-            this.rbtActivo.AutoSize = true;
-            this.rbtActivo.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.rbtActivo.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtActivo.Location = new System.Drawing.Point(93, 18);
-            this.rbtActivo.Name = "rbtActivo";
-            this.rbtActivo.Size = new System.Drawing.Size(62, 19);
-            this.rbtActivo.TabIndex = 42;
-            this.rbtActivo.TabStop = true;
-            this.rbtActivo.Text = "Activo";
-            this.rbtActivo.UseVisualStyleBackColor = false;
-            this.rbtActivo.CheckedChanged += new System.EventHandler(this.rbtActivo_CheckedChanged);
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(488, 12);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(27, 29);
+            this.btnEditar.TabIndex = 52;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // lblEstado
+            // btnNuevo
             // 
-            this.lblEstado.BackColor = System.Drawing.SystemColors.Control;
-            this.lblEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEstado.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(18, 18);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(69, 21);
-            this.lblEstado.TabIndex = 41;
-            this.lblEstado.Text = "Estado";
+            this.btnNuevo.Image = global::GestorInformatico.Properties.Resources.add;
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Location = new System.Drawing.Point(455, 12);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(27, 29);
+            this.btnNuevo.TabIndex = 50;
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // groupBox1
+            // btnAlta
             // 
-            this.groupBox1.Controls.Add(this.btnEliminar);
-            this.groupBox1.Controls.Add(this.btnActualizar);
-            this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.BtnSalir);
-            this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.lblEstado);
-            this.groupBox1.Controls.Add(this.rbtInactivo);
-            this.groupBox1.Controls.Add(this.rbtActivo);
-            this.groupBox1.Location = new System.Drawing.Point(12, 230);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(576, 47);
-            this.groupBox1.TabIndex = 45;
-            this.groupBox1.TabStop = false;
+            this.btnAlta.Image = global::GestorInformatico.Properties.Resources.accept;
+            this.btnAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlta.Location = new System.Drawing.Point(521, 12);
+            this.btnAlta.Name = "btnAlta";
+            this.btnAlta.Size = new System.Drawing.Size(27, 29);
+            this.btnAlta.TabIndex = 48;
+            this.btnAlta.UseVisualStyleBackColor = true;
+            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
             // 
             // dgvEmpleado
             // 
+            this.dgvEmpleado.AllowUserToAddRows = false;
+            this.dgvEmpleado.AllowUserToDeleteRows = false;
             this.dgvEmpleado.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.Apellido,
-            this.dataGridViewTextBoxColumn2,
-            this.Estado});
+            this.ColIdEmpleado,
+            this.ColApellido,
+            this.ColNombre,
+            this.ColNroDoc,
+            this.ColEstado,
+            this.ColProvincia,
+            this.ColDepto,
+            this.ColLocalidad,
+            this.ColBarrio,
+            this.ColTelefono,
+            this.ColMail,
+            this.ColCalle,
+            this.ColNroCalle});
             this.dgvEmpleado.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvEmpleado.Location = new System.Drawing.Point(614, 12);
+            this.dgvEmpleado.Location = new System.Drawing.Point(15, 264);
             this.dgvEmpleado.Name = "dgvEmpleado";
-            this.dgvEmpleado.Size = new System.Drawing.Size(473, 265);
+            this.dgvEmpleado.ReadOnly = true;
+            this.dgvEmpleado.Size = new System.Drawing.Size(573, 285);
             this.dgvEmpleado.TabIndex = 50;
+            this.dgvEmpleado.SelectionChanged += new System.EventHandler(this.dgvEmpleado_SelectionChanged);
             // 
-            // dataGridViewTextBoxColumn1
+            // ColIdEmpleado
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 110;
+            this.ColIdEmpleado.DataPropertyName = "IdEmpleado";
+            this.ColIdEmpleado.HeaderText = "IdEmpleado";
+            this.ColIdEmpleado.Name = "ColIdEmpleado";
+            this.ColIdEmpleado.ReadOnly = true;
+            this.ColIdEmpleado.Visible = false;
             // 
-            // Apellido
+            // ColApellido
             // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.Width = 110;
+            this.ColApellido.DataPropertyName = "Apellido";
+            this.ColApellido.HeaderText = "Apellido";
+            this.ColApellido.Name = "ColApellido";
+            this.ColApellido.ReadOnly = true;
+            this.ColApellido.Width = 110;
             // 
-            // dataGridViewTextBoxColumn2
+            // ColNombre
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "NroDocumento";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.ColNombre.DataPropertyName = "Nombre";
+            this.ColNombre.HeaderText = "Nombre";
+            this.ColNombre.Name = "ColNombre";
+            this.ColNombre.ReadOnly = true;
+            this.ColNombre.Width = 110;
             // 
-            // Estado
+            // ColNroDoc
             // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
+            this.ColNroDoc.DataPropertyName = "NroDoc";
+            this.ColNroDoc.HeaderText = "Nro. Documento";
+            this.ColNroDoc.Name = "ColNroDoc";
+            this.ColNroDoc.ReadOnly = true;
             // 
-            // cmbTDoc
+            // ColEstado
             // 
-            this.cmbTDoc.FormattingEnabled = true;
-            this.cmbTDoc.Location = new System.Drawing.Point(130, 81);
-            this.cmbTDoc.Name = "cmbTDoc";
-            this.cmbTDoc.Size = new System.Drawing.Size(119, 21);
-            this.cmbTDoc.TabIndex = 48;
+            this.ColEstado.DataPropertyName = "Descripcion";
+            this.ColEstado.HeaderText = "Estado";
+            this.ColEstado.Name = "ColEstado";
+            this.ColEstado.ReadOnly = true;
+            // 
+            // ColProvincia
+            // 
+            this.ColProvincia.DataPropertyName = "Descripcion1";
+            this.ColProvincia.HeaderText = "Provincia";
+            this.ColProvincia.Name = "ColProvincia";
+            this.ColProvincia.ReadOnly = true;
+            // 
+            // ColDepto
+            // 
+            this.ColDepto.DataPropertyName = "Descripcion2";
+            this.ColDepto.HeaderText = "Departamento";
+            this.ColDepto.Name = "ColDepto";
+            this.ColDepto.ReadOnly = true;
+            // 
+            // ColLocalidad
+            // 
+            this.ColLocalidad.DataPropertyName = "Descripcion3";
+            this.ColLocalidad.HeaderText = "Localidad";
+            this.ColLocalidad.Name = "ColLocalidad";
+            this.ColLocalidad.ReadOnly = true;
+            // 
+            // ColBarrio
+            // 
+            this.ColBarrio.DataPropertyName = "Descripcion4";
+            this.ColBarrio.HeaderText = "Barrio";
+            this.ColBarrio.Name = "ColBarrio";
+            this.ColBarrio.ReadOnly = true;
+            // 
+            // ColTelefono
+            // 
+            this.ColTelefono.DataPropertyName = "nroTelefono";
+            this.ColTelefono.HeaderText = "Telefono";
+            this.ColTelefono.Name = "ColTelefono";
+            this.ColTelefono.ReadOnly = true;
+            // 
+            // ColMail
+            // 
+            this.ColMail.DataPropertyName = "Email";
+            this.ColMail.HeaderText = "Mail";
+            this.ColMail.Name = "ColMail";
+            this.ColMail.ReadOnly = true;
+            // 
+            // ColCalle
+            // 
+            this.ColCalle.DataPropertyName = "Calle";
+            this.ColCalle.HeaderText = "Calle";
+            this.ColCalle.Name = "ColCalle";
+            this.ColCalle.ReadOnly = true;
+            // 
+            // ColNroCalle
+            // 
+            this.ColNroCalle.DataPropertyName = "NroCalle";
+            this.ColNroCalle.HeaderText = "Nro. Calle";
+            this.ColNroCalle.Name = "ColNroCalle";
+            this.ColNroCalle.ReadOnly = true;
             // 
             // lblCamposOb
             // 
             this.lblCamposOb.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lblCamposOb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCamposOb.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCamposOb.Location = new System.Drawing.Point(12, 280);
+            this.lblCamposOb.Location = new System.Drawing.Point(18, 12);
             this.lblCamposOb.Name = "lblCamposOb";
             this.lblCamposOb.Size = new System.Drawing.Size(127, 20);
             this.lblCamposOb.TabIndex = 51;
             this.lblCamposOb.Text = "Campos Obligatorios";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(439, 13);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(27, 29);
-            this.btnEliminar.TabIndex = 53;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(406, 13);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(27, 29);
-            this.btnActualizar.TabIndex = 52;
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(373, 13);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(27, 29);
-            this.btnBuscar.TabIndex = 51;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(472, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(27, 29);
-            this.button2.TabIndex = 50;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // BtnSalir
-            // 
-            this.BtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Image")));
-            this.BtnSalir.Location = new System.Drawing.Point(538, 13);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(27, 29);
-            this.BtnSalir.TabIndex = 49;
-            this.BtnSalir.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(505, 13);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(27, 29);
-            this.btnGuardar.TabIndex = 48;
-            this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // ABMEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1101, 309);
+            this.ClientSize = new System.Drawing.Size(603, 563);
+            this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.lblCamposOb);
+            this.Controls.Add(this.btnAlta);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvEmpleado);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.grBoxDomicilio);
             this.Controls.Add(this.grBoxEmpleados);
             this.Controls.Add(this.textBox4);
             this.Name = "ABMEmpleado";
             this.Text = "Empleados";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ABMEmpleado_FormClosing);
             this.Load += new System.EventHandler(this.ABMEmpleado_Load);
             this.grBoxEmpleados.ResumeLayout(false);
             this.grBoxEmpleados.PerformLayout();
             this.grBoxDomicilio.ResumeLayout(false);
             this.grBoxDomicilio.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -594,27 +615,23 @@
         private System.Windows.Forms.TextBox txtNombreEmp;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNroDocumento;
-        private System.Windows.Forms.Label Telefono;
+        private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblBarrio;
         private System.Windows.Forms.Label lblDepartamento;
         private System.Windows.Forms.Label lblLocalidad;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblProvincia;
         private System.Windows.Forms.Label lblNroCalle;
         private System.Windows.Forms.Label lblCalle;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblNroDoc;
+        private System.Windows.Forms.Label lblTipoDoc;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.GroupBox grBoxDomicilio;
         private System.Windows.Forms.TextBox textBox4;
-        public System.Windows.Forms.RadioButton rbtInactivo;
-        public System.Windows.Forms.RadioButton rbtActivo;
-        private System.Windows.Forms.Label lblEstado;
         public System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtCalle;
         public System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNumeroCalle;
         public System.Windows.Forms.ComboBox cmbBarrio;
         public System.Windows.Forms.ComboBox cmbLocalidad;
@@ -625,17 +642,24 @@
         private System.Windows.Forms.Button btnDpto;
         private System.Windows.Forms.Button btnProvincia;
         private System.Windows.Forms.DataGridView dgvEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         public System.Windows.Forms.ComboBox cmbTDoc;
         private System.Windows.Forms.Label lblCamposOb;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button BtnSalir;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnBaja;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnAlta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColIdEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNroDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColProvincia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColDepto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColLocalidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColBarrio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColMail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColCalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNroCalle;
     }
 }

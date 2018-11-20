@@ -1,6 +1,6 @@
 ﻿namespace GestorInformatico.Reportes
 {
-    partial class ImpresionVenta
+    partial class ReporteVenEmp
     {
         /// <summary>
         /// Required designer variable.
@@ -30,51 +30,51 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.ventaEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet2 = new GestorInformatico.DataLayer.DataSet2();
-            this.impresionVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.impresion_VentaTableAdapter = new GestorInformatico.DataLayer.DataSet2TableAdapters.Impresion_VentaTableAdapter();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.venta_EmpleadoTableAdapter = new GestorInformatico.DataLayer.DataSet2TableAdapters.Venta_EmpleadoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.ventaEmpleadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.impresionVentaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // ventaEmpleadoBindingSource
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetImpresionVenta";
-            reportDataSource1.Value = this.impresionVentaBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GestorInformatico.Reportes.ImpresionVenta.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(617, 312);
-            this.reportViewer1.TabIndex = 0;
+            this.ventaEmpleadoBindingSource.DataMember = "Venta_Empleado";
+            this.ventaEmpleadoBindingSource.DataSource = this.dataSet2;
             // 
             // dataSet2
             // 
             this.dataSet2.DataSetName = "DataSet2";
             this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // impresionVentaBindingSource
+            // reportViewer1
             // 
-            this.impresionVentaBindingSource.DataMember = "Impresion_Venta";
-            this.impresionVentaBindingSource.DataSource = this.dataSet2;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSetVenEmp";
+            reportDataSource1.Value = this.ventaEmpleadoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GestorInformatico.Reportes.ReporteVentaEmpleado.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(557, 486);
+            this.reportViewer1.TabIndex = 0;
             // 
-            // impresion_VentaTableAdapter
+            // venta_EmpleadoTableAdapter
             // 
-            this.impresion_VentaTableAdapter.ClearBeforeFill = true;
+            this.venta_EmpleadoTableAdapter.ClearBeforeFill = true;
             // 
-            // ImpresionVenta
+            // ReporteVenEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 312);
+            this.ClientSize = new System.Drawing.Size(557, 486);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "ImpresionVenta";
-            this.Text = "Impresion Venta";
-            this.Load += new System.EventHandler(this.ImpresionVenta_Load);
+            this.Name = "ReporteVenEmp";
+            this.Text = "Reporte de Venta";
+            this.Load += new System.EventHandler(this.ReporteVenEmp_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ventaEmpleadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.impresionVentaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -82,8 +82,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource impresionVentaBindingSource;
+        private System.Windows.Forms.BindingSource ventaEmpleadoBindingSource;
         private DataLayer.DataSet2 dataSet2;
-        private DataLayer.DataSet2TableAdapters.Impresion_VentaTableAdapter impresion_VentaTableAdapter;
+        private DataLayer.DataSet2TableAdapters.Venta_EmpleadoTableAdapter venta_EmpleadoTableAdapter;
     }
 }

@@ -132,5 +132,18 @@ namespace GestorInformatico.GUIlayer
                 dgvArticulo.DataSource = tabla;
             }
         }
+
+        private void frmArticulo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea salir?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                e.Cancel = false;
+                Application.ExitThread();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

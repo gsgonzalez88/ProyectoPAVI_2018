@@ -1,6 +1,6 @@
 ﻿namespace GestorInformatico.Reportes
 {
-    partial class GraficoVenta
+    partial class ReporteVenFecha
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.graficoVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ventaFechaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet2 = new GestorInformatico.DataLayer.DataSet2();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.grafico_VentaTableAdapter = new GestorInformatico.DataLayer.DataSet2TableAdapters.Grafico_VentaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.graficoVentaBindingSource)).BeginInit();
+            this.venta_FechaTableAdapter = new GestorInformatico.DataLayer.DataSet2TableAdapters.Venta_FechaTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.ventaFechaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             this.SuspendLayout();
             // 
-            // graficoVentaBindingSource
+            // ventaFechaBindingSource
             // 
-            this.graficoVentaBindingSource.DataMember = "Grafico_Venta";
-            this.graficoVentaBindingSource.DataSource = this.dataSet2;
+            this.ventaFechaBindingSource.DataMember = "Venta_Fecha";
+            this.ventaFechaBindingSource.DataSource = this.dataSet2BindingSource;
+            // 
+            // dataSet2BindingSource
+            // 
+            this.dataSet2BindingSource.DataSource = this.dataSet2;
+            this.dataSet2BindingSource.Position = 0;
             // 
             // dataSet2
             // 
@@ -51,29 +58,30 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetGraficoVenta";
-            reportDataSource1.Value = this.graficoVentaBindingSource;
+            reportDataSource1.Name = "DataSetFecha";
+            reportDataSource1.Value = this.ventaFechaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GestorInformatico.Reportes.GraficoVenta.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GestorInformatico.Reportes.ReporteVentaFecha.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(579, 352);
+            this.reportViewer1.Size = new System.Drawing.Size(677, 300);
             this.reportViewer1.TabIndex = 0;
             // 
-            // grafico_VentaTableAdapter
+            // venta_FechaTableAdapter
             // 
-            this.grafico_VentaTableAdapter.ClearBeforeFill = true;
+            this.venta_FechaTableAdapter.ClearBeforeFill = true;
             // 
-            // GraficoVenta
+            // ReporteVenFecha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 352);
+            this.ClientSize = new System.Drawing.Size(677, 300);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "GraficoVenta";
-            this.Text = "Grafico";
-            this.Load += new System.EventHandler(this.GraficoVenta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.graficoVentaBindingSource)).EndInit();
+            this.Name = "ReporteVenFecha";
+            this.Text = "Reporte de Venta";
+            this.Load += new System.EventHandler(this.ReporteVenFecha_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ventaFechaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             this.ResumeLayout(false);
 
@@ -82,8 +90,9 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource dataSet2BindingSource;
         private DataLayer.DataSet2 dataSet2;
-        private System.Windows.Forms.BindingSource graficoVentaBindingSource;
-        private DataLayer.DataSet2TableAdapters.Grafico_VentaTableAdapter grafico_VentaTableAdapter;
+        private System.Windows.Forms.BindingSource ventaFechaBindingSource;
+        private DataLayer.DataSet2TableAdapters.Venta_FechaTableAdapter venta_FechaTableAdapter;
     }
 }
