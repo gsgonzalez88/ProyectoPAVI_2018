@@ -264,9 +264,22 @@ namespace GestorInformatico.GUIlayer
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            //Reportes.ImpresionVenta reporte = new Reportes.ImpresionVenta(identity);
-            //reporte.ShowDialog();
-            
+            Reportes.ImpresionVenta reporte = new Reportes.ImpresionVenta();
+            reporte.idVenta = identity;
+            reporte.ShowDialog();
+        }
+
+        private void frmVenta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea salir?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                e.Cancel = false;
+                Application.ExitThread();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
 
   

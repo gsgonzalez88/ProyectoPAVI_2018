@@ -43,5 +43,11 @@ namespace GestorInformatico.Reportes
             repo.emp = Convert.ToInt32(cboEmpleado.SelectedValue);
             repo.ShowDialog();
         }
+
+        private void btnInformeArticulo_Click(object sender, EventArgs e)
+        {
+            Reportes.GraficoVenta grafico = new Reportes.GraficoVenta();
+            grafico.ShowDialog();
+        }
     }
 }

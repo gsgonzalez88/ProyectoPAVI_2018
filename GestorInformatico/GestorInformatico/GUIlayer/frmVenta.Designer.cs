@@ -453,6 +453,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmVenta";
             this.Text = "Venta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmVenta_FormClosing);
             this.Load += new System.EventHandler(this.frmVenta_Load);
             this.grbVenta.ResumeLayout(false);
             this.grbVenta.PerformLayout();

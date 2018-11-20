@@ -118,6 +118,7 @@
             this.btnInformeArticulo.TabIndex = 0;
             this.btnInformeArticulo.Text = "Generar";
             this.btnInformeArticulo.UseVisualStyleBackColor = true;
+            this.btnInformeArticulo.Click += new System.EventHandler(this.btnInformeArticulo_Click);
             // 
             // ReporteVenta
             // 

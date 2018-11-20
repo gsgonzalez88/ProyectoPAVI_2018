@@ -7,41 +7,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using DBHelper;
 
-
-namespace GestorInformatico
+namespace GestorInformatico.GUIlayer
 {
-    public partial class ABMEmpleado : Form
+    public partial class AbmEditarEmpleado : Form
     {
+        int idEmpleado;
         int idProvincia;
         int idDepto;
         int idLocalidad;
-        int idEmpleado;
-
-        public ABMEmpleado()
+        DataTable tabla;
+        public AbmEditarEmpleado(int id)
         {
             InitializeComponent();
-        }  
 
-        private void ABMEmpleado_Load(object sender, EventArgs e)
-        {
-            cargarCombo(cmbProvin, DBHelper.Utilidades.Ejecutar("SELECT * FROM Provincia"), "Descripcion", "IdProvincia");
-            
-            
-            
-            cargarCombo(cmbTDoc, DBHelper.Utilidades.Ejecutar("SELECT * FROM TipoDoc"), "Descripcion", "IdTipoDoc");
-
-            DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT Emp.IdEmpleado, Emp.Apellido, Emp.Nombre, Emp.NroDoc, Est.Descripcion, P.Descripcion, D.Descripcion, L.Descripcion, B.Descripcion, Emp.nroTelefono, Emp.Email, Emp.Calle, Emp.NroCalle " + 
-                "FROM Empleado Emp, Estado Est, Provincia P, Departamento D, Localidad L, Barrio B" + 
-                " WHERE Emp.IdEstado = Est.IdEstado AND Emp.IdProvincia = P.IdProvincia AND Emp.IdDepartamento = D.IdDepartamento AND Emp.IdLocalidad = L.IdLocalidad AND Emp.IdBarrio = B.IdBarrio");
-            if(tabla.Rows.Count > 0)
-            {
-                dgvEmpleado.DataSource = tabla;
-            }
+            idEmpleado = id;
         }
 
+        private void AbmEditarEmpleado_Load(object sender, EventArgs e)
+        {
+            cargarCombo(cmbTDoc, DBHelper.Utilidades.Ejecutar("SELECT * FROM TipoDoc"), "Descripcion", "IdTipoDoc");
+            cargarCombo(cmbProvin, DBHelper.Utilidades.Ejecutar("SELECT * FROM Provincia"), "Descripcion", "IdProvincia");
+            tabla = DBHelper.Utilidades.Ejecutar("SELECT Apellido, Nombre, IdTipoDoc, NroDoc, IdProvincia, IdDepartamento, IdLocalidad, IdBarrio, nroTelefono, Email, Calle, NroCalle FROM Empleado WHERE IdEmpleado = " + idEmpleado);
+            if(tabla.Rows.Count > 0)
+            {
+                txtNombreEmp.Text = tabla.Rows[0].ItemArray[1].ToString();
+                txtApellido.Text = tabla.Rows[0].ItemArray[0].ToString();
+
+                cmbTDoc.SelectedValue = Convert.ToInt32(tabla.Rows[0].ItemArray[2]);
+
+                txtNroDocumento.Text = tabla.Rows[0].ItemArray[3].ToString();
+                txtEmail.Text = tabla.Rows[0].ItemArray[9].ToString();
+                txtTelefono.Text = tabla.Rows[0].ItemArray[8].ToString();
+                txtCalle.Text = tabla.Rows[0].ItemArray[10].ToString();
+                txtNumeroCalle.Text = tabla.Rows[0].ItemArray[11].ToString();
+
+                cmbProvin.SelectedValue = Convert.ToInt32(tabla.Rows[0].ItemArray[4]);
+            }
+        }
         private void cargarCombo(ComboBox cbo, Object source, string display, String value)
         {
             cbo.DataSource = source;
@@ -50,37 +53,16 @@ namespace GestorInformatico
             cbo.SelectedIndex = -1;
         }
 
-
-        private void btnBarrio_Click(object sender, EventArgs e)
-        {
-            AbmBarrio frmBarrio = new AbmBarrio();
-            frmBarrio.ShowDialog();
-        }
-
-        private void btnLoc_Click(object sender, EventArgs e)
-        {
-            AbmLocalidad loc = new AbmLocalidad();
-            loc.ShowDialog();
-        }
-
-        private void btnDpto_Click(object sender, EventArgs e)
-        {
-            AbmDepto depto = new AbmDepto();
-            depto.ShowDialog();
-        }
-
-        private void btnProvincia_Click(object sender, EventArgs e)
-        {
-            ABMProvincia prov = new ABMProvincia();
-            prov.ShowDialog();
-        }
-
         private void cmbProvin_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(cmbProvin.Text) && cmbProvin.SelectedIndex != -1)
             {
                 idProvincia = Convert.ToInt32(cmbProvin.SelectedValue.GetHashCode());
                 cargarCombo(cmbDepto, DBHelper.Utilidades.Ejecutar("SELECT * FROM Departamento WHERE IdProvincia = " + idProvincia), "Descripcion", "IdDepartamento");
+                if (tabla != null)
+                {
+                    cmbDepto.SelectedValue = Convert.ToInt32(tabla.Rows[0].ItemArray[5]);
+                }
             }
         }
 
@@ -90,6 +72,10 @@ namespace GestorInformatico
             {
                 idDepto = Convert.ToInt32(cmbDepto.SelectedValue.GetHashCode());
                 cargarCombo(cmbLocalidad, DBHelper.Utilidades.Ejecutar("SELECT * FROM Localidad WHERE IdDepartamento = " + idDepto), "Descripcion", "IdLocalidad");
+                if (tabla != null)
+                {
+                    cmbLocalidad.SelectedValue = Convert.ToInt32(tabla.Rows[0].ItemArray[6]);
+                }
             }
         }
 
@@ -99,102 +85,45 @@ namespace GestorInformatico
             {
                 idLocalidad = Convert.ToInt32(cmbLocalidad.SelectedValue.GetHashCode());
                 cargarCombo(cmbBarrio, DBHelper.Utilidades.Ejecutar("SELECT * FROM Barrio WHERE IdLocalidad = " + idLocalidad), "Descripcion", "IdBarrio");
-            }
-        }
-
-        private void btnAlta_Click(object sender, EventArgs e)
-        {
-            DBHelper.Utilidades.Update("UPDATE Empleado SET IdEstado = 1 WHERE IdEmpleado = " + idEmpleado);
-            DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT Emp.IdEmpleado, Emp.Apellido, Emp.Nombre, Emp.NroDoc, Est.Descripcion, P.Descripcion, D.Descripcion, L.Descripcion, B.Descripcion, Emp.nroTelefono, Emp.Email, Emp.Calle, Emp.NroCalle " + 
-                "FROM Empleado Emp, Estado Est, Provincia P, Departamento D, Localidad L, Barrio B" + 
-                " WHERE Emp.IdEstado = Est.IdEstado AND Emp.IdProvincia = P.IdProvincia AND Emp.IdDepartamento = D.IdDepartamento AND Emp.IdLocalidad = L.IdLocalidad AND Emp.IdBarrio = B.IdBarrio");
-            if (tabla.Rows.Count > 0)
-            {
-                dgvEmpleado.DataSource = tabla;
-            }
-        }
-
-        private void dgvEmpleado_SelectionChanged(object sender, EventArgs e)
-        {
-            idEmpleado = Convert.ToInt32(dgvEmpleado.CurrentRow.Cells[0].Value);
-        }
-
-        private void ABMEmpleado_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if(MessageBox.Show("¿Seguro que desea salir?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                e.Cancel = false;
-                Application.ExitThread();
-            }
-            else
-            {
-                e.Cancel = true;
-            }
-        }
-
-        private void btnBaja_Click(object sender, EventArgs e)
-        {
-            DBHelper.Utilidades.Update("UPDATE Empleado SET IdEstado = 2 WHERE IdEmpleado = " + idEmpleado);
-            DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT Emp.IdEmpleado, Emp.Apellido, Emp.Nombre, Emp.NroDoc, Est.Descripcion, P.Descripcion, D.Descripcion, L.Descripcion, B.Descripcion, Emp.nroTelefono, Emp.Email, Emp.Calle, Emp.NroCalle " +
-                "FROM Empleado Emp, Estado Est, Provincia P, Departamento D, Localidad L, Barrio B" +
-                " WHERE Emp.IdEstado = Est.IdEstado AND Emp.IdProvincia = P.IdProvincia AND Emp.IdDepartamento = D.IdDepartamento AND Emp.IdLocalidad = L.IdLocalidad AND Emp.IdBarrio = B.IdBarrio");
-            if (tabla.Rows.Count > 0)
-            {
-                dgvEmpleado.DataSource = tabla;
-            }
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            if(!string.IsNullOrEmpty(txtApellido.Text))
-            {
-                if(!string.IsNullOrEmpty(txtNombreEmp.Text))
+                if (tabla != null)
                 {
-                    if(!string.IsNullOrEmpty(cmbTDoc.Text))
-                    {
-                        if(!string.IsNullOrEmpty(txtNroDocumento.Text))
-                        {
-                            if(!string.IsNullOrEmpty(txtEmail.Text))
-                            {
-                                if(!string.IsNullOrEmpty(txtTelefono.Text))
-                                {
-                                    if(!string.IsNullOrEmpty(txtCalle.Text))
-                                    {
-                                        if(!string.IsNullOrEmpty(txtNumeroCalle.Text))
-                                        {
-                                            if(!string.IsNullOrEmpty(cmbProvin.Text))
-                                            {
-                                                if(!string.IsNullOrEmpty(cmbDepto.Text))
-                                                {
-                                                    if(!string.IsNullOrEmpty(cmbLocalidad.Text))
-                                                    {
-                                                        if(!string.IsNullOrEmpty(cmbBarrio.Text))
-                                                        {
-                                                            DBHelper.Utilidades.Insert("INSERT INTO Empleado VALUES (\'" + txtNombreEmp.Text + "\',\'" + txtApellido.Text + "\'," + Convert.ToInt32(cmbTDoc.SelectedValue.GetHashCode()) + "," +
-                                                                Convert.ToInt32(txtNroDocumento.Text) + "," + Convert.ToInt32(cmbBarrio.SelectedValue.GetHashCode()) + "," + Convert.ToInt32(cmbLocalidad.SelectedValue.GetHashCode()) +
-                                                                "," + Convert.ToInt32(cmbDepto.SelectedValue.GetHashCode()) + "," + Convert.ToInt32(cmbProvin.SelectedValue.GetHashCode()) + "," + Convert.ToInt32(txtTelefono.Text) + ",\'" +
-                                                                txtEmail.Text + "\',\'" + txtCalle.Text + "\'," + Convert.ToInt32(txtNumeroCalle.Text) + ",1)");
-                                                            MessageBox.Show("Empleado agregado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cmbBarrio.SelectedValue = Convert.ToInt32(tabla.Rows[0].ItemArray[7]);
+                }
+            }
+        }
 
-                                                            DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT Emp.IdEmpleado, Emp.Apellido, Emp.Nombre, Emp.NroDoc, Est.Descripcion, P.Descripcion, D.Descripcion, L.Descripcion, B.Descripcion, Emp.nroTelefono, Emp.Email, Emp.Calle, Emp.NroCalle " + 
-                                                                "FROM Empleado Emp, Estado Est, Provincia P, Departamento D, Localidad L, Barrio B" + 
-                                                                " WHERE Emp.IdEstado = Est.IdEstado AND Emp.IdProvincia = P.IdProvincia AND Emp.IdDepartamento = D.IdDepartamento AND Emp.IdLocalidad = L.IdLocalidad AND Emp.IdBarrio = B.IdBarrio");
-                                                            if (tabla.Rows.Count > 0)
-                                                            {
-                                                                dgvEmpleado.DataSource = tabla;
-                                                            }
-                                                            txtApellido.Text = "";
-                                                            txtNombreEmp.Text = "";
-                                                            cmbTDoc.SelectedIndex = -1;
-                                                            txtNroDocumento.Text = "";
-                                                            txtEmail.Text = "";
-                                                            txtTelefono.Text = "";
-                                                            txtCalle.Text = "";
-                                                            txtNumeroCalle.Text = "";
-                                                            cmbProvin.SelectedIndex = -1;
-                                                            cmbDepto.SelectedIndex = -1;
-                                                            cmbLocalidad.SelectedIndex = -1;
-                                                            cmbBarrio.SelectedIndex = -1;
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtApellido.Text))
+            {
+                if (!string.IsNullOrEmpty(txtNombreEmp.Text))
+                {
+                    if (!string.IsNullOrEmpty(cmbTDoc.Text))
+                    {
+                        if (!string.IsNullOrEmpty(txtNroDocumento.Text))
+                        {
+                            if (!string.IsNullOrEmpty(txtEmail.Text))
+                            {
+                                if (!string.IsNullOrEmpty(txtTelefono.Text))
+                                {
+                                    if (!string.IsNullOrEmpty(txtCalle.Text))
+                                    {
+                                        if (!string.IsNullOrEmpty(txtNumeroCalle.Text))
+                                        {
+                                            if (!string.IsNullOrEmpty(cmbProvin.Text))
+                                            {
+                                                if (!string.IsNullOrEmpty(cmbDepto.Text))
+                                                {
+                                                    if (!string.IsNullOrEmpty(cmbLocalidad.Text))
+                                                    {
+                                                        if (!string.IsNullOrEmpty(cmbBarrio.Text))
+                                                        {
+                                                            DBHelper.Utilidades.Update("UPDATE Empleado SET Nombre = \'" + txtNombreEmp.Text + "\',Apellido = \'" + txtApellido.Text + "\',IdTipoDoc = " + Convert.ToInt32(cmbTDoc.SelectedValue.GetHashCode()) + ",NroDoc = " +
+                                                                Convert.ToInt32(txtNroDocumento.Text) + ",IdBarrio = " + Convert.ToInt32(cmbBarrio.SelectedValue.GetHashCode()) + ",IdLocalidad = " + Convert.ToInt32(cmbLocalidad.SelectedValue.GetHashCode()) +
+                                                                ",IdDepartamento = " + Convert.ToInt32(cmbDepto.SelectedValue.GetHashCode()) + ",IdProvincia = " + Convert.ToInt32(cmbProvin.SelectedValue.GetHashCode()) + ",nroTelefono = " + Convert.ToInt32(txtTelefono.Text) + ",Email = \'" +
+                                                                txtEmail.Text + "\',Calle = \'" + txtCalle.Text + "\',NroCalle = " + Convert.ToInt32(txtNumeroCalle.Text) + "WHERE IdEmpleado = " + idEmpleado);
+                                                            MessageBox.Show("Artículo editado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                            this.Close();
                                                         }
                                                         else
                                                         {
@@ -410,22 +339,6 @@ namespace GestorInformatico
                 lblDepartamento.BackColor = Color.LightBlue;
                 lblLocalidad.BackColor = Color.LightBlue;
                 lblBarrio.BackColor = Color.LightBlue;
-            }
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            if(!string.IsNullOrEmpty(idEmpleado.ToString()))
-            {
-                GUIlayer.AbmEditarEmpleado emp = new GUIlayer.AbmEditarEmpleado(idEmpleado);
-                emp.ShowDialog();
-                DataTable tabla = DBHelper.Utilidades.Ejecutar("SELECT Emp.IdEmpleado, Emp.Apellido, Emp.Nombre, Emp.NroDoc, Est.Descripcion, P.Descripcion, D.Descripcion, L.Descripcion, B.Descripcion, Emp.nroTelefono, Emp.Email, Emp.Calle, Emp.NroCalle " +
-                "FROM Empleado Emp, Estado Est, Provincia P, Departamento D, Localidad L, Barrio B" +
-                " WHERE Emp.IdEstado = Est.IdEstado AND Emp.IdProvincia = P.IdProvincia AND Emp.IdDepartamento = D.IdDepartamento AND Emp.IdLocalidad = L.IdLocalidad AND Emp.IdBarrio = B.IdBarrio");
-                if (tabla.Rows.Count > 0)
-                {
-                    dgvEmpleado.DataSource = tabla;
-                }
             }
         }
     }
