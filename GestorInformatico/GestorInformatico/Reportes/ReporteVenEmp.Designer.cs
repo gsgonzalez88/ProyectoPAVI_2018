@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet2 = new GestorInformatico.DataLayer.DataSet2();
             this.ventaEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2 = new GestorInformatico.DataLayer.DataSet2();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.venta_EmpleadoTableAdapter = new GestorInformatico.DataLayer.DataSet2TableAdapters.Venta_EmpleadoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaEmpleadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ventaEmpleadoBindingSource
+            // 
+            this.ventaEmpleadoBindingSource.DataMember = "Venta_Empleado";
+            this.ventaEmpleadoBindingSource.DataSource = this.dataSet2;
+            // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -50,16 +60,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(557, 486);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ventaEmpleadoBindingSource
-            // 
-            this.ventaEmpleadoBindingSource.DataMember = "Venta_Empleado";
-            this.ventaEmpleadoBindingSource.DataSource = this.dataSet2;
-            // 
             // venta_EmpleadoTableAdapter
             // 
             this.venta_EmpleadoTableAdapter.ClearBeforeFill = true;
@@ -71,10 +71,10 @@
             this.ClientSize = new System.Drawing.Size(557, 486);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ReporteVenEmp";
-            this.Text = "ReporteVenEmp";
+            this.Text = "Reporte de Venta";
             this.Load += new System.EventHandler(this.ReporteVenEmp_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaEmpleadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }

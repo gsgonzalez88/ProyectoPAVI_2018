@@ -108,7 +108,7 @@
             this.grbArticulo.Size = new System.Drawing.Size(137, 86);
             this.grbArticulo.TabIndex = 4;
             this.grbArticulo.TabStop = false;
-            this.grbArticulo.Text = "Articulos mas vendidos";
+            this.grbArticulo.Text = "Articulos vendidos";
             // 
             // btnInformeArticulo
             // 
@@ -129,7 +129,7 @@
             this.Controls.Add(this.grbEmpleado);
             this.Controls.Add(this.grbFecha);
             this.Name = "ReporteVenta";
-            this.Text = "ReporteVenta";
+            this.Text = "Reporte de Ventas";
             this.Load += new System.EventHandler(this.ReporteVenta_Load);
             this.grbFecha.ResumeLayout(false);
             this.grbEmpleado.ResumeLayout(false);

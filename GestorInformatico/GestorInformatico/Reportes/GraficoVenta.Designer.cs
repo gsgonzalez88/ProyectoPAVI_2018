@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet2 = new GestorInformatico.DataLayer.DataSet2();
             this.graficoVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2 = new GestorInformatico.DataLayer.DataSet2();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.grafico_VentaTableAdapter = new GestorInformatico.DataLayer.DataSet2TableAdapters.Grafico_VentaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.graficoVentaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // graficoVentaBindingSource
+            // 
+            this.graficoVentaBindingSource.DataMember = "Grafico_Venta";
+            this.graficoVentaBindingSource.DataSource = this.dataSet2;
+            // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -50,16 +60,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(579, 352);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // graficoVentaBindingSource
-            // 
-            this.graficoVentaBindingSource.DataMember = "Grafico_Venta";
-            this.graficoVentaBindingSource.DataSource = this.dataSet2;
-            // 
             // grafico_VentaTableAdapter
             // 
             this.grafico_VentaTableAdapter.ClearBeforeFill = true;
@@ -71,10 +71,10 @@
             this.ClientSize = new System.Drawing.Size(579, 352);
             this.Controls.Add(this.reportViewer1);
             this.Name = "GraficoVenta";
-            this.Text = "GraficoVenta";
+            this.Text = "Grafico";
             this.Load += new System.EventHandler(this.GraficoVenta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.graficoVentaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -30,15 +30,30 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet2 = new GestorInformatico.DataLayer.DataSet2();
-            this.dataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ventaFechaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2 = new GestorInformatico.DataLayer.DataSet2();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.venta_FechaTableAdapter = new GestorInformatico.DataLayer.DataSet2TableAdapters.Venta_FechaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaFechaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ventaFechaBindingSource
+            // 
+            this.ventaFechaBindingSource.DataMember = "Venta_Fecha";
+            this.ventaFechaBindingSource.DataSource = this.dataSet2BindingSource;
+            // 
+            // dataSet2BindingSource
+            // 
+            this.dataSet2BindingSource.DataSource = this.dataSet2;
+            this.dataSet2BindingSource.Position = 0;
+            // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -52,21 +67,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(677, 300);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataSet2BindingSource
-            // 
-            this.dataSet2BindingSource.DataSource = this.dataSet2;
-            this.dataSet2BindingSource.Position = 0;
-            // 
-            // ventaFechaBindingSource
-            // 
-            this.ventaFechaBindingSource.DataMember = "Venta_Fecha";
-            this.ventaFechaBindingSource.DataSource = this.dataSet2BindingSource;
-            // 
             // venta_FechaTableAdapter
             // 
             this.venta_FechaTableAdapter.ClearBeforeFill = true;
@@ -78,11 +78,11 @@
             this.ClientSize = new System.Drawing.Size(677, 300);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ReporteVenFecha";
-            this.Text = "ReporteVenFecha";
+            this.Text = "Reporte de Venta";
             this.Load += new System.EventHandler(this.ReporteVenFecha_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaFechaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }
